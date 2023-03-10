@@ -1,0 +1,5 @@
+Kivy~=1.10.1
+PyGObject~=3.36.0
+numpy~=1.23.2
+opencv-python~=4.6.0.66
+Pillow~=7.0.0
