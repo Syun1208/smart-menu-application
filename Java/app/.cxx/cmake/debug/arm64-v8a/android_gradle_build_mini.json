@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/src/main/cpp/CMakeLists.txt",
+    "/home/long/Android/Sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake",
+    "/home/long/Android/Sdk/ndk/21.1.6352462/build/cmake/platforms.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/OpenCVConfig-version.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/OpenCVConfig.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/abi-arm64-v8a/OpenCVConfig.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/abi-arm64-v8a/OpenCVModules.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/abi-arm64-v8a/OpenCVModules-release.cmake"
+  ],
+  "cleanCommands": [
+    "/home/long/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "/home/long/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "Native-Debug-arm64-v8a": {
+      "artifactName": "Native",
+      "buildCommand": "/home/long/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/arm64-v8a\" Native",
+      "abi": "arm64-v8a",
+      "output": "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libNative.so",
+      "runtimeFiles": [
+        "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/PaddleLite/cxx/libs/arm64-v8a/libpaddle_light_api_shared.so"
+      ]
+    }
+  }
+}

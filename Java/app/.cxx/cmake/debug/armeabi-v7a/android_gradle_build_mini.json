@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/src/main/cpp/CMakeLists.txt",
+    "/home/long/Android/Sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake",
+    "/home/long/Android/Sdk/ndk/21.1.6352462/build/cmake/platforms.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/OpenCVConfig-version.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/OpenCVConfig.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/abi-armeabi-v7a/OpenCVConfig.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/abi-armeabi-v7a/OpenCVModules.cmake",
+    "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/OpenCV/sdk/native/jni/abi-armeabi-v7a/OpenCVModules-release.cmake"
+  ],
+  "cleanCommands": [
+    "/home/long/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "/home/long/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "Native-Debug-armeabi-v7a": {
+      "artifactName": "Native",
+      "buildCommand": "/home/long/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/armeabi-v7a\" Native",
+      "abi": "armeabi-v7a",
+      "output": "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libNative.so",
+      "runtimeFiles": [
+        "/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/PaddleLite/cxx/libs/armeabi-v7a/libpaddle_light_api_shared.so"
+      ]
+    }
+  }
+}

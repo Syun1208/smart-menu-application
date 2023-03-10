@@ -1,0 +1,3 @@
+/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/long/Desktop/Paddle-Lite-Demo/ocr/android/app/cxx/ppocr_demo/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/Native.dir
