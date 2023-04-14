@@ -5,10 +5,172 @@
     android:layout_height="match_parent"
     tools:context=".MenuScannerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:ignore="UselessLeaf,UselessParent">
 
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="550dp"
+            android:background="@drawable/baseline_camera_alt_24"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/ocr"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="550dp"
+            android:background="@drawable/baseline_document_scanner_24"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/local_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="550dp"
+            android:layout_marginRight="65dp"
+            android:background="@drawable/baseline_image_24"
+            tools:ignore="RtlHardcoded" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity"
+            tools:ignore="RedundantNamespace">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/chatbot_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="@dimen/fab_margin"
+                android:layout_marginBottom="16dp"
+                app:srcCompat="@drawable/chatbot_icon"
+                tools:ignore="ContentDescription" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessLeaf">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.2"
+            android:src="@drawable/ocr"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessLeaf">
+
+        <TextView
+            android:id="@+id/tv_input_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="5dp"
+            android:lineSpacingExtra="4dp"
+            android:maxLines="6"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tv_model_img_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="5dp"
+            android:lineSpacingExtra="4dp"
+            android:maxLines="6"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:text="STATUS: ok"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/v_output_info"
+        android:layout_below="@+id/v_input_info"
+        tools:ignore="ObsoleteLayoutParam">
+
+        <ImageView
+            android:id="@+id/iv_input_image"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="5dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/v_output_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="ObsoleteLayoutParam">
+
+
+        <TextView
+            android:id="@+id/tv_output_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="600dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="5dp"
+            android:lineSpacingExtra="5dp"
+            android:maxLines="5"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:text=""
+            android:textAlignment="center"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/tv_inference_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_output_result"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            android:text=""
+            android:textAlignment="center" />
+    </RelativeLayout>
 </FrameLayout>

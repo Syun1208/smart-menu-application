@@ -4,22 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.AppCompat.DayNight">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:alpha="0.7"
-            android:background="@drawable/wood_background"
-            app:popupTheme="@style/Theme.Mobile_java.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+    tools:context=".HomeFragment">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -30,8 +15,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:src="@drawable/background"
             android:alpha="0.3"
+            android:src="@drawable/background"
             tools:ignore="ContentDescription" />
 
         <ImageView
