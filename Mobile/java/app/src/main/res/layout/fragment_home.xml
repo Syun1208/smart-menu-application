@@ -69,6 +69,15 @@
             android:textStyle="italic"
             tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Designed by Syun Engineer"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="italic"
+            android:layout_marginTop="637dp"
+            android:layout_marginLeft="230dp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
     </RelativeLayout>
 
 
