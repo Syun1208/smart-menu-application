@@ -1,0 +1,2 @@
+CMake Error: The source directory "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper" does not exist.
+Specify --help for usage, or press the help button on the CMake GUI.

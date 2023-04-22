@@ -280,9 +280,7 @@ public class MenuScannerFragment extends Fragment {
                 tvStatus.setText("STATUS: open camera....");
                 Toast.makeText(requireContext(), "CLick open camera", Toast.LENGTH_SHORT).show();
                 Log.i("REQUEST", String.valueOf(requestAllPermissions()));
-                if (requestAllPermissions()) {
-                    takePhoto();
-                }
+                takePhoto();
             }
         });
     }
@@ -376,9 +374,7 @@ public class MenuScannerFragment extends Fragment {
             public void onClick(View view) {
                 tvStatus.setText("STATUS: open gallery....");
                 Toast.makeText(requireContext(), "CLick open gallery", Toast.LENGTH_SHORT).show();
-                if (requestAllPermissions()) {
-                    openGallery();
-                }
+                openGallery();
             }
         });
     }

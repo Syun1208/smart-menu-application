@@ -1,0 +1,114 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 21 min SDK version: x86",
+    "file_": "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper/CMakeLists.txt",
+    "tag_": "debug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 842605138
+  },
+  {
+    "level_": 0,
+    "message_": "rebuilding JSON /home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/.cxx/Debug/25621e1m/x86/android_gradle_build.json due to:",
+    "file_": "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper/CMakeLists.txt",
+    "tag_": "debug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -757075988
+  },
+  {
+    "level_": 0,
+    "message_": "- no fingerprint file, will remove stale configuration folder",
+    "file_": "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper/CMakeLists.txt",
+    "tag_": "debug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1106432739
+  },
+  {
+    "level_": 0,
+    "message_": "removing stale contents from \u0027/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/.cxx/Debug/25621e1m/x86\u0027",
+    "file_": "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper/CMakeLists.txt",
+    "tag_": "debug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1035938821
+  },
+  {
+    "level_": 0,
+    "message_": "created folder \u0027/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/.cxx/Debug/25621e1m/x86\u0027",
+    "file_": "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper/CMakeLists.txt",
+    "tag_": "debug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -740269959
+  },
+  {
+    "level_": 0,
+    "message_": "executing cmake /home/long/Android/Sdk/cmake/3.22.1/bin/cmake \\\n  -H/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d21 \\\n  -DANDROID_PLATFORM\u003dandroid-21 \\\n  -DANDROID_ABI\u003dx86 \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003dx86 \\\n  -DANDROID_NDK\u003d/home/long/Android/Sdk/ndk/23.1.7779620 \\\n  -DCMAKE_ANDROID_NDK\u003d/home/long/Android/Sdk/ndk/23.1.7779620 \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/home/long/Android/Sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/home/long/Android/Sdk/cmake/3.22.1/bin/ninja \\\n  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/build/intermediates/cxx/Debug/25621e1m/obj/x86 \\\n  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/build/intermediates/cxx/Debug/25621e1m/obj/x86 \\\n  -DCMAKE_BUILD_TYPE\u003dDebug \\\n  -B/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/.cxx/Debug/25621e1m/x86 \\\n  -GNinja \\\n  -DANDROID_STL\u003dc++_shared\n",
+    "file_": "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper/CMakeLists.txt",
+    "tag_": "debug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -227846411
+  },
+  {
+    "level_": 0,
+    "message_": "/home/long/Android/Sdk/cmake/3.22.1/bin/cmake \\\n  -H/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d21 \\\n  -DANDROID_PLATFORM\u003dandroid-21 \\\n  -DANDROID_ABI\u003dx86 \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003dx86 \\\n  -DANDROID_NDK\u003d/home/long/Android/Sdk/ndk/23.1.7779620 \\\n  -DCMAKE_ANDROID_NDK\u003d/home/long/Android/Sdk/ndk/23.1.7779620 \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/home/long/Android/Sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/home/long/Android/Sdk/cmake/3.22.1/bin/ninja \\\n  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/build/intermediates/cxx/Debug/25621e1m/obj/x86 \\\n  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/build/intermediates/cxx/Debug/25621e1m/obj/x86 \\\n  -DCMAKE_BUILD_TYPE\u003dDebug \\\n  -B/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/.cxx/Debug/25621e1m/x86 \\\n  -GNinja \\\n  -DANDROID_STL\u003dc++_shared\n",
+    "file_": "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper/CMakeLists.txt",
+    "tag_": "debug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -647089676
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed with problem. Exception: com.android.ide.common.process.ProcessException: C++ build system [configure] failed while executing:\n    /home/long/Android/Sdk/cmake/3.22.1/bin/cmake \\\n      -H/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper \\\n      -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n      -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n      -DCMAKE_SYSTEM_VERSION\u003d21 \\\n      -DANDROID_PLATFORM\u003dandroid-21 \\\n      -DANDROID_ABI\u003dx86 \\\n      -DCMAKE_ANDROID_ARCH_ABI\u003dx86 \\\n      -DANDROID_NDK\u003d/home/long/Android/Sdk/ndk/23.1.7779620 \\\n      -DCMAKE_ANDROID_NDK\u003d/home/long/Android/Sdk/ndk/23.1.7779620 \\\n      -DCMAKE_TOOLCHAIN_FILE\u003d/home/long/Android/Sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake \\\n      -DCMAKE_MAKE_PROGRAM\u003d/home/long/Android/Sdk/cmake/3.22.1/bin/ninja \\\n      -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/build/intermediates/cxx/Debug/25621e1m/obj/x86 \\\n      -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/build/intermediates/cxx/Debug/25621e1m/obj/x86 \\\n      -DCMAKE_BUILD_TYPE\u003dDebug \\\n      -B/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/.cxx/Debug/25621e1m/x86 \\\n      -GNinja \\\n      -DANDROID_STL\u003dc++_shared\n  from /home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk\nCMake Error: The source directory \"/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper\" does not exist.\nSpecify --help for usage, or press the help button on the CMake GUI.",
+    "file_": "/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper/CMakeLists.txt",
+    "tag_": "debug|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1101555076
+  }
+]

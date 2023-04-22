@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:ignore="UselessLeaf"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/food_background"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/user"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_show_welcome"
+                android:layout_centerHorizontal="true"
+                android:hint="Loading..."
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:layout_below="@+id/avatar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                tools:ignore="HardcodedText" />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

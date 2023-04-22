@@ -53,8 +53,105 @@ public class Predictor {
         isLoaded = loadLabel(appCtx, labelPath);
         return isLoaded;
     }
+    public boolean init(FoodRecommenderFragment appCtx, String modelPath, String labelPath) {
+        isLoaded = loadModel(appCtx, modelPath, cpuThreadNum, cpuPowerMode);
+        if (!isLoaded) {
+            return false;
+        }
+        isLoaded = loadLabel(appCtx, labelPath);
+        return isLoaded;
+    }
+    public boolean init(EnglishTranslatorFragment appCtx, String modelPath, String labelPath) {
+        isLoaded = loadModel(appCtx, modelPath, cpuThreadNum, cpuPowerMode);
+        if (!isLoaded) {
+            return false;
+        }
+        isLoaded = loadLabel(appCtx, labelPath);
+        return isLoaded;
+    }
 
-
+    public boolean init(EnglishTranslatorFragment appCtx, String modelPath, String labelPath, int cpuThreadNum, String cpuPowerMode,
+                        String inputColorFormat,
+                        long[] inputShape, float[] inputMean,
+                        float[] inputStd, float scoreThreshold) {
+        if (inputShape.length != 3) {
+            Log.e(TAG, "Size of input shape should be: 3");
+            return false;
+        }
+        if (inputMean.length != inputShape[1]) {
+            Log.e(TAG, "Size of input mean should be: " + Long.toString(inputShape[1]));
+            return false;
+        }
+        if (inputStd.length != inputShape[1]) {
+            Log.e(TAG, "Size of input std should be: " + Long.toString(inputShape[1]));
+            return false;
+        }
+        if (inputShape[0] != 1) {
+            Log.e(TAG, "Only one batch is supported in the image classification demo, you can use any batch size in " +
+                    "your Apps!");
+            return false;
+        }
+        if (inputShape[1] != 1 && inputShape[1] != 3) {
+            Log.e(TAG, "Only one/three channels are supported in the image classification demo, you can use any " +
+                    "channel size in your Apps!");
+            return false;
+        }
+        if (!inputColorFormat.equalsIgnoreCase("BGR")) {
+            Log.e(TAG, "Only  BGR color format is supported.");
+            return false;
+        }
+        boolean isLoaded = init(appCtx, modelPath, labelPath);
+        if (!isLoaded) {
+            return false;
+        }
+        this.inputColorFormat = inputColorFormat;
+        this.inputShape = inputShape;
+        this.inputMean = inputMean;
+        this.inputStd = inputStd;
+        this.scoreThreshold = scoreThreshold;
+        return true;
+    }
+    public boolean init(FoodRecommenderFragment appCtx, String modelPath, String labelPath, int cpuThreadNum, String cpuPowerMode,
+                        String inputColorFormat,
+                        long[] inputShape, float[] inputMean,
+                        float[] inputStd, float scoreThreshold) {
+        if (inputShape.length != 3) {
+            Log.e(TAG, "Size of input shape should be: 3");
+            return false;
+        }
+        if (inputMean.length != inputShape[1]) {
+            Log.e(TAG, "Size of input mean should be: " + Long.toString(inputShape[1]));
+            return false;
+        }
+        if (inputStd.length != inputShape[1]) {
+            Log.e(TAG, "Size of input std should be: " + Long.toString(inputShape[1]));
+            return false;
+        }
+        if (inputShape[0] != 1) {
+            Log.e(TAG, "Only one batch is supported in the image classification demo, you can use any batch size in " +
+                    "your Apps!");
+            return false;
+        }
+        if (inputShape[1] != 1 && inputShape[1] != 3) {
+            Log.e(TAG, "Only one/three channels are supported in the image classification demo, you can use any " +
+                    "channel size in your Apps!");
+            return false;
+        }
+        if (!inputColorFormat.equalsIgnoreCase("BGR")) {
+            Log.e(TAG, "Only  BGR color format is supported.");
+            return false;
+        }
+        boolean isLoaded = init(appCtx, modelPath, labelPath);
+        if (!isLoaded) {
+            return false;
+        }
+        this.inputColorFormat = inputColorFormat;
+        this.inputShape = inputShape;
+        this.inputMean = inputMean;
+        this.inputStd = inputStd;
+        this.scoreThreshold = scoreThreshold;
+        return true;
+    }
     public boolean init(MenuScannerFragment appCtx, String modelPath, String labelPath, int cpuThreadNum, String cpuPowerMode,
                         String inputColorFormat,
                         long[] inputShape, float[] inputMean,
@@ -132,7 +229,76 @@ public class Predictor {
         this.modelName = realPath.substring(realPath.lastIndexOf("/") + 1);
         return true;
     }
+    protected boolean loadModel(FoodRecommenderFragment appCtx, String modelPath, int cpuThreadNum, String cpuPowerMode) {
+        // Release model if exists
+        releaseModel();
 
+        // Load model
+        if (modelPath.isEmpty()) {
+            Log.e("ERROR", "Cannot find model directory");
+            return false;
+        }
+        String realPath = modelPath;
+        if (modelPath.charAt(0) != '/') {
+            // Read model files from custom path if the first character of mode path is '/'
+            // otherwise copy model to cache from assets
+            realPath = appCtx.getActivity().getCacheDir() + "/" + modelPath;
+            Utils.copyDirectoryFromAssets(appCtx.getActivity(), modelPath, realPath);
+        }
+        if (realPath.isEmpty()) {
+            return false;
+        }
+
+        OCRPredictorNative.Config config = new OCRPredictorNative.Config();
+        config.cpuThreadNum = cpuThreadNum;
+        config.detModelFilename = realPath + File.separator + "ch_ppocr_mobile_v2.0_det_opt.nb";
+        config.recModelFilename = realPath + File.separator + "ch_ppocr_mobile_v2.0_rec_opt.nb";
+        config.clsModelFilename = realPath + File.separator + "ch_ppocr_mobile_v2.0_cls_opt.nb";
+        Log.e("Predictor", "model path" + config.detModelFilename + " ; " + config.recModelFilename + ";" + config.clsModelFilename);
+        config.cpuPower = cpuPowerMode;
+        paddlePredictor = new OCRPredictorNative(config);
+
+        this.cpuThreadNum = cpuThreadNum;
+        this.cpuPowerMode = cpuPowerMode;
+        this.modelPath = realPath;
+        this.modelName = realPath.substring(realPath.lastIndexOf("/") + 1);
+        return true;
+    }
+    protected boolean loadModel(EnglishTranslatorFragment appCtx, String modelPath, int cpuThreadNum, String cpuPowerMode) {
+        // Release model if exists
+        releaseModel();
+
+        // Load model
+        if (modelPath.isEmpty()) {
+            Log.e("ERROR", "Cannot find model directory");
+            return false;
+        }
+        String realPath = modelPath;
+        if (modelPath.charAt(0) != '/') {
+            // Read model files from custom path if the first character of mode path is '/'
+            // otherwise copy model to cache from assets
+            realPath = appCtx.getActivity().getCacheDir() + "/" + modelPath;
+            Utils.copyDirectoryFromAssets(appCtx.getActivity(), modelPath, realPath);
+        }
+        if (realPath.isEmpty()) {
+            return false;
+        }
+
+        OCRPredictorNative.Config config = new OCRPredictorNative.Config();
+        config.cpuThreadNum = cpuThreadNum;
+        config.detModelFilename = realPath + File.separator + "ch_ppocr_mobile_v2.0_det_opt.nb";
+        config.recModelFilename = realPath + File.separator + "ch_ppocr_mobile_v2.0_rec_opt.nb";
+        config.clsModelFilename = realPath + File.separator + "ch_ppocr_mobile_v2.0_cls_opt.nb";
+        Log.e("Predictor", "model path" + config.detModelFilename + " ; " + config.recModelFilename + ";" + config.clsModelFilename);
+        config.cpuPower = cpuPowerMode;
+        paddlePredictor = new OCRPredictorNative(config);
+
+        this.cpuThreadNum = cpuThreadNum;
+        this.cpuPowerMode = cpuPowerMode;
+        this.modelPath = realPath;
+        this.modelName = realPath.substring(realPath.lastIndexOf("/") + 1);
+        return true;
+    }
     public void releaseModel() {
         if (paddlePredictor != null) {
             paddlePredictor.destory();
@@ -144,7 +310,51 @@ public class Predictor {
         modelPath = "";
         modelName = "";
     }
+    protected boolean loadLabel(FoodRecommenderFragment appCtx, String labelPath) {
+        wordLabels.clear();
+        wordLabels.add("black");
+        // Load word labels from file
+        try {
+            InputStream assetsInputStream = appCtx.getActivity().getAssets().open(labelPath);
+            int available = assetsInputStream.available();
+            byte[] lines = new byte[available];
+            assetsInputStream.read(lines);
+            assetsInputStream.close();
+            String words = new String(lines);
+            String[] contents = words.split("\n");
+            for (String content : contents) {
+                wordLabels.add(content);
+            }
+            Log.i(TAG, "Word label size: " + wordLabels.size());
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage());
+            return false;
+        }
+        return true;
+    }
 
+    protected boolean loadLabel(EnglishTranslatorFragment appCtx, String labelPath) {
+        wordLabels.clear();
+        wordLabels.add("black");
+        // Load word labels from file
+        try {
+            InputStream assetsInputStream = appCtx.getActivity().getAssets().open(labelPath);
+            int available = assetsInputStream.available();
+            byte[] lines = new byte[available];
+            assetsInputStream.read(lines);
+            assetsInputStream.close();
+            String words = new String(lines);
+            String[] contents = words.split("\n");
+            for (String content : contents) {
+                wordLabels.add(content);
+            }
+            Log.i(TAG, "Word label size: " + wordLabels.size());
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage());
+            return false;
+        }
+        return true;
+    }
     protected boolean loadLabel(MenuScannerFragment appCtx, String labelPath) {
         wordLabels.clear();
         wordLabels.add("black");

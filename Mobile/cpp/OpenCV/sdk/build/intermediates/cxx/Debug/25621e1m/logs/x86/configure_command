@@ -1,0 +1,18 @@
+/home/long/Android/Sdk/cmake/3.22.1/bin/cmake \
+  -H/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/libcxx_helper \
+  -DCMAKE_SYSTEM_NAME=Android \
+  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  -DCMAKE_SYSTEM_VERSION=21 \
+  -DANDROID_PLATFORM=android-21 \
+  -DANDROID_ABI=x86 \
+  -DCMAKE_ANDROID_ARCH_ABI=x86 \
+  -DANDROID_NDK=/home/long/Android/Sdk/ndk/23.1.7779620 \
+  -DCMAKE_ANDROID_NDK=/home/long/Android/Sdk/ndk/23.1.7779620 \
+  -DCMAKE_TOOLCHAIN_FILE=/home/long/Android/Sdk/ndk/23.1.7779620/build/cmake/android.toolchain.cmake \
+  -DCMAKE_MAKE_PROGRAM=/home/long/Android/Sdk/cmake/3.22.1/bin/ninja \
+  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/build/intermediates/cxx/Debug/25621e1m/obj/x86 \
+  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/build/intermediates/cxx/Debug/25621e1m/obj/x86 \
+  -DCMAKE_BUILD_TYPE=Debug \
+  -B/home/long/Desktop/smart-menu-application/Mobile/java/app/OpenCV/sdk/.cxx/Debug/25621e1m/x86 \
+  -GNinja \
+  -DANDROID_STL=c++_shared

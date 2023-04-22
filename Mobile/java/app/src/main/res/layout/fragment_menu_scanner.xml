@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="btn_run_model_click"
-                    android:text="RUN MODEL"
+                    android:text="SCAN MENU"
                     tools:ignore="ButtonStyle,HardcodedText" />
                 <Button
                     android:id="@+id/btn_take_photo"
