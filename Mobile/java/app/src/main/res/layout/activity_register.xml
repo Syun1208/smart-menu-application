@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@color/gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:alpha="0.9"
+        android:layout_margin="15dp"
+        android:background="@drawable/food_register"
+        tools:ignore="ScrollViewSize,UselessLeaf">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Register"
+            android:textStyle="bold"
+            android:id="@+id/tv_register_head"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/white"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_register_full_name"
+            android:layout_below="@id/tv_register_head"
+            android:text="Full name*"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_register_full_name"
+            android:hint="Enter your full name"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:inputType="textPersonName"
+            android:layout_below="@id/tv_register_full_name"
+            android:padding="6dp"
+            android:background="@drawable/border"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_register_email"
+            android:layout_below="@id/tv_register_full_name"
+            android:text="Email*"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_register_email"
+            android:hint="Enter your email"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:inputType="textPersonName"
+            android:layout_below="@id/tv_register_email"
+            android:padding="6dp"
+            android:background="@drawable/border"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_register_dob"
+            android:textStyle="bold"
+            android:layout_below="@id/tv_register_email"
+            android:text="Date of Birth(dd/mm/yyyy)*"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_register_dob"
+            android:textStyle="italic"
+            android:hint="Select your Date of Birth(dd/mm/yyyy)"
+            android:textSize="16sp"
+            android:focusable="false"
+            android:inputType="textPersonName"
+            android:layout_below="@id/tv_register_dob"
+            android:padding="6dp"
+            android:background="@drawable/border"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_register_gender"
+            android:layout_below="@id/tv_register_dob"
+            android:text="Gender*"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            tools:ignore="HardcodedText" />
+
+        <RadioGroup
+            android:id="@+id/radio_register_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tv_register_gender">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_register_female"
+                android:textStyle="bold"
+                android:text="Female"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText">
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_register_male"
+                android:textStyle="bold"
+                android:text="Male"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText">
+            </RadioButton>
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_register_phone"
+            android:layout_below="@id/tv_register_gender"
+            android:text="Phone number*"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_register_phone"
+            android:hint="Phone number"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/tv_register_phone"
+            android:padding="6dp"
+            android:background="@drawable/border"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_register_pw"
+            android:layout_below="@+id/et_register_phone"
+            android:text="Password*"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_register_pw"
+            android:hint="Password"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/tv_register_pw"
+            android:padding="6dp"
+            android:background="@drawable/border"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_register_cf_pw"
+            android:layout_below="@+id/et_register_pw"
+            android:text="Confirm password*"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_register_cf_pw"
+            android:hint="Confirm password"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/tv_register_cf_pw"
+            android:padding="6dp"
+            android:background="@drawable/border"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/et_register_cf_pw"
+            android:text="Register now"
+            tools:ignore="HardcodedText" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</ScrollView>

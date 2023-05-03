@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.9"
+    android:background="@drawable/background"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        android:padding="15dp"
+        tools:ignore="ScrollViewSize,UselessLeaf">
+
+        <TextView
+            android:id="@+id/tv_login_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_login_header"
+            android:layout_marginTop="50dp"
+            android:text="Email*"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/et_login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_login_email"
+            android:background="@drawable/border"
+            android:hint="Type your email"
+            android:inputType="textEmailAddress"
+            android:padding="6dp"
+            android:textSize="16sp"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+
+        <TextView
+            android:id="@+id/tv_login_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_login_email"
+            android:layout_marginTop="20dp"
+            android:text="Password*"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/et_login_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_login_pwd"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/border"
+            android:hint="Type your password"
+            android:inputType="textEmailAddress"
+            android:padding="6dp"
+            android:textSize="16sp"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/tv_login_pwd"
+            android:id="@+id/iv_show_hide_pwd"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_login_forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_login_pwd"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="10dp"
+            android:text="Forgot password ?"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_login_pwd"
+            android:id="@+id/btn_login"
+            android:layout_marginTop="50dp"
+            android:text="Login"
+            android:textAlignment="center"
+            tools:ignore="HardcodedText" />
+
+
+        <ProgressBar
+            style="?android:progressBarStyleLarge"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</ScrollView>

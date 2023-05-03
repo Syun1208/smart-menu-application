@@ -11,4 +11,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="lavender">#8692f7</color>
+    <color name="gray">#D3D3D3</color>
+    <color name="olive"> #808000</color>
 </resources>
