@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +32,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.net.InetSocketAddress;
 
@@ -69,6 +71,15 @@ public class UserFragment extends Fragment {
         textViewGender = view.findViewById(R.id.tv_show_gender);
         textViewPhoneNumber = view.findViewById(R.id.tv_show_phone_number);
         progressBar = view.findViewById(R.id.progress_bar);
+
+        imageView = view.findViewById(R.id.iv_user_avatar);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), UpdateAvatarActivity.class);
+                startActivity(intent);
+            }
+        });
 
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
@@ -123,12 +134,19 @@ public class UserFragment extends Fragment {
                     gender = readWriteDetails.gender;
                     phoneNumber = readWriteDetails.phoneNumber;
 
+                    // Set information to profile from firebase
                     textViewWelcome.setText("Welcome, " + userName + "!");
                     textViewUserName.setText(userName);
                     textViewEmail.setText(email);
                     textViewDob.setText(dob);
                     textViewGender.setText(gender);
                     textViewPhoneNumber.setText(phoneNumber);
+
+                    // Set image to avatar from firebase
+                    Uri uri = firebaseUser.getPhotoUrl();
+                    Picasso.with(getActivity()).load(uri).into(imageView);
+                } else {
+                    Toast.makeText(requireContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
                 }
                 progressBar.setVisibility(View.GONE);
             }
@@ -140,6 +158,7 @@ public class UserFragment extends Fragment {
             }
         });
     }
+
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -155,10 +174,11 @@ public class UserFragment extends Fragment {
             startActivity(requireActivity().getIntent());
             getActivity().finish();
             getActivity().overridePendingTransition(0,0);
-        } /*else if (id == R.id.menu_update_profile){
-            Intent intent = new Intent(requireActivity() UpdateProfileActivity.class);
+        } else if (id == R.id.menu_update_profile){
+            Intent intent = new Intent(requireActivity(), UpdateProfileActivity.class);
             startActivity(intent);
-        } else if (id == R.id.menu_update_email){
+            getActivity().finish();
+        } /*else if (id == R.id.menu_update_email){
             Intent intent = new Intent(requireActivity(), UpdateEmailActivity.class);
             startActivity(intent);
         } else if (id == R.id.menu_settings){
@@ -169,14 +189,14 @@ public class UserFragment extends Fragment {
         } else if (id == R.id.menu_delete_profile){
             Intent intent = new Intent(requireActivity(), DeleteProfileActivity.class);
             startActivity(intent);
-        } */else if (id == R.id.menu_logout){
+        } else if (id == R.id.menu_logout){
             firebaseAuth.signOut();
             Toast.makeText(requireContext(), "Logged out", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(requireActivity(), MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             getActivity().finish();
-        } else {
+        } */else {
             Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);

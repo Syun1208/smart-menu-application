@@ -12,8 +12,15 @@
         android:theme="@style/Theme.Mobile_java"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateAvatarActivity"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
+
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
@@ -32,11 +39,10 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Mobile_java.NoActionBar"
-            tools:ignore="RedundantLabel"></activity>
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".UserProfileActivity"></activity>
-        <activity android:name=".ChatbotActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
+            tools:ignore="RedundantLabel" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ChatbotActivity" />
+        <activity android:name=".LoginActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        tools:ignore="UselessLeaf">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:id="@+id/tv_update_profile_header"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:text="UPLOAD AVATAR"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_choose_img"
+            android:layout_below="@id/tv_update_profile_header"
+            android:text="Choose image"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/border"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            android:id="@+id/iv_update_profile_choose_img"
+            android:layout_below="@id/btn_choose_img"
+            tools:ignore="ContentDescription" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_upload_image"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:text="Upload Image"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            android:layout_below="@id/iv_update_profile_choose_img"
+            tools:ignore="HardcodedText" />
+
+        <ProgressBar
+            style="?android:progressBarStyleLarge"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            android:visibility="gone"
+            tools:ignore="ObsoleteLayoutParam" />
+    </RelativeLayout>
+
+</ScrollView>

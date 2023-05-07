@@ -131,9 +131,9 @@ public class RegisterActivity extends AppCompatActivity {
                 String textPhoneNumber = editTextRegisterPhone.getText().toString();
                 String textPwd = editTextRegisterPwd.getText().toString();
                 String textCfPwd = editTextRegisterCfPwd.getText().toString();
+                String textGender;
                 int selectedGenderId = radioGroupRegisterGender.getCheckedRadioButtonId();
                 radioGroupRegisterGenderSelected = findViewById(selectedGenderId);
-                String textGender;
                 progressBar = findViewById(R.id.progress_bar);
 
                 String mobileRegex = "[6-9][0-9]{9}";
@@ -217,7 +217,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "User registered successfully", Toast.LENGTH_LONG).show();
 
                                         //Open User Profile after successful registration
-                                        Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                         finish();
@@ -237,11 +237,11 @@ public class RegisterActivity extends AppCompatActivity {
                                 editTextRegisterPwd.setError("Your password is too weak. Kindly use a mix of alphabets, numbers and special characters");
                                 editTextRegisterPwd.requestFocus();
                             } catch(FirebaseAuthInvalidCredentialsException e){
-                                editTextRegisterPwd.setError("Your email is invalid or already in use. Kindly re-enter");
-                                editTextRegisterPwd.requestFocus();
+                                editTextRegisterEmail.setError("Your email is invalid or already in use. Kindly re-enter");
+                                editTextRegisterEmail.requestFocus();
                             } catch (FirebaseAuthUserCollisionException e){
-                                editTextRegisterPwd.setError("User is already registered with this email. Use another email");
-                                editTextRegisterPwd.requestFocus();
+                                editTextRegisterEmail.setError("User is already registered with this email. Use another email");
+                                editTextRegisterEmail.requestFocus();
                             } catch(Exception e){
                                 Log.e(TAG, e.getMessage());
                                 Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();

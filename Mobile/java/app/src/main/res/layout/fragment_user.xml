@@ -20,9 +20,9 @@
             tools:ignore="UselessParent">
 
             <ImageView
-                android:id="@+id/avatar"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:id="@+id/iv_user_avatar"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
                 android:src="@drawable/user_profile"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"

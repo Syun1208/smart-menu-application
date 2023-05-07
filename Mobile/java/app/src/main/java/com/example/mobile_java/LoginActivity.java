@@ -114,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "You could log in now !", Toast.LENGTH_SHORT).show();
                         //Open user profile
                         startActivity(new Intent(LoginActivity.this, OperationActivity.class));
+//                        startActivity(new Intent(LoginActivity.this, HeaderMainActivity.class));
                         finish();
 
                     } else {

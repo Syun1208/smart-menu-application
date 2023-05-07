@@ -1,12 +1,19 @@
 package com.example.mobile_java;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,11 +24,22 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class OperationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     AlertDialog.Builder builder;
+    private ImageView imageViewAvatar;
+    private TextView textViewEmail, textViewUserName;
+    private String userName, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +56,89 @@ public class OperationActivity extends AppCompatActivity implements NavigationVi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View headerView = navigationView.getHeaderView(0);
+
+
+        imageViewAvatar = headerView.findViewById(R.id.iv_avatar);
+        textViewEmail = headerView.findViewById(R.id.tv_email);
+        textViewUserName = headerView.findViewById(R.id.tv_user_name);
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+        if (firebaseUser == null){
+            Toast.makeText(OperationActivity.this, "User's details are not available", Toast.LENGTH_SHORT).show();
+        } else {
+            checkIfEmailVerified(firebaseUser);
+            showUserProfile(firebaseUser);
+        }
     }
+
+    private void checkIfEmailVerified(FirebaseUser firebaseUser) {
+        if (!firebaseUser.isEmailVerified()){
+            showAlertDialog();
+        }
+    }
+
+    private void showAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+        builder.setTitle("Email is not verified");
+        builder.setMessage("Please verify your email now. You cannot login without email verification next time");
+
+        builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    private void showUserProfile(FirebaseUser firebaseUser) {
+        String userID = firebaseUser.getUid();
+        // Extracting user reference from database for "registered users"
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Registered users");
+        databaseReference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ReadWriteDetails readWriteDetails = snapshot.getValue(ReadWriteDetails.class);
+                if (readWriteDetails != null){
+                    userName = firebaseUser.getDisplayName();
+                    email = firebaseUser.getEmail();
+
+                    // Set information to profile from firebase
+                    textViewUserName.setText(userName);
+                    textViewEmail.setText(email);
+
+                    // Set image to avatar from firebase
+                    Uri uri = firebaseUser.getPhotoUrl();
+                    Picasso.with(OperationActivity.this).load(uri).into(imageViewAvatar);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_SHORT).show();
+                }
+                //progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(), "Something went wrong !", Toast.LENGTH_SHORT).show();
+                //progressBar.setVisibility(View.GONE);
+            }
+        });
+    }
+
 
     @Override
     public void onBackPressed() {
