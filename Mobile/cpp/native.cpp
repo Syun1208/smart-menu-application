@@ -11,7 +11,7 @@
 static paddle::lite_api::PowerMode str_to_cpu_mode(const std::string &cpu_mode);
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_baidu_paddle_lite_demo_ocr_OCRPredictorNative_init(
+Java_com_example_java_OCRPredictorNative_init(
     JNIEnv *env, jobject thiz, jstring j_det_model_path,
     jstring j_rec_model_path, jstring j_cls_model_path, jint j_thread_num,
     jstring j_cpu_mode) {
@@ -56,7 +56,7 @@ str_to_cpu_mode(const std::string &cpu_mode) {
 }
 
 extern "C" JNIEXPORT jfloatArray JNICALL
-Java_com_baidu_paddle_lite_demo_ocr_OCRPredictorNative_forward(
+Java_com_example_java_OCRPredictorNative_forward(
     JNIEnv *env, jobject thiz, jlong java_pointer, jfloatArray buf,
     jfloatArray ddims, jobject original_image) {
   LOGI("begin to run native forward");
@@ -102,7 +102,7 @@ Java_com_baidu_paddle_lite_demo_ocr_OCRPredictorNative_forward(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_baidu_paddle_lite_demo_ocr_OCRPredictorNative_release(
+Java_com_example_java_OCRPredictorNative_release(
     JNIEnv *env, jobject thiz, jlong java_pointer) {
   if (java_pointer == 0) {
     LOGE("JAVA pointer is NULL");

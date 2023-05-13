@@ -7,38 +7,38 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.mobile_java.MainActivity"
+        android:name="com.example.java.MainActivity"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.mobile_java.GalleryFragment"
+        android:name="com.example.java.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_menu_scanner"
-        android:name="com.example.mobile_java.MenuScannerFragment"
+        android:name="com.example.java.MenuScannerFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_menu_scanner" />
 
     <fragment
         android:id="@+id/nav_user_information"
-        android:name="com.example.mobile_java.UserFragment"
+        android:name="com.example.java.UserFragment"
         android:label="user_information"
         tools:layout="@layout/fragment_user" />
 
     <fragment
         android:id="@+id/nav_translator"
-        android:name="com.example.mobile_java.TranslatorFragment"
+        android:name="com.example.java.TranslatorFragment"
         android:label="translator"
         tools:layout="@layout/fragment_translator" />
 
     <fragment
         android:id="@+id/nav_recommender"
-        android:name="com.example.mobile_java.FoodRecommenderFragment"
+        android:name="com.example.java.FoodRecommenderFragment"
         android:label="food_recommender"
         tools:layout="@layout/fragment_food_recommender"/>
 

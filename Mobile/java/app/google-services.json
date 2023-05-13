@@ -1,15 +1,45 @@
 {
   "project_info": {
     "project_number": "690846115707",
+    "firebase_url": "https://mobile-java-user-verification-default-rtdb.firebaseio.com",
     "project_id": "mobile-java-user-verification",
     "storage_bucket": "mobile-java-user-verification.appspot.com"
   },
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:690846115707:android:344d25229cb5f6924dbfde",
+        "android_client_info": {
+          "package_name": "com.example.mobile.anative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690846115707-1sf8garqrdmc84e8otlhc1jmrd9ea0io.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2SjCXa0JEPupukp0vzF6XEc3_ulWAI9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690846115707-1sf8garqrdmc84e8otlhc1jmrd9ea0io.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:690846115707:android:1ccee6f5fe0556464dbfde",
         "android_client_info": {
-          "package_name": "com.example.mobile_java"
+          "package_name": "com.example.java"
         }
       },
       "oauth_client": [

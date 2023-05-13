@@ -46,7 +46,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.mobile_java.fileprovider"
+            android:authorities="com.example.java.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

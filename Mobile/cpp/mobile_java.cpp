@@ -6,12 +6,12 @@
 //
 // In MainActivity.java:
 //    static {
-//       System.loadLibrary("mobile_java");
+//       System.loadLibrary("java");
 //    }
 //
 // Or, in MainActivity.kt:
 //    companion object {
 //      init {
-//         System.loadLibrary("mobile_java")
+//         System.loadLibrary("java")
 //      }
 //    }

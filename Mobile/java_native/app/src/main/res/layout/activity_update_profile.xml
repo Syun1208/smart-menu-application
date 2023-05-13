@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/background"
+        android:padding="15dp"
+        tools:ignore="UselessLeaf">
+
+        <TextView
+            android:id="@+id/tv_update_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="UPDATE USER PROFILE"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_update_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_head"
+            android:layout_marginTop="50dp"
+            android:text="Full name*"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/et_update_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_full_name"
+            android:background="@drawable/border"
+            android:hint="Enter your full name"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <TextView
+            android:id="@+id/tv_update_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_full_name"
+            android:layout_marginTop="50dp"
+            android:text="Email*"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/et_update_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_email"
+            android:background="@drawable/border"
+            android:hint="Enter your email"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <TextView
+            android:id="@+id/tv_update_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_email"
+            android:layout_marginTop="50dp"
+            android:text="Date of Birth(dd/mm/yyyy)*"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/et_update_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_dob"
+            android:background="@drawable/border"
+            android:focusable="false"
+            android:hint="Select your Date of Birth(dd/mm/yyyy)"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <TextView
+            android:id="@+id/tv_update_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_dob"
+            android:layout_marginTop="50dp"
+            android:text="Gender*"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <RadioGroup
+            android:id="@+id/radio_update_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_gender"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_update_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/radio_update_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText">
+
+            </RadioButton>
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/tv_update_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_update_gender"
+            android:layout_marginTop="50dp"
+            android:text="Phone number*"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/et_update_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_update_phone"
+            android:background="@drawable/border"
+            android:hint="Phone number"
+            android:inputType="textPersonName"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            tools:ignore="Autofill,HardcodedText,LabelFor,TextFields" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:id="@+id/btn_upload_avatar"
+            android:text="UPLOAD AVATAR"
+            android:textColor="@color/white"
+            android:background="@drawable/border"
+            android:layout_below="@+id/et_update_phone"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            tools:ignore="HardcodedText" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_upload_email"
+            android:text="UPLOAD EMAIL"
+            android:textColor="@color/white"
+            android:background="@drawable/border"
+            android:layout_below="@+id/btn_upload_avatar"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn_upload_profile"
+            android:text="CONFIRM UPLOAD PROFILE"
+            android:textColor="@color/white"
+            android:background="@drawable/border"
+            android:layout_below="@+id/btn_upload_email"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            tools:ignore="HardcodedText" />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</ScrollView>

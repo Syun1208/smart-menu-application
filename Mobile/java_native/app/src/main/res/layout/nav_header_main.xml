@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/food_background"
+    android:gravity="bottom"
+    android:alpha="1"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".HeaderMainActivity"
+    android:theme="@style/Theme.AppCompat.NoActionBar">
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="101dp"
+        android:layout_height="118dp"
+        android:contentDescription="@string/nav_header_desc"
+        android:scaleType="centerCrop"
+        android:src="@drawable/user_profile" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:hint="Loading..."
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:hint="Loading..."
+        tools:ignore="HardcodedText" />
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/baseline_home_24"
+            android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_user_information"
+            android:icon="@drawable/baseline_supervised_user_circle_24"
+            android:title="User"
+            tools:ignore="HardcodedText,MenuTitle" />
+
+        <item
+            android:id="@+id/nav_menu_scanner"
+            android:icon="@drawable/baseline_document_scanner_24"
+            android:title="Menu scanner"
+            tools:ignore="HardcodedText,MenuTitle" />
+
+        <item
+            android:id="@+id/nav_translator"
+            android:icon="@drawable/baseline_translate_24"
+            android:title="English Translator"
+            tools:ignore="HardcodedText,MenuTitle" />
+
+        <item
+            android:id="@+id/nav_recommender"
+            android:icon="@drawable/baseline_recommend_24"
+            android:title="Food recommender"
+            tools:ignore="HardcodedText,MenuTitle" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_gallery" />
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/baseline_share_24"
+            android:title="Share"
+            tools:ignore="HardcodedText,MenuTitle" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/baseline_live_help_24"
+            android:title="Help"
+            tools:ignore="HardcodedText,MenuTitle" />
+
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/baseline_info_24"
+            android:title="About us"
+            tools:ignore="HardcodedText,MenuTitle" />
+
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/baseline_exit_to_app_24"
+            android:title="Exit"
+            tools:ignore="HardcodedText,MenuTitle" />
+    </group>
+</menu>
