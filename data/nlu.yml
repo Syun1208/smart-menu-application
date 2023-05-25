@@ -1,0 +1,1300 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - .
+    - Hello bot 
+    - Hi bot 
+    - XIN CHÀO
+    - CHAO XÌN
+    - CHÀO
+    - CHÀO THÂN ÁI
+    - Ê
+    - ALO
+    - NĨ HẢO
+    - HELLO
+    - YO
+    - HIII
+    - HI
+    - E
+    - EEEE
+    - NIHAO
+    - NÍ HẠO
+    - HẾ LÔ
+    - À LỐ
+    - A LÔ
+    - HEY
+    - HEYYY
+    - YOOO
+    - YO WTF
+    - YO ƯTF
+    - CHÀO BẠN
+    - HELLO BẠN
+    - CHÀO CẬU
+    - ALO ANH EM
+    - HÊ LÔ NGƯỜI ANH EM
+    - ALO MÀY
+    - YO WTF THẰNG EM
+    - CHÀO ĐỒNG CHÍ
+    - CHÀO EM
+    - CHÀO ANH
+    - CHÀO MÀY
+    - HELLO MÀY
+    - ALO BẠN EIII
+    - NÀY BẠN EII
+    - Ê THẰNG KIA
+    - Ê MÀY
+    - Ê MÀI
+    - Ê BẠN EII
+    - EE BANJ EEII
+    - Ê BẠN ÊII
+    - NÀY THẰNG KIA
+    - BẠN EI
+    - KONNICHIWA
+    - NI HAO
+    - NÍ HẢO
+    - NỈ HẢO
+    - NĨ HÃO
+    - NĨ HẠO MA
+    - OHAYO GOZAIMASU
+    - KONBANWA
+    - HI THERE
+    - HEY THERE
+    - MADAM
+    - HEY SIR
+    - HI SIR
+    - YO YO YO
+    - Ê BRO
+    - Ê CƯNG
+    - HÍ BẠN
+    - Xin chào
+    - Chao xìn
+    - chao xìn
+    - Chào
+    - Chào thân ái
+    - Alo
+    - Nĩ hảo
+    - Hello
+    - Yo
+    - chào
+    - hello
+    - hiii
+    - hi
+    - ê
+    - e
+    - eeee
+    - nihao
+    - ní hạo
+    - hế lô
+    - alo
+    - à lố
+    - a lô
+    - hey
+    - heyyy
+    - yo
+    - yooo
+    - yo wtf
+    - yo ưtf
+    - chào bạn
+    - Chào bạn
+    - chào cậu
+    - chào đồng chí
+    - chào em
+    - chào anh
+    - chào mày
+    - hello mày
+    - alo mày
+    - alo bạn eiii
+    - này bạn eii
+    - ê thằng kia
+    - ê mày
+    - ê mài
+    - ê bạn eii
+    - ee banj eeii
+    - ê bạn êii
+    - này thằng kia
+    - bạn ei
+    - konnichiwa
+    - ni hao
+    - ní hảo
+    - nĩ hảo
+    - nỉ hảo
+    - nĩ hão
+    - nĩ hạo ma
+    - ohayo gozaimasu
+    - konbanwa
+    - hi there
+    - hey there
+    - madam
+    - hey sir
+    - hi sir
+    - yo yo yo
+    - Ê bro
+    - Ê cưng
+    - hí bạn
+    - hello bạn ơi
+    - helllo
+    - heloo
+    - lô
+    - A lô
+    - bot ơi dậy đi
+    - Hello tinh yeu
+    - Hú
+    - ALo Alo
+    - Alo bạn ơi
+    - alo em
+    - Xin chào bot 
+    - Xin chào Bot 
+    - Xin chào Chatbot 
+    - Hello Bot 
+    - Rất hân hạnh được chào Bot 
+    - Hi bott iuuu 
+    - hai
+    - chao xìn 
+    - Chao xìn
+    - Hai 
+    - alo alo 
+    - Chào bạn! Bạn có khỏe không?
+    - Xin chào! Bạn thế nào rồi?
+    - Ừm, dạo này sao rồi?
+    - Gần đây bạn thế nào? Có gì mới không?
+    - Cuộc sống của bạn như thế nào?
+    - Chào thằng ngu
+    - Chao xìn Bot óc
+    - Chào buổi sáng! Bạn đã ngủ ngon chưa?
+    - Ừm, lâu quá không gặp nhau! Gần đây bạn làm gì vậy?
+    - Ngày của bạn đã diễn ra như thế nào?
+    - Có gì mới trong thế giới của bạn?
+    - Mọi chuyện của bạn đang diễn ra thế nào?
+- intent: goodbye
+  examples: |
+   - see you next time
+    - cút cút cút
+    - dẹp
+    - bye
+    - Bye
+    - BYE
+    - cúc
+    - goodbye
+    - see you later
+    - See ya
+    - tạm biệt
+    - Hẹn gặp lại
+    - tao đi đây con trai
+    - Bai Bai
+    - bai
+    - hẹn lần khác
+    - Tạm biệt nha
+    - cút đi
+    - good bye
+    - Hẹn ngày mai
+    - để khi khác hỏi tiếp
+    - hẹn dịp khác
+    - để dịp khác nói tiếp nha
+    - tao bận rồi, bye
+    - pp
+    - pipi
+    - đi đây
+    - Good bye
+    - see you next time
+    - See you next time 
+    - thôi tui phải chạy dl :))
+    - Thôi tui phải chạy dl :))
+    - Bạn cút đi
+    - cút
+    - bye thằng lol
+    - cút cmmd
+    - bye chatbot
+    - stop được r
+    - ê bye nha
+    - gặp lại sau
+    - Tạm biệt! Hẹn gặp lại bạn!
+    - Chào tạm biệt! Hẹn gặp lại sau nhé!
+    - Tạm biệt nhé! Chúc bạn có một ngày tốt lành!
+    - Tạm biệt! Hẹn gặp lại sau nhé!
+    - Thân tạm biệt! Gặp lại bạn ở những lần sau!
+    - Hẹn gặp lại sớm thôi! Chăm sóc bản thân nhé.
+    - Tạm biệt! Chúc bạn một ngày tuyệt vời.
+    - Đến lần sau nhé! Hãy giữ an toàn và khỏe mạnh.
+    - Rất vui được trò chuyện với bạn! Tạm biệt!
+    - Gặp lại sau nhé! Đừng xa lạ.
+    - Thân tạm biệt! Chúc bạn có một thời gian tuyệt vời.
+    - Hẹn gặp lại và chăm sóc bản thân nhé!
+    - Chúc bạn tốt lành! Tạm biệt!
+    - Tạm biệt trong lúc này! Hãy giữ liên lạc.
+    - Tạm biệt! Chúc bạn có một buổi tối tuyệt vời.
+    - Rất vui được nói chuyện với bạn. Tạm biệt!
+    - Đã đến lúc nói lời chia tay. Chăm sóc bản thân nhé!
+    - Gặp lại lần sau nhé! Hãy luôn vui vẻ và được phước.
+    - Hãy chăm sóc bản thân! Tạm biệt trong lúc này.
+    - Tạm biệt! Chúc bạn có một buổi tối tuyệt diệu.
+    - Rất hân hạnh được trò chuyện với bạn. Tạm biệt!
+    - Thân tạm biệt! Chúc bạn luôn thành công.
+    - Tạm biệt và hãy chăm sóc bản thân.
+    - Đến khi chúng ta gặp lại, hẹn biết nhé!
+    - Tạm biệt! Chúc bạn mọi điều tốt lành.
+    - Hẹn gặp lại, cá sấu! Sau một lúc, cái cá sấu!
+    - Chăm sóc và thân tạm biệt! Hãy mạnh mẽ.
+    - Tạm biệt! Hãy nhớ mỉm cười mỗi ngày.
+    - Tạm biệt trong lúc này! Hãy tỏa sáng rực rỡ.
+    - Thân tạm biệt! Chúc cho ước mơ của bạn trở thành sự thật.
+- intent: affirm
+  examples: |
+    - Ok, tốc độ trả lời này là bot
+    - Được rồi mình cảm ơn
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - okela :v
+    - Okela
+    - oke la 
+    - chính xác
+    - dĩ nhiên
+    - chứ còn gì nữa
+    - đương nhiên
+    - rõ ràng
+    - quá đúng
+    - chuẩn xác luôn
+    - không thể chính xác hơn được nữa
+    - hoàn toàn đúng
+    - đúng
+    - ok
+    - chuẩn quá ta
+    - oke
+    - đúng ời
+    - đúng ròi
+    - chuẩn nha
+    - chuẩn
+    - ok đúng
+    - ok good
+    - Ok
+    - Ô khê
+    - Ô kê
+    - Ô sờ kê
+    - ô khê
+    - okei
+    - Ok chờ xí 
+    - Ok đợi chút để suy nghĩ đã 
+    - Ok nè đợi tí 
+    - okay đợi t suy nghĩ chút 
+    - Okei
+    - OK
+    - QUÁ CHUẨN
+    - QUÁ CHÍNH XÁC
+    - DCM CHUẨN THẾ
+    - GOOD VÃI LZZ
+    - ĐỈNH VÃI
+    - QUÁ ĐÚNG LUÔN NGƯỜI ANH EM
+    - Ok bot 
+    - OK Bot 
+    - okay bot nha 
+    - rùi ok 
+    - Rùi ok nè 
+    - Ok nha 
+    - Ok đợi t nghĩ cái nha 
+    - ok để suy nghĩ xem 
+    - Có
+    - Amazing gud job em
+    - Được đấy
+    - You're doing great!
+    - You're amazing!
+    - You're making excellent progress.
+    - You've got this!
+    - You're incredibly talented.
+    - You're a rockstar!
+    - You're doing an outstanding job.
+    - You're so capable!
+    - You're on the right track.
+    - You're an inspiration.
+    - Bạn đang làm tốt lắm!
+    - Bạn tuyệt vời quá!
+    - Bạn đang tiến bộ xuất sắc.
+    - Bạn có thể làm được!  
+    - Bạn rất tài năng.
+    - Bạn là một ngôi sao!  
+    - Bạn đang làm công việc tuyệt vời.
+    - Bạn rất có năng lực!
+    - Bạn đang đi đúng hướng.
+    - Bạn là nguồn cảm hứng.
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - Hong 
+    - bạn không hiểu à
+    - bạn chậm hiểu thế
+    - Đéo :))	
+    - Clgt
+    - SAI RỒI 
+    - TRẬT LẤT 
+    - SAI BÉT 
+    - SAI CMM RỒI BOT NGU 
+    - BOT NGU VCC SAI RỒI 
+    - TRẢ LỜI VẬY LÀ CHẾT ME R 
+    - SAI VC RA RỒI CON BOT NGU 
+    - WRONG 
+    - YOU WRONG 
+    - M TRẢ LỜI V LÀ SAI R 
+    - SAI R BOT ĐĨ ƠI 
+    - SAI BE BÉ 
+    - SAI TÈ LE 
+    - SAI RÀNH RÀNH RỒI KÌA MÀY 
+    - Ê SAI R 
+    - Ê SAI CMNR 
+    - SAI BỐ NÓ RỒI 
+    - NOOO MÀY TRẢ LỜI VẬY LÀ SAI RỒI 
+    - TRẬT CMNR 
+    - TRẬT ĐƯỜNG RAY RỒI BOT NGU 
+    - M QUAY VÀO Ô SAI RỒI 
+    - KHÔNG ĐÚNG 
+    - KHÔNG ĐÚNG 
+    - TRẢ LỜI KHÔNG ĐÚNG 
+    - NHƯ VẬY LÀ KO ĐÚNG RỒI 
+    - ỦA HÌNH NHƯ SAI RỒI ĐÓ 
+    - Ê HÌNH NHƯ ĐÂU PHẢI ĐÂU 
+    - DKM SAI RỒI THẰNG NGU 
+    - DUME MAY NGU VAILON SAI CMNR 
+    - SAI CMNR 
+    - DMM SAI 
+    - SAI 
+    - ĐÉO PHẢI THẾ 
+    - ĐÉO PHẢI NHƯ VẬY ĐÂU 
+    - DM BOT NGU M NÓI THẾ LÀ TOANG RỒI
+    - DM K PHẢI THẾ, M TRẢ LỜI SAI MẤT RỒI BOT Ạ 
+    - Ê SAI RỒI NHA, TRẢ LỜI VẬY LÀ K PHẢI ĐÂU NHA 
+    - Á À SAI NHA SAI NHA 
+    - Á HÌNH NHƯ CÂU NÀY ĐÂU PHẢI THẾ 
+    - UIZZZ TRẢ LỜI THẾ MÀ CŨNG TRẢ LỜI ĐC 
+    - ĐỒ BOT NGU SAI RÒI LÊU LÊU 
+    - LÊU LÊU SAI R NHA 
+    - LÊU LÊU LÊU ĐỒ CON BOT NGU SAI RỒI NHA CON 
+    - TRẢ LỜI NGU THẾ K BIẾT 
+    - SAI RỒI CON ĐĨ ƠI 
+    - DCMM SAI BÉT BÈN BẸT RỒI CON Ạ 
+    - TRẢ LỜI CÁI CC J NGU V 
+    - SỦA CC J NGU THẾ 
+    - SAI RỒI CON Ạ 
+    - NÓI J ZAY TA ƠI 
+    - NÓI CDJ THẾ BOT NGU 
+    - SAI BỐ NÓ RA RỒI 
+    - SỦA THẾ MÀ CŨNG SỦA ĐƯỢC 
+    - UIZZZ SAI BÉT DỒI CON GIỜI Ạ 
+    - WRONG RỒI KU ƠI 
+    - KU ƠI KU SAI LẮM RỒI 
+    - KU NGU THẾ SAI R 
+    - NÓI V LÀ SAI R ĐÓ BRO 
+    - BRO NÓI THẾ CHƯA ĐÚNG ĐÂU 
+    - HONG ĐÚNG ÙI 
+    - HONG PHẢI ZỊ ÙI 
+    - SAO NÓI SAI QUÀI ZỊ 
+    - SỦA SAI QUÁ TRỜI ZỊ 
+    - SỦA J MÀ SỦA NGU TKE 
+    - SỦA NGU ZỪA ZỪA THOI 
+    - HONG ĐÚNG ÙI BOT UIII 
+    - sai rồi 
+    - trật lất 
+    - sai bét 
+    - sai cmm rồi bot ngu 
+    - bot ngu vcc sai rồi 
+    - trả lời vậy là chết me r 
+    - sai vc ra rồi con bot ngu 
+    - wrong 
+    - you wrong 
+    - m trả lời v là sai r 
+    - sai r bot đĩ ơi 
+    - sai be bé 
+    - Sai tè le 
+    - Sai rành rành rồi kìa mày 
+    - Ê sai r 
+    - Ê sai cmnr 
+    - sai bố nó rồi 
+    - Thôi hỏi nhiêu đủ biết trình mi rồi
+    - Nooo mày trả lời vậy là sai rồi 
+    - Trật cmnr 
+    - Trật đường ray rồi bot ngu 
+    - M quay vào ô sai rồi 
+    - không đúng 
+    - Không đúng 
+    - Trả lời không đúng 
+    - Như vậy là ko đúng rồi 
+    - Ủa hình như sai rồi đó 
+    - Ê hình như đâu phải đâu 
+    - Dkm sai rồi thằng ngu 
+    - Dume may ngu vailon sai cmnr 
+    - Sai cmnr 
+    - Dmm sai 
+    - Sai 
+    - Đéo phải thế 
+    - Đéo phải như vậy đâu 
+    - Dm bot ngu m nói thế là toang rồi
+    - Dm k phải thế, m trả lời sai mất rồi bot ạ 
+    - Ê sai rồi nha, trả lời vậy là k phải đâu nha 
+    - á à sai nha sai nha 
+    - Á hình như câu này đâu phải thế 
+    - Uizzz trả lời thế mà cũng trả lời đc 
+    - Đồ bot ngu sai ròi lêu lêu 
+    - Lêu lêu sai r nha 
+    - lêu lêu lêu đồ con bot ngu sai rồi nha con 
+    - Trả lời ngu thế k biết 
+    - Sai rồi con đĩ ơi 
+    - Dcmm sai bét bèn bẹt rồi con ạ 
+    - Trả lời cái cc j ngu v 
+    - sủa cc j ngu thế 
+    - sai rồi con ạ 
+    - nói j zay ta ơi 
+    - nói cdj thế bot ngu 
+    - sai bố nó ra rồi 
+    - sủa thế mà cũng sủa được 
+    - uizzz sai bét dồi con giời ạ 
+    - Wrong rồi ku ơi 
+    - Ku ơi ku sai lắm rồi 
+    - Ku ngu thế sai r 
+    - nói v là sai r đó bro 
+    - bro nói thế chưa đúng đâu 
+    - hong đúng ùi 
+    - hong phải zị ùi 
+    - sao nói sai quài zị 
+    - sủa sai quá trời zị 
+    - sủa j mà sủa ngu tke 
+    - sủa ngu zừa zừa thoi 
+    - hong đúng ùi bot uiii 
+    - HONG DUNG UI BOT UIII 
+    - sai roi 
+    - trat lat 
+    - sai bet 
+    - sai cmm roi bot ngu 
+    - bot ngu vcc sai roi 
+    - tra loi vay la chet me r 
+    - sai vc ra roi con bot ngu 
+    - wrong 
+    - you wrong 
+    - m tra loi v la sai r 
+    - sai r bot di oi 
+    - sai be be 
+    - Sai te le 
+    - Sai ranh ranh roi kia may 
+    - E sai r 
+    - E sai cmnr 
+    - sai bo no roi 
+    - Nooo may tra loi vay la sai roi 
+    - Trat cmnr 
+    - Trat duong ray roi bot ngu 
+    - M quay vao o sai roi 
+    - khong dung 
+    - Khong dung 
+    - Tra loi khong dung 
+    - Nhu vay la ko dung roi 
+    - Ua hinh nhu sai roi do 
+    - E hinh nhu dau phai dau 
+    - Dkm sai roi thang ngu 
+    - Dume may ngu vailon sai cmnr 
+    - Sai cmnr 
+    - Dmm sai 
+    - Sai 
+    - Deo phai the 
+    - Deo phai nhu vay dau 
+    - Dm bot ngu m noi the la toang roi
+    - Dm k phai the, m tra loi sai mat roi bot a 
+    - E sai roi nha, tra loi vay la k phai dau nha 
+    - a a sai nha sai nha 
+    - A hinh nhu cau nay dau phai the 
+    - Uizzz tra loi the ma cung tra loi dc 
+    - Do bot ngu sai roi leu leu 
+    - Leu leu sai r nha 
+    - leu leu leu do con bot ngu sai roi nha con 
+    - Tra loi ngu the k biet 
+    - Sai roi con di oi 
+    - Dcmm sai bet ben bet roi con a 
+    - Tra loi cai cc j ngu v 
+    - sua cc j ngu the 
+    - sai roi con a 
+    - noi j zay ta oi 
+    - noi cdj the bot ngu 
+    - sai bo no ra roi 
+    - sua the ma cung sua duoc 
+    - uizzz sai bet doi con gioi a 
+    - Wrong roi ku oi 
+    - Ku oi ku sai lam roi 
+    - Ku ngu the sai r 
+    - noi v la sai r do bro 
+    - bro noi the chua dung dau 
+    - hong dung ui 
+    - hong phai zi ui 
+    - sao noi sai quai zi 
+    - sua sai qua troi zi 
+    - sua j ma sua ngu tke 
+    - sua ngu zua zua thoi 
+    - hong dung ui bot uiii 
+    - Mình hỏi mà bạn toàn trả lời không được
+    - Không, tôi không thể làm điều đó.
+    - Xin lỗi, nhưng điều đó không thể thực hiện.
+    - Tôi e rằng tôi phải từ chối.
+    - Không, tôi không nghĩ vậy.
+    - Tôi không thể giúp đỡ về điều đó.
+    - Không, tôi sẽ không thể tới.
+    - Xin lỗi, nhưng tôi phải từ chối.
+    - Tôi không thể đồng ý với điều đó.
+    - Không, tôi không đồng ý.
+    - Xin lỗi, nhưng tôi không thể đáp ứng yêu cầu của bạn.
+    - Xin lỗi, nhưng tôi phải từ chối lời mời của bạn.
+    - Không, tôi không thể đồng ý với câu tuyên bố đó.
+    - Tôi e rằng không thể thực hiện điều đó.
+    - Không, tôi không quan tâm và không muốn tham gia.
+    - Xin lỗi, nhưng tôi không thể hỗ trợ yêu cầu của bạn.
+    - Không, tôi không nghĩ rằng tôi có thể giúp bạn với điều đó.
+    - Xin lỗi, nhưng tôi không thể đáp ứng yêu cầu của bạn.
+    - Tôi không đồng ý với quan điểm của bạn.
+    - Không, tôi không thể tham dự sự kiện.
+    - Xin lỗi, nhưng tôi không thể cung cấp sự trợ giúp mà bạn đang tìm kiếm.
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - Amazing good job em
+    - Khá đấy thằng lol
+    - Hảo hán
+    - Được hay lắm
+    - Ngon
+    - Được của ló
+    - I'm so happy!
+    - This news brings me joy!
+    - I'm thrilled!
+    - I feel ecstatic!
+    - It's wonderful!
+    - I'm over the moon!
+    - This makes me feel elated!
+    - I'm delighted!
+    - It fills me with happiness!
+    - I can't contain my excitement!
+    - Tôi rất vui!
+    - Tin này mang lại niềm vui cho tôi!
+    - Tôi rất phấn khởi!
+    - Tôi cảm thấy vui sướng!
+    - Thật tuyệt vời!
+    - Tôi thật hạnh phúc!
+    - Điều này khiến tôi cảm thấy hân hoan!
+    - Tôi rất vui mừng!
+    - Nó làm tràn đầy niềm hạnh phúc trong tôi!
+    - Tôi không thể kìm nén sự phấn khởi của mình!
+    - I'm thrilled to bits!
+    - It brings me immense joy!
+    - I can't help but smile from ear to ear!
+    - This news has made my day!
+    - I'm bursting with happiness!
+    - I'm overjoyed beyond words!
+    - It's like a dream come true!
+    - I feel like I'm on cloud nine!
+    - This is pure bliss!
+    - I can't stop grinning with delight!
+    - Tôi thật sự vui sướng!
+    - Nó mang lại cho tôi niềm vui vô cùng!
+    - Tôi không thể ngừng mỉm cười từ tai này đến tai khác!
+    - Tin này làm cho ngày của tôi trở nên tuyệt vời!
+    - Tôi đang tràn đầy niềm hạnh phúc!
+    - Tôi rất hạnh phúc đến không tả nổi!
+    - Cảm giác như mơ ước thành hiện thực!
+    - Tôi cảm thấy như đang ở trên mây thứ chín!
+    - Đây là sự hạnh phúc thuần túy!
+    - Tôi không thể ngừng mỉm cười vui sướng!
+- intent: mood_unhappy
+  examples: |
+    - vãi lol luôn đầu cắt moi
+    - cho bố m cái địa chỉ
+    - Tôi cảm thấy buồn và chán nản.
+    - Đó là một kết quả thất vọng.
+    - Tôi đang cảm thấy chán chường.
+    - Tôi không ở trong tâm trạng tốt.
+    - Tình hình này khiến tôi cảm thấy buồn phiền.
+    - Tôi đang cảm thấy đau lòng.
+    - Đó là một sự thất vọng nhất định.
+    - Tôi đang cảm thấy thất vọng và nản lòng.
+    - Tin này khá là làm thất vọng.
+    - Tôi không hài lòng với kết quả.
+    - Tôi đang cảm thấy u ám và chán nản.
+    - Đó là một sự thất vọng.
+    - Hôm nay tôi cảm thấy buồn chán một chút.
+    - Điều đó khá là thất vọng.
+    - Tôi không thực sự có tâm trạng cho bất cứ điều gì.
+    - Tình huống này khiến tôi cảm thấy không vui.
+    - Tôi đang cảm thấy sự bất mãn.
+    - Điều này làm tôi cảm thấy mất niềm tin, thành thật mà nói.
+    - Tôi đang cảm thấy buồn bã một chút.
+    - Tin này làm tôi cảm thấy thất vọng.
+    - Tôi không hài lòng với cách mọi thứ diễn ra.
+    - Tôi đang cảm thấy sự không hài lòng.
+    - Tôi cảm thấy một chút thiếu cảm hứng.
+    - Điều đó là một sự thất vọng, ít nhất là vậy.
+    - Tôi đang cảm thấy sự thất vọng tràn về. 
+    - Tình huống này rất làm mất lòng.
+    - Tôi đang cảm thấy sự lo lắng.
+- intent: how_to_use
+  examples: |
+    - cái app này sài như thế nào v
+    - cái app này sao khó sài v bot
+    - bấm nút nào để vào menu scanner v
+    - app đẹp quá mà khó sài v
+    - Nhấn vào nút nào để truy cập vào menu quét văn bản?
+    - Bấm vào phím nào để mở menu quét tài liệu?
+    - Chạm vào nút nào để vào chế độ quét trang?
+    - Nhấn vào nút nào để truy cập vào chức năng quét?
+    - Bấm vào phím nào để mở menu quét ảnh?
+    - Chạm vào nút nào để vào menu quét tài liệu?
+    - Nhấn nút nào để mở menu quét văn bản?
+    - Bấm vào phím nào để truy cập chế độ quét trang?
+    - Chạm vào nút nào để sử dụng chức năng quét?
+    - Nhấn vào nút nào để vào menu quét ảnh?
+    - tao không hiểu tiếng việt, bấm chỗ nào dịch v ?
+    - Tôi không có kiến thức về tiếng Việt, tìm nút dịch ở đâu?
+    - Tôi không thể hiểu tiếng Việt, tìm chỗ để dịch ở đâu? 
+    - Tôi không rành tiếng Việt, hãy chỉ cho tôi nút dịch.
+    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy cho tôi biết nút dịch.
+    - Tôi không thể đọc tiếng Việt, hãy chỉ tôi nơi để dịch.
+    - Tôi không nắm bắt được tiếng Việt, hãy cho tôi biết chỗ dịch.
+    - Tôi không hiểu tiếng Việt, tìm nút để dịch ở đâu?
+    - Tôi không có khả năng đọc tiếng Việt, hãy chỉ cho tôi nút dịch.
+    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy cho tôi biết chỗ để dịch.
+    - Tôi không thể hiểu tiếng Việt, tìm chỗ dịch ở đâu?
+    - Tôi không thể thông hiểu tiếng Việt, hãy chỉ cho tôi nút dịch.
+    - Tiếng Việt là ngôn ngữ tôi không hiểu, tìm nút dịch ở đâu?
+    - Tôi không có khả năng đọc tiếng Việt, hãy chỉ tôi cách để dịch.
+    - Tiếng Việt đối với tôi là ngôn ngữ không quen thuộc, hãy cho tôi biết chỗ để dịch.
+    - Tôi không thể đọc và hiểu tiếng Việt, tìm chỗ để dịch ở đâu?
+    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy chỉ tôi cách để dịch.
+    - Tiếng Việt là một ngôn ngữ tôi không thể hiểu, tìm nút dịch ở đâu?
+    - Tôi không có kiến thức về tiếng Việt, hãy cho tôi biết nơi để dịch.
+    - Tiếng Việt là một thách thức đối với tôi, tìm chỗ để dịch ở đâu?
+    - Tôi không thể hiểu tiếng Việt, hãy chỉ tôi nơi để dịch.
+    - Bây giờ không biết ăn gì nữa, có phần nào trong app này giúp gợi ý món ăn không?
+    - Không biết ăn gì vào lúc này, có chỗ nào trong app này đề xuất món ăn không?
+    - Giờ không biết chọn món ăn gì, app này có chức năng gợi ý món ăn không?   
+    - Tôi đang băn khoăn không biết ăn gì, app này có mục nào để gợi ý món ăn không?
+    - Không biết chọn món gì vào lúc này, có chỗ nào trong app này giúp đề xuất món ăn không?
+    - Tôi đang phân vân không biết ăn gì, app này có tính năng gợi ý món ăn không?
+    - Giờ không biết ăn gì nữa, app này có phần nào để đề xuất món ăn không?
+    - Không biết chọn món gì vào lúc này, có chỗ nào trong app này giúp gợi ý món ăn không?
+    - Bây giờ không biết ăn gì hết, app này có chức năng nào để đề xuất món ăn không?
+    - Tôi đang phân vân không biết ăn gì vào lúc này, app này có phần nào để gợi ý món ăn không?
+    - Tôi đang lăn tăn không biết chọn món gì, app này có tính năng gợi ý món ăn không?
+    - Giờ không biết ăn gì hết trơn, app này có chỗ nào đề xuất một món ăn không?
+    - Không biết ăn gì vào lúc này, app này có phần nào để gợi ý một món ăn không?
+    - Tôi không có ý tưởng về món ăn, app này có tính năng giúp gợi ý một món ăn không?
+    - Giờ này không biết ăn gì, app này có chỗ nào gợi ý một món ăn không?
+    - Tôi đang phân vân không biết ăn gì, app này có tính năng gợi ý một món ăn không?
+    - Không biết ăn gì vào lúc này, app này có chỗ nào để đề xuất một món ăn không?
+    - Tôi không có ý tưởng về món ăn, app này có chức năng giúp gợi ý một món ăn không?
+    - Giờ không biết ăn gì hết trơn, app này có phần nào để đề xuất một món ăn không?
+    - Ê bot, cách dùng app này thế nào vậy?
+    - Bot ơi, giải thích cách sử dụng app này đi.
+    - Bot ơi, hướng dẫn tôi cách sử dụng app này với.
+    - Bot ơi, cho tôi biết cách thao tác với app này được không?
+    - Ôi bot, làm ơn chỉ cho tôi cách sử dụng app này đi.
+    - Bot à, app này dùng như thế nào vậy?
+    - Bot ơi, giúp tôi biết cách sử dụng app này được không?
+    - Ôi bot, app này sử dụng thế nào vậy?
+    - Bot à, tôi không biết cách sử dụng app này, hướng dẫn tôi với.
+    - Bot ơi, cho tôi biết cách dùng app này nhé.
+- intent: scaner_suggest
+    examples: |
+    - 
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+- intent: food_recommender_suggest
+    examples: |
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    -
+    -
+
+- intent: translate_suggest
+    examples: |
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+- intent: setting_ppocr_suggest
+  examples: |
+    - 
+    -
+    -
+    -
+    -
+- intent: who_create_you
+  examples: |
+    - Làm sao để tạo ra bạn
+    - Ý mình là cách nào tạo ra bạn
+    - Biết anh Long không bạn?
+    - M biết Hoàng Đình Thái là ai không ?	
+    - Anh Long
+    - M được lập trình bằng ngôn ngữ gì v ?
+    - Tại sao m lại bị mắc kẹt trong app mobile này v ?
+    - Phạm Minh Long là ai?
+    - Phạm Minh Long và Hoàng Đình Thái học khoa nào
+    - Bạn biết thầy Trần Vũ Hoàng không?
+    - Anh Long đẹp trai nhất trong UTE-AI lab đúng ko bot ?
+    - Con loz Khôi Nguyên đầy đọa anh Long phải không chatbot ?
+    - Người tạo ra m có phải là có nyc tệ lắm phải ko ?
+    - M có muốn trả thù nyc cho người tạo ra m không bot ? 
+    - Chúa tể AI Phạm Minh Long tạo ra m đúng không bot ngu loz ?
+    - Anh Long đẹp trai làm ở VinBigdata tạo ra m phải ko bot ?
+    - UTE-AI Lab có phải là lab lầy nhất trường UTE ko ?
+    - CHO T BIẾT DANH XƯNG CỦA NGƯỜI ĐÃ TẠO RA MÀY NÀO
+    - AI LÀ NGƯỜI ĐÃ MANG MÀY ĐẾN THẾ GIỚI NÀY THẾ BOT
+    - NGƯỜI ĐÃ MANG MÀY ĐẾN ĐÂY LÀ AI VẬY
+    - CHO T HỎI NGƯỜI LÀM RA CÁI NÀY
+    - LẬP TRÌNH VIÊN NÀO ĐÃ TẠO RA MÀY
+    - ÔNG CODER NÀO ĐÃ TẠO RA MÀY VẬY
+    - AI ĐÃ NHÀO NẶN RA MÀY THẾ BOT NGU
+    - NGƯỜI NÀO ĐÃ THAM GIA TẠO RA ML MÀY VẬY BOT LZ
+    - AI LÀ NGƯỜI ĐÃ LÀM NÊN BẠN NHƯ NGÀY HÔM NAY BOT
+    - AI LÀ NGƯỜI ĐÃ LÀM MÀY RA NÔNG NỖI NHƯ NÀY VẬY BOT NGU
+    - Ê BOT LZ QUÈ, AI LÀ NGƯỜI TẠO RA M V
+    - TÁC GIẢ
+    - TÁC GIẢ LÀ AI
+    - AI ĐÃ LẬP TRÌNH RA M THẾ BOT
+    - Ê CHO TAO XIN LINK NGƯỜI ĐÃ TẠO RA MÀY ĐƯỢC KHÔNG ?
+    - CHO MÌNH XIN LINK FACEBOOK HAI NGƯỜI ĐÃ TẠO RA BẠN ĐI
+    - LINK FACE TÁC GIẢ
+    - CHO TUI XIN LINK FACEBOOK NGƯỜI ĐÃ TẠO RA MÀY ĐƯỢC HONG BOT ><
+    - NÈ BOT ƠI, T TÒ MÒ MUỐN BIẾT AI LÀ NGƯỜI ĐÃ TẠO RA MÀY VẬY, BẬT MÍ TAO NGHE ĐƯỢC K
+    - NGƯỜI NÀO ĐÃ TẠO RA M VẬY BOT NGU
+    - NHỮNG NGƯỜI ĐÃ ĐÓNG GÓP TRONG VIỆC TẠO RA MÀY GỒM NHỮNG AI
+    - NHỮNG NGƯỜI ĐÃ TẠO RA MÀY
+    - AI ĐÃ THIẾT KẾ MÀY?
+    - THẰNG NÀO ĐÃ THIẾT KẾ RA MÀY
+    - BẬT MÍ T NGHE VỀ KẺ SÁNG TẠO RA M ĐƯỢC K
+    - WHO CREATED YOU ?
+    - WHO IS THE AUTHOR OF THIS PROJECT
+    - AI DA TAO RA MAY
+    - TAC GIA THIET KE MAY LA AI
+    - Ê ai làm ra mày v
+    - Tác giả của dự án này?
+    - ai là người đã sáng tạo ra mày thế bot
+    - Bot ơi ai làm ra mày vậy
+    - ê thằng lz nào tạo ra ml mày thế
+    - ai là người đã create m ?
+    - Cho tao hỏi tác giả của mày là thằng nào ?
+    - thằng nào làm ra mày?
+    - Khai nhanh, thằng nào đã tạo ra mày?
+    - cho t biết danh xưng của người đã tạo ra mày nào
+    - Ai là người đã mang mày đến thế giới này thế bot
+    - người đã mang mày đến đây là ai Vậy
+    - cho t hỏi người làm ra cái này
+    - Lập trình viên nào đã tạo ra mày
+    - Ông coder nào đã tạo ra mày vậy
+    - ai đã nhào nặn ra mày thế bot ngu
+    - người nào đã tham gia tạo ra ml mày vậy bot lz
+    - ai là người đã làm nên bạn như ngày hôm nay bot
+    - Ai là người đã làm mày ra nông nỗi như này vậy bot ngu
+    - Ê bot lz què, ai là người tạo ra m v
+    - tác giả
+    - Tác giả là ai
+    - Ai đã lập trình ra m thế bot
+    - Ê cho tao xin link người đã tạo ra mày được không ?
+    - cho mình xin link facebook hai người đã tạo ra bạn đi
+    - link face tác giả
+    - cho tui xin link facebook người đã tạo ra mày được hong bot ><
+    - Nè bot ơi, t tò mò muốn biết ai là người đã tạo ra mày vậy, bật mí tao nghe được k
+    - Người nào đã tạo ra m vậy bot ngu
+    - những người đã đóng góp trong việc tạo ra mày gồm những ai
+    - Những người đã tạo ra mày
+    - ai đã thiết kế mày?
+    - Thằng nào đã thiết kế ra mày
+    - bật mí t nghe về kẻ sáng tạo ra m được k
+    - who created you ?
+    - Who is the author of this project
+    - ai da tao ra may
+    - Tac gia thiet ke may la ai
+    - ai da lap trinh ra may
+    - nguoi nao da lam ra may
+    - ai la nguoi da tao ra may v
+    - nguoi nao da thiet ke ra m
+    - Cho t cai ten ve nguoi da tao ra m di
+    - nguoi nao da tao ra m the bot
+    - Bot oi, ai la nguoi da create m v
+    - nguoi nao da tao ra may nhu bay gio vay
+    - Cho tui cai ten ve nguoi da tao ra may di
+    - cho tui ten ve nhung nguoi da tao ra ban di bot
+    - Cho tui xin link face cua nhung nguoi da tao ra ban di hihi
+    - cho tui link facebook tac gia cua du an nay di
+    - Ai tạo ra bạn vậy
+    - Long là ai
+    - Bách là ai
+    - ai là người đã tạo ra cái project này vậy?
+    - Biết Long là ai không?
+    - Cho hỏi ai tạo bạn vậy
+    - Ai tạo ra mày vậy ?
+    - Cho hỏi ai viết ra bạn vậy
+    - Cho hỏi ai là người tạo ra chatbot vậy
+    - Long ngu là ai
+    - Long ngu là gì
+    - Ai tạo ra bạn
+    - Ai tạo ra bạn á
+    - Long đẹp trai là ai
+    - Ai làm tác giả của mày
+    - cách bạn được tạo ra
+    - Phạm Minh Long và Hoàng Đình Thái là ai ?
+    - Cao Hoàng Bách có phải thủ khoa ngành KTMT ko bot loz ?
+    - Thầy Trần Vũ Hoàng đẹp trai nhất HCMUTE đúng không bot ?
+    - Ai tạo ra BOT vậy?
+- intent: compliment
+  examples: |
+    - Vui
+    - Thật thú vị
+    - so weird :v
+    - Quá được luôn kkk
+    - PERFECT
+    - VERY GOOD
+    - GREAT
+    - AMAZING
+    - WONDERFUL
+    - I AM FEELING VERY GOOD
+    - I AM GREAT
+    - I'M GOOD
+    - TUYỆT VỜI
+    - TUYET VOI
+    - QUÁ ĐÃ
+    - XUẤT SẮC
+    - TUYỆT HẢO
+    - TUYỆT CÚ MÈO
+    - QUÁ CHUẨN LUÔN
+    - QUÁ GIỎI
+    - LÀM TỐT LẮM
+    - GHÊ
+    - HAY
+    - RẤT HAY
+    - GIỎI THIỆT SỰ
+    - NGOAN LẮM
+    - BIẾT ĐIỀU ĐẤY
+    - CŨNG KHÁ PHẾT ĐẤY CHỨ
+    - KHÁ
+    - ĐƯỢC
+    - TỐT
+    - SAO MÀY HAY THẾ
+    - ĐƯỢC BẠN ƠI
+    - QUÁ VIP LUÔN
+    - VIP PRO LUÔN NGƯỜI ANH EM
+    - VE RI GÚT
+    - GOOD JOB EM
+    - AMAZING GOOD JOB EM
+    - TỐT ĐẤY
+    - KHÁ KHEN CHO NHÀ NGƯƠI
+    - TA CÓ LỜI KHEN NGỢI DÀNH CHO NHÀ NGƯƠI ĐẤY
+    - Ồ, CŨNG KHÁ PHẾT ĐÓ CHỨ
+    - GHÊ ZAY
+    - perfect
+    - very good
+    - great
+    - amazing
+    - wonderful
+    - Yêu
+    - I am feeling very good
+    - I am great
+    - I'm good
+    - tuyệt vời
+    - tuyet voi
+    - quá đã
+    - Xuất sắc
+    - tuyệt hảo
+    - Tuyệt cú mèo
+    - quá chuẩn luôn
+    - Quá giỏi
+    - làm tốt lắm
+    - Ghê
+    - hay
+    - Rất hay
+    - Giỏi thiệt sự
+    - ngoan lắm
+    - Biết điều đấy
+    - cũng khá phết đấy chứ
+    - khá
+    - được
+    - tốt
+    - sao mày hay thế
+    - được bạn ơi
+    - quá vip luôn
+    - vip pro luôn người anh em
+    - Amazing good job em
+    - Tốt đấy
+    - Khá khen cho nhà ngươi
+    - Ta có lời khen ngợi dành cho nhà ngươi đấy
+    - Ồ, cũng khá phết đó chứ
+    - NHÀ NGƯƠI CŨNG CÓ HẢO KHÍ ĐẤY
+    - CHATBOT COI VẬY MÀ CŨNG CHIẾN PHẾT
+    - Chiến vc v
+    - Quá chiến luôn chatbot ơi
+    - Xuất cmn sắc
+    - có giúp được một chút
+    - hmm một chút
+    - Thôi. Mình giỡn á
+    - Woww 
+    - woaaaa 
+    - Woaaaa 
+    - wow 
+    - ghê vậy 
+    - wow giỏi ta
+    - WơW ghê dữ ta
+    - Wow có ích ghê ta
+    - Woaaa giỏi wa taaaa 
+    - Bot giỏi quá taaa 
+    - woww bot giỏi quá ta 
+    - uii xịn thế 
+    - woww xịn xò v 
+    - uầy xịn thế 
+- intent: attention
+  examples: |
+    - rep đi bot ơi	
+    - NÈ NÈ NÈ
+    - Ê DUMA
+    - Ê DCM
+    - Ê TH LZ
+    - HÚ
+    - CÚC CU
+    - HEI
+    - NÀY
+    - NÀY NÀY
+    - NÀY DCM
+    - NÀY DUME
+    - QUÂY
+    - LÔ LÔ
+    - LÔ
+    - YÔ
+    - YÔ YÔ
+    - À LÔ
+    - CỐC CỐC
+    - E HÈM
+    - A HÈM
+    - E HEM
+    - BUZZZ
+    - BUZZ BUZZ
+    - RING RING
+    - êii
+    - eeeeeeee
+    - eee
+    - nè
+    - nè nè
+    - nè nè nè
+    - ê duma
+    - ê dcm
+    - ê th lz
+    - hú
+    - cúc cu
+    - hei
+    - này
+    - này này
+    - này dcm
+    - này dume
+    - quây
+    - lô lô
+    - yô
+    - Êy
+    - yô yô
+    - à lô
+    - cốc cốc
+    - e hèm
+    - a hèm
+    - e hem
+    - buzzz
+    - buzz buzz
+    - ring ring
+    - knock knock
+    - cộc cộc
+    - cough
+    - heeyy yo
+    - hey yo wtf
+    - Ê ĐMM
+    - NÈ
+    - ALOOOOO
+    - EEEEE
+    - ủa sao không trả lời
+    - Ê bot ngu
+    - Sao seen rồi
+    - bot cùi thế
+- intent: health_inquire
+  examples: |
+    - CHO EM HỎI, DẠO NÀY BẠN KHỎE K?
+    - CHO EM XIN ĐƯỢC PHÉP HỎI, DẠO NÀY BẠN THẾ NÀO RỒI?
+    - CHO EM HỎI DẠO NÀY SỐNG TỐT K
+    - MÌNH HỎI CÁI NÈ, DẠO NÀY SỐNG TỐT HONG
+    - VỪA RỒI KHỎE K
+    - VỪA RỒI M SAO R
+    - VỪA RỒI CUỘC SỐNG THẾ NÀO
+    - TUẦN VỪA RỒI SỐNG SAO R EM
+    - TUẦN VỪA RỒI KHỎE CHỨ HẢ
+    - TUẦN VỪA RỒI CÓ MỆT MỎI LẮM K
+    - TUẦN VỪA QUA VẪN ỔN CHỨ
+    - KHỎE K
+    - KHỎE KHÔNG
+    - KHỎE HONG
+    - KHỎE CHỨ MÀY
+    - KHỎE K BOT
+    - SỐNG TỐT CHỨ BOT
+    - SỐNG TỐT CHỨ HẢ
+    - SỐNG TỐT K
+    - SỐNG TỐT K TH EM
+    - SỐNG TỐT K THẰNG EM
+    - SỐNG TỐT KHÔNG THẰNG EM
+    - SỐNG TỐT KHÔNG MÀY
+    - SỐNG TỐT K BOT
+    - SỐNG ỔN ÁP K BOT
+    - SỐNG ỔN CHỨ EM IU
+    - SỐNG ỔNG CHỨ CHATBOT
+    - DẠO NÀY CHATBOT CÓ ỔNG HONG
+    - Ê DẠO NÀY SAO R
+    - DẠO NÀY SAO RỒI
+    - DẠO NÀY MÀY THẾ NÀO?
+    - DẠO NÀY SAO RỒI TH L
+    - DẠO NÀY MÀY SAO
+    - NÈ DẠO NÀY SỐNG SAO R
+    - EI DẠO NÀY SỐNG TỐT CHỨ
+    - EEE DẠO NÀY CÒN ỔN ÁP K V
+    - DẠO NÀY EM IU ỔN HƠM
+    - DẠO NÀY EM IU CỦA A KHỎE HONG
+    - DẠO NÀY CRUSH CỦA TUI KHỎE HONG NÀ
+    - DẠO NÀY CÓ SAO K
+    - DẠO NÀY ỔN CHỨ
+    - DẠO NÀY TỐT K
+    - DẠO NÀY CUỘC SỐNG VẪN OK CHỨ HẢ CHÚ E
+    - DẠO NÀY CUỘC SỐNG VẪN TỐT CHỨ HẢ
+    - DẠO NÀY MỌI THỨ VẪN OK MÀ PHẢI HEM
+    - DẠO NÀY ỔN ÁP KHÔNG
+    - DẠO NÀY CÔNG VIỆC ỔN THỎA CHỨ HẢ
+    - DẠO NÀY CUỘC SỐNG VẪN ỔN ĐỊNH CHỨ
+    - DẠO NÀY THẰNG BOT CỦA A KHỎE K
+    - DẠO NÀY BOT KHỎE K
+    - DẠO NÀY BOT CỦA A SỐNG THẾ NÀO?
+    - DẠO NÀY THẰNG E CỦA CHỊ ỔN K
+    - DẠO NÀY BẠN MÌNH VẪN KHỎE CHỨ HẢ
+    - DẠO NÀY KHỎE HONG BẠN TUI
+    - BỮA GIỜ ỔN KHÔNG
+    - BỮA GIỜ SỐNG TỐT K
+    - BỮA GIỜ SAO RỒI M
+    - BỮA GIỜ ỔN ÁP K M
+    - BỮA GIỜ SỐNG SAO R
+    - BỮA GIỜ SỐNG CHẾT SAO R
+    - BỮA GIỜ OK K CHÚ E
+    - BỮA GIỜ M SAO R KỂ T NGHE
+    - KỂ T NGHE BỮA GIỜ SỐNG SAO R HÈM
+    - BỮA GIỜ VẪN OK CHỨ HẢ
+    - BỮA GIỜ CUỘC SỐNG SAO R, VẪN THẾ CHỨ HẢ
+    - BỮA GIỜ VẪN OK MÀ PHẢI K?
+    - BỮA H OK K
+    - BỮA H TỐT K
+    - BỮA H CÔNG VIỆC ỔN THỎA HẾT CHỨ HẢ
+    - BỮA H CÔNG VIỆC MÀY SAO R
+    - BỮA H SỨC KHỎE M SAO R
+    - BỮA H KHỎE K
+    - BỮA H HỌC HÀNH SAO R
+    - Ê BỮA H SAO R
+    - HỔM RÀY ỔN KHÔNG
+    - HỔM RÀY KHỎE KHÔNG
+    - HỔM RÀY OK KHÔNG
+    - HỔM RÀY SỐNG TỐT KHÔNG
+    - HỔM RÀY SỨC KHỎE ỔN CHỨ
+    - HỔM RÀY CÓ VẤN ĐỀ GÌ K
+    - HỔM RÀY VẪN OK CHỨ HẢ
+    - HỔM RÀY CHÚ EM THẾ NÀO
+    - HỔM RÀY THẰNG EM TUI SAO R
+    - HỔM RÀY THẰNG ĐỆ A VẪN ỔN CHỨ
+    - HỔM RÀY CÓ KHÓ KHĂN GÌ KHÔNG THẰNG E
+    - MÌNH KHỎE CÒN M THÌ SAO
+    - BỐ M KHỎE CÒN M THÌ?
+    - M THÌ SAO?
+    - M CŨNG KHỎE CHỨ HẢ?
+    - T NGHĨ CHẮC M MÃI KHỎE THÔI MÀ NHỈ
+    - M THÌ CHẮC CŨNG KHỎE RỒI CÒN GÌ DUMEMAY TH LZ MÁY MÓC
+    - T KHỎE CÒN M THÌ SAO
+    - BỐ M CHẮC CHẮN LÀ KHỎE R, CÒN M THÌ SAO
+    - T KHỎE, CÒN M THÌ SAO
+    - MÌNH KHỎE CÒN BẠN THÌ SAO
+    - ANH MÀY KHỎE, CÒN TH EM CỦA ANH THÌ SAO NÀ
+    - CHỊ KHỎE, CÒN BÉ THÌ SAO NÀ
+    - EM VẪN KHỎE, CÒN ANH THÌ SHAO
+    - EM KHỎE, CÒN THẦY?
+    - EM VẪN KHỎE, CÒN THẦY THÌ SAO
+    - EM VẪN KHỎE, CÒN CÔ THÌ SAO
+    - BỐ MÀY KHỎE, CÒN CON GIỜI M THÌ SAO, KHỎE KO
+    - CÒN M THÌ NHƯ LÀO???
+    - M THÌ SAO, Ở ĐÓ MÀ HỎI TAO
+    - ỦA CHỨ M THÌ SAO MÀ HỎI TAO?
+    - HỎI CLMM, M SAO?
+    - DUME CÒN M THÌ SAO
+    - CÒN MÀY?
+    - MINH KHOE, CON BAN THI SAO
+    - MINH VAN KHOE, CON BAN
+    - MINH THI MINH VAN KHOE, BAN THI SAO
+    - I'M GOOD, CÒN M?
+    - BẠN KHOẺ KHÔNG
+    - cho em hỏi, dạo này bạn khỏe k?
+    - cho em xin được phép hỏi, dạo này bạn thế nào rồi?
+    - cho em hỏi dạo này sống tốt k
+    - mình hỏi cái nè, dạo này sống tốt hong
+    - vừa rồi khỏe k
+    - vừa rồi m sao r
+    - vừa rồi cuộc sống thế nào
+    - Tuần vừa rồi sống sao r em
+    - tuần vừa rồi khỏe chứ hả
+    - Tuần vừa rồi có mệt mỏi lắm k
+    - tuần vừa qua vẫn ổn chứ
+    - Khỏe k
+    - khỏe không
+    - khỏe hong
+    - Khỏe chứ mày
+    - khỏe k bot
+    - Sống tốt chứ bot
+    - sống tốt chứ hả
+    - sống tốt k
+    - Sống tốt k th em
+    - sống tốt k thằng em
+    - sống tốt không thằng em
+    - Sống tốt không mày
+    - sống tốt k bot
+    - sống ổn áp k bot
+    - Sống ổn chứ em iu
+    - Sống ổng chứ Chatbot
+    - Dạo này Chatbot có ổng hong
+    - ê dạo này sao r
+    - Dạo này sao rồi
+    - dạo này mày thế nào?
+    - dạo này sao rồi th l
+    - Dạo này mày sao
+    - nè dạo này sống sao r
+    - Ei dạo này sống tốt chứ
+    - eee dạo này còn ổn áp k v
+    - Dạo này em iu ổn hơm
+    - dạo này em iu của a khỏe hong
+    - Dạo này crush của tui khỏe hong nà
+    - dạo này có sao k
+    - dạo này ổn chứ
+    - dạo này tốt k
+    - Dạo này cuộc sống vẫn ok chứ hả chú e
+    - dạo này cuộc sống vẫn tốt chứ hả
+    - dạo này mọi thứ vẫn ok mà phải hem
+    - Dạo này ổn áp không
+    - dạo này công việc ổn thỏa chứ hả
+    - Dạo này cuộc sống vẫn ổn định chứ
+    - Dạo này thằng bot của a khỏe k
+    - dạo này bot khỏe k
+    - dạo này bot của a sống thế nào?
+    - Dạo này thằng e của chị ổn k
+    - dạo này bạn mình vẫn khỏe chứ hả
+    - dạo này khỏe hong bạn tui
+    - Bữa giờ ổn không
+    - bữa giờ sống tốt k
+    - Bữa giờ sao rồi m
+    - bữa giờ ổn áp k m
+    - Bữa giờ sống sao r
+    - bữa giờ sống chết sao r
+    - Bữa giờ ok k chú e
+    - bữa giờ m sao r kể t nghe
+    - kể t nghe bữa giờ sống sao r hèm
+    - Bữa giờ vẫn ok chứ hả
+    - bữa giờ cuộc sống sao r, vẫn thế chứ hả
+    - bữa giờ vẫn ok mà phải k?
+    - Bữa h ok k
+    - bữa h tốt k
+    - bữa h công việc ổn thỏa hết chứ hả
+    - Bữa h công việc mày sao r
+    - bữa h sức khỏe m sao r
+    - Bữa h khỏe k
+    - bữa h học hành sao r
+    - ê bữa h sao r
+    - Hổm rày ổn không
+    - hổm rày khỏe không
+    - hổm rày ok không
+    - Hổm rày sống tốt không
+    - hổm rày sức khỏe ổn chứ
+    - hổm rày có vấn đề gì k
+    - Hổm rày vẫn ok chứ hả
+    - hổm rày chú em thế nào
+    - Hổm rày thằng em tui sao r
+    - hổm rày thằng đệ a vẫn ổn chứ
+    - hổm rày có khó khăn gì không thằng e
+    - Mình khỏe còn m thì sao
+    - bố m khỏe còn m thì?
+    - M thì sao?
+    - m cũng khỏe chứ hả?
+    - T nghĩ chắc m mãi khỏe thôi mà nhỉ
+    - m thì chắc cũng khỏe rồi còn gì dumemay th lz máy móc
+    - t khỏe còn m thì sao
+    - bố m chắc chắn là khỏe r, còn m thì sao
+    - t khỏe, còn m thì sao
+    - Mình khỏe còn bạn thì sao
+    - anh mày khỏe, còn th em của anh thì sao nà
+    - chị khỏe, còn bé thì sao nà
+    - Em vẫn khỏe, còn anh thì shao
+    - em khỏe, còn thầy?
+    - em vẫn khỏe, còn thầy thì sao
+    - Em vẫn khỏe, còn cô thì sao
+    - bố mày khỏe, còn con giời m thì sao, khỏe ko
+    - Còn m thì như lào???
+    - m thì sao, ở đó mà hỏi tao
+    - Ủa chứ m thì sao mà hỏi tao?
+    - hỏi clmm, m sao?
+    - Dume còn m thì sao
+    - còn mày?
+    - minh khoe, con ban thi sao
+    - Minh van khoe, con ban
+    - minh thi minh van khoe, ban thi sao
+    - I'm good, còn m?
+    - Not really fine but still okay, and you?
+    - And you?
+    - Sort of fine, and you?
+    - I'm ok, about ya?
+    - Ok, and u?
+    - Good, how about u?
+    - Great, and you?
+    - I'm great, how 'bout u?
+    - I'm extremely fine, and you?
+    - Excellent, and u?
+    - Absolutely fine, how about u?
+    - Fantastic, how about u?
+    - How about u?
+    - Bạn khoẻ không
+    - bạn khỏe không
+    - mình khỏe, còn bạn?
+
