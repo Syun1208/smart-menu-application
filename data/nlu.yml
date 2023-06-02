@@ -714,55 +714,270 @@ nlu:
     - Bot à, tôi không biết cách sử dụng app này, hướng dẫn tôi với.
     - Bot ơi, cho tôi biết cách dùng app này nhé.
 - intent: scaner_suggest
-    examples: |
-    - 
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-- intent: food_recommender_suggest
-    examples: |
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    -
-    -
-
-- intent: translate_suggest
-    examples: |
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-- intent: setting_ppocr_suggest
   examples: |
-    - 
-    -
-    -
-    -
-    -
+    - Làm sao để quét một menu trong phần này?
+    - Cách quét menu trong phần này như thế nào?
+    - Muốn quét một menu trong phần này thì làm thế nào?
+    - Bước nào để quét menu trong phần này?
+    - Hướng dẫn quét menu trong phần này như thế nào?
+    - Làm thế nào để quét một cái menu trong phần này?
+    - Để quét một menu trong phần này, cần thực hiện những bước nào?
+    - Muốn quét một menu trong phần này, phải làm những gì?
+    - Cách scanner một menu trong phần này như thế nào?
+    - Hướng dẫn quét một cái menu trong phần này như thế nào?
+    - Tôi đã nhấn nút scanner nhưng không thể quét được cái menu, cần phải làm gì để quét được?
+    - Tôi bấm nút scanner nhưng không thể quét được cái menu, có cách nào để quét thành công không?
+    - Tôi thử bấm nút scanner để quét cái menu nhưng không thành công, cần làm gì để quét được?
+    - Khi tôi nhấn nút scanner để quét cái menu, không có kết quả, phải làm thế nào để quét thành công?
+    - Tôi không thể quét được cái menu khi bấm nút scanner, có cách nào để quét thành công không?
+    - Tôi đã cố gắng quét cái menu bằng cách nhấn nút scanner, nhưng không thành công, có cách nào khác để quét được không?
+    - Khi tôi sử dụng nút scanner để quét cái menu, không có kết quả, có phương pháp nào khác để quét được không?
+    - Tôi gặp khó khăn khi sử dụng nút scanner để quét cái menu, có bước nào khác để quét thành công không?
+    - Khi tôi nhấn nút scanner để quét cái menu, không thể quét được, cần phải thực hiện những gì để quét thành công?
+    - Tôi đã cố gắng quét cái menu bằng cách nhấn nút scanner, nhưng không thể quét được, có cách nào khác để quét thành công không?
+    - Tôi đã cố gắng sử dụng nút scanner để quét cái menu, nhưng không thành công, có cách nào khác để quét được không?
+    - Khi tôi bấm nút scanner, không thể quét được cái menu, cần phải làm gì để quét thành công?
+    - Tôi không thể quét cái menu sau khi nhấn nút scanner, có phương pháp nào khác để quét thành công không?
+    - Khi tôi sử dụng chức năng scanner, không thể quét cái menu, cần làm gì để quét thành công?
+    - Tôi đã thử sử dụng tính năng scanner để quét cái menu, nhưng không thể quét được, có cách nào khác để quét thành công không?
+    - Tôi đã nhấn nút scanner để quét cái menu nhưng không thành công, có bước nào khác để quét được không?
+    - Khi tôi sử dụng tính năng quét, không thể quét cái menu, cần phải làm gì để quét thành công?
+    - Tôi đã cố gắng sử dụng tính năng quét để quét cái menu, nhưng không thành công, có cách nào khác để quét được không?
+    - Tôi không thể quét cái menu sau khi nhấn nút scanner, có phương pháp nào khác để quét thành công không?
+    - Khi tôi bấm nút scanner để quét cái menu, không thể quét được, cần làm gì để quét thành công?
+    - Tôi đã thử quét cái menu bằng cách nhấn nút scanner, nhưng không thành công. Có cách nào khác để quét cái menu không?
+    - Khi tôi sử dụng nút scanner để quét cái menu, không có kết quả. Có cách nào để quét được không?
+    - Tôi không thể quét cái menu bằng cách nhấn nút scanner, có phải có phương pháp khác để quét được không?
+    - Tôi đã cố gắng sử dụng nút scanner để quét cái menu, nhưng không thể quét được. Có cách nào khác để thực hiện quét thành công không?
+    - Tôi đã nhấn nút scanner để quét cái menu, nhưng không thể quét được. Có phương pháp nào khác để quét thành công không?
+    - Khi tôi sử dụng nút scanner để quét cái menu, không có kết quả. Có cách nào khác để quét thành công không?
+    - Tôi không thể quét cái menu khi sử dụng nút scanner. Có phương pháp nào khác để quét thành công không?
+    - Tôi đã thử quét cái menu bằng cách nhấn nút scanner, nhưng không thành công. Có cách nào khác để quét cái menu được không?
+    - Khi tôi sử dụng nút scanner để quét cái menu, không có kết quả. Có cách nào khác để quét thành công không?
+    - Tôi không thể quét cái menu sau khi nhấn nút scanner. Có phương pháp nào khác để quét thành công không?
+    - Tôi đã thử sử dụng chức năng scanner để quét cái menu, nhưng không thành công. Có cách nào khác để quét cái menu được không?
+    = Khi tôi bấm nút scanner, không thể quét được cái menu. Cần phải làm gì để quét thành công?
+    - Tôi không thể quét cái menu sau khi nhấn nút scanner. Có phương pháp nào khác để quét thành công không?
+    - Tôi đã thử quét cái menu bằng cách sử dụng tính năng scanner, nhưng không thành công. Có cách nào khác để quét thành công không?
+    - Tôi không thể quét cái menu sau khi nhấn nút scanner. Có phương pháp nào khác để quét thành công không?
+    - Tôi đã cố gắng sử dụng tính năng quét để quét cái menu, nhưng không thành công. Có cách nào khác để quét thành công không?
+    - Khi tôi sử dụng tính năng quét, không thể quét được cái menu. Cần phải làm gì để quét thành công?
+    - Tôi đã thử sử dụng tính năng quét để quét cái menu, nhưng không thành công. Có cách nào khác để quét thành công không?
+    - Tôi không thể quét cái menu sau khi nhấn nút scanner. Có phương pháp nào khác để quét thành công không?
+    - Khi tôi bấm nút scanner để quét cái menu, không thể quét được. Cần làm gì để quét thành công?
+    - Có cách nào khác để quét cái menu không sau khi bấm nút scanner?
+    - Làm sao để quét thành công cái menu sau khi bấm nút scanner?
+    - Có phương pháp khác để quét cái menu không sau khi nhấn nút scanner?
+    - Quét cái menu thế nào sau khi bấm nút scanner?
+    - Làm sao để quét thành công cái menu khi sử dụng tính năng scanner?
+    - Có cách nào khác để quét cái menu không sau khi nhấn nút scanner?
+    - Làm thế nào để quét cái menu sau khi nhấn nút scanner?
+    - Có phương pháp khác để quét thành công cái menu sau khi bấm nút scanner?
+    - Làm sao để quét cái menu khi sử dụng tính năng quét?
+    - Có cách nào khác để quét cái menu không sau khi nhấn nút scanner?
+    - Cách để quét cái menu sau khi nhấn nút scanner?
+    - Làm sao để quét thành công cái menu khi dùng scanner?
+    - Có phương pháp khác để quét cái menu không sau khi nhấn scanner?
+    - Quét cái menu như thế nào sau khi bấm nút scanner?
+    - Làm sao để quét thành công cái menu khi sử dụng scanner?
+    - Có cách khác để quét cái menu sau khi nhấn nút scanner?
+    - Làm thế nào để quét cái menu sau khi nhấn scanner?
+    - Có phương pháp khác để quét thành công cái menu sau khi bấm nút scanner?
+    - Làm sao để quét cái menu khi sử dụng tính năng quét?
+    - Có cách khác để quét cái menu không sau khi nhấn nút scanner?
+    - Quét cái menu sau khi nhấn nút scanner thế nào?
+    - Làm sao để quét cái menu thành công khi dùng scanner?
+    - Có phương pháp khác để quét cái menu sau khi nhấn scanner không?
+    - Quét cái menu như thế nào sau khi nhấn nút scanner?
+    - Làm sao để quét cái menu thành công khi sử dụng scanner?
+    - Có cách khác để quét cái menu sau khi nhấn nút scanner không?
+    - Làm thế nào để quét cái menu sau khi nhấn scanner?
+    - Có phương pháp khác để quét thành công cái menu sau khi bấm scanner?
+    - Làm sao để quét cái menu khi sử dụng tính năng quét?
+    - Có cách khác để quét cái menu không sau khi nhấn nút scanner?
+    - Chỗ nào để khởi động camera v?
+    - Cần mở camera ở đâu?
+    - Ở đâu để bật chế độ camera?
+    - Mở camera ở chỗ nào?
+    - Chỗ nào để kích hoạt chế độ camera?
+    - Camera được bật ở đâu?
+    - Chỗ nào để mở ứng dụng camera?
+    - Cần mở camera ở đâu trong thiết bị?
+    - Chỗ nào để truy cập vào chế độ camera?
+    - Mở camera ở đâu trên giao diện?
+    - Ở đâu có camera?
+    - Chỗ nào mở camera?
+    - Mở camera ở đâu?
+    - Cần tìm chỗ để bật camera?
+    - Camera được mở ở đâu?
+    - Ở đâu để truy cập camera?
+    - Camera ở đâu?
+    - Chỗ nào để vào chế độ camera?
+    - Mở ứng dụng camera ở đâu?
+    - Ở đâu để khởi động chế độ camera?
+    - Camera ở đâu?
+    - Mở camera ở đâu?
+    - Chỗ nào có camera?
+    - Chỗ nào để bật camera?
+    - Camera mở ở đâu?
+    - Truy cập camera ở đâu?
+    - Chỗ nào để vào chế độ camera?
+    - Mở ứng dụng camera ở đâu? 
+    - Khởi động camera ở đâu?
+    - Chức năng của nút load model là gì?
+    - Mục đích sử dụng của nút load model là gì?
+    - Nút load model có tác dụng gì?
+    - Nút load model được dùng để thực hiện công việc gì?
+    - Công dụng của nút load model là gì?
+    - Nút load model được sử dụng để làm việc gì?
+    - Nút load model được áp dụng trong mục đích gì?
+    - Nút load model có tác động như thế nào?
+    - Nút load model đóng vai trò gì trong quá trình làm việc?
+    - Nút load model có ứng dụng như thế nào?
+    - Nút load model dùng làm gì?
+    - Nút load model để làm gì chính xác?
+    - Nút load model có tác dụng gì?
+    - Nút load model xử lý như thế nào?"
+    - Nút load model thực hiện công việc gì?
+    - Nút load model có công dụng gì?
+    - Nút load model được sử dụng như thế nào?
+    - Nút load model có tác động ra sao?
+    - Nút load model đóng vai trò gì?
+    - Nút load model ứng dụng như thế nào?
+    - Nút load model để làm gì?
+    - Nút load model dùng để gì?
+    - Nút load model có tác dụng gì?
+    - Nút load model xử lý như thế nào?
+    - Nút load model thực hiện việc gì?
+    - Nút load model có công dụng gì?
+    - Nút load model được sử dụng như thế nào?
+    - Nút load model tác động như thế nào?
+    - Nút load model đóng vai trò gì?
+    - Nút load model ứng dụng như thế nào?
+    - Chức năng của nút camera là gì?
+    - Mục đích sử dụng của nút camera là gì?
+    - Nút camera có tác dụng gì?
+    - Nút camera được dùng để thực hiện công việc gì?
+    - Công dụng của nút camera là gì?
+    - Nút camera được sử dụng để làm việc gì?
+    - Nút camera được áp dụng trong mục đích gì?
+    - Nút camera có tác động như thế nào?
+    - Nút camera đóng vai trò gì trong quá trình làm việc?
+    - Nút camera có ứng dụng như thế nào?
+    - Nút camera dùng làm gì?
+    - Nút camera để làm gì chính xác?
+    - Nút camera có tác dụng gì?
+    - Nút camera xử lý như thế nào?
+    - Nút camera thực hiện công việc gì?
+    - Nút camera có công dụng gì?
+    - Nút camera được sử dụng như thế nào?
+    - Nút camera tác động như thế nào?
+    - Nút camera đóng vai trò gì?
+    - Nút camera ứng dụng như thế nào?
+    - Nút camera dùng làm gì?
+    - Nút camera để làm gì?
+    - Tác dụng của nút camera là gì?
+    - Nút camera xử lý thế nào?
+    - Nút camera thực hiện gì?
+    - Công dụng của nút camera là gì?
+    - Nút camera được dùng như thế nào?
+    - Tác động của nút camera ra sao?
+    - Vai trò của nút camera là gì?
+    - Nút camera ứng dụng như thế nào?
+    - Mục đích sử dụng của nút gallery là gì?
+    - Chức năng của nút gallery là gì?
+    - Nút gallery được sử dụng để làm gì?
+    - Công dụng của nút gallery là gì?
+    - Nút gallery thực hiện việc gì?
+    - Nút gallery có tác dụng gì?
+    - Nút gallery đóng vai trò gì?
+    - Nút gallery ứng dụng như thế nào?
+    - Nút gallery dùng để làm gì chính xác?
+    - Nút gallery xử lý như thế nào?
+    - Nút gallery dùng để làm gì?
+    - Nút gallery có tác dụng gì?
+    - Nút gallery thực hiện gì?
+    - Nút gallery có công dụng gì?
+    - Nút gallery được sử dụng như thế nào?
+    - Nút gallery đóng vai trò gì?
+    - Nút gallery ứng dụng như thế nào?
+    - Nút gallery dùng để làm gì?
+    - Tác dụng của nút gallery là gì? 
+    - Nút gallery thực hiện việc gì?
+    - Công dụng của nút gallery là gì?
+    - Nút gallery được sử dụng như thế nào?
+    - Vai trò của nút gallery là gì?
+    - Nút gallery ứng dụng như thế nào?
+    - Tại sao không thể sử dụng nút scanner?
+    - Tại sao việc nhấn nút scanner không thành công?
+    - Vì sao không thể kích hoạt nút scanner?
+    - Tại sao không thể sử dụng nút scanner?
+    - Tại sao không có phản ứng khi bấm nút scanner?
+    - Tại sao nút scanner không hoạt động?
+    - Vì sao không thể dùng nút scanner?
+    - Tại sao không nhận diện khi bấm nút scanner?
+    - Tại sao không thể sử dụng nút scanner?
+    - Tại sao không có phản ứng khi nhấn nút scanner?
+    - Lý do nút scanner không hoạt động là gì?
+    - Vì sao nút scanner không phản hồi?
+    - Tại sao không thể kích hoạt nút scanner?
+    - Vì sao không thể sử dụng được nút scanner?
+    - Tại sao nút scanner không phản ứng?
+    - Vì sao không thể kích hoạt nút scanner?
+    - Tại sao nút scanner không hoạt động?
+    - Lý do nút scanner không có tác dụng là gì?
+    - Tại sao nút scanner không thực hiện chức năng?
+    - Xem kết quả ở đâu vậy?
+    - Tìm kết quả ở đâu vậy?
+    - Chỗ nào để xem kết quả vậy?
+    - Nơi nào hiển thị kết quả vậy?
+    - Vị trí nào để kiểm tra kết quả vậy?
+    - Xem kết quả ở đâu trong đó?
+    - Địa điểm nào để thấy kết quả vậy?
+    - Tìm hiểu kết quả ở đâu vậy?
+    - Chỗ nào để có cái nhìn tổng quan về kết quả?
+    - Nơi nào để xác nhận kết quả vậy?
+    - Điểm đặt để kiểm tra kết quả là ở đâu vậy?
+    - Coi kết quả tại điểm nào vậy?
+    - Vị trí nào để xem kết quả được?
+    - Nơi nào hiển thị thông tin kết quả vậy?
+    - Chỗ nào để xem kết quả đó?
+    - Địa điểm nào để thuận tiện kiểm tra kết quả?
+    - Coi kết quả tại đâu vậy?
+    - Tìm kết quả ở chỗ nào vậy?
+    - Chỗ nào để kiểm tra kết quả vậy?
+    - Xem kết quả ở điểm nào trong đó?
+# - intent: food_recommender_suggest
+#     examples: |
+#     - 
+
+
+# - intent: translate_suggest
+#     examples: |
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+#     -
+# - intent: setting_ppocr_suggest
+#   examples: |
+#     - 
+#     -
+#     -
+#     -
+#     -
 - intent: who_create_you
   examples: |
     - Làm sao để tạo ra bạn
