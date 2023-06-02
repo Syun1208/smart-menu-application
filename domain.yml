@@ -7,28 +7,130 @@ intents:
   - deny
   - mood_great
   - mood_unhappy
-  - bot_challenge
+  - how_to_use
+  - scaner_suggest
+  - who_create_you
+  - compliment
+  - attention
+  - health_inquire
+  - scanner_run_model
+  - scanner_load_model
+  - scanner_gallery
+  - camera
+  - scanner_results
 
 responses:
+
+  utter_who_create_you:
+  - text: Cảm ơn bạn đã quan tâm, mình đã được tạo ra bởi sinh viên Phạm Minh Long, hiện đang là sinh viên Computer Engineering, dưới sự hướng dẫn của thầy Trần Vũ Hoàng. Nhờ công lao của họ mà mình mới có thể trò chuyện cùng bạn ngay lúc này nè ;)
+  - text: Trời ơi, tất nhiên rồi. Mình được tạo bởi chúa tể AI Phạm Minh Long và được hướng dẫn bởi Ph.D Trần Vũ Hoàng. Mục đích tui được anh Long tạo ra nhàm phục vụ đồ án tốt nghiệp ngành Kĩ Thuật Máy Tính.
+  - text: Mình được là chatbot thông minh được tạo ra bởi anh Phạm Minh Long dưới sự hướng dẫn của thầy Trần Vũ Hoàng.
+  
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: Xin chào! Bạn khỏe không?
+  - text: Chào bạn, hôm nay bạn thế nào?
+  - text: Hello bro,  hôm nay bạn oke không ? Còn buồn vì nyc ko :>
 
   utter_goodbye:
-  - text: "Bye"
+  - text: Tạm biệt, hẹn gặp lại bạn sau
+  - text: Chào bạn nha
+  - text: Vâng, hẹn hôm khác nói chuyện tiếp nha
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_affirm:
+  - text: Hehe cảm ơn nha :)))))
+  - text: Ngại quá hihi !
+  utter_ok:
+  - text: Ok bạn nha
+  - text: Ừa ok bạn
+  - text: Okelaaa
+  utter_sorry:
+  - text: Xin lỗi bạn
+  - text: Thành thật xin lỗi bạn nhiều
+  utter_wtf:
+  - text: Mình chưa hiểu câu của bạn lắm >< Bạn có thể nói lại được không ạ?
+  - text: Bạn có thể nói lại rõ hơn được không? Mình chưa hiểu ý bạn lắm ><
+  utter_deny:
+  - text: Bot đang trong giai đoạn hoàn thiện nên không tránh khỏi sai sót nên mong bạn thông cảm nha ^^
+
+  utter_mood_great:
+  - text: Mình cũng vậy bạn eeiiii !
+  - text: Amazing gud job emmm !!
+  - text: Quá đã
+
+  utter_mood_unhappy:
+  - text: Hãy quay về phía Mặt trời và bạn sẽ không thấy bóng tối – Helen Keller.
+  - text: Đừng buồn vì bụi hoa hồng có gai mà hãy vui vì trong bụi gai có hoa hồng - Abraham Lincoln.
+  - text: Em ơi đừng khóc bóng tối sẽ bắt em đi
+  utter_how_to_use:
+  - text: App có 3 chức năng chính scan text trên menu, dịch tiếng Việt sang tiếng Anh, gợi ý món ăn. Ởphần home bạn sẽ thấy có 3 nút tương ứng cho 3 chức năng. Ở góc dưới bên phải là chat bot (là tui đó :))))
+  - text: Ứng dụng này có ba chức năng chủ yếu quét văn bản trên thực đơn, dịch từ tiếng Việt sang tiếng Anh và đề xuất món ăn. Trên màn hình chính, bạn sẽ thấy ba nút tương ứng cho ba chức năng này. Ở góc dưới bên phải, có một trò chuyện chat bot (đó là tôi đấy :))))
+  - text: Ứng dụng này được xây dựng với ba tính năng chính quét và nhận diện văn bản trên menu, dịch đoạn văn từ tiếng Việt sang tiếng Anh và cung cấp gợi ý về các món ăn. Trên màn hình chính, bạn sẽ thấy ba nút tương ứng cho từng tính năng này. Ở góc dưới bên phải, có một chat bot sẵn sàng trò chuyện và giúp đỡ bạn (chính là tôi đấy :))))
+  - text: Có 3 chức năng nha má {menu scanner, dịch tiếng Việt -> Anh, gợi ý món ăn}. Góc dưới là con chatbot đẹp trai khoai to nha =)). Bấm thử vô từng chức năng đi, rùi thắc mắc gì hỏi mình tiếp nha.
+  
+  utter_scaner_suggest:
+  - text: bạn làm theo mình. Bấm load model -> chọn 1 bức ảnh menu từ (camera hoặc gallery trong điện thoại bạn) -> run model để lấy kết quả ạ
+  - text: Dễ mà trời ơi. Nè ! Bấm vào load model, sau đó chọn ảnh (chụp ảnh từ camera hoặc gallery), sau đó bấm run model để lấy kết quả
+
+  utter_camera:
+  - text: Nút camera ở góc trên bên phải á bạn :))))
+  - text: Bấm nút camera ở góc trên bên phải để chụp ảnh nha bạn  iuuu :>>>>
+  - text: Gà v, nút camera ở trên kìa trời ơi :)))) mù hongg v bạn trẻ :v
+  
+  utter_scanner_load_model: 
+  - text: nút load model để khởi tạo model cho việc inference kết quả. Bạn bấm nút ở góc trên bên trái nha bạn :>>>
+  - text: Haizzz ! Cái nút load model ở góc trên bên trái á bạn, bắt buộc phải bấm nút đó đầu tiên để khởi tạo model AI cho việc trả kết quả nha bạn :)))
+  
+  utter_scanner_run_model:
+  - text: Để chạy được nút run model, bạn phải bấm nút load model trước nha :v
+  - text: Nút run model để trả kết qủa cho bạn. Nhưng trước hết bạn phải chạy nút load model để thiết bị đọc mô hình AI để trả được kết quả cho bạn nha :v
+  
+  utter_scanner_gallery:
+  - text: Nút gallery để mở kho ảnh trong điện thoại của bạn để cho phép bạn chọn 1 bước ảnh có sẵn để test thử app ạ :>>>
+
+  utter_scanner_results:
+  - text: Kết quả ở trước mặt rất rõ rùi :v kết quả từ trên ảnh bạn có thể thấy ở giữa màn hình và kết quả text bạn vui lòng lướt xem ở dưới để coi tên món ăn từ menu ạ :>
+
+  utter_compliment:
+  - text: Hihi ngại quá
+  - text: Có gì đâu nè :3
+  utter_attention:
+  - text: nè tui nè
+  - text: sao cậu ơi, mình giúp gì ?
+  - text: mình nè, bạn muốn gì ạ :>
+
+  utter_health_inquire:
+  - text: Dạo này mình vẫn ổn nha bạn, cảm ơn đã hỏi thăm mình nha
+  - text: Mình vẫn ổn nha, cảm ơn bạn nhiều
+
+  utter_reply_insult:
+  - text: Mình không biết vì sao bạn lại chửi mình nhưng nếu mình có làm gì không phải ý mong bạn bỏ qua nha ><
+  - text: Sao bạn lại chửi mình zayy TT
+  - text: Đừng chửi tuii, tuii có làm gì bạn đâu ><
+  - text: Mày thích chửi hông ? Đó là người cục sục sẽ nói vậy, chứ đừng có chửi mình nha
+  - text: Tin nhắn đã được chuyển tiếp đến phòng công tác sinh viên. Cảm ơn bạn đã quan tâm.
+  utter_reply_thanks:
+  - text: Không có gì đâu nè ^^
+  - text: Có gì đâu hihi
+  - text: Giúp được bạn là nhiệm vụ của mình mà !
+
+actions:
+- utter_greet
+- utter_goodbye
+- utter_affirm
+- utter_ok
+- utter_sorry
+- utter_wtf
+- utter_deny
+- utter_mood_great
+- utter_mood_unhappy
+- utter_how_to_use
+- utter_scaner_suggest
+- utter_who_create_you
+- utter_compliment
+- utter_attention
+- utter_health_inquire
+- utter_reply_thanks
 
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false

@@ -653,56 +653,6 @@ nlu:
     - cái app này sao khó sài v bot
     - bấm nút nào để vào menu scanner v
     - app đẹp quá mà khó sài v
-    - Nhấn vào nút nào để truy cập vào menu quét văn bản?
-    - Bấm vào phím nào để mở menu quét tài liệu?
-    - Chạm vào nút nào để vào chế độ quét trang?
-    - Nhấn vào nút nào để truy cập vào chức năng quét?
-    - Bấm vào phím nào để mở menu quét ảnh?
-    - Chạm vào nút nào để vào menu quét tài liệu?
-    - Nhấn nút nào để mở menu quét văn bản?
-    - Bấm vào phím nào để truy cập chế độ quét trang?
-    - Chạm vào nút nào để sử dụng chức năng quét?
-    - Nhấn vào nút nào để vào menu quét ảnh?
-    - tao không hiểu tiếng việt, bấm chỗ nào dịch v ?
-    - Tôi không có kiến thức về tiếng Việt, tìm nút dịch ở đâu?
-    - Tôi không thể hiểu tiếng Việt, tìm chỗ để dịch ở đâu? 
-    - Tôi không rành tiếng Việt, hãy chỉ cho tôi nút dịch.
-    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy cho tôi biết nút dịch.
-    - Tôi không thể đọc tiếng Việt, hãy chỉ tôi nơi để dịch.
-    - Tôi không nắm bắt được tiếng Việt, hãy cho tôi biết chỗ dịch.
-    - Tôi không hiểu tiếng Việt, tìm nút để dịch ở đâu?
-    - Tôi không có khả năng đọc tiếng Việt, hãy chỉ cho tôi nút dịch.
-    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy cho tôi biết chỗ để dịch.
-    - Tôi không thể hiểu tiếng Việt, tìm chỗ dịch ở đâu?
-    - Tôi không thể thông hiểu tiếng Việt, hãy chỉ cho tôi nút dịch.
-    - Tiếng Việt là ngôn ngữ tôi không hiểu, tìm nút dịch ở đâu?
-    - Tôi không có khả năng đọc tiếng Việt, hãy chỉ tôi cách để dịch.
-    - Tiếng Việt đối với tôi là ngôn ngữ không quen thuộc, hãy cho tôi biết chỗ để dịch.
-    - Tôi không thể đọc và hiểu tiếng Việt, tìm chỗ để dịch ở đâu?
-    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy chỉ tôi cách để dịch.
-    - Tiếng Việt là một ngôn ngữ tôi không thể hiểu, tìm nút dịch ở đâu?
-    - Tôi không có kiến thức về tiếng Việt, hãy cho tôi biết nơi để dịch.
-    - Tiếng Việt là một thách thức đối với tôi, tìm chỗ để dịch ở đâu?
-    - Tôi không thể hiểu tiếng Việt, hãy chỉ tôi nơi để dịch.
-    - Bây giờ không biết ăn gì nữa, có phần nào trong app này giúp gợi ý món ăn không?
-    - Không biết ăn gì vào lúc này, có chỗ nào trong app này đề xuất món ăn không?
-    - Giờ không biết chọn món ăn gì, app này có chức năng gợi ý món ăn không?   
-    - Tôi đang băn khoăn không biết ăn gì, app này có mục nào để gợi ý món ăn không?
-    - Không biết chọn món gì vào lúc này, có chỗ nào trong app này giúp đề xuất món ăn không?
-    - Tôi đang phân vân không biết ăn gì, app này có tính năng gợi ý món ăn không?
-    - Giờ không biết ăn gì nữa, app này có phần nào để đề xuất món ăn không?
-    - Không biết chọn món gì vào lúc này, có chỗ nào trong app này giúp gợi ý món ăn không?
-    - Bây giờ không biết ăn gì hết, app này có chức năng nào để đề xuất món ăn không?
-    - Tôi đang phân vân không biết ăn gì vào lúc này, app này có phần nào để gợi ý món ăn không?
-    - Tôi đang lăn tăn không biết chọn món gì, app này có tính năng gợi ý món ăn không?
-    - Giờ không biết ăn gì hết trơn, app này có chỗ nào đề xuất một món ăn không?
-    - Không biết ăn gì vào lúc này, app này có phần nào để gợi ý một món ăn không?
-    - Tôi không có ý tưởng về món ăn, app này có tính năng giúp gợi ý một món ăn không?
-    - Giờ này không biết ăn gì, app này có chỗ nào gợi ý một món ăn không?
-    - Tôi đang phân vân không biết ăn gì, app này có tính năng gợi ý một món ăn không?
-    - Không biết ăn gì vào lúc này, app này có chỗ nào để đề xuất một món ăn không?
-    - Tôi không có ý tưởng về món ăn, app này có chức năng giúp gợi ý một món ăn không?
-    - Giờ không biết ăn gì hết trơn, app này có phần nào để đề xuất một món ăn không?
     - Ê bot, cách dùng app này thế nào vậy?
     - Bot ơi, giải thích cách sử dụng app này đi.
     - Bot ơi, hướng dẫn tôi cách sử dụng app này với.
@@ -713,8 +663,184 @@ nlu:
     - Ôi bot, app này sử dụng thế nào vậy?
     - Bot à, tôi không biết cách sử dụng app này, hướng dẫn tôi với.
     - Bot ơi, cho tôi biết cách dùng app này nhé.
+- intent: camera
+  examples: |
+    - Chỗ nào để khởi động camera v?
+    - Cần mở camera ở đâu?
+    - Ở đâu để bật chế độ camera?
+    - Mở camera ở chỗ nào?
+    - Chỗ nào để kích hoạt chế độ camera?
+    - Camera được bật ở đâu?
+    - Chỗ nào để mở ứng dụng camera?
+    - Cần mở camera ở đâu trong thiết bị?
+    - Chỗ nào để truy cập vào chế độ camera?
+    - Mở camera ở đâu trên giao diện?
+    - Ở đâu có camera?
+    - Chỗ nào mở camera?
+    - Mở camera ở đâu?
+    - Cần tìm chỗ để bật camera?
+    - Camera được mở ở đâu?
+    - Ở đâu để truy cập camera?
+    - Camera ở đâu?
+    - Chỗ nào để vào chế độ camera?
+    - Mở ứng dụng camera ở đâu?
+    - Ở đâu để khởi động chế độ camera?
+    - Camera ở đâu?
+    - Mở camera ở đâu?
+    - Chỗ nào có camera?
+    - Chỗ nào để bật camera?
+    - Camera mở ở đâu?
+    - Truy cập camera ở đâu?
+    - Chỗ nào để vào chế độ camera?
+    - Mở ứng dụng camera ở đâu? 
+    - Khởi động camera ở đâu?
+    - Chức năng của nút camera là gì?
+    - Mục đích sử dụng của nút camera là gì?
+    - Nút camera có tác dụng gì?
+    - Nút camera được dùng để thực hiện công việc gì?
+    - Công dụng của nút camera là gì?
+    - Nút camera được sử dụng để làm việc gì?
+    - Nút camera được áp dụng trong mục đích gì?
+    - Nút camera có tác động như thế nào?
+    - Nút camera đóng vai trò gì trong quá trình làm việc?
+    - Nút camera có ứng dụng như thế nào?
+    - Nút camera dùng làm gì?
+    - Nút camera để làm gì chính xác?
+    - Nút camera có tác dụng gì?
+    - Nút camera xử lý như thế nào?
+    - Nút camera thực hiện công việc gì?
+    - Nút camera có công dụng gì?
+    - Nút camera được sử dụng như thế nào?
+    - Nút camera tác động như thế nào?
+    - Nút camera đóng vai trò gì?
+    - Nút camera ứng dụng như thế nào?
+    - Nút camera dùng làm gì?
+    - Nút camera để làm gì?
+    - Tác dụng của nút camera là gì?
+    - Nút camera xử lý thế nào?
+    - Nút camera thực hiện gì?
+    - Công dụng của nút camera là gì?
+    - Nút camera được dùng như thế nào?
+    - Tác động của nút camera ra sao?
+    - Vai trò của nút camera là gì?
+    - Nút camera ứng dụng như thế nào?
+- intent: scanner_load_model
+  examples: |
+    - Chức năng của nút load model là gì?
+    - Mục đích sử dụng của nút load model là gì?
+    - Nút load model có tác dụng gì?
+    - Nút load model được dùng để thực hiện công việc gì?
+    - Công dụng của nút load model là gì?
+    - Nút load model được sử dụng để làm việc gì?
+    - Nút load model được áp dụng trong mục đích gì?
+    - Nút load model có tác động như thế nào?
+    - Nút load model đóng vai trò gì trong quá trình làm việc?
+    - Nút load model có ứng dụng như thế nào?
+    - Nút load model dùng làm gì?
+    - Nút load model để làm gì chính xác?
+    - Nút load model có tác dụng gì?
+    - Nút load model xử lý như thế nào?"
+    - Nút load model thực hiện công việc gì?
+    - Nút load model có công dụng gì?
+    - Nút load model được sử dụng như thế nào?
+    - Nút load model có tác động ra sao?
+    - Nút load model đóng vai trò gì?
+    - Nút load model ứng dụng như thế nào?
+    - Nút load model để làm gì?
+    - Nút load model dùng để gì?
+    - Nút load model có tác dụng gì?
+    - Nút load model xử lý như thế nào?
+    - Nút load model thực hiện việc gì?
+    - Nút load model có công dụng gì?
+    - Nút load model được sử dụng như thế nào?
+    - Nút load model tác động như thế nào?
+    - Nút load model đóng vai trò gì?
+    - Nút load model ứng dụng như thế nào?
+
+- intent: scanner_gallery
+  examples: |
+    - Mục đích sử dụng của nút gallery là gì?
+    - Chức năng của nút gallery là gì?
+    - Nút gallery được sử dụng để làm gì?
+    - Công dụng của nút gallery là gì?
+    - Nút gallery thực hiện việc gì?
+    - Nút gallery có tác dụng gì?
+    - Nút gallery đóng vai trò gì?
+    - Nút gallery ứng dụng như thế nào?
+    - Nút gallery dùng để làm gì chính xác?
+    - Nút gallery xử lý như thế nào?
+    - Nút gallery dùng để làm gì?
+    - Nút gallery có tác dụng gì?
+    - Nút gallery thực hiện gì?
+    - Nút gallery có công dụng gì?
+    - Nút gallery được sử dụng như thế nào?
+    - Nút gallery đóng vai trò gì?
+    - Nút gallery ứng dụng như thế nào?
+    - Nút gallery dùng để làm gì?
+    - Tác dụng của nút gallery là gì? 
+    - Nút gallery thực hiện việc gì?
+    - Công dụng của nút gallery là gì?
+    - Nút gallery được sử dụng như thế nào?
+    - Vai trò của nút gallery là gì?
+    - Nút gallery ứng dụng như thế nào?
+
+- intent: scanner_run_model
+  examples: |
+    - Tại sao không thể sử dụng nút run model?
+    - Tại sao việc nhấn nút run model không thành công?
+    - Vì sao không thể kích hoạt nút run model?
+    - Tại sao không thể sử dụng nút run model?
+    - Tại sao không có phản ứng khi bấm nút run model?
+    - Tại sao nút run model không hoạt động?
+    - Vì sao không thể dùng nút run model?
+    - Tại sao không nhận diện khi bấm nút run model?
+    - Tại sao không thể sử dụng nút run model?
+    - Tại sao không có phản ứng khi nhấn nút run model?
+    - Lý do nút run model không hoạt động là gì?
+    - Vì sao nút run model không phản hồi?
+    - Tại sao không thể kích hoạt nút run model?
+    - Vì sao không thể sử dụng được nút run model?
+    - Tại sao nút run model không phản ứng?
+    - Vì sao không thể kích hoạt nút run model?
+    - Tại sao nút run model không hoạt động?
+    - Lý do nút run model không có tác dụng là gì?
+    - Tại sao nút run model không thực hiện chức năng?
+
+- intent: scanner_results
+  examples: |
+    - Xem kết quả ở đâu vậy?
+    - Tìm kết quả ở đâu vậy?
+    - Chỗ nào để xem kết quả vậy?
+    - Nơi nào hiển thị kết quả vậy?
+    - Vị trí nào để kiểm tra kết quả vậy?
+    - Xem kết quả ở đâu trong đó?
+    - Địa điểm nào để thấy kết quả vậy?
+    - Tìm hiểu kết quả ở đâu vậy?
+    - Chỗ nào để có cái nhìn tổng quan về kết quả?
+    - Nơi nào để xác nhận kết quả vậy?
+    - Điểm đặt để kiểm tra kết quả là ở đâu vậy?
+    - Coi kết quả tại điểm nào vậy?
+    - Vị trí nào để xem kết quả được?
+    - Nơi nào hiển thị thông tin kết quả vậy?
+    - Chỗ nào để xem kết quả đó?
+    - Địa điểm nào để thuận tiện kiểm tra kết quả?
+    - Coi kết quả tại đâu vậy?
+    - Tìm kết quả ở chỗ nào vậy?
+    - Chỗ nào để kiểm tra kết quả vậy?
+    - Xem kết quả ở điểm nào trong đó?
+
+
 - intent: scaner_suggest
   examples: |
+    - Nhấn vào nút nào để truy cập vào menu quét văn bản?
+    - Bấm vào phím nào để mở menu quét tài liệu?
+    - Nhấn vào nút nào để truy cập vào chức năng quét?
+    - Bấm vào phím nào để mở menu quét ảnh?
+    - Chạm vào nút nào để vào menu quét tài liệu?
+    - Nhấn nút nào để mở menu quét văn bản?
+    - Bấm vào phím nào để truy cập chế độ quét trang?
+    - Chạm vào nút nào để sử dụng chức năng quét?
+    - Nhấn vào nút nào để vào menu quét ảnh?
     - Làm sao để quét một menu trong phần này?
     - Cách quét menu trong phần này như thế nào?
     - Muốn quét một menu trong phần này thì làm thế nào?
@@ -756,7 +882,7 @@ nlu:
     - Khi tôi sử dụng nút scanner để quét cái menu, không có kết quả. Có cách nào khác để quét thành công không?
     - Tôi không thể quét cái menu sau khi nhấn nút scanner. Có phương pháp nào khác để quét thành công không?
     - Tôi đã thử sử dụng chức năng scanner để quét cái menu, nhưng không thành công. Có cách nào khác để quét cái menu được không?
-    = Khi tôi bấm nút scanner, không thể quét được cái menu. Cần phải làm gì để quét thành công?
+    - Khi tôi bấm nút scanner, không thể quét được cái menu. Cần phải làm gì để quét thành công?
     - Tôi không thể quét cái menu sau khi nhấn nút scanner. Có phương pháp nào khác để quét thành công không?
     - Tôi đã thử quét cái menu bằng cách sử dụng tính năng scanner, nhưng không thành công. Có cách nào khác để quét thành công không?
     - Tôi không thể quét cái menu sau khi nhấn nút scanner. Có phương pháp nào khác để quét thành công không?
@@ -795,182 +921,53 @@ nlu:
     - Có phương pháp khác để quét thành công cái menu sau khi bấm scanner?
     - Làm sao để quét cái menu khi sử dụng tính năng quét?
     - Có cách khác để quét cái menu không sau khi nhấn nút scanner?
-    - Chỗ nào để khởi động camera v?
-    - Cần mở camera ở đâu?
-    - Ở đâu để bật chế độ camera?
-    - Mở camera ở chỗ nào?
-    - Chỗ nào để kích hoạt chế độ camera?
-    - Camera được bật ở đâu?
-    - Chỗ nào để mở ứng dụng camera?
-    - Cần mở camera ở đâu trong thiết bị?
-    - Chỗ nào để truy cập vào chế độ camera?
-    - Mở camera ở đâu trên giao diện?
-    - Ở đâu có camera?
-    - Chỗ nào mở camera?
-    - Mở camera ở đâu?
-    - Cần tìm chỗ để bật camera?
-    - Camera được mở ở đâu?
-    - Ở đâu để truy cập camera?
-    - Camera ở đâu?
-    - Chỗ nào để vào chế độ camera?
-    - Mở ứng dụng camera ở đâu?
-    - Ở đâu để khởi động chế độ camera?
-    - Camera ở đâu?
-    - Mở camera ở đâu?
-    - Chỗ nào có camera?
-    - Chỗ nào để bật camera?
-    - Camera mở ở đâu?
-    - Truy cập camera ở đâu?
-    - Chỗ nào để vào chế độ camera?
-    - Mở ứng dụng camera ở đâu? 
-    - Khởi động camera ở đâu?
-    - Chức năng của nút load model là gì?
-    - Mục đích sử dụng của nút load model là gì?
-    - Nút load model có tác dụng gì?
-    - Nút load model được dùng để thực hiện công việc gì?
-    - Công dụng của nút load model là gì?
-    - Nút load model được sử dụng để làm việc gì?
-    - Nút load model được áp dụng trong mục đích gì?
-    - Nút load model có tác động như thế nào?
-    - Nút load model đóng vai trò gì trong quá trình làm việc?
-    - Nút load model có ứng dụng như thế nào?
-    - Nút load model dùng làm gì?
-    - Nút load model để làm gì chính xác?
-    - Nút load model có tác dụng gì?
-    - Nút load model xử lý như thế nào?"
-    - Nút load model thực hiện công việc gì?
-    - Nút load model có công dụng gì?
-    - Nút load model được sử dụng như thế nào?
-    - Nút load model có tác động ra sao?
-    - Nút load model đóng vai trò gì?
-    - Nút load model ứng dụng như thế nào?
-    - Nút load model để làm gì?
-    - Nút load model dùng để gì?
-    - Nút load model có tác dụng gì?
-    - Nút load model xử lý như thế nào?
-    - Nút load model thực hiện việc gì?
-    - Nút load model có công dụng gì?
-    - Nút load model được sử dụng như thế nào?
-    - Nút load model tác động như thế nào?
-    - Nút load model đóng vai trò gì?
-    - Nút load model ứng dụng như thế nào?
-    - Chức năng của nút camera là gì?
-    - Mục đích sử dụng của nút camera là gì?
-    - Nút camera có tác dụng gì?
-    - Nút camera được dùng để thực hiện công việc gì?
-    - Công dụng của nút camera là gì?
-    - Nút camera được sử dụng để làm việc gì?
-    - Nút camera được áp dụng trong mục đích gì?
-    - Nút camera có tác động như thế nào?
-    - Nút camera đóng vai trò gì trong quá trình làm việc?
-    - Nút camera có ứng dụng như thế nào?
-    - Nút camera dùng làm gì?
-    - Nút camera để làm gì chính xác?
-    - Nút camera có tác dụng gì?
-    - Nút camera xử lý như thế nào?
-    - Nút camera thực hiện công việc gì?
-    - Nút camera có công dụng gì?
-    - Nút camera được sử dụng như thế nào?
-    - Nút camera tác động như thế nào?
-    - Nút camera đóng vai trò gì?
-    - Nút camera ứng dụng như thế nào?
-    - Nút camera dùng làm gì?
-    - Nút camera để làm gì?
-    - Tác dụng của nút camera là gì?
-    - Nút camera xử lý thế nào?
-    - Nút camera thực hiện gì?
-    - Công dụng của nút camera là gì?
-    - Nút camera được dùng như thế nào?
-    - Tác động của nút camera ra sao?
-    - Vai trò của nút camera là gì?
-    - Nút camera ứng dụng như thế nào?
-    - Mục đích sử dụng của nút gallery là gì?
-    - Chức năng của nút gallery là gì?
-    - Nút gallery được sử dụng để làm gì?
-    - Công dụng của nút gallery là gì?
-    - Nút gallery thực hiện việc gì?
-    - Nút gallery có tác dụng gì?
-    - Nút gallery đóng vai trò gì?
-    - Nút gallery ứng dụng như thế nào?
-    - Nút gallery dùng để làm gì chính xác?
-    - Nút gallery xử lý như thế nào?
-    - Nút gallery dùng để làm gì?
-    - Nút gallery có tác dụng gì?
-    - Nút gallery thực hiện gì?
-    - Nút gallery có công dụng gì?
-    - Nút gallery được sử dụng như thế nào?
-    - Nút gallery đóng vai trò gì?
-    - Nút gallery ứng dụng như thế nào?
-    - Nút gallery dùng để làm gì?
-    - Tác dụng của nút gallery là gì? 
-    - Nút gallery thực hiện việc gì?
-    - Công dụng của nút gallery là gì?
-    - Nút gallery được sử dụng như thế nào?
-    - Vai trò của nút gallery là gì?
-    - Nút gallery ứng dụng như thế nào?
-    - Tại sao không thể sử dụng nút scanner?
-    - Tại sao việc nhấn nút scanner không thành công?
-    - Vì sao không thể kích hoạt nút scanner?
-    - Tại sao không thể sử dụng nút scanner?
-    - Tại sao không có phản ứng khi bấm nút scanner?
-    - Tại sao nút scanner không hoạt động?
-    - Vì sao không thể dùng nút scanner?
-    - Tại sao không nhận diện khi bấm nút scanner?
-    - Tại sao không thể sử dụng nút scanner?
-    - Tại sao không có phản ứng khi nhấn nút scanner?
-    - Lý do nút scanner không hoạt động là gì?
-    - Vì sao nút scanner không phản hồi?
-    - Tại sao không thể kích hoạt nút scanner?
-    - Vì sao không thể sử dụng được nút scanner?
-    - Tại sao nút scanner không phản ứng?
-    - Vì sao không thể kích hoạt nút scanner?
-    - Tại sao nút scanner không hoạt động?
-    - Lý do nút scanner không có tác dụng là gì?
-    - Tại sao nút scanner không thực hiện chức năng?
-    - Xem kết quả ở đâu vậy?
-    - Tìm kết quả ở đâu vậy?
-    - Chỗ nào để xem kết quả vậy?
-    - Nơi nào hiển thị kết quả vậy?
-    - Vị trí nào để kiểm tra kết quả vậy?
-    - Xem kết quả ở đâu trong đó?
-    - Địa điểm nào để thấy kết quả vậy?
-    - Tìm hiểu kết quả ở đâu vậy?
-    - Chỗ nào để có cái nhìn tổng quan về kết quả?
-    - Nơi nào để xác nhận kết quả vậy?
-    - Điểm đặt để kiểm tra kết quả là ở đâu vậy?
-    - Coi kết quả tại điểm nào vậy?
-    - Vị trí nào để xem kết quả được?
-    - Nơi nào hiển thị thông tin kết quả vậy?
-    - Chỗ nào để xem kết quả đó?
-    - Địa điểm nào để thuận tiện kiểm tra kết quả?
-    - Coi kết quả tại đâu vậy?
-    - Tìm kết quả ở chỗ nào vậy?
-    - Chỗ nào để kiểm tra kết quả vậy?
-    - Xem kết quả ở điểm nào trong đó?
-# - intent: food_recommender_suggest
-#     examples: |
-#     - 
+  
+- intent: food_recommender_suggest
+  examples: |
+    - Bây giờ không biết ăn gì nữa, có phần nào trong app này giúp gợi ý món ăn không?
+    - Không biết ăn gì vào lúc này, có chỗ nào trong app này đề xuất món ăn không?
+    - Giờ không biết chọn món ăn gì, app này có chức năng gợi ý món ăn không?   
+    - Tôi đang băn khoăn không biết ăn gì, app này có mục nào để gợi ý món ăn không?
+    - Không biết chọn món gì vào lúc này, có chỗ nào trong app này giúp đề xuất món ăn không?
+    - Tôi đang phân vân không biết ăn gì, app này có tính năng gợi ý món ăn không?
+    - Giờ không biết ăn gì nữa, app này có phần nào để đề xuất món ăn không?
+    - Không biết chọn món gì vào lúc này, có chỗ nào trong app này giúp gợi ý món ăn không?
+    - Bây giờ không biết ăn gì hết, app này có chức năng nào để đề xuất món ăn không?
+    - Tôi đang phân vân không biết ăn gì vào lúc này, app này có phần nào để gợi ý món ăn không?
+    - Tôi đang lăn tăn không biết chọn món gì, app này có tính năng gợi ý món ăn không?
+    - Giờ không biết ăn gì hết trơn, app này có chỗ nào đề xuất một món ăn không?
+    - Không biết ăn gì vào lúc này, app này có phần nào để gợi ý một món ăn không?
+    - Tôi không có ý tưởng về món ăn, app này có tính năng giúp gợi ý một món ăn không?
+    - Giờ này không biết ăn gì, app này có chỗ nào gợi ý một món ăn không?
+    - Tôi đang phân vân không biết ăn gì, app này có tính năng gợi ý một món ăn không?
+    - Không biết ăn gì vào lúc này, app này có chỗ nào để đề xuất một món ăn không?
+    - Tôi không có ý tưởng về món ăn, app này có chức năng giúp gợi ý một món ăn không?
+    - Giờ không biết ăn gì hết trơn, app này có phần nào để đề xuất một món ăn không?
 
 
-# - intent: translate_suggest
-#     examples: |
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
-#     -
+- intent: translate_suggest
+  examples: |
+    - tao không hiểu tiếng việt, bấm chỗ nào dịch v ?
+    - Tôi không có kiến thức về tiếng Việt, tìm nút dịch ở đâu?
+    - Tôi không thể hiểu tiếng Việt, tìm chỗ để dịch ở đâu? 
+    - Tôi không rành tiếng Việt, hãy chỉ cho tôi nút dịch.
+    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy cho tôi biết nút dịch.
+    - Tôi không thể đọc tiếng Việt, hãy chỉ tôi nơi để dịch.
+    - Tôi không nắm bắt được tiếng Việt, hãy cho tôi biết chỗ dịch.
+    - Tôi không hiểu tiếng Việt, tìm nút để dịch ở đâu?
+    - Tôi không có khả năng đọc tiếng Việt, hãy chỉ cho tôi nút dịch.
+    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy cho tôi biết chỗ để dịch.
+    - Tôi không thể hiểu tiếng Việt, tìm chỗ dịch ở đâu?
+    - Tôi không thể thông hiểu tiếng Việt, hãy chỉ cho tôi nút dịch.
+    - Tiếng Việt là ngôn ngữ tôi không hiểu, tìm nút dịch ở đâu?
+    - Tôi không có khả năng đọc tiếng Việt, hãy chỉ tôi cách để dịch.
+    - Tiếng Việt đối với tôi là ngôn ngữ không quen thuộc, hãy cho tôi biết chỗ để dịch.
+    - Tôi không thể đọc và hiểu tiếng Việt, tìm chỗ để dịch ở đâu?
+    - Tôi không hiểu ngôn ngữ tiếng Việt, hãy chỉ tôi cách để dịch.
+    - Tiếng Việt là một ngôn ngữ tôi không thể hiểu, tìm nút dịch ở đâu?
+    - Tôi không có kiến thức về tiếng Việt, hãy cho tôi biết nơi để dịch.
+    - Tiếng Việt là một thách thức đối với tôi, tìm chỗ để dịch ở đâu?
+    - Tôi không thể hiểu tiếng Việt, hãy chỉ tôi nơi để dịch.
 # - intent: setting_ppocr_suggest
 #   examples: |
 #     - 
