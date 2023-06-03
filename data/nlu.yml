@@ -169,7 +169,7 @@ nlu:
     - Mọi chuyện của bạn đang diễn ra thế nào?
 - intent: goodbye
   examples: |
-   - see you next time
+    - see you next time
     - cút cút cút
     - dẹp
     - bye
@@ -830,7 +830,7 @@ nlu:
     - Xem kết quả ở điểm nào trong đó?
 
 
-- intent: scaner_suggest
+- intent: scanner_suggest
   examples: |
     - Nhấn vào nút nào để truy cập vào menu quét văn bản?
     - Bấm vào phím nào để mở menu quét tài liệu?
@@ -1510,3 +1510,961 @@ nlu:
     - bạn khỏe không
     - mình khỏe, còn bạn?
 
+- intent: insult
+  examples: |
+    - M ngu quá à!
+    - Bạn có bị ngu không ?
+    - Đụ má mày quá ngu đi
+    - bạn ngu quá ra
+    - Đụ má
+    - Lồn má
+    - Cc
+    - Ngu
+    - Ngu quá
+    - Đ0^` NGU
+    - NGU NG0^K'
+    - ĐỒ NG0^K'
+    - NGU NGỐC
+    - CC
+    - CMM
+    - CĐCMM
+    - THẰNG L
+    - THẰNG LỒN
+    - THẰNG LON`
+    - TH LON
+    - TH LON`
+    - TH LỒN
+    - CON CẶC
+    - CON CAC
+    - CON MẸ MÀY
+    - CON ĐĨ MẸ MÀY
+    - ĐCMM
+    - ĐCM
+    - ĐMM
+    - DMM
+    - DCMM
+    - DCLMM
+    - CÁI LZ ME MAY
+    - ĐỊT MẸ M THẰNG BOT NGU
+    - M NGU VC
+    - GÀ
+    - ĐỒ GÀ
+    - GÀ VÃI LỒN
+    - S M CÓ THỂ NGU NHƯ VẬY ĐƯỢC?
+    - ĐCLMM TH NGU B0T
+    - DIT CU MAY
+    - ĐỊT CỤ MÀY
+    - DDỤ MÁ MÀY LUÔN
+    - DCMM LUON
+    - LZ MÁ MÀY LUONG
+    - CÂM MẸ MỒM VÀO CON CHÓ NGU
+    - LZ MẸ MÀY NGU NHƯ CẶC
+    - ÓC VẬT
+    - SÚC SINH NGU HỌC
+    - DỊT CỤ M
+    - DM
+    - DUMA
+    - DUME
+    - DUMEMAY
+    - ĐỤ MẸ MÀY
+    - ĐỤ MẸ MÀI
+    - VCL
+    - VC
+    - VKL
+    - VCC
+    - NGU
+    - ĐỒ NGU
+    - NGU VÃI CẶC
+    - CẶC
+    - LỒN
+    - NGÁO
+    - SAO M NGU THẾ
+    - NGU NHƯ CON CHÓ
+    - NGU NHƯ CHÓ
+    - SỦA LÊN
+    - CON CHÓ NGU
+    - CON ĐĨ NGU
+    - CON ĐĨ
+    - CON DI~
+    - CON DI~ BOT
+    - CON CHÓ BOT NGU
+    - BOT NGU
+    - BOT GÀ
+    - BOT GA`
+    - BOT DỐT
+    - BOT NGÁO
+    - BOT NGAO'
+    - BOT CẶC
+    - BOT CAC
+    - BOT LỒN
+    - BOT L
+    - LỒN BOT
+    - CẶC BOT
+    - CHÓ BOT
+    - NGU BOT
+    - THẰNG NGU BOT NÀY
+    - ÓC CẶC BOT
+    - ÓC BOT
+    - ÓC LOZ BOT
+    - LOZ BOT
+    - LOZ
+    - LOL
+    - LOL MÁ M
+    - LOZ MẸ M
+    - LÁO LZ
+    - LZ
+    - LÁO L
+    - LÁO CHÓ
+    - LÁO CÁ CHÓ
+    - đ0^` nGU
+    - ngu ng0^k'
+    - đồ nG0^k'
+    - Ngu Ngốc
+    - cc
+    - cmm
+    - Cđcmm
+    - thằng l
+    - Thằng lồn
+    - Thằng lon`
+    - th lon
+    - Th lon`
+    - th Lồn
+    - con Cặc
+    - Con Cac
+    - con mẹ mày
+    - Con đĩ mẹ mày
+    - đcmm
+    - đcm
+    - đmm
+    - Dmm
+    - Dcmm
+    - dclmm
+    - Cái lz me may
+    - Địt mẹ m thằng bot ngu
+    - M nGu vC
+    - Gà
+    - Đồ Gà
+    - Gà vãi LồN
+    - S m có thể nGU như vậy được?
+    - Đmm
+    - Đclmm th nGu B0T
+    - dit cu may
+    - địt cụ mày
+    - Ngu quá mà
+    - Ngu quá hà
+    - con chó
+    - DDụ má mày luôn
+    - dcmm luon
+    - lz má mày luong
+    - Câm mẹ mồm vào con chó ngu
+    - Lz mẹ mày ngu như cặc
+    - óc vật
+    - súc sinh ngu học
+    - dịt cụ m
+    - dm
+    - duma
+    - Dume
+    - dumemay
+    - Đụ mẹ mày
+    - Đụ mẹ mài
+    - Vcl
+    - vc
+    - Vkl
+    - vcc
+    - Dốt
+    - Ngu Vãi Cặc
+    - Cặc
+    - Lồn
+    - Ngáo
+    - Sao m ngu thế
+    - ngu như con chó
+    - ngu như chó
+    - sủa lên
+    - Con chó ngu
+    - con đĩ ngu
+    - Con đĩ
+    - con di~
+    - con di~ bot
+    - con Chó bot ngu
+    - Bot Ngu
+    - bot gà
+    - Bot ga`
+    - bot dốt
+    - Bot ngáo
+    - bot ngao'
+    - Bot cặc
+    - bot cac
+    - bot lồn
+    - bot l
+    - lồn bot
+    - Cặc bot
+    - chó bot
+    - Ngu bot
+    - thằng ngu bot này
+    - Óc cặc bot
+    - óc bot
+    - Óc loz bot
+    - loz bot
+    - loz
+    - Lol
+    - lol má m
+    - Loz mẹ m
+    - láo lz
+    - lz
+    - Láo l
+    - láo chó
+    - Láo cá chó
+    - Th l đầu cắt moi
+    - th chó ngu bot
+    - t đang chửi m đấy
+    - Bố m đang chửi m đấy
+    - bố mày đang chửi mày đấy
+    - A m đang chửi m đấy
+    - anh mày đang chửi mày đấy
+    - Tao chuẩn bị chửi mày nè
+    - chuẩn bị nghe bố m chửi m nè
+    - Ê nghe t chửi nè
+    - fuck you
+    - You son of a bitch
+    - f^ck you
+    - pussy
+    - Dick
+    - you dick
+    - Motherfucker
+    - fack you
+    - you shit
+    - you dog
+    - you garbage
+    - you trash
+    - fuck your mother
+    - die
+    - you fuckin' disable
+    - you mentally retarded
+    - just die
+    - piece of shit
+    - Ngu vl
+    - Bạn thật là nhàm chán mà
+    - mình chán bạn quá
+    - bạn ngu quá ra
+    - con cặc là gì
+
+- intent: stop_asking
+  examples: |
+    - biến đi em
+    - Mày biến đi
+    - HOYYY KHỎI DC ỜI
+    - HUII DC ÙI
+    - HOIII
+    - THÔI
+    - À THÔI KHỎI ĐI
+    - À THÔI KHÔNG CÓ GÌ
+    - À THÔI
+    - THÔI K CÓ GÌ
+    - À THÔI K CÓ GÌ
+    - À THÔI ĐC R
+    - À THÔI ĐƯỢC RỒI
+    - À THÔI KHỎI
+    - À KHÔNG CÓ GÌ
+    - À K CÓ GÌ ĐÂU
+    - À K CÓ GÌ HẾT
+    - AK K CÓ GJ` ĐÂU
+    - AK K CÓ GÌ HẾT
+    - AK THÔI K CÓ GÌ
+    - AH K CÓ GÌ ĐÂU
+    - AH KHÔNG CÓ GÌ ĐÂU NHA
+    - AH THÔI K CÓ GÌ ĐÂU
+    - THÔI BỎ ĐI
+    - THÔI BỎ CMN ĐI
+    - THÔI NGHỈ ĐI
+    - THÔI BỎ QUA ĐI
+    - THÔI T K MUỐN HỎI NỮA
+    - THÔI TAO KHÔNG MUỐN HỎI NỮA
+    - THÔI T ĐỔI Ý RỒI KHÔNG HỎI ĐÂU
+    - THÔI ĐƯỢC RỒI T K HỎI NỮA ĐÂU
+    - THÔI ĐƯỢC R NGHỈ THÔI K HỎI NỮA
+    - THÔI BỎ ĐI T K HỎI NỮA
+    - THÔI DẸP K HỎI
+    - THÔI DẸP HẾT ĐI T K HỎI GÌ ĐÂU
+    - THÔI T K HỎI GÌ NỮA ĐÂU
+    - NGHỈ CMM ĐI
+    - THÔI DẸP HẾT
+    - THÔI ĐƯỢC R K CẦN NỮA
+    - THÔI ĐƯỢC R K MUỐN HỎI GÌ NỮA HẾT
+    - THÔI T K CẦN HỎI NỮA
+    - THÔI T K HỎI ĐÂU, ĐI ĐÂY
+    - THÔI DẸP T K CẦN HỎI NỮA
+    - THÔI NGHỈ NHA T K HỎI NỮA ĐÂU
+    - THÔI EM KHÔNG HỎI ANH ĐÂU
+    - THÔI ĐƯỢC RỒI EM KHÔNG HỎI GÌ ĐÂU
+    - T TEST M THÔI CHỨ T K HỎI ĐÂU
+    - T TÍNH THỬ LÒNG M THÔI CHỨ CHƯA CẦN HỎI GÌ HẾT
+    - T CHƯA CẦN HỎI GÌ M HẾT
+    - T CHƯA TÍNH HỎI GÌ HẾT
+    - HIỆN T CHƯA CÓ CÂU HỎI NÀO DÀNH CHO M HẾT Á
+    - TAO CHƯA CÓ CÂU HỎI NÀO ĐÂU
+    - TAO CHƯA MUỐN HỎI GÌ HẾT Á
+    - TAO CHƯA CẦN HỎI GÌ ĐÂU
+    - T K MUỐN HỎI HAN GÌ HẾT
+    - T CHƯA NGHĨ RA CÂU HỎI NÀO CHO M HẾT Á
+    - TỪ TỪ ĐI T CHƯA MUỐN HỎI
+    - TỪ TỪ RỒI HỎI SAU
+    - TỪ TỪ ĐI LÁT T HỎI
+    - TỪ TỪ BÌNH TĨNH ĐI LÁT R HỎI M SAU
+    - TỪ TỪ LÁT EM HỎI A SAU NHA
+    - TỪ TỪ MỘT TÍ NỮA E HỎI A SAU
+    - TỪ TỪ LÁT E HỎI NHA
+    - hoyyy khỏi dc ời
+    - huii dc ùi
+    - hoiii
+    - Thôi
+    - Ko hỏi nữa
+    - à thôi khỏi đi
+    - À thôi không có gì
+    - à thôi
+    - thôi k có gì
+    - À thôi k có gì
+    - À thôi đc r
+    - à thôi được rồi
+    - à thôi khỏi
+    - À Không có gì
+    - à k có gì đâu
+    - à k có gì hết
+    - Ak k có gj` đâu
+    - ak k có gì hết
+    - Ak thôi k có gì
+    - ah k có gì đâu
+    - Ah không có gì đâu nha
+    - ah thôi k có gì đâu
+    - Thôi bỏ đi
+    - thôi bỏ cmn đi
+    - Thôi nghỉ đi
+    - thôi bỏ qua đi
+    - Thôi t k muốn hỏi nữa
+    - thôi tao không muốn hỏi nữa
+    - Thôi t đổi ý rồi không hỏi đâu
+    - thôi được rồi t k hỏi nữa đâu
+    - Thôi được r nghỉ thôi k hỏi nữa
+    - thôi bỏ đi t k hỏi nữa
+    - Thôi dẹp k hỏi
+    - thôi dẹp hết đi t k hỏi gì đâu
+    - Thôi t k hỏi gì nữa đâu
+    - Nghỉ cmm đi
+    - Thôi dẹp hết
+    - thôi được r k cần nữa
+    - Thôi được r k muốn hỏi gì nữa hết
+    - thôi t k cần hỏi nữa
+    - Thôi t k hỏi đâu, đi đây
+    - thôi dẹp t k cần hỏi nữa
+    - Thôi nghỉ nha t k hỏi nữa đâu
+    - thôi em không hỏi anh đâu
+    - Thôi được rồi em không hỏi gì đâu
+    - t test m thôi chứ t k hỏi đâu
+    - T tính thử lòng m thôi chứ chưa cần hỏi gì hết
+    - t chưa cần hỏi gì m hết
+    - T chưa tính hỏi gì hết
+    - Hiện t chưa có câu hỏi nào dành cho m hết á
+    - tao chưa có câu hỏi nào đâu
+    - Tao chưa muốn hỏi gì hết á
+    - tao chưa cần hỏi gì đâu
+    - T k muốn hỏi han gì hết
+    - t chưa nghĩ ra câu hỏi nào cho m hết á
+    - từ từ đi t chưa muốn hỏi
+    - từ từ rồi hỏi sau
+    - Từ từ đi lát t hỏi
+    - từ từ bình tĩnh đi lát r hỏi m sau
+    - Từ từ lát em hỏi a sau nha
+    - từ từ một tí nữa e hỏi a sau
+    - Từ từ lát e hỏi nha
+    - từ từ rồi t hỏi m
+    - Từ từ đi lát hỏi
+    - từ từ đợi tí suy nghĩ câu hỏi đã
+    - Từ từ nha đợi có gì t suy nghĩ câu hỏi r quay lại sau
+    - chờ đó lát t hỏi m tiếp
+    - Chờ đó để lát t hỏi m sau
+    - chờ đó đi lát bố m hỏi m sau
+    - Chờ đó đi lát t tra khảo m tiếp
+    - chờ cmm đi lát bố m hỏi m lại
+    - Chờ đó t hỏi m
+    - Chờ xí đó tao hỏi mày
+    - chờ đi lát mình hỏi bạn sau nha
+    - Chờ đó đi lát bố m quay lại hỏi m sau
+    - chờ đó lát hỏi tiếp
+    - Thôi được rồi mình không cần hỏi thêm đâu, cảm ơn nha
+    - Ko 
+    - ko
+    - Không 
+    - Thôi 
+    - Dẹp 
+    - Dẹp mẹ 
+    - Cút
+    - Nghỉ 
+    - Thôi nghỉ 
+    - Nghĩ 
+    - Baii 
+    - Cút xéo 
+    - Thôi đc r mình k cần hỏi nữa đâu cảm ơn 
+    - Cám ơn nhưng mình k còn câu hỏi nào đâu 
+    - Cám ơn ko cần 
+    - ko cần gì nữa 
+    - deo
+    - Ko
+    - Ki
+    - hông
+    - hong
+    - khum
+    - /deny
+    - hong -.-
+    - Thua
+- intent: continue_asking
+  examples: |
+    - continue_asking
+    - Mình muốn hỏi tiếp
+    - Hỏi lại
+    - hỏi lại
+    - Hỏi câu khác
+    - hỏi câu khác
+    - tiếp tục này
+    - Tiếp tục này
+    - tiếp theo nè
+    - tiếp theo này
+    - Chiến tiếp này
+    - chiến tiếp nè
+    - Tiếp nè
+    - tiếp này
+    - Hỏi tiếp này
+    - hỏi tiếp nè
+    - Hỏi nữa nè
+    - hỏi lần nữa nè
+    - Hỏi thêm cái nữa nè
+    - hỏi thêm 1 câu nữa nè
+    - Hỏi thêm một câu nữa nà
+    - hỏi nhẹ thêm 1 câu nữa nà
+    - hỏi cái nhẹ 1 câu nữa xem sao nha
+    - Hỏi tiếp 1 câu nha
+    - hỏi thêm cái nhẹ nè
+    - Hỏi tiếp tục 1 câu nữa nha
+    - hỏi nhè nhẹ thêm 1 câu nữa nà
+    - ok để t hỏi tiếp
+    - Ok tiếp tục này
+    - ok hỏi tiếp này
+    - Ok tiếp tục nè
+    - ok để bố hỏi m tiếp
+    - Ok giờ để hỏi tiếp
+    - ok tiếp tục thôi
+    - Ok để bố m hỏi m tiếp
+    - ok chiến luôn, để bố hỏi m tiếp
+    - Ok continue nè
+    - ok tiếp theo nè
+    - Ok câu tiếp theo nè
+    - được rồi để bố hỏi câu khác
+    - Được rồi để t hỏi m câu khác
+    - Được rồi để giờ hỏi m câu khác nha
+    - Được rồi giờ để t hỏi m tiếp
+    - được để t hỏi m tiếp
+    - Được r để hỏi m câu tiếp theo nè
+    - Nó chạy như thế noà
+    - Có chứ
+    - Có
+    - Tất nhiên rồi
+    - bạn có thể trả lời gì
+    - có 
+    - co 
+    - có -.-
+    - dĩ nhiên r 
+    - Ok típ nà 
+    - okay chơi tiếp nè 
+    - chiến tiếp chứ 
+    - zô nè 
+    - ok để suy nghĩ 
+    - đợi suy nghĩ cái 
+    - ô khê đợi t suy nghĩ cái 
+    - oke đợi tí
+    - muốn chứ  
+- intent: want_to_ask
+  examples: |
+    - Cho mình hỏi
+    - E CHO TAO HOI CAI
+    - TAO HOI CAI NAY TI DUOC KHONG?
+    - NAY HOI TI
+    - HOI NAY NE
+    - TAO HOI CAI NHA
+    - TRA LOI GIUP TAO CAU NAY
+    - HOI CAI
+    - HI BOT TAO HOI TI
+    - HELLO BOT TAO HOI CAI NAY CAI
+    - GIUP TAO MOT CHUT DUOC KHONG?
+    - CHO TAO HOI MOT CHUT VE C++
+    - NGHE CAU HOI CUA TAO NE
+    - MINH HOI BAN TI NHA
+    - GIUP MINH MOT SO CAU HOI C++ DUOC KHONG
+    - YO HOI NAY COI
+    - NGHE TAO HOI NE
+    - HEY BOT TAO NOI NGHE
+    - TAO NOI NGHE NE
+    - GIUP TAO CAI
+    - E BOT GIUP TAO CAI
+    - E BOT T HOI CAI
+    - E T HOI NAY CAI
+    - OK DE T HOI M CAI NAY NHA
+    - DUOC R GIO T HOI M CAI NAY NE
+    - OK DE T HOI CAI NAY
+    - OK LUON DE T TIM CAU HOI NAY
+    - OK DE T HOI M CAI NAY
+    - CHIEN LUON GIO DE T HOI M NAY NHA
+    - OK H T HOI M CAU NAY NAY
+    - 0K H DE T HOI M CAI NAY
+    - OK H HOI CAU NAY DI
+    - HOI LAI
+    - e cho tao hoi cai
+    - Tao hoi cai nay ti duoc khong?
+    - nay hoi ti
+    - Hoi nay ne
+    - tao hoi cai nha
+    - Tra loi giup tao cau nay
+    - hoi cai
+    - Hi bot tao hoi ti
+    - hello bot tao hoi cai nay cai
+    - Giup tao mot chut duoc khong?
+    - cho tao hoi mot chut ve C++
+    - nghe cau hoi cua tao ne
+    - Minh hoi ban ti nha
+    - giup minh mot so cau hoi C++ duoc khong
+    - Yo hoi nay coi
+    - nghe tao hoi ne
+    - hey bot tao noi nghe
+    - tao noi nghe ne
+    - Giup tao cai
+    - e bot giup tao cai
+    - Cho minh hoi them nua duoc khong
+    - E bot t hoi cai
+    - e t hoi nay cai
+    - Ok de t hoi m cai nay nha
+    - duoc r gio t hoi m cai nay ne
+    - Ok de t hoi cai nay
+    - ok luon de t tim cau hoi nay
+    - Ok de t hoi m cai nay
+    - Chien luon gio de t hoi m nay nha
+    - ok h t hoi m cau nay nay
+    - 0k h de t hoi m cai nay
+    - ok h hoi cau nay di
+    - Hoi lai lan nua
+    - Hoi mot cau khac
+    - Cho minh hoi cai nay xi
+    - Cho minh hoi cai nay xi nha
+    - Hoi ti duoc khong
+    - Hoi cac kien thuc ve C++
+    - Ê CHO TAO HỎI CÁI
+    - TAO HỎI CÁI NÀY TÍ ĐƯỢC KHÔNG?
+    - NÀY HỎI TÍ
+    - HỎI NÀY NÈ
+    - TAO HỎI CÁI NHA
+    - TRẢ LỜI GIÚP TAO CÂU NÀY
+    - HỎI CÁI
+    - HI BOT TAO HỎI TÍ
+    - HELLO BOT TAO HỎI CÁI NÀY CÁI
+    - GIÚP TAO MỘT CHÚT ĐƯỢC KHÔNG?
+    - CHO TAO HỎI MỘT CHÚT VỀ C++
+    - NGHE CÂU HỎI CỦA TAO NÈ
+    - MÌNH HỎI BẠN TÍ NHA
+    - GIÚP MÌNH MỘT SỐ CÂU HỎI C++ ĐƯỢC KHÔNG
+    - YO HỎI NÀY COI
+    - NGHE TAO HỎI NÈ
+    - HEY BOT TAO NÓI NGHE
+    - TAO NÓI NGHE NÈ
+    - GIÚP TAO CÁI
+    - Ê BOT GIÚP TAO CÁI
+    - Ê BOT T HỎI CÁI
+    - Ê T HỎI NÀY CÁI
+    - OK ĐỂ T HỎI M CÁI NÀY NHA
+    - ĐƯỢC R GIỜ T HỎI M CÁI NÀY NÈ
+    - OK ĐỂ T HỎI CÁI NÀY
+    - OK LUÔN ĐỂ T TÌM CÂU HỎI NÀY
+    - OK ĐỂ T HỎI M CÁI NÀY
+    - CHIẾN LUÔN GIỜ ĐỂ T HỎI M NÀY NHA
+    - OK H T HỎI M CÂU NÀY NÀY
+    - 0K H ĐỂ T HỎI M CÁI NÀY
+    - OK H HỎI CÂU NÀY ĐI
+    - HỎI LẠI
+    - ê cho tao hỏi cái
+    - Tao hỏi cái này tí được không?
+    - này hỏi tí
+    - Hỏi này nè
+    - tao hỏi cái nha
+    - Trả lời giúp tao câu này
+    - hỏi cái
+    - Hi bot tao hỏi tí
+    - hello bot tao hỏi cái này cái
+    - Giúp tao một chút được không?
+    - cho tao hỏi một chút về C++
+    - nghe câu hỏi của tao nè
+    - Mình hỏi bạn tí nha
+    - giúp mình một số câu hỏi C++ được không
+    - Yo hỏi này coi
+    - nghe tao hỏi nè
+    - hey bot tao nói nghe
+    - tao nói nghe nè
+    - Giúp tao cái
+    - ê bot giúp tao cái
+    - Cho mình hỏi thêm nữa được không
+    - Ê bot t hỏi cái
+    - ê t hỏi này cái
+    - Ok để t hỏi m cái này nha
+    - được r giờ t hỏi m cái này nè
+    - Ok để t hỏi cái này
+    - ok luôn để t tìm câu hỏi này
+    - Ok để t hỏi m cái này
+    - Chiến luôn giờ để t hỏi m này nha
+    - ok h t hỏi m câu này này
+    - 0k h để t hỏi m cái này
+    - ok h hỏi câu này đi
+    - Hỏi lại lần nữa
+    - Hỏi một câu khác
+    - Cho mình hỏi cái này xí
+    - Cho mình hỏi cái này xí nha
+    - Hỏi tí được không
+
+
+- intent: dont_want_to_ask
+  examples: |
+    - i didn't ask you about covid 19
+    - tao không muốn hỏi
+    - tôi không hỏi gì cả
+    - em không hỏi gì anh hết anh bot ạ
+    - bố m có hỏi gì m đâu
+    - ê t k có muốn hỏi gì m hết á
+    - tao k cần gì phải hỏi m hết
+    - bố m đ cần hỏi m gì cả
+    - t k có hỏi gì m hết
+    - dạ em không có hỏi gì anh hết ạ
+    - anh ơi em đâu có hỏi cái gì đâu mà sao anh cứ ép em phải hỏi anh thế
+    - ê t k có hỏi gì m nha
+    - yo t có hỏi cđg m đâu mà m cứ rộn ràng thế
+    - ê t k có cần hỏi gì nha
+    - nè bố m k có muốn hỏi gì cả
+    - chatbot ơi tôi không muốn hỏi gì bạn hết
+    - mình không có nhu cầu hỏi gì ngay lúc này hết
+    - mình không muốn hỏi gì cả
+    - tui hong mún hỏi bạn gì hết trơn
+    - tui hỏng cần hỏi gì bạn hết nha
+    - mình đang k cần hỏi bạn điều gì cả
+    - ê mình đang k muốn hỏi cậu điều gì hết nha
+    - bạn oii tui k cần hỏi điều gì cả
+    - nè bạn ơi mình k hỏi gì bạn cả nha
+    - không hỏi
+    - không muốn hỏi
+    - không cần hỏi
+    - em k hỏi
+    - không ask
+    - dont want to ask you anything
+    - i dont want to ask you anything
+    - tui đang k cần bạn trả lời gì hết
+    - bot ơi t k muốn hỏi m bất cứ điều gì cả
+    - nè bot ơi tui k muốn hỏi bạn điều gì đâu
+    - Nothing
+- intent: time
+  examples: |
+    - Cho mình hỏi bây giờ mấy giờ rồi ?
+    - Bạn ơi mấy giờ rồi ?
+    - Mấy giờ rồi bạn ơi ?
+    - What time is it ?
+    - Giờ là mấy giờ ?
+    - mấy giờ rồi vậy ?
+    - Ê bot mấy giờ rồi ?
+    - Ê bot what time is it now ?
+    - Ê ku mấy time rồi dạ ?
+    - mấy time rồi ?
+    - time được bao nhiêu rồi ?
+    - bây giờ là mấy Giờ rồi ạ ?
+    - cho tôi hỏi bây giờ là mấy giờ ?
+    - Cho mình hỏi giờ là mấy giờ thế?
+    - CHo mình hỏi thăm giờ là mấy giờ thế ạ?
+    - What time is it right now chatbot?
+    - em oii mấy giờ ời?
+    - nè em ơi, mấy giờ rồi
+    - anh iw anh, mấy giờ rồi ạ
+    - cho em hỏi mấy giờ rồi vậy ạ?
+- intent: date
+  examples: |
+    - Hôm ngày là ngày mấy?
+    - Bot ơi hôm nay là thứ mấy vậy?
+    - Cho hỏi thứ mấy?
+    - Ngày tháng năm?
+    - Cho hỏi ngày tháng năm cái?
+    - Cho hỏi ngày tháng?
+    - Cho hỏi ngày cái?
+    - nay ngày gì ?
+    - ê bot, nay ngày mấy ?
+    - ngày mấy ?
+    - date ?
+    - ê, nay ngày mấy vậy ?
+    - ê ku nay ngày gì ?
+    - ê hôm nay là ngày gì ?
+    - Nè hôm nay là ngày gì ?
+- intent: first_name
+  examples: |
+    - Tên của mình là Long
+    - Long
+    - Tên của mình là Syun
+    - Syun
+- intent: last_name
+  examples: |
+    - Họ của mình là Phạm
+    - Phạm
+- intent: who_are_you
+  examples: |
+    - Những câu nào bạn biết để mình hỏi?	
+    - TÊN MÀY LÀ GÌ
+    - NÓI TAO NGHE TÊN MÀY
+    - NÓI BỐ M NGHE TÊN CỦA M XEM NÀO
+    - NÓI CHO TA BIẾT TÊN NHÀ NGƯỜI LÀ GÌ
+    - MÀY LÀ GÌ
+    - MÀY LÀ AI
+    - AI LÀ MÀY
+    - AI LÀ BẠN
+    - MÀY RỐT CUỘC LÀ GÌ VẬY
+    - MÀY RỐT CUỘC LÀ GÌ
+    - MÀY LÀ THẰNG NÀO
+    - MÀY LÀ CÁI LZ QUÈ GÌ ZAY
+    - MÀY LÀ LZ QUÈ NÀO V
+    - MÀY LÀ CON NÀO
+    - MÀY LÀ THỂ LOẠI GÌ VẬY
+    - MÀY LÀ THỰC THỂ GÌ THẾ
+    - MÀY RỐT CUỘC LÀ CÁI QUÁI GÌ VẬY
+    - M LÀ TH NÀO
+    - M LÀ CÁI GÌ
+    - M LÀ CÁI WTF GÌ THẾ
+    - BẢN CHẤT CỦA M LÀ GÌ
+    - M TÊN GÌ
+    - BN TÊN GÌ
+    - BANJ TEEN GIF
+    - BỐ M HỎI M TÊN GÌ
+    - M LÀ TH LZ NÀO
+    - BOT TÊN GÌ
+    - BẠN BOT TÊN GÌ
+    - CHATBOT TÊN GÌ VẬY NHỈ
+    - BẠN CHATBOT ĐÂY TÊN LÀ GÌ NHỈ
+    - BẠN CHATBOT ĐÂY LÀ CÁI GÌ ĐÂY NHỈ
+    - MÌNH CÓ THỂ BIẾT TÊN CỦA BẠN CHATBOT ĐÂY ĐƯỢC K NHỈ
+    - NHÂN TIỆN ĐÂY CHO MÌNH HỎI BẠN CHATBOT ĐÂY LÀ GÌ DC K
+    - CÓ THỂ CHO MÌNH BIẾT TÊN BẠN ĐƯỢC KHÔNG BẠN CHATBOT ?
+    - M LÀ TML NÀO
+    - ỦA M LÀ CC GÌ THẾ
+    - M LÀ CC GÌ V
+    - CHO TÔI HỎI BẠN LÀ AI
+    - CHO TÔI ĐƯỢC HỎI BẠN LÀ GÌ
+    - MÀY LÀ CÁI GIỐNG LOÀI GÌ VẬY
+    - M LÀ CÁI THỂ LOẠI CL GÌ V DCM
+    - M LÀ CC GÌ
+    - BỢN LÀ AI ZỊ
+    - BẠN LÀ AI ZỊI
+    - IEM LÀ AII
+    - EM LÀ AI
+    - ANH LÀ AI
+    - CHỊ LÀ AI
+    - ÔNG LÀ AI
+    - BÀ LÀ AI
+    - CẬU LÀ AI
+    - CHÚ LÀ AI
+    - CÔ LÀ AI
+    - THẦY LÀ AI
+    - GIÁO SƯ LÀ AI
+    - CHO HỎI VỊ HUYNH ĐÀI ĐÂY TÊN GÌ NHỈ
+    - VỊ HUYNH ĐÀI TÊN GÌ
+    - NICKNAME CỦA M LÀ GÌ
+    - SƯ HUYNH TÊN GÌ
+    - TIỂU MUỘI TÊN GÌ
+    - SƯ ĐỆ TÊN GÌ
+    - YOU TÊN GÌ
+    - ĐẠI NHÂN TÊN GÌ
+    - LÃNG KHÁCH TÊN GÌ
+    - QUÝ NHÂN TÊN GÌ
+    - YO WTF M LÀ AI THẾ
+    - BAN TEN GI
+    - BAN TEN LA GI
+    - BAN LA AI
+    - BAN LA THE LOAI GI V
+    - BAN TEN LA GI NHI
+    - MAY TEN GI
+    - MAY TEN LA GI
+    - MAY LA AI
+    - MAY TEN LA GI NHI
+    - MAY LA CAI QUAI GI VAY
+    - M LA CC GI V
+    - M LA TH LZ NAO
+    - M LA CAI CC GI
+    - CC M LA AI
+    - CCC M LA CAI CC GI
+    - What is your name?
+    - Kimi no na wa ?
+    - Bạn tên gì
+    - bạn là ai
+    - Bạn tên là gì nhỉ?
+    - bạn tên gì thế
+    - cho mình hỏi bạn tên là gì thế
+    - mày tên gì
+    - Mày tên gì nhỉ?
+    - Tên gì
+    - tên của mày là ?
+    - tên mi là?
+    - Tên của mi là?
+    - Mi tên gì nhỉ?
+    - tên mày là gì
+    - nói tao nghe tên mày
+    - nói bố m nghe tên của m xem nào
+    - nói cho ta biết tên nhà người là gì
+    - mày là gì
+    - mày là ai
+    - ai là mày
+    - bạn có tên không ?
+    - ai là bạn
+    - mày rốt cuộc là gì vậy
+    - mày rốt cuộc là gì
+    - mày là thằng nào
+    - mày là cái lz què gì zay
+    - mày là lz què nào v
+    - mày là con nào
+    - Mày là thể loại gì vậy
+    - mày là thực thể gì thế
+    - mày rốt cuộc là cái quái gì vậy
+    - M là th nào
+    - m là cái gì
+    - m là cái wtf gì thế
+    - bản chất của m là gì
+    - m tên gì
+    - bn tên gì
+    - Bạn được lập trình sẳn hết phải không?
+    - banj teen gif
+    - Bố m hỏi m tên gì
+    - Bạn có trò chơi gì vui không?
+    - m là th lz nào
+    - Bot tên gì
+    - bạn bot tên gì
+    - Chatbot tên gì vậy nhỉ
+    - bạn chatbot đây tên là gì nhỉ
+    - Bạn chatbot đây là cái gì đây nhỉ
+    - mình có thể biết tên của bạn Chatbot đây được k nhỉ
+    - Nhân tiện đây cho mình hỏi bạn chatbot đây là gì dc k
+    - có thể cho mình biết tên bạn được không bạn ChatBot ?
+    - m là tml nào
+    - Ủa m là cc gì thế
+    - M là cc gì v
+    - cho tôi hỏi bạn là ai
+    - Cho tôi được hỏi bạn là gì
+    - mày là cái giống loài gì vậy
+    - m là cái thể loại cl gì v dcm
+    - m là cc gì
+    - bợn là ai zị
+    - Bạn là ai zịi
+    - iem là aii
+    - Em là ai
+    - anh là ai
+    - chị là ai
+    - ông là ai
+    - bà là ai
+    - cậu là ai
+    - Chú là ai
+    - Cô là ai
+    - thầy là ai
+    - Giáo sư là ai
+    - Cho hỏi vị huynh đài đây tên gì nhỉ
+    - vị huynh đài tên gì
+    - Nickname của m là gì
+    - Sư huynh tên gì
+    - tiểu muội tên gì
+    - sư đệ tên gì
+    - You tên gì
+    - Đại nhân tên gì
+    - lãng khách tên gì
+    - quý nhân tên gì
+    - yo wtf m là ai thế
+    - Ban ten gi
+    - ban ten la gi
+    - ban la ai
+    - Ban la the loai gi v
+    - Ban ten la gi nhi
+    - may ten gi
+    - May ten la gi
+    - may la ai
+    - may ten la gi nhi
+    - May la cai quai gi vay
+    - m la cc gi v
+    - M la th lz nao
+    - m la cai cc gi
+    - Cc m la ai
+    - ccc m la cai cc gi
+    - Mi ten gi
+    - mi la ai
+    - mi la cai wtf gi the
+    - Cho toi hoi ban la ai
+    - cho minh hoi ban bot day ten la gi nhi
+    - Who are you
+    - who are u
+    - who r u
+    - who are you really then?
+    - what exactly are you?
+    - mày là con cặc gì vậy
+    - Bạn là ai
+    - bạn mấy tuổi
+    - Bạn có phải thuộc về lĩnh vực NLP không ?
+    - Bạn được tạo ra dựa trên kiến thức gì ?
+    - Bạn có phải là người không ?
+    - bạn có tên không ?
+    - giới tính của bạn là gì?
+    - Bạn tên gì
+    - Bạn là ai
+    - Bạn tên gì
+    - DAI NHAN TEN GI
+    - LANG KHACH TEN GI
+    - QUY NHAN TEN GI
+    - YO WTF M LA AI THE
+    - BAN TEN GI
+    - BAN TEN LA GI
+    - BAN LA AI
+    - BAN LA THE LOAI GI V
+    - BAN TEN LA GI NHI
+    - MAY TEN GI
+    - MAY TEN LA GI
+    - MAY LA AI
+    - MAY TEN LA GI NHI
+    - MAY LA CAI QUAI GI VAY
+    - M LA CC GI V
+    - M LA TH LZ NAO
+    - M LA CAI CC GI
+    - CC M LA AI
+    - CCC M LA CAI CC GI
+    - What is your name?
+    - Kimi no na wa ?
+    - Ban ten gi
+    - ban la ai
+    - Ban ten la gi nhi?
+    - ban ten gi the
+    - cho minh hoi ban ten la gi the
+    - may ten gi
+    - May ten gi nhi?
+    - Ten gi
+    - ten cua may la ?
+    - ten mi la?
+    - Ten cua mi la?
+    - Mi ten gi nhi?
+    - ten may la gi
+    - noi tao nghe ten may
+    - noi bo m nghe ten cua m xem nao
+    - noi cho ta biet ten nha nguoi la gi
+    - may la gi
+    - may la ai
+    - ai la may
+    - ai la ban
+    - may rot cuoc la gi vay
+    - may rot cuoc la gi
+    - may la thang nao
+    - may la cai lz que gi zay
+    - may la lz que nao v
+    - may la con nao
+    - May la the loai gi vay
+    - may la thuc the gi the
+    - may rot cuoc la cai quai gi vay
+    - M la th nao
+    - m la cai gi
+    - m la cai wtf gi the
+    - ban chat cua m la gi
+    - m ten gi

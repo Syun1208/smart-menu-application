@@ -2,12 +2,160 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: greeting
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: greet
+  - action: utter_greet
+  wait_for_user_input: false
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+# - rule: how to use
+#   steps:
+#   - intent: how_to_use
+#   - action: utter_how_to_use
+#   wait_for_user_input: false
+
+# - rule: ask about the author
+#   steps:
+#   - intent: who_create_you
+#   - action: utter_who_create_you
+#   wait_for_user_input: false
+
+
+# - rule: confirm
+#   steps:
+#   - intent: affirm
+#   - action: utter_ok
+#   - action: utter_reply_thanks
+#   wait_for_user_input: false 
+
+
+# - rule: health check
+#   steps:
+#   - intent: health_inquire
+#   - action: utter_health_inquire
+#   wait_for_user_input: false
+
+# - rule: attention
+#   steps:
+#   - intent: attention
+#   - action: utter_attention
+#   wait_for_user_input: false
+
+# - rule: sadness
+#   steps:
+#   - intent: mood_unhappy
+#   - action: utter_mood_unhappy
+#   - action: utter_sorry
+#   wait_for_user_input: false
+
+# - rule: bye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
+#   wait_for_user_input: false
+
+
+# - rule: Say goodbye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
+
+# - rule: Express gratitude
+#   steps:
+#   - intent: compliment
+#   - action: utter_reply_thanks
+
+# - rule: Ask for help with using the app
+#   steps:
+#   - intent: how_to_use
+#   - action: utter_how_to_use
+#   wait_for_user_input: false
+
+
+# - rule: Ask about the creator
+#   steps:
+#   - intent: who_create_you
+#   - action: utter_who_create_you
+#   wait_for_user_input: false
+
+
+# - rule: Express compliment
+#   steps:
+#   - intent: compliment
+#   - action: utter_compliment
+#   wait_for_user_input: false
+
+
+# - rule: Seek attention
+#   steps:
+#   - intent: attention
+#   - action: utter_attention
+
+# - rule: Insult the bot
+#   steps:
+#   - intent: insult
+#   - action: utter_reply_insult
+
+# - rule: Default fallback
+#   steps:
+#   - action: utter_wtf
+#   wait_for_user_input: false
+
+
+
+# - rule: Handle user denial
+#   steps:
+#   - intent: deny
+#   - action: utter_deny
+#   wait_for_user_input: false
+
+
+# - rule: User asks about the creator of the bot
+#   steps:
+#   - intent: who_create_you
+#   - action: utter_who_create_you
+#   wait_for_user_input: false
+
+
+# - rule: User is unhappy and seeks comfort
+#   steps:
+#   - intent: mood_unhappy
+#   - action: utter_mood_unhappy
+
+# - rule: User asks about their health and receives a response
+#   steps:
+#   - intent: health_inquire
+#   - action: utter_health_inquire
+#   wait_for_user_input: false
+
+# - rule: User is confused and seeks clarification
+#   steps:
+#   - intent: deny
+#   - action: utter_deny
+
+# - rule: who are you
+#   steps:
+#   - intent: who_are_you
+#   - action: utter_who_are_you
+#   wait_for_user_input: false
+
+
+# - rule: stop asking
+#   steps:
+#   - intent: stop_asking
+#   - action: utter_stop_asking
+#   wait_for_user_input: false
+
+
+# - rule: continue_asking
+#   steps:
+#   - intent: continue_asking
+#   - action: utter_continue_asking
+#   wait_for_user_input: false
+
+
+# - rule: want to ask
+#   steps:
+#   - intent: want_to_ask
+#   - action: utter_want_to_ask
+#   wait_for_user_input: false

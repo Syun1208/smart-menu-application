@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: tensorflow-addons
+Version: 0.19.0
+Summary: TensorFlow Addons.
+Home-page: UNKNOWN
+Author: Google Inc.
+Author-email: opensource@google.com
+License: Apache 2.0
+Keywords: tensorflow addons machine learning
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries
+Requires-Dist: packaging
+Requires-Dist: typeguard (>=2.7)
+Provides-Extra: tensorflow
+Requires-Dist: tensorflow (<2.12.0,>=2.9.0) ; extra == 'tensorflow'
+Provides-Extra: tensorflow-cpu
+Requires-Dist: tensorflow-cpu (<2.12.0,>=2.9.0) ; extra == 'tensorflow-cpu'
+Provides-Extra: tensorflow-gpu
+Requires-Dist: tensorflow-gpu (<2.12.0,>=2.9.0) ; extra == 'tensorflow-gpu'
+
+TensorFlow Addons is a repository of contributions that conform to well-
+established API patterns, but implement new functionality not available
+in core TensorFlow. TensorFlow natively supports a large number of
+operators, layers, metrics, losses, and optimizers. However, in a fast
+moving field like ML, there are many interesting new developments that
+cannot be integrated into core TensorFlow (because their broad
+applicability is not yet clear, or it is mostly used by a smaller subset
+of the community).
+
+

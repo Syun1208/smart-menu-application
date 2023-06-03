@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: tensorflow-text
+Version: 2.11.0
+Summary: TF.Text is a TensorFlow library of text related ops, modules, and subgraphs.
+Home-page: http://github.com/tensorflow/text
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Keywords: tensorflow text machine learning
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+Requires-Dist: tensorflow-hub (>=0.8.0)
+Requires-Dist: tensorflow (<2.12,>=2.11.0) ; platform_machine != "arm64" or platform_system != "Darwin"
+Requires-Dist: tensorflow-macos (<2.12,>=2.11.0) ; platform_machine == "arm64" and platform_system == "Darwin"
+Provides-Extra: tensorflow_cpu
+Requires-Dist: tensorflow-cpu (<2.12,>=2.11.0) ; extra == 'tensorflow_cpu'
+Provides-Extra: tests
+Requires-Dist: absl-py ; extra == 'tests'
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: tensorflow-datasets (>=3.2.0) ; extra == 'tests'
+
+TF.Text is a TensorFlow library of text related ops, modules, and subgraphs. The
+library can perform the preprocessing regularly required by text-based models,
+and includes other features useful for sequence modeling not provided by core
+TensorFlow.
+
+See the README on GitHub for further documentation.
+http://github.com/tensorflow/text

@@ -1,30 +1,301 @@
 version: "3.1"
 
-stories:
 
-- story: happy path
+stories:
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: how to use
+  steps:
+  - intent: how_to_use
+  - action: utter_how_to_use
+
+- story: ask about the author
+  steps:
+  - intent: who_create_you
+  - action: utter_who_create_you
+
+- story: scanner suggest
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
-  - action: utter_happy
+  - action: utter_mood_great
+  - intent: scanner_suggest
+  - action: utter_scanner_suggest
+  - intent: camera 
+  - action: utter_camera
+  - intent: scanner_run_model
+  - action: utter_scanner_run_model
+  - intent: scanner_load_model
+  - action: utter_scanner_load_model
+  - intent: scanner_gallery
+  - action: utter_scanner_gallery
+  - intent: scanner_results
+  - action: utter_scanner_results
+  - intent: compliment
+  - action: utter_compliment
+  - action: utter_reply_thanks
 
-- story: sad path 1
+- story: scanner run model
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: scanner_run_model
+  - action: utter_scanner_run_model
 
-- story: sad path 2
+- story: scanner load model
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: scanner_load_model
+  - action: utter_scanner_load_model
+
+- story: scanner gallery
+  steps:
+  - intent: scanner_gallery
+  - action: utter_scanner_gallery
+
+- story: scanner results
+  steps:
+  - intent: scanner_results
+  - action: utter_scanner_results
+
+- story: health check
+  steps:
+  - intent: health_inquire
+  - action: utter_health_inquire
+
+- story: attention
+  steps:
+  - intent: attention
+  - action: utter_attention
+
+- story: sadness
+  steps:
   - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - action: utter_mood_unhappy
+  - action: utter_sorry
+
+- story: bye
+  steps:
+  - intent: goodbye
   - action: utter_goodbye
+
+- story: camera
+  steps:
+  - intent: attention
+  - action: utter_attention
+  - intent: camera
+  - action: utter_camera
+  - intent: deny
+  - action: utter_deny
+
+- story: User denies a suggestion and asks for more options
+  steps:
+  - intent: scanner_suggest
+  - action: utter_scanner_suggest
+  - intent: deny
+  - action: utter_deny
+
+- story: User asks about the camera feature
+  steps:
+  - intent: how_to_use
+  - action: utter_how_to_use
+  - intent: camera
+  - action: utter_camera
+
+- story: User asks for help and apologizes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_to_use
+  - action: utter_how_to_use
+
+- story: User expresses unhappiness and seeks motivation
+  steps:
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+  - intent: compliment
+  - action: utter_compliment
+
+- story: User inquires about the bot's health and thanks the bot
+  steps:
+  - intent: attention
+  - action: utter_attention
+  - intent: health_inquire
+  - action: utter_health_inquire
+  - intent: compliment
+  - action: utter_reply_thanks
+
+- story: Greet and inquire about well-being
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: health_inquire
+  - action: utter_health_inquire
+
+  
+- story: confirm
+  steps:
+  - intent: affirm
+  - action: utter_ok
+  - action: utter_reply_thanks
+
+
+- story: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Express gratitude
+  steps:
+  - intent: compliment
+  - action: utter_reply_thanks
+
+- story: Ask for help with using the app
+  steps:
+  - intent: how_to_use
+  - action: utter_how_to_use
+
+- story: Ask about the creator
+  steps:
+  - intent: who_create_you
+  - action: utter_who_create_you
+
+- story: Express compliment
+  steps:
+  - intent: compliment
+  - action: utter_compliment
+
+- story: Seek attention
+  steps:
+  - intent: attention
+  - action: utter_attention
+
+- story: Insult the bot
+  steps:
+  - intent: insult
+  - action: utter_reply_insult
+
+- story: Default fallback
+  steps:
+  - action: utter_wtf
+
+- story: Scanner functionality flow
+  steps:
+  - intent: scanner_suggest
+  - action: utter_scanner_suggest
+  - intent: camera
+  - action: utter_camera
+  - intent: scanner_load_model
+  - action: utter_scanner_load_model
+  - intent: scanner_run_model
+  - action: utter_scanner_run_model
+  - intent: scanner_gallery
+  - action: utter_scanner_gallery
+  - intent: scanner_results
+  - action: utter_scanner_results
+
+- story: Handle user denial
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+
+- story: User greets and asks for assistance
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_to_use
+  - action: utter_how_to_use
+
+- story: User asks about the creator of the bot
+  steps:
+  - intent: who_create_you
+  - action: utter_who_create_you
+
+- story: User asks for help and gets confused
+  steps:
+  - intent: attention
+  - action: utter_attention
+  - intent: how_to_use
+  - action: utter_how_to_use
+
+- story: User gives a compliment and expresses gratitude
+  steps:
+  - intent: compliment
+  - action: utter_compliment
+  - intent: compliment
+  - action: utter_reply_thanks
+
+- story: User wants to know how to use the scanner feature
+  steps:
+  - intent: how_to_use
+  - action: utter_how_to_use
+  - intent: scanner_suggest
+  - action: utter_scanner_suggest
+
+- story: User asks for more details about the app's features
+  steps:
+  - intent: how_to_use
+  - action: utter_how_to_use
+  - intent: scanner_load_model
+  - action: utter_scanner_load_model
+  - intent: scanner_run_model
+  - action: utter_scanner_run_model
+  - intent: scanner_gallery
+  - action: utter_scanner_gallery
+
+
+- story: User is unhappy and seeks comfort
+  steps:
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+
+- story: User asks about their health and receives a response
+  steps:
+  - intent: health_inquire
+  - action: utter_health_inquire
+
+- story: User insults the bot and receives a response
+  steps:
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+  - intent: deny
+  - action: utter_deny
+  - intent: insult
+  - action: utter_reply_insult
+
+- story: User greets, asks for assistance, and says goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_to_use
+  - action: utter_how_to_use
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: User is confused and seeks clarification
+  steps:
+  - action: utter_want_to_ask
+  - intent: deny
+  - action: utter_deny
+
+- story: who are you
+  steps:
+  - intent: who_are_you
+  - action: utter_who_are_you
+
+- story: stop asking
+  steps:
+  - intent: stop_asking
+  - action: utter_stop_asking
+
+- story: continue_asking
+  steps:
+  - intent: continue_asking
+  - action: utter_continue_asking
+
+- story: want to ask
+  steps:
+  - intent: want_to_ask
+  - action: utter_want_to_ask

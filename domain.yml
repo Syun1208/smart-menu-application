@@ -5,10 +5,20 @@ intents:
   - goodbye
   - affirm
   - deny
+  - insult
+  - stop_asking
+  - continue_asking
+  - want_to_ask
+  - dont_want_to_ask
+  - time 
+  - date
+  - first_name
+  - last_name
+  - who_are_you
   - mood_great
   - mood_unhappy
   - how_to_use
-  - scaner_suggest
+  - scanner_suggest
   - who_create_you
   - compliment
   - attention
@@ -19,8 +29,40 @@ intents:
   - camera
   - scanner_results
 
+slots:
+  date_answer:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  time_answer:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+
+
 responses:
 
+  utter_who_are_you:
+  - text: Mình là trợ lý hướng dẫn người dùng sử dụng ứng dụng smart menu do anh Phạm Minh Long phát minh dưới sự hướng dẫn của thầy Trần Vũ Hoàng
+  - text: Mình là chatbot thông minh hỗ trợ bạn sử dụng ứng dụng smart menu một cách hiệu quả nhất !
+
+  utter_stop_asking:
+  - text: Ừa ok bạn, bạn có thể trở lại hỏi bất cứ khi nào nha
+  - text: Oke nha bro, có thắc mắc gì thì cứ hỏi mình nhé, đừng dấu cái ngu làm hại tim <3
+
+  utter_continue_asking:
+  - text: Oke bạn muốn gì tiếp ?
+  - text: Bro muốn gì từ em ạ ?
+  - text: Dạ bạn muốn gì từ mình ạ
+
+  utter_want_to_ask:
+  - text: Oke bạn muốn hỏi gì ?
+  - text: Bạn muốn gì từ mình ạ ?
+  
   utter_who_create_you:
   - text: Cảm ơn bạn đã quan tâm, mình đã được tạo ra bởi sinh viên Phạm Minh Long, hiện đang là sinh viên Computer Engineering, dưới sự hướng dẫn của thầy Trần Vũ Hoàng. Nhờ công lao của họ mà mình mới có thể trò chuyện cùng bạn ngay lúc này nè ;)
   - text: Trời ơi, tất nhiên rồi. Mình được tạo bởi chúa tể AI Phạm Minh Long và được hướng dẫn bởi Ph.D Trần Vũ Hoàng. Mục đích tui được anh Long tạo ra nhàm phục vụ đồ án tốt nghiệp ngành Kĩ Thuật Máy Tính.
@@ -36,13 +78,11 @@ responses:
   - text: Chào bạn nha
   - text: Vâng, hẹn hôm khác nói chuyện tiếp nha
 
-  utter_affirm:
-  - text: Hehe cảm ơn nha :)))))
-  - text: Ngại quá hihi !
   utter_ok:
   - text: Ok bạn nha
   - text: Ừa ok bạn
   - text: Okelaaa
+
   utter_sorry:
   - text: Xin lỗi bạn
   - text: Thành thật xin lỗi bạn nhiều
@@ -67,7 +107,7 @@ responses:
   - text: Ứng dụng này được xây dựng với ba tính năng chính quét và nhận diện văn bản trên menu, dịch đoạn văn từ tiếng Việt sang tiếng Anh và cung cấp gợi ý về các món ăn. Trên màn hình chính, bạn sẽ thấy ba nút tương ứng cho từng tính năng này. Ở góc dưới bên phải, có một chat bot sẵn sàng trò chuyện và giúp đỡ bạn (chính là tôi đấy :))))
   - text: Có 3 chức năng nha má {menu scanner, dịch tiếng Việt -> Anh, gợi ý món ăn}. Góc dưới là con chatbot đẹp trai khoai to nha =)). Bấm thử vô từng chức năng đi, rùi thắc mắc gì hỏi mình tiếp nha.
   
-  utter_scaner_suggest:
+  utter_scanner_suggest:
   - text: bạn làm theo mình. Bấm load model -> chọn 1 bức ảnh menu từ (camera hoặc gallery trong điện thoại bạn) -> run model để lấy kết quả ạ
   - text: Dễ mà trời ơi. Nè ! Bấm vào load model, sau đó chọn ảnh (chụp ảnh từ camera hoặc gallery), sau đó bấm run model để lấy kết quả
 
@@ -108,23 +148,31 @@ responses:
   - text: Đừng chửi tuii, tuii có làm gì bạn đâu ><
   - text: Mày thích chửi hông ? Đó là người cục sục sẽ nói vậy, chứ đừng có chửi mình nha
   - text: Tin nhắn đã được chuyển tiếp đến phòng công tác sinh viên. Cảm ơn bạn đã quan tâm.
+  
   utter_reply_thanks:
   - text: Không có gì đâu nè ^^
   - text: Có gì đâu hihi
   - text: Giúp được bạn là nhiệm vụ của mình mà !
 
 actions:
+- action_ask_date
+- action_ask_time
+- action_ask_first_name
+- action_ask_last_name
 - utter_greet
 - utter_goodbye
-- utter_affirm
 - utter_ok
+- utter_who_are_you
+- utter_stop_asking
+- utter_continue_asking
+- utter_want_to_ask
 - utter_sorry
 - utter_wtf
 - utter_deny
 - utter_mood_great
 - utter_mood_unhappy
 - utter_how_to_use
-- utter_scaner_suggest
+- utter_scanner_suggest
 - utter_who_create_you
 - utter_compliment
 - utter_attention
