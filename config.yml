@@ -11,11 +11,17 @@ assistant_id: 20230527-183943-charcoal-skipper
 language: vi
 
 pipeline:
-- name: LanguageModelFeaturizer
-  # Name of the language model to use
-  model_name: "bert"
-  # Pre-Trained weights to be loaded
-  model_weights: "rasa/LaBSE"
+# - name: LanguageModelFeaturizer
+#   # Name of the language model to use
+#   model_name: "gpt"
+#   # Pre-Trained weights to be loaded
+#   model_weights: "openai-gpt"
+#   cache_dir: null
+- name: "WhitespaceTokenizer"
+  intent_tokenization_flag: True
+  intent_split_symbol: "+"
+- name: "CountVectorsFeaturizer"
+- name: "DIETClassifier"
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

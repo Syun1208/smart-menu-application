@@ -1,0 +1,53 @@
+2023-06-03 19:45:46,749 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-03 19:45:46,750 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-06-03 19:45:46,750 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-03 19:45:46,857 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-03 19:45:47,682 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-03 19:45:47,749 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-03 19:45:47,749 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-03 19:45:47,750 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-03 19:45:47,751 [INFO ]  Loading model /home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/models/20230603-190605-concrete-disk.tar.gz...
+2023-06-03 19:45:47,811 [DEBUG]  Extracted model to '/tmp/tmph2e925am'.
+2023-06-03 19:45:47,818 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-03 19:45:47,818 [DEBUG]  Node 'run_LanguageModelFeaturizer0' loading 'LanguageModelFeaturizer.load' and kwargs: '{}'.
+2023-06-03 19:45:48,169 [DEBUG]  Loading Tokenizer and Model for bert
+2023-06-03 19:45:48,173 [DEBUG]  Starting new HTTPS connection (1): huggingface.co:443
+2023-06-03 19:45:48,534 [DEBUG]  https://huggingface.co:443 "HEAD /rasa/LaBSE/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-06-03 19:45:50,318 [DEBUG]  https://huggingface.co:443 "HEAD /rasa/LaBSE/resolve/main/config.json HTTP/1.1" 200 0
+2023-06-03 19:45:59,409 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-03 19:45:59,409 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-03 19:45:59,409 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-03 19:45:59,464 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-03 19:45:59,464 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-03 19:45:59,465 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-03 19:45:59,465 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-03 19:45:59,466 [DEBUG]  Loading the model from /tmp/tmpu9taltwr/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-03 19:46:25,146 [DEBUG]  Finished loading the model.
+2023-06-03 19:46:25,148 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-03 19:46:25,149 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-03 19:46:25,150 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-03 19:46:25,151 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-03 19:46:25,151 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-03 19:46:25,154 [INFO ]  Rasa server is up and running.
+2023-06-03 19:46:25,156 [INFO ]  Enabling coroutine debugging. Loop id 94162458305592.
