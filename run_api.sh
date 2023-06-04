@@ -1,1 +1,1 @@
-rasa run --enable-api --auth-token thisismysecret --cors * -m ./AI/chatbot/models/20230603-190605-concrete-disk.tar.gz -vv --log-file out.log
+rasa run --enable-api --auth-token thisismysecret --cors * -m ./models/20230603-200504-silver-tungsten.tar.gz -vv --log-file out.log
