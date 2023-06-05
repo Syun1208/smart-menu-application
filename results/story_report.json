@@ -11,11 +11,11 @@
     "f1-score": 1.0,
     "support": 1
   },
-  "utter_how_to_use": {
+  "action_listen": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 1
+    "support": 2
   },
   "utter_greet": {
     "precision": 1.0,
@@ -23,11 +23,11 @@
     "f1-score": 1.0,
     "support": 1
   },
-  "action_listen": {
+  "utter_how_to_use": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 2
+    "support": 1
   },
   "accuracy": 1.0,
   "macro avg": {

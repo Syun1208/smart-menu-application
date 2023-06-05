@@ -1,1 +1,1 @@
-rasa run --enable-api --auth-token thisismysecret --cors * -m ./models/20230603-200504-silver-tungsten.tar.gz -vv --log-file out.log
+rasa run --enable-api --auth-token thisismysecret --cors * -m models/20230605-105138-violent-paradigm.tar.gz -vv --log-file out.log -p 5045 -i 192.168.0.139 

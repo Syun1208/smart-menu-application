@@ -22,6 +22,32 @@ pipeline:
   intent_split_symbol: "+"
 - name: "CountVectorsFeaturizer"
 - name: "DIETClassifier"
+# - name: "SpacyNLP"
+#   # language model to load
+#   model: "en_core_web_md"
+#   case_sensitive: False
+# - name: "SpacyTokenizer"
+#   # Flag to check whether to split intents
+#   "intent_tokenization_flag": False
+#   # Symbol on which intent should be split
+#   "intent_split_symbol": "_"
+#   # Regular expression to detect tokens
+#   "token_pattern": None
+# - name: "SpacyFeaturizer"
+#   # Specify what pooling operation should be used to calculate the vector of
+#   # the complete utterance. Available options: 'mean' and 'max'.
+#   "pooling": "mean"
+# - name: LogisticRegressionClassifier
+#   max_iter: 100
+#   solver: lbfgs
+#   tol: 0.0001
+#   random_state: 42
+#   ranking_length: 10
+# - name: "SpacyEntityExtractor"
+#   # dimensions to extract
+#   dimensions: ["PERSON", "LOC", "ORG", "PRODUCT"]
+
+
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

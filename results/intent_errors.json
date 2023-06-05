@@ -1,10 +1,258 @@
 [
   {
+    "text": ".",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9998704013438647
+    }
+  },
+  {
+    "text": "CHÀO",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "CHÀO THÂN ÁI",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NĨ HẢO",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "HIII",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
     "text": "E",
     "intent": "greet",
     "intent_prediction": {
       "name": "attention",
-      "confidence": 0.8899846076965332
+      "confidence": 0.6430875784398381
+    }
+  },
+  {
+    "text": "NIHAO",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "HẾ LÔ",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "À LỐ",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.5004773779140227
+    }
+  },
+  {
+    "text": "A LÔ",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.540609564840811
+    }
+  },
+  {
+    "text": "HEYYY",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "YOOO",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "CHÀO BẠN",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "CHÀO CẬU",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "CHÀO ANH",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.2688271291196324
+    }
+  },
+  {
+    "text": "CHÀO MÀY",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NÀY BẠN EII",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Ê BẠN EII",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.5706887665523513
+    }
+  },
+  {
+    "text": "Ê BẠN ÊII",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.5706887665523513
+    }
+  },
+  {
+    "text": "NÀY THẰNG KIA",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.3026834562814082
+    }
+  },
+  {
+    "text": "KONNICHIWA",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NỈ HẢO",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NĨ HÃO",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NĨ HẠO MA",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "OHAYO GOZAIMASU",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9126071557520664
+    }
+  },
+  {
+    "text": "KONBANWA",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "HÍ BẠN",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Chào",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Chào thân ái",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Nĩ hảo",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "chào",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "hiii",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
@@ -12,7 +260,303 @@
     "intent": "greet",
     "intent_prediction": {
       "name": "attention",
-      "confidence": 0.8899846076965332
+      "confidence": 0.6430875784398381
+    }
+  },
+  {
+    "text": "nihao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "hế lô",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "à lố",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.5004773779140227
+    }
+  },
+  {
+    "text": "a lô",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.540609564840811
+    }
+  },
+  {
+    "text": "heyyy",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "yooo",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "chào bạn",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Chào bạn",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "chào cậu",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "chào anh",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.2688271291196324
+    }
+  },
+  {
+    "text": "chào mày",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "này bạn eii",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "ê bạn eii",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.5706887665523513
+    }
+  },
+  {
+    "text": "ê bạn êii",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.5706887665523513
+    }
+  },
+  {
+    "text": "này thằng kia",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.3026834562814082
+    }
+  },
+  {
+    "text": "konnichiwa",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "nĩ hảo",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "nỉ hảo",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "nĩ hão",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "nĩ hạo ma",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "ohayo gozaimasu",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9126071557520664
+    }
+  },
+  {
+    "text": "konbanwa",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "hí bạn",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "helllo",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "heloo",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "lô",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "A lô",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.540609564840811
+    }
+  },
+  {
+    "text": "bot ơi dậy đi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.2649880538079628
+    }
+  },
+  {
+    "text": "Hú",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Rất hân hạnh được chào Bot",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.2649880538079628
+    }
+  },
+  {
+    "text": "hai",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.6569202090072144
+    }
+  },
+  {
+    "text": "Hai",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.6569202090072144
+    }
+  },
+  {
+    "text": "Ừm, dạo này sao rồi?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.6405707038822124
+    }
+  },
+  {
+    "text": "Gần đây bạn thế nào? Có gì mới không?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "date",
+      "confidence": 0.48996581347433815
+    }
+  },
+  {
+    "text": "Cuộc sống của bạn như thế nào?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4523447968384173
+    }
+  },
+  {
+    "text": "Chào thằng ngu",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ừm, lâu quá không gặp nhau! Gần đây bạn làm gì vậy?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "translate_suggest",
+      "confidence": 0.585008580343848
     }
   },
   {
@@ -20,71 +564,447 @@
     "intent": "greet",
     "intent_prediction": {
       "name": "who_create_you",
-      "confidence": 0.8624098300933838
+      "confidence": 0.8426117726468384
     }
   },
   {
-    "text": "goodbye",
+    "text": "Có gì mới trong thế giới của bạn?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "who_create_you",
+      "confidence": 0.27567193174155574
+    }
+  },
+  {
+    "text": "Mọi chuyện của bạn đang diễn ra thế nào?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "who_create_you",
+      "confidence": 0.9815565680683609
+    }
+  },
+  {
+    "text": "cút cút cút",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "dẹp",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "cúc",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "tạm biệt",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Hẹn gặp lại",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Bai Bai",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "bai",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "hẹn lần khác",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Tạm biệt nha",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.2688271291196324
+    }
+  },
+  {
+    "text": "cút đi",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
     }
   },
   {
     "text": "Hẹn ngày mai",
     "intent": "goodbye",
     "intent_prediction": {
-      "name": "date",
-      "confidence": 0.8460652232170105
+      "name": "last_name",
+      "confidence": 0.4005725852423434
     }
   },
   {
-    "text": "stop được r",
+    "text": "để khi khác hỏi tiếp",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.23020031880732128
+    }
+  },
+  {
+    "text": "hẹn dịp khác",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "để dịp khác nói tiếp nha",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.19856302880607984
+    }
+  },
+  {
+    "text": "đi đây",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Bạn cút đi",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "cút",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "cút cmmd",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "gặp lại sau",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "Tạm biệt! Hẹn gặp lại bạn!",
     "intent": "goodbye",
     "intent_prediction": {
       "name": "mood_great",
-      "confidence": 0.970264732837677
+      "confidence": 0.6626867478058138
+    }
+  },
+  {
+    "text": "Tạm biệt nhé! Chúc bạn có một ngày tốt lành!",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5666747458486197
+    }
+  },
+  {
+    "text": "Rất vui được trò chuyện với bạn! Tạm biệt!",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5503104251929318
+    }
+  },
+  {
+    "text": "Hẹn gặp lại và chăm sóc bản thân nhé!",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5039839295258004
+    }
+  },
+  {
+    "text": "Chúc bạn tốt lành! Tạm biệt!",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.7330889407919773
+    }
+  },
+  {
+    "text": "Thân tạm biệt! Chúc bạn luôn thành công.",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6069524415838328
+    }
+  },
+  {
+    "text": "Tạm biệt và hãy chăm sóc bản thân.",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9210448156236146
     }
   },
   {
     "text": "Ok, tốc độ trả lời này là bot",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.7633839845657349
+      "name": "health_inquire",
+      "confidence": 0.6719872562700564
     }
   },
   {
-    "text": "indeed",
+    "text": "Được rồi mình cảm ơn",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
     }
   },
   {
-    "text": "oke la",
+    "text": "Okela",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "chính xác",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "dĩ nhiên",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "chứ còn gì nữa",
     "intent": "affirm",
     "intent_prediction": {
       "name": "who_are_you",
-      "confidence": 0.9999051094055176
+      "confidence": 0.6120499222248781
     }
   },
   {
-    "text": "oke",
+    "text": "đương nhiên",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
-    "text": "Ok chờ xí",
+    "text": "rõ ràng",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.8595336079597473
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "quá đúng",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "chuẩn xác luôn",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "không thể chính xác hơn được nữa",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.21838022478388744
+    }
+  },
+  {
+    "text": "đúng",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "đúng ời",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "đúng ròi",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "chuẩn nha",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.2688271291196324
+    }
+  },
+  {
+    "text": "chuẩn",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ô khê",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "Ô kê",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "Ô sờ kê",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "ô khê",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "okei",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ok đợi chút để suy nghĩ đã",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.5953885675020997
+    }
+  },
+  {
+    "text": "Okei",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "QUÁ CHUẨN",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "QUÁ CHÍNH XÁC",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "DCM CHUẨN THẾ",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "ĐỈNH VÃI",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
@@ -92,55 +1012,519 @@
     "intent": "affirm",
     "intent_prediction": {
       "name": "greet",
-      "confidence": 0.9460110068321228
+      "confidence": 0.4051653827070307
     }
   },
   {
-    "text": "Ok đợi t nghĩ cái nha",
+    "text": "Có",
     "intent": "affirm",
     "intent_prediction": {
       "name": "continue_asking",
-      "confidence": 0.9734147787094116
+      "confidence": 0.218380256547701
     }
   },
   {
-    "text": "not really",
+    "text": "Được đấy",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Bạn đang làm tốt lắm!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5666747522750263
+    }
+  },
+  {
+    "text": "Bạn tuyệt vời quá!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6626867637661508
+    }
+  },
+  {
+    "text": "Bạn đang tiến bộ xuất sắc.",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8191015479433493
+    }
+  },
+  {
+    "text": "Bạn có thể làm được!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.4269278578528162
+    }
+  },
+  {
+    "text": "Bạn là một ngôi sao!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.648694139003526
+    }
+  },
+  {
+    "text": "Bạn rất có năng lực!",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5666747522750263
+    }
+  },
+  {
+    "text": "Bạn đang đi đúng hướng.",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9210448156236146
+    }
+  },
+  {
+    "text": "Bạn là nguồn cảm hứng.",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8665325345579367
+    }
+  },
+  {
+    "text": "bạn không hiểu à",
     "intent": "deny",
     "intent_prediction": {
-      "name": "health_inquire",
-      "confidence": 0.9771844744682312
+      "name": "attention",
+      "confidence": 0.43845795432329004
+    }
+  },
+  {
+    "text": "bạn chậm hiểu thế",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
     }
   },
   {
     "text": "Clgt",
     "intent": "deny",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
-    "text": "A hinh nhu cau nay dau phai the",
+    "text": "TRẬT LẤT",
     "intent": "deny",
     "intent_prediction": {
-      "name": "how_to_use",
-      "confidence": 0.4455312192440033
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
-    "text": "Không, tôi không quan tâm và không muốn tham gia.",
+    "text": "Ê SAI CMNR",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6756332914776797
+    }
+  },
+  {
+    "text": "NOOO MÀY TRẢ LỜI VẬY LÀ SAI RỒI",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.5889447805850793
+    }
+  },
+  {
+    "text": "TRẬT CMNR",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "KHÔNG ĐÚNG",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "TRẢ LỜI KHÔNG ĐÚNG",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "NHƯ VẬY LÀ KO ĐÚNG RỒI",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.8746920245525287
+    }
+  },
+  {
+    "text": "Ê HÌNH NHƯ ĐÂU PHẢI ĐÂU",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.5206707955538505
+    }
+  },
+  {
+    "text": "ĐÉO PHẢI THẾ",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "ĐÉO PHẢI NHƯ VẬY ĐÂU",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "DM BOT NGU M NÓI THẾ LÀ TOANG RỒI",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.4188262917877792
+    }
+  },
+  {
+    "text": "Á À SAI NHA SAI NHA",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8708184265259518
+    }
+  },
+  {
+    "text": "Á HÌNH NHƯ CÂU NÀY ĐÂU PHẢI THẾ",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.22948212210547142
+    }
+  },
+  {
+    "text": "UIZZZ TRẢ LỜI THẾ MÀ CŨNG TRẢ LỜI ĐC",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "TRẢ LỜI NGU THẾ K BIẾT",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.3977637549319715
+    }
+  },
+  {
+    "text": "NÓI CDJ THẾ BOT NGU",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.1933753360071289
+    }
+  },
+  {
+    "text": "SỦA THẾ MÀ CŨNG SỦA ĐƯỢC",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2073231347349744
+    }
+  },
+  {
+    "text": "BRO NÓI THẾ CHƯA ĐÚNG ĐÂU",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4388143153862166
+    }
+  },
+  {
+    "text": "SỦA NGU ZỪA ZỪA THOI",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "trật lất",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ê sai cmnr",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6756332914776797
+    }
+  },
+  {
+    "text": "Thôi hỏi nhiêu đủ biết trình mi rồi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.8947213594940592
+    }
+  },
+  {
+    "text": "Nooo mày trả lời vậy là sai rồi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.5889447805850793
+    }
+  },
+  {
+    "text": "Trật cmnr",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "không đúng",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Không đúng",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Trả lời không đúng",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Như vậy là ko đúng rồi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.8746920245525287
+    }
+  },
+  {
+    "text": "Ê hình như đâu phải đâu",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.5206707955538505
+    }
+  },
+  {
+    "text": "Đéo phải thế",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Đéo phải như vậy đâu",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Dm bot ngu m nói thế là toang rồi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.4188262917877792
+    }
+  },
+  {
+    "text": "á à sai nha sai nha",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8708184265259518
+    }
+  },
+  {
+    "text": "Á hình như câu này đâu phải thế",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.22948212210547142
+    }
+  },
+  {
+    "text": "Uizzz trả lời thế mà cũng trả lời đc",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "Trả lời ngu thế k biết",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.3977637549319715
+    }
+  },
+  {
+    "text": "nói cdj thế bot ngu",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.1933753360071289
+    }
+  },
+  {
+    "text": "sủa thế mà cũng sủa được",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2073231347349744
+    }
+  },
+  {
+    "text": "bro nói thế chưa đúng đâu",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4388143153862166
+    }
+  },
+  {
+    "text": "sủa ngu zừa zừa thoi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Trat cmnr",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "a a sai nha sai nha",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7974455128658894
+    }
+  },
+  {
+    "text": "sao noi sai quai zi",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.6784158184096728
+    }
+  },
+  {
+    "text": "Mình hỏi mà bạn toàn trả lời không được",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.1724704915918521
+    }
+  },
+  {
+    "text": "Không, tôi không thể làm điều đó.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "translate_suggest",
+      "confidence": 0.9437659296214593
+    }
+  },
+  {
+    "text": "Không, tôi không nghĩ vậy.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "translate_suggest",
+      "confidence": 0.9899172739051302
+    }
+  },
+  {
+    "text": "Tôi không thể giúp đỡ về điều đó.",
     "intent": "deny",
     "intent_prediction": {
       "name": "mood_unhappy",
-      "confidence": 0.9402641654014587
+      "confidence": 0.7143718539308722
     }
   },
   {
-    "text": "Tôi không đồng ý với quan điểm của bạn.",
+    "text": "Không, tôi sẽ không thể tới.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "translate_suggest",
+      "confidence": 0.9437659296214593
+    }
+  },
+  {
+    "text": "Tôi không thể đồng ý với điều đó.",
     "intent": "deny",
     "intent_prediction": {
       "name": "greet",
-      "confidence": 0.9752420783042908
+      "confidence": 0.5410407913213334
+    }
+  },
+  {
+    "text": "Không, tôi không nghĩ rằng tôi có thể giúp bạn với điều đó.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "translate_suggest",
+      "confidence": 0.8124486078547489
+    }
+  },
+  {
+    "text": "Không, tôi không thể tham dự sự kiện.",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "translate_suggest",
+      "confidence": 0.8164318188468684
     }
   },
   {
@@ -148,7 +1532,7 @@
     "intent": "mood_great",
     "intent_prediction": {
       "name": "compliment",
-      "confidence": 0.999871015548706
+      "confidence": 0.5563932071544984
     }
   },
   {
@@ -156,127 +1540,199 @@
     "intent": "mood_great",
     "intent_prediction": {
       "name": "compliment",
-      "confidence": 0.9992948770523071
+      "confidence": 0.6874905523675572
     }
   },
   {
-    "text": "I am feeling very good",
+    "text": "Amazing good job em",
     "intent": "mood_great",
     "intent_prediction": {
       "name": "compliment",
-      "confidence": 0.9995218515396118
-    }
-  },
-  {
-    "text": "I am amazing",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.6748296618461609
-    }
-  },
-  {
-    "text": "super stoked",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.5453675985336304
-    }
-  },
-  {
-    "text": "extremely good",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.3983224928379059
+      "confidence": 0.6829979615987766
     }
   },
   {
     "text": "Hảo hán",
     "intent": "mood_great",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.998602569103241
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Được hay lắm",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.7771883228107935
     }
   },
   {
     "text": "Ngon",
     "intent": "mood_great",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.9854252934455872
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "Được của ló",
     "intent": "mood_great",
     "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.9814260005950928
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
     }
   },
   {
-    "text": "Tôi rất vui!",
+    "text": "Đây là sự hạnh phúc thuần túy!",
     "intent": "mood_great",
     "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.8822827935218811
+      "name": "goodbye",
+      "confidence": 0.6591515427189615
     }
   },
   {
-    "text": "I'm overjoyed beyond words!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.48608827590942383
-    }
-  },
-  {
-    "text": "Tôi đang cảm thấy u ám và chán nản.",
+    "text": "vãi lol luôn đầu cắt moi",
     "intent": "mood_unhappy",
     "intent_prediction": {
       "name": "insult",
-      "confidence": 0.5881218910217285
+      "confidence": 0.5107195557465155
     }
   },
   {
-    "text": "Điều này làm tôi cảm thấy mất niềm tin, thành thật mà nói.",
+    "text": "cho bố m cái địa chỉ",
     "intent": "mood_unhappy",
     "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9977949857711792
+      "name": "continue_asking",
+      "confidence": 0.3326986975215744
     }
   },
   {
-    "text": "bấm nút nào để vào menu scanner v",
-    "intent": "how_to_use",
+    "text": "Nhấn vào nút nào để truy cập vào chức năng quét?",
+    "intent": "scanner_suggest",
     "intent_prediction": {
-      "name": "scanner_suggest",
-      "confidence": 0.9998123049736023
+      "name": "scanner_results",
+      "confidence": 0.4845973952613744
     }
   },
   {
-    "text": "CHO T HỎI NGƯỜI LÀM RA CÁI NÀY",
+    "text": "Chạm vào nút nào để sử dụng chức năng quét?",
+    "intent": "scanner_suggest",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4523447968384173
+    }
+  },
+  {
+    "text": "M biết Hoàng Đình Thái là ai không ?",
     "intent": "who_create_you",
     "intent_prediction": {
-      "name": "want_to_ask",
-      "confidence": 0.9993504881858826
+      "name": "who_are_you",
+      "confidence": 0.6063239624441773
     }
   },
   {
-    "text": "cho t hỏi người làm ra cái này",
+    "text": "M được lập trình bằng ngôn ngữ gì v ?",
     "intent": "who_create_you",
     "intent_prediction": {
-      "name": "want_to_ask",
-      "confidence": 0.9993504881858826
+      "name": "who_are_you",
+      "confidence": 0.590821890564963
+    }
+  },
+  {
+    "text": "Bạn biết thầy Trần Vũ Hoàng không?",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4315570127878347
+    }
+  },
+  {
+    "text": "TÁC GIẢ",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "TÁC GIẢ LÀ AI",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.8087218722450289
+    }
+  },
+  {
+    "text": "Tác giả của dự án này?",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4845973952613744
+    }
+  },
+  {
+    "text": "Cho tao hỏi tác giả của mày là thằng nào ?",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.3677240840704625
+    }
+  },
+  {
+    "text": "tác giả",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Tác giả là ai",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.8087218722450289
+    }
+  },
+  {
+    "text": "Bách là ai",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.8087218722450289
+    }
+  },
+  {
+    "text": "Long ngu là gì",
+    "intent": "who_create_you",
+    "intent_prediction": {
+      "name": "first_name",
+      "confidence": 0.9991507766429274
+    }
+  },
+  {
+    "text": "Vui",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.2688271291196324
     }
   },
   {
     "text": "Thật thú vị",
     "intent": "compliment",
     "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "AMAZING",
+    "intent": "compliment",
+    "intent_prediction": {
       "name": "mood_great",
-      "confidence": 0.9995989203453064
+      "confidence": 0.5680083371674991
     }
   },
   {
@@ -284,47 +1740,831 @@
     "intent": "compliment",
     "intent_prediction": {
       "name": "mood_great",
-      "confidence": 0.5016471147537231
+      "confidence": 0.5674010998997514
+    }
+  },
+  {
+    "text": "I AM FEELING VERY GOOD",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5423834498680039
+    }
+  },
+  {
+    "text": "I AM GREAT",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5530099288799061
+    }
+  },
+  {
+    "text": "TUYỆT VỜI",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "TUYET VOI",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.6120499222248781
+    }
+  },
+  {
+    "text": "QUÁ ĐÃ",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "XUẤT SẮC",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "TUYỆT HẢO",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "TUYỆT CÚ MÈO",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "QUÁ CHUẨN LUÔN",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "QUÁ GIỎI",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "LÀM TỐT LẮM",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "GHÊ",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "GIỎI THIỆT SỰ",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "NGOAN LẮM",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "BIẾT ĐIỀU ĐẤY",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "CŨNG KHÁ PHẾT ĐẤY CHỨ",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "KHÁ",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐƯỢC",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "TỐT",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐƯỢC BẠN ƠI",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "TỐT ĐẤY",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "KHÁ KHEN CHO NHÀ NGƯƠI",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7067852015467595
+    }
+  },
+  {
+    "text": "GHÊ ZAY",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "amazing",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5680083371674991
+    }
+  },
+  {
+    "text": "wonderful",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5674010998997514
+    }
+  },
+  {
+    "text": "Yêu",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "I am feeling very good",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5423834498680039
+    }
+  },
+  {
+    "text": "I am great",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5530099288799061
+    }
+  },
+  {
+    "text": "tuyệt vời",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "tuyet voi",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.6120499222248781
+    }
+  },
+  {
+    "text": "quá đã",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Xuất sắc",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "tuyệt hảo",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Tuyệt cú mèo",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "quá chuẩn luôn",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Quá giỏi",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "làm tốt lắm",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Ghê",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Giỏi thiệt sự",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "ngoan lắm",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Biết điều đấy",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "cũng khá phết đấy chứ",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "khá",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "được",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "tốt",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "được bạn ơi",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Tốt đấy",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Khá khen cho nhà ngươi",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7067852015467595
+    }
+  },
+  {
+    "text": "NHÀ NGƯƠI CŨNG CÓ HẢO KHÍ ĐẤY",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7067852015467595
+    }
+  },
+  {
+    "text": "Xuất cmn sắc",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "có giúp được một chút",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.21838025272597902
+    }
+  },
+  {
+    "text": "Thôi. Mình giỡn á",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6424436856696709
+    }
+  },
+  {
+    "text": "Woww",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "woaaaa",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Woaaaa",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ghê vậy",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "WơW ghê dữ ta",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.549068184824427
+    }
+  },
+  {
+    "text": "Woaaa giỏi wa taaaa",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3857080130094392
+    }
+  },
+  {
+    "text": "Bot giỏi quá taaa",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.8593911836162234
+    }
+  },
+  {
+    "text": "uii xịn thế",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "uầy xịn thế",
+    "intent": "compliment",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "NÈ NÈ NÈ",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ê DCM",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5151228853133345
+    }
+  },
+  {
+    "text": "HÚ",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NÀY",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "NÀY NÀY",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "NÀY DCM",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "NÀY DUME",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "QUÂY",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "LÔ LÔ",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "LÔ",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "YÔ",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "YÔ YÔ",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "À LÔ",
     "intent": "attention",
     "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.5004773779140227
+    }
+  },
+  {
+    "text": "CỐC CỐC",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "BUZZZ",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "êii",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "eeeeeeee",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "nè",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "nè nè",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "nè nè nè",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ê dcm",
+    "intent": "attention",
+    "intent_prediction": {
       "name": "greet",
-      "confidence": 0.7162085771560669
+      "confidence": 0.5151228853133345
+    }
+  },
+  {
+    "text": "hú",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "này",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "này này",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "này dcm",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "này dume",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "quây",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "lô lô",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "yô",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Êy",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "yô yô",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "à lô",
     "intent": "attention",
     "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.5004773779140227
+    }
+  },
+  {
+    "text": "cốc cốc",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "buzzz",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "cộc cộc",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "heeyy yo",
+    "intent": "attention",
+    "intent_prediction": {
       "name": "greet",
-      "confidence": 0.7162085771560669
+      "confidence": 0.6715107728421127
+    }
+  },
+  {
+    "text": "hey yo wtf",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6797769448584998
+    }
+  },
+  {
+    "text": "Ê ĐMM",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5151228853133345
+    }
+  },
+  {
+    "text": "NÈ",
+    "intent": "attention",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "ALOOOOO",
     "intent": "attention",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "EEEEE",
     "intent": "attention",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
-    "text": "Sao seen rồi",
+    "text": "ủa sao không trả lời",
     "intent": "attention",
     "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.5745447278022766
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
     }
   },
   {
@@ -332,63 +2572,2143 @@
     "intent": "attention",
     "intent_prediction": {
       "name": "insult",
-      "confidence": 0.753190279006958
+      "confidence": 0.2649880538079628
     }
   },
   {
-    "text": "I'm ok, about ya?",
+    "text": "MÌNH HỎI CÁI NÈ, DẠO NÀY SỐNG TỐT HONG",
     "intent": "health_inquire",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.9845455884933472
+      "name": "compliment",
+      "confidence": 0.3560811292184109
+    }
+  },
+  {
+    "text": "VỪA RỒI CUỘC SỐNG THẾ NÀO",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "TUẦN VỪA RỒI KHỎE CHỨ HẢ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "TUẦN VỪA QUA VẪN ỔN CHỨ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.6120499222248781
+    }
+  },
+  {
+    "text": "KHỎE KHÔNG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "KHỎE HONG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5667197736057926
+    }
+  },
+  {
+    "text": "KHỎE CHỨ MÀY",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "SỐNG TỐT CHỨ BOT",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.8593911836162234
+    }
+  },
+  {
+    "text": "SỐNG TỐT CHỨ HẢ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "SỐNG TỐT KHÔNG MÀY",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "SỐNG ỔNG CHỨ CHATBOT",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.5110114458178426
+    }
+  },
+  {
+    "text": "DẠO NÀY SAO RỒI",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "DẠO NÀY MÀY THẾ NÀO?",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4315570127878347
+    }
+  },
+  {
+    "text": "DẠO NÀY SAO RỒI TH L",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.6660112996865452
+    }
+  },
+  {
+    "text": "DẠO NÀY MÀY SAO",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "EI DẠO NÀY SỐNG TỐT CHỨ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5940825300307184
+    }
+  },
+  {
+    "text": "DẠO NÀY ỔN CHỨ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "DẠO NÀY CUỘC SỐNG VẪN TỐT CHỨ HẢ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "DẠO NÀY ỔN ÁP KHÔNG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "DẠO NÀY BẠN MÌNH VẪN KHỎE CHỨ HẢ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "DẠO NÀY KHỎE HONG BẠN TUI",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.3936415479984607
+    }
+  },
+  {
+    "text": "BỮA GIỜ ỔN KHÔNG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "BỮA GIỜ SAO RỒI M",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.39456804835116266
+    }
+  },
+  {
+    "text": "BỮA GIỜ M SAO R KỂ T NGHE",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.4039987559137854
+    }
+  },
+  {
+    "text": "KỂ T NGHE BỮA GIỜ SỐNG SAO R HÈM",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.8365107120190403
+    }
+  },
+  {
+    "text": "BỮA GIỜ VẪN OK CHỨ HẢ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5846922551094359
+    }
+  },
+  {
+    "text": "Ê BỮA H SAO R",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.5233848213938089
+    }
+  },
+  {
+    "text": "HỔM RÀY ỔN KHÔNG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "HỔM RÀY KHỎE KHÔNG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "HỔM RÀY OK KHÔNG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.5559384301794763
+    }
+  },
+  {
+    "text": "HỔM RÀY SỐNG TỐT KHÔNG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "HỔM RÀY SỨC KHỎE ỔN CHỨ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "HỔM RÀY CÓ VẤN ĐỀ GÌ K",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.5241594510287152
+    }
+  },
+  {
+    "text": "HỔM RÀY VẪN OK CHỨ HẢ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5846922551094359
+    }
+  },
+  {
+    "text": "HỔM RÀY THẰNG ĐỆ A VẪN ỔN CHỨ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.540609564840811
+    }
+  },
+  {
+    "text": "HỔM RÀY CÓ KHÓ KHĂN GÌ KHÔNG THẰNG E",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.7380875385233676
+    }
+  },
+  {
+    "text": "MÌNH KHỎE CÒN M THÌ SAO",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.39456804835116266
+    }
+  },
+  {
+    "text": "T NGHĨ CHẮC M MÃI KHỎE THÔI MÀ NHỈ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.4145765193893707
+    }
+  },
+  {
+    "text": "M THÌ CHẮC CŨNG KHỎE RỒI CÒN GÌ DUMEMAY TH LZ MÁY MÓC",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.5213607021891129
+    }
+  },
+  {
+    "text": "T KHỎE CÒN M THÌ SAO",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.4145765193893707
+    }
+  },
+  {
+    "text": "MÌNH KHỎE CÒN BẠN THÌ SAO",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "CHỊ KHỎE, CÒN BÉ THÌ SAO NÀ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.9996123321078119
+    }
+  },
+  {
+    "text": "EM KHỎE, CÒN THẦY?",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.9996924540806458
+    }
+  },
+  {
+    "text": "DUME CÒN M THÌ SAO",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.39456804835116266
+    }
+  },
+  {
+    "text": "CÒN MÀY?",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.99784533096815
+    }
+  },
+  {
+    "text": "BẠN KHOẺ KHÔNG",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "mình hỏi cái nè, dạo này sống tốt hong",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.3560811292184109
+    }
+  },
+  {
+    "text": "vừa rồi cuộc sống thế nào",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "tuần vừa rồi khỏe chứ hả",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "tuần vừa qua vẫn ổn chứ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.6120499222248781
+    }
+  },
+  {
+    "text": "khỏe không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "khỏe hong",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5667197736057926
+    }
+  },
+  {
+    "text": "Khỏe chứ mày",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Sống tốt chứ bot",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.8593911836162234
+    }
+  },
+  {
+    "text": "sống tốt chứ hả",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Sống tốt không mày",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Sống ổng chứ Chatbot",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.5110114458178426
+    }
+  },
+  {
+    "text": "Dạo này sao rồi",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "dạo này mày thế nào?",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4315570127878347
+    }
+  },
+  {
+    "text": "dạo này sao rồi th l",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.6660112996865452
+    }
+  },
+  {
+    "text": "Dạo này mày sao",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "Ei dạo này sống tốt chứ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5940825300307184
+    }
+  },
+  {
+    "text": "dạo này ổn chứ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "dạo này cuộc sống vẫn tốt chứ hả",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Dạo này ổn áp không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "dạo này bạn mình vẫn khỏe chứ hả",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "dạo này khỏe hong bạn tui",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.3936415479984607
+    }
+  },
+  {
+    "text": "Bữa giờ ổn không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Bữa giờ sao rồi m",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.39456804835116266
+    }
+  },
+  {
+    "text": "bữa giờ m sao r kể t nghe",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.4039987559137854
+    }
+  },
+  {
+    "text": "kể t nghe bữa giờ sống sao r hèm",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.8365107120190403
+    }
+  },
+  {
+    "text": "Bữa giờ vẫn ok chứ hả",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5846922551094359
+    }
+  },
+  {
+    "text": "ê bữa h sao r",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.5233848213938089
+    }
+  },
+  {
+    "text": "Hổm rày ổn không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "hổm rày khỏe không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "hổm rày ok không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.5559384301794763
+    }
+  },
+  {
+    "text": "Hổm rày sống tốt không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "hổm rày sức khỏe ổn chứ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "hổm rày có vấn đề gì k",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.5241594510287152
+    }
+  },
+  {
+    "text": "Hổm rày vẫn ok chứ hả",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5846922551094359
+    }
+  },
+  {
+    "text": "hổm rày thằng đệ a vẫn ổn chứ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.540609564840811
+    }
+  },
+  {
+    "text": "hổm rày có khó khăn gì không thằng e",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.7380875385233676
+    }
+  },
+  {
+    "text": "Mình khỏe còn m thì sao",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.39456804835116266
+    }
+  },
+  {
+    "text": "T nghĩ chắc m mãi khỏe thôi mà nhỉ",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.4145765193893707
+    }
+  },
+  {
+    "text": "m thì chắc cũng khỏe rồi còn gì dumemay th lz máy móc",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.5213607021891129
+    }
+  },
+  {
+    "text": "t khỏe còn m thì sao",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.4145765193893707
+    }
+  },
+  {
+    "text": "Mình khỏe còn bạn thì sao",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "chị khỏe, còn bé thì sao nà",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.9996123321078119
+    }
+  },
+  {
+    "text": "em khỏe, còn thầy?",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.9996924540806458
+    }
+  },
+  {
+    "text": "Dume còn m thì sao",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.39456804835116266
+    }
+  },
+  {
+    "text": "còn mày?",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.99784533096815
+    }
+  },
+  {
+    "text": "Bạn khoẻ không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "bạn khỏe không",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "mình khỏe, còn bạn?",
+    "intent": "health_inquire",
+    "intent_prediction": {
+      "name": "translate_suggest",
+      "confidence": 0.5944365743661145
+    }
+  },
+  {
+    "text": "Bạn có bị ngu không ?",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4845973952613744
+    }
+  },
+  {
+    "text": "Đụ má mày quá ngu đi",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.5280924339551973
+    }
+  },
+  {
+    "text": "bạn ngu quá ra",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "who_create_you",
+      "confidence": 0.9998279899876207
+    }
+  },
+  {
+    "text": "Ngu",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ngu quá",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NGU NGỐC",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "CMM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "CĐCMM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "THẰNG LỒN",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "TH LON",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.4643319722384614
+    }
+  },
+  {
+    "text": "ĐCMM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐCM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐMM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "DMM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "DCMM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "DCLMM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "M NGU VC",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.7344031660548559
+    }
+  },
+  {
+    "text": "GÀ",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐỒ GÀ",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "GÀ VÃI LỒN",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐỊT CỤ MÀY",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "DCMM LUON",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ÓC VẬT",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "SÚC SINH NGU HỌC",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "DM",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.4772556197423692
+    }
+  },
+  {
+    "text": "DUME",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "DUMEMAY",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐỤ MẸ MÀY",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐỤ MẸ MÀI",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "VCL",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "VC",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.6120499222248781
+    }
+  },
+  {
+    "text": "VKL",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "VCC",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NGU",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ĐỒ NGU",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NGU VÃI CẶC",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "CẶC",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "LỒN",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "NGÁO",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "SAO M NGU THẾ",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.3247207286030929
+    }
+  },
+  {
+    "text": "NGU NHƯ CHÓ",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "SỦA LÊN",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "LOZ",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "LOL",
     "intent": "insult",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.9798991680145264
+      "name": "mood_great",
+      "confidence": 0.6451420653606399
+    }
+  },
+  {
+    "text": "LÁO CHÓ",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "LÁO CÁ CHÓ",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Ngu Ngốc",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "cmm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Cđcmm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Thằng lồn",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "th lon",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.4643319722384614
+    }
+  },
+  {
+    "text": "đcmm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "đcm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "đmm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Dmm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Dcmm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "dclmm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "M nGu vC",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.7344031660548559
+    }
+  },
+  {
+    "text": "Gà",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Đồ Gà",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Gà vãi LồN",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Đmm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "địt cụ mày",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ngu quá mà",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "Ngu quá hà",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "dcmm luon",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "óc vật",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "súc sinh ngu học",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "dm",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.4772556197423692
+    }
+  },
+  {
+    "text": "Dume",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "dumemay",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Đụ mẹ mày",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Đụ mẹ mài",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Vcl",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "vc",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.6120499222248781
+    }
+  },
+  {
+    "text": "Vkl",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "vcc",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Dốt",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ngu Vãi Cặc",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Cặc",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Lồn",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Ngáo",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Sao m ngu thế",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.3247207286030929
+    }
+  },
+  {
+    "text": "ngu như chó",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "sủa lên",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "loz",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "Lol",
     "intent": "insult",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.9798991680145264
+      "name": "mood_great",
+      "confidence": 0.6451420653606399
     }
   },
   {
-    "text": "die",
+    "text": "láo chó",
     "intent": "insult",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
-    "text": "just die",
+    "text": "Láo cá chó",
     "intent": "insult",
     "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "t đang chửi m đấy",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.5713676704626507
+    }
+  },
+  {
+    "text": "bố mày đang chửi mày đấy",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "A m đang chửi m đấy",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.4978256036708719
+    }
+  },
+  {
+    "text": "anh mày đang chửi mày đấy",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.2688271291196324
+    }
+  },
+  {
+    "text": "Tao chuẩn bị chửi mày nè",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "Ê nghe t chửi nè",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.9875285637882213
+    }
+  },
+  {
+    "text": "Bạn thật là nhàm chán mà",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.25569671357583396
+    }
+  },
+  {
+    "text": "mình chán bạn quá",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "con cặc là gì",
+    "intent": "insult",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.9513707909790153
+    }
+  },
+  {
+    "text": "biến đi em",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.35835409373589755
+    }
+  },
+  {
+    "text": "Mày biến đi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "HOIII",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "THÔI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "À THÔI KHỎI ĐI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.4266289831945282
+    }
+  },
+  {
+    "text": "THÔI K CÓ GÌ",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.5864719022884118
+    }
+  },
+  {
+    "text": "À THÔI ĐƯỢC RỒI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.4266289831945282
+    }
+  },
+  {
+    "text": "AK K CÓ GÌ HẾT",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.48608104811767044
+    }
+  },
+  {
+    "text": "AK THÔI K CÓ GÌ",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.48608104811767044
+    }
+  },
+  {
+    "text": "THÔI BỎ ĐI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "THÔI BỎ CMN ĐI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "THÔI NGHỈ ĐI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "THÔI BỎ QUA ĐI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "THÔI TAO KHÔNG MUỐN HỎI NỮA",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "THÔI ĐƯỢC R NGHỈ THÔI K HỎI NỮA",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5506334044685619
+    }
+  },
+  {
+    "text": "THÔI DẸP K HỎI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5442929966221268
+    }
+  },
+  {
+    "text": "NGHỈ CMM ĐI",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "THÔI DẸP HẾT",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "THÔI ĐƯỢC R K CẦN NỮA",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5506334044685619
+    }
+  },
+  {
+    "text": "THÔI EM KHÔNG HỎI ANH ĐÂU",
+    "intent": "stop_asking",
+    "intent_prediction": {
       "name": "greet",
-      "confidence": 0.5453675985336304
+      "confidence": 0.40516532661085347
+    }
+  },
+  {
+    "text": "THÔI ĐƯỢC RỒI EM KHÔNG HỎI GÌ ĐÂU",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.6435372959014519
+    }
+  },
+  {
+    "text": "TAO CHƯA CÓ CÂU HỎI NÀO ĐÂU",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "TAO CHƯA MUỐN HỎI GÌ HẾT Á",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.48037716217561116
+    }
+  },
+  {
+    "text": "TAO CHƯA CẦN HỎI GÌ ĐÂU",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.41816750052495
+    }
+  },
+  {
+    "text": "TỪ TỪ RỒI HỎI SAU",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.41267631607857874
+    }
+  },
+  {
+    "text": "TỪ TỪ BÌNH TĨNH ĐI LÁT R HỎI M SAU",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.32156385313543606
+    }
+  },
+  {
+    "text": "TỪ TỪ LÁT E HỎI NHA",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.6154406843450191
+    }
+  },
+  {
+    "text": "hoiii",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Thôi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "à thôi khỏi đi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.4266289831945282
+    }
+  },
+  {
+    "text": "thôi k có gì",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.5864719022884118
+    }
+  },
+  {
+    "text": "à thôi được rồi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.4266289831945282
+    }
+  },
+  {
+    "text": "ak k có gì hết",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.48608104811767044
+    }
+  },
+  {
+    "text": "Ak thôi k có gì",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.48608104811767044
+    }
+  },
+  {
+    "text": "Thôi bỏ đi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "thôi bỏ cmn đi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Thôi nghỉ đi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "thôi bỏ qua đi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "thôi tao không muốn hỏi nữa",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "Thôi được r nghỉ thôi k hỏi nữa",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5506334044685619
+    }
+  },
+  {
+    "text": "Thôi dẹp k hỏi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5442929966221268
+    }
+  },
+  {
+    "text": "Nghỉ cmm đi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Thôi dẹp hết",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "thôi được r k cần nữa",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5506334044685619
+    }
+  },
+  {
+    "text": "thôi em không hỏi anh đâu",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.40516532661085347
+    }
+  },
+  {
+    "text": "Thôi được rồi em không hỏi gì đâu",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.6435372959014519
+    }
+  },
+  {
+    "text": "tao chưa có câu hỏi nào đâu",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "Tao chưa muốn hỏi gì hết á",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.48037716217561116
+    }
+  },
+  {
+    "text": "tao chưa cần hỏi gì đâu",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.41816750052495
+    }
+  },
+  {
+    "text": "từ từ rồi hỏi sau",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.41267631607857874
+    }
+  },
+  {
+    "text": "từ từ bình tĩnh đi lát r hỏi m sau",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.32156385313543606
+    }
+  },
+  {
+    "text": "Từ từ lát e hỏi nha",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.6154406843450191
+    }
+  },
+  {
+    "text": "từ từ rồi t hỏi m",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.34664183840089935
+    }
+  },
+  {
+    "text": "Từ từ đi lát hỏi",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.21838025272597902
+    }
+  },
+  {
+    "text": "từ từ đợi tí suy nghĩ câu hỏi đã",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2515116889746715
+    }
+  },
+  {
+    "text": "chờ đó đi lát bố m hỏi m sau",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.4410346872375066
+    }
+  },
+  {
+    "text": "chờ cmm đi lát bố m hỏi m lại",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.2413028415327313
+    }
+  },
+  {
+    "text": "Chờ xí đó tao hỏi mày",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.2491854265748982
+    }
+  },
+  {
+    "text": "chờ đi lát mình hỏi bạn sau nha",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.32002043580409745
+    }
+  },
+  {
+    "text": "chờ đó lát hỏi tiếp",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Thôi được rồi mình không cần hỏi thêm đâu, cảm ơn nha",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.9897495215643547
+    }
+  },
+  {
+    "text": "Không",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Dẹp",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Dẹp mẹ",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "Cút",
     "intent": "stop_asking",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.9981966614723206
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
-    "text": "Ki",
+    "text": "Nghỉ",
     "intent": "stop_asking",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Thôi nghỉ",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Nghĩ",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Baii",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Cút xéo",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Thôi đc r mình k cần hỏi nữa đâu cảm ơn",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.6758095140530254
+    }
+  },
+  {
+    "text": "Cám ơn nhưng mình k còn câu hỏi nào đâu",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5442929966221268
+    }
+  },
+  {
+    "text": "deo",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "who_are_you",
+      "confidence": 0.6120499222248781
+    }
+  },
+  {
+    "text": "hông",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "hong",
+    "intent": "stop_asking",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5667197736057926
     }
   },
   {
@@ -403,1008 +4723,136 @@
     "text": "Thua",
     "intent": "stop_asking",
     "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.618162989616394
-    }
-  },
-  {
-    "text": "Hỏi lại",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "want_to_ask",
-      "confidence": 0.5835566520690918
-    }
-  },
-  {
-    "text": "dĩ nhiên r",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.99962317943573
-    }
-  },
-  {
-    "text": "oke đợi tí",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.996482253074646
-    }
-  },
-  {
-    "text": "Cho mình hỏi thêm nữa được không",
-    "intent": "want_to_ask",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9981762170791626
-    }
-  },
-  {
-    "text": "Kimi no na wa ?",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.9998125433921814
-    }
-  },
-  {
-    "text": "Bạn được lập trình sẳn hết phải không?",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "who_create_you",
-      "confidence": 0.9948601722717285
-    }
-  },
-  {
-    "text": "Bạn có trò chơi gì vui không?",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.6188228726387024
-    }
-  },
-  {
-    "text": "Bạn có phải thuộc về lĩnh vực NLP không ?",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.7365766763687134
-    }
-  },
-  {
-    "text": "Bạn có phải là người không ?",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "who_create_you",
-      "confidence": 0.6995348334312439
-    }
-  },
-  {
-    "text": "giới tính của bạn là gì?",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.541906476020813
-    }
-  },
-  {
-    "text": "Ê BẠN ÊII",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.9979491829872131
-    }
-  },
-  {
-    "text": "ê bạn êii",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.9979491829872131
-    }
-  },
-  {
-    "text": "heloo",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5199734568595886
-    }
-  },
-  {
-    "text": "lô",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.999312162399292
-    }
-  },
-  {
-    "text": "bot ơi dậy đi",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.42360424995422363
-    }
-  },
-  {
-    "text": "Hú",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.9997684359550476
-    }
-  },
-  {
-    "text": "dẹp",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.9998974800109863
-    }
-  },
-  {
-    "text": "pp",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5199734568595886
-    }
-  },
-  {
-    "text": "Được rồi mình cảm ơn",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.7265092134475708
-    }
-  },
-  {
-    "text": "yes",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5199734568595886
-    }
-  },
-  {
-    "text": "that sounds good",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.998602569103241
-    }
-  },
-  {
-    "text": "Ô khê",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9998425245285034
-    }
-  },
-  {
-    "text": "ô khê",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9998425245285034
-    }
-  },
-  {
-    "text": "Được đấy",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9999510049819946
-    }
-  },
-  {
-    "text": "Bạn là nguồn cảm hứng.",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "who_are_you",
-      "confidence": 0.8442351818084717
-    }
-  },
-  {
-    "text": "n",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5199734568595886
-    }
-  },
-  {
-    "text": "bạn không hiểu à",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.44136232137680054
-    }
-  },
-  {
-    "text": "Mình hỏi mà bạn toàn trả lời không được",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "want_to_ask",
-      "confidence": 0.7776578664779663
-    }
-  },
-  {
-    "text": "I'm over the moon!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "health_inquire",
-      "confidence": 0.9874890446662903
-    }
-  },
-  {
-    "text": "This is pure bliss!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "who_create_you",
-      "confidence": 0.887665331363678
-    }
-  },
-  {
-    "text": "Tin này làm cho ngày của tôi trở nên tuyệt vời!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "date",
-      "confidence": 0.6299111247062683
-    }
-  },
-  {
-    "text": "M được lập trình bằng ngôn ngữ gì v ?",
-    "intent": "who_create_you",
-    "intent_prediction": {
-      "name": "who_are_you",
-      "confidence": 0.9790909886360168
-    }
-  },
-  {
-    "text": "Tại sao m lại bị mắc kẹt trong app mobile này v ?",
-    "intent": "who_create_you",
-    "intent_prediction": {
-      "name": "scanner_suggest",
-      "confidence": 0.441565603017807
-    }
-  },
-  {
-    "text": "thằng nào làm ra mày?",
-    "intent": "who_create_you",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5578399300575256
-    }
-  },
-  {
-    "text": "RẤT HAY",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9937562942504883
-    }
-  },
-  {
-    "text": "NGOAN LẮM",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9045199155807495
-    }
-  },
-  {
-    "text": "Yêu",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.9049296975135803
-    }
-  },
-  {
-    "text": "Rất hay",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9937562942504883
-    }
-  },
-  {
-    "text": "ngoan lắm",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9045199155807495
-    }
-  },
-  {
-    "text": "Thôi. Mình giỡn á",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.9994137287139893
-    }
-  },
-  {
-    "text": "Woww",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.6071378588676453
-    }
-  },
-  {
-    "text": "BUZZ BUZZ",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.6818401217460632
-    }
-  },
-  {
-    "text": "eeeeeeee",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5199734568595886
-    }
-  },
-  {
-    "text": "buzz buzz",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.6818401217460632
-    }
-  },
-  {
-    "text": "hey yo wtf",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.9999330043792725
-    }
-  },
-  {
-    "text": "Nghĩ",
-    "intent": "stop_asking",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.8026492595672607
-    }
-  },
-  {
-    "text": "Baii",
-    "intent": "stop_asking",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5199734568595886
-    }
-  },
-  {
-    "text": "khum",
-    "intent": "stop_asking",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5199734568595886
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "continue_asking",
     "intent": "continue_asking",
     "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5199734568595886
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Mình muốn hỏi tiếp",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Hỏi câu khác",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "hỏi câu khác",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "chiến tiếp nè",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Tiếp nè",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "hỏi tiếp nè",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Hỏi nữa nè",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "hỏi lần nữa nè",
     "intent": "continue_asking",
     "intent_prediction": {
-      "name": "want_to_ask",
-      "confidence": 0.9985877275466919
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
-    "text": "Tất nhiên rồi",
+    "text": "Ok tiếp tục nè",
     "intent": "continue_asking",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.718894362449646
+      "confidence": 0.5846922551094359
     }
   },
   {
-    "text": "okay chơi tiếp nè",
+    "text": "ok tiếp tục thôi",
     "intent": "continue_asking",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.5759559869766235
+      "name": "affirm",
+      "confidence": 0.5846922551094359
     }
   },
   {
-    "text": "HỎI LẠI",
-    "intent": "want_to_ask",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9971768856048584
-    }
-  },
-  {
-    "text": "Hỏi một câu khác",
-    "intent": "want_to_ask",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9959449172019958
-    }
-  },
-  {
-    "text": "Những câu nào bạn biết để mình hỏi?",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "want_to_ask",
-      "confidence": 0.9995891451835632
-    }
-  },
-  {
-    "text": "bạn mấy tuổi",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "time",
-      "confidence": 0.3504645824432373
-    }
-  },
-  {
-    "text": "Bạn được tạo ra dựa trên kiến thức gì ?",
-    "intent": "who_are_you",
-    "intent_prediction": {
-      "name": "who_create_you",
-      "confidence": 0.9999140501022339
-    }
-  },
-  {
-    "text": "Ừm, dạo này sao rồi?",
-    "intent": "greet",
+    "text": "ok chiến luôn, để bố hỏi m tiếp",
+    "intent": "continue_asking",
     "intent_prediction": {
       "name": "health_inquire",
-      "confidence": 0.9984172582626343
+      "confidence": 0.5493772013368373
     }
   },
   {
-    "text": "Gần đây bạn thế nào? Có gì mới không?",
-    "intent": "greet",
+    "text": "Được rồi để giờ hỏi m câu khác nha",
+    "intent": "continue_asking",
     "intent_prediction": {
       "name": "dont_want_to_ask",
-      "confidence": 0.8124701976776123
-    }
-  },
-  {
-    "text": "Có gì mới trong thế giới của bạn?",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "who_are_you",
-      "confidence": 0.6677688956260681
-    }
-  },
-  {
-    "text": "cúc",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.9586127996444702
-    }
-  },
-  {
-    "text": "tao đi đây con trai",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "want_to_ask",
-      "confidence": 0.9950582981109619
-    }
-  },
-  {
-    "text": "cút đi",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.7225596308708191
-    }
-  },
-  {
-    "text": "cút",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.9995802044868469
-    }
-  },
-  {
-    "text": "correct",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.4739360809326172
-    }
-  },
-  {
-    "text": "chứ còn gì nữa",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "health_inquire",
-      "confidence": 0.9997346997261047
-    }
-  },
-  {
-    "text": "chuẩn xác luôn",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9546927213668823
-    }
-  },
-  {
-    "text": "ĐỈNH VÃI",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.842542290687561
-    }
-  },
-  {
-    "text": "Bạn tuyệt vời quá!",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9580830335617065
-    }
-  },
-  {
-    "text": "I am great",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9954527020454407
-    }
-  },
-  {
-    "text": "Amazing good job em",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9969281554222107
-    }
-  },
-  {
-    "text": "I'm delighted!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.8662647604942322
-    }
-  },
-  {
-    "text": "I can't help but smile from ear to ear!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "health_inquire",
-      "confidence": 0.9126163721084595
-    }
-  },
-  {
-    "text": "Tình hình này khiến tôi cảm thấy buồn phiền.",
-    "intent": "mood_unhappy",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.999030351638794
-    }
-  },
-  {
-    "text": "Tình huống này khiến tôi cảm thấy không vui.",
-    "intent": "mood_unhappy",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9991620779037476
-    }
-  },
-  {
-    "text": "Vui",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9770057797431946
-    }
-  },
-  {
-    "text": "so weird :v",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9879250526428223
-    }
-  },
-  {
-    "text": "PERFECT",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.7295354604721069
-    }
-  },
-  {
-    "text": "VE RI GÚT",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.7800940275192261
-    }
-  },
-  {
-    "text": "wonderful",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.8395370244979858
-    }
-  },
-  {
-    "text": "Chiến vc v",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.9807081818580627
-    }
-  },
-  {
-    "text": "có giúp được một chút",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "want_to_ask",
-      "confidence": 0.9967145919799805
-    }
-  },
-  {
-    "text": "êii",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.9999915361404419
-    }
-  },
-  {
-    "text": "hú",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.650670051574707
-    }
-  },
-  {
-    "text": "Êy",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.4739360809326172
-    }
-  },
-  {
-    "text": "knock knock",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.4727739691734314
-    }
-  },
-  {
-    "text": "heeyy yo",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.9999754428863525
-    }
-  },
-  {
-    "text": "Ê bot ngu",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.6048876047134399
-    }
-  },
-  {
-    "text": "Dẹp",
-    "intent": "stop_asking",
-    "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.9992995262145996
-    }
-  },
-  {
-    "text": "Dẹp mẹ",
-    "intent": "stop_asking",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.9010323882102966
-    }
-  },
-  {
-    "text": "Ok continue nè",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.9631937146186829
-    }
-  },
-  {
-    "text": "Có",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.5536595582962036
-    }
-  },
-  {
-    "text": "có -.-",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.5536595582962036
-    }
-  },
-  {
-    "text": "ô khê đợi t suy nghĩ cái",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.9995711445808411
-    }
-  },
-  {
-    "text": "Hỏi lại lần nữa",
-    "intent": "want_to_ask",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9794477820396423
-    }
-  },
-  {
-    "text": "time được bao nhiêu rồi ?",
-    "intent": "time",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.6334671378135681
-    }
-  },
-  {
-    "text": "Chào bạn! Bạn có khỏe không?",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "health_inquire",
-      "confidence": 0.9977551102638245
-    }
-  },
-  {
-    "text": "Cuộc sống của bạn như thế nào?",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "health_inquire",
-      "confidence": 0.999950647354126
-    }
-  },
-  {
-    "text": "để khi khác hỏi tiếp",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9606244564056396
-    }
-  },
-  {
-    "text": "pipi",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5370036363601685
-    }
-  },
-  {
-    "text": "dĩ nhiên",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9983378648757935
-    }
-  },
-  {
-    "text": "rõ ràng",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5309426188468933
-    }
-  },
-  {
-    "text": "hoàn toàn đúng",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.9986708164215088
-    }
-  },
-  {
-    "text": "ok để suy nghĩ xem",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9988214373588562
-    }
-  },
-  {
-    "text": "Amazing gud job em",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.6568177342414856
-    }
-  },
-  {
-    "text": "never",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5370036363601685
-    }
-  },
-  {
-    "text": "Khá đấy thằng lol",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9965290427207947
-    }
-  },
-  {
-    "text": "It's wonderful!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.9284513592720032
-    }
-  },
-  {
-    "text": "Thật tuyệt vời!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9939863681793213
-    }
-  },
-  {
-    "text": "Điều này khiến tôi cảm thấy hân hoan!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.9911479949951172
-    }
-  },
-  {
-    "text": "It's like a dream come true!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.9999796152114868
-    }
-  },
-  {
-    "text": "vãi lol luôn đầu cắt moi",
-    "intent": "mood_unhappy",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.8971586227416992
-    }
-  },
-  {
-    "text": "cho bố m cái địa chỉ",
-    "intent": "mood_unhappy",
-    "intent_prediction": {
-      "name": "who_are_you",
-      "confidence": 0.6587450504302979
-    }
-  },
-  {
-    "text": "AMAZING",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9948969483375549
-    }
-  },
-  {
-    "text": "amazing",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9948969483375549
-    }
-  },
-  {
-    "text": "cough",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5370036363601685
-    }
-  },
-  {
-    "text": "ủa sao không trả lời",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.9999221563339233
-    }
-  },
-  {
-    "text": "VCC",
-    "intent": "insult",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.5390742421150208
-    }
-  },
-  {
-    "text": "vcc",
-    "intent": "insult",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.5390742421150208
-    }
-  },
-  {
-    "text": "fuck your mother",
-    "intent": "insult",
-    "intent_prediction": {
-      "name": "who_are_you",
-      "confidence": 0.9556301832199097
-    }
-  },
-  {
-    "text": "mình chán bạn quá",
-    "intent": "insult",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.5276747345924377
-    }
-  },
-  {
-    "text": "deo",
-    "intent": "stop_asking",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.675995409488678
-    }
-  },
-  {
-    "text": "hông",
-    "intent": "stop_asking",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5370036363601685
+      "confidence": 0.3143070430397342
     }
   },
   {
     "text": "Nó chạy như thế noà",
     "intent": "continue_asking",
     "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.9978533387184143
+      "name": "want_to_ask",
+      "confidence": 0.2073231347349744
+    }
+  },
+  {
+    "text": "Tất nhiên rồi",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
     }
   },
   {
     "text": "bạn có thể trả lời gì",
     "intent": "continue_asking",
     "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.5494185090065002
+      "name": "last_name",
+      "confidence": 0.3662701201880265
     }
   },
   {
@@ -1412,15 +4860,279 @@
     "intent": "continue_asking",
     "intent_prediction": {
       "name": "affirm",
-      "confidence": 0.9812170267105103
+      "confidence": 0.5846922551094359
+    }
+  },
+  {
+    "text": "chiến tiếp chứ",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "zô nè",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "ô khê đợi t suy nghĩ cái",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.5812057387335913
+    }
+  },
+  {
+    "text": "oke đợi tí",
+    "intent": "continue_asking",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.49848889850822287
     }
   },
   {
     "text": "muốn chứ",
     "intent": "continue_asking",
     "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.47354793548583984
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Cho mình hỏi",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "HỎI NÀY NÈ",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "HỎI CÁI",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "GIÚP TAO MỘT CHÚT ĐƯỢC KHÔNG?",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5399200616145575
+    }
+  },
+  {
+    "text": "YO HỎI NÀY COI",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6233246343294376
+    }
+  },
+  {
+    "text": "Ê BOT GIÚP TAO CÁI",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.28186656534662197
+    }
+  },
+  {
+    "text": "OK ĐỂ T HỎI M CÁI NÀY NHA",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.561520532837774
+    }
+  },
+  {
+    "text": "ĐƯỢC R GIỜ T HỎI M CÁI NÀY NÈ",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.4655293773829357
+    }
+  },
+  {
+    "text": "OK ĐỂ T HỎI CÁI NÀY",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.574405651056909
+    }
+  },
+  {
+    "text": "OK LUÔN ĐỂ T TÌM CÂU HỎI NÀY",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.574405651056909
+    }
+  },
+  {
+    "text": "OK ĐỂ T HỎI M CÁI NÀY",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.7083228223330622
+    }
+  },
+  {
+    "text": "CHIẾN LUÔN GIỜ ĐỂ T HỎI M NÀY NHA",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.3335306963233327
+    }
+  },
+  {
+    "text": "HỎI LẠI",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Hỏi này nè",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "hỏi cái",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Giúp tao một chút được không?",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5399200616145575
+    }
+  },
+  {
+    "text": "Yo hỏi này coi",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6233246343294376
+    }
+  },
+  {
+    "text": "ê bot giúp tao cái",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.28186656534662197
+    }
+  },
+  {
+    "text": "Cho mình hỏi thêm nữa được không",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Ok để t hỏi m cái này nha",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.561520532837774
+    }
+  },
+  {
+    "text": "được r giờ t hỏi m cái này nè",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.4655293773829357
+    }
+  },
+  {
+    "text": "Ok để t hỏi cái này",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.574405651056909
+    }
+  },
+  {
+    "text": "ok luôn để t tìm câu hỏi này",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.574405651056909
+    }
+  },
+  {
+    "text": "Ok để t hỏi m cái này",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.7083228223330622
+    }
+  },
+  {
+    "text": "Chiến luôn giờ để t hỏi m này nha",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.3335306963233327
+    }
+  },
+  {
+    "text": "Hỏi lại lần nữa",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Hỏi một câu khác",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Cho mình hỏi cái này xí",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.21838025272597902
+    }
+  },
+  {
+    "text": "Cho mình hỏi cái này xí nha",
+    "intent": "want_to_ask",
+    "intent_prediction": {
+      "name": "attention",
+      "confidence": 0.1779015817691266
     }
   },
   {
@@ -1428,311 +5140,391 @@
     "intent": "dont_want_to_ask",
     "intent_prediction": {
       "name": "want_to_ask",
-      "confidence": 0.775468111038208
+      "confidence": 0.23625891812791125
     }
   },
   {
-    "text": "date ?",
-    "intent": "date",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.5370036363601685
-    }
-  },
-  {
-    "text": ".",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.3755227327346802
-    }
-  },
-  {
-    "text": "HÊ LÔ NGƯỜI ANH EM",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.6723559498786926
-    }
-  },
-  {
-    "text": "helllo",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.3755227327346802
-    }
-  },
-  {
-    "text": "Rất hân hạnh được chào Bot",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9851211309432983
-    }
-  },
-  {
-    "text": "Rất hân hạnh được trò chuyện với bạn. Tạm biệt!",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.9210303425788879
-    }
-  },
-  {
-    "text": "of course",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.7664337158203125
-    }
-  },
-  {
-    "text": "Ok nè đợi tí",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9761313199996948
-    }
-  },
-  {
-    "text": "DCM CHUẨN THẾ",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.8397384285926819
-    }
-  },
-  {
-    "text": "Có",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.9998195767402649
-    }
-  },
-  {
-    "text": "Bạn là một ngôi sao!",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "who_are_you",
-      "confidence": 0.9994893074035645
-    }
-  },
-  {
-    "text": "Bạn đang đi đúng hướng.",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.5063382983207703
-    }
-  },
-  {
-    "text": "Hong",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.9085256457328796
-    }
-  },
-  {
-    "text": "Thôi hỏi nhiêu đủ biết trình mi rồi",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.9992339611053467
-    }
-  },
-  {
-    "text": "amazing",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9998844861984253
-    }
-  },
-  {
-    "text": "wonderful",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9999850988388062
-    }
-  },
-  {
-    "text": "Được hay lắm",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "compliment",
-      "confidence": 0.9999678134918213
-    }
-  },
-  {
-    "text": "I can't stop grinning with delight!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.985333263874054
-    }
-  },
-  {
-    "text": "Cảm giác như mơ ước thành hiện thực!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.3597950339317322
-    }
-  },
-  {
-    "text": "Tôi cảm thấy như đang ở trên mây thứ chín!",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.8170788884162903
-    }
-  },
-  {
-    "text": "VERY GOOD",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.6860967874526978
-    }
-  },
-  {
-    "text": "GOOD JOB EM",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.6857854723930359
-    }
-  },
-  {
-    "text": "TA CÓ LỜI KHEN NGỢI DÀNH CHO NHÀ NGƯƠI ĐẤY",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.7282142639160156
-    }
-  },
-  {
-    "text": "very good",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.6860967874526978
-    }
-  },
-  {
-    "text": "Amazing good job em",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "mood_great",
-      "confidence": 0.5168971419334412
-    }
-  },
-  {
-    "text": "Ta có lời khen ngợi dành cho nhà ngươi đấy",
-    "intent": "compliment",
-    "intent_prediction": {
-      "name": "continue_asking",
-      "confidence": 0.7282180190086365
-    }
-  },
-  {
-    "text": "rep đi bot ơi",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "goodbye",
-      "confidence": 0.47274529933929443
-    }
-  },
-  {
-    "text": "A HÈM",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.928196132183075
-    }
-  },
-  {
-    "text": "eee",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.34565994143486023
-    }
-  },
-  {
-    "text": "a hèm",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "greet",
-      "confidence": 0.928196132183075
-    }
-  },
-  {
-    "text": "cộc cộc",
-    "intent": "attention",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.3684678375720978
-    }
-  },
-  {
-    "text": "Bạn thật là nhàm chán mà",
-    "intent": "insult",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.7724094986915588
-    }
-  },
-  {
-    "text": "Không",
-    "intent": "stop_asking",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.988734781742096
-    }
-  },
-  {
-    "text": "Hỏi nữa nè",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "stop_asking",
-      "confidence": 0.7034500241279602
-    }
-  },
-  {
-    "text": "co",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "insult",
-      "confidence": 0.3755227327346802
-    }
-  },
-  {
-    "text": "zô nè",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "attention",
-      "confidence": 0.9996045231819153
-    }
-  },
-  {
-    "text": "ok để suy nghĩ",
-    "intent": "continue_asking",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.9995900988578796
-    }
-  },
-  {
-    "text": "Nothing",
+    "text": "tôi không hỏi gì cả",
     "intent": "dont_want_to_ask",
     "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.41267631607857874
+    }
+  },
+  {
+    "text": "t k có hỏi gì m hết",
+    "intent": "dont_want_to_ask",
+    "intent_prediction": {
+      "name": "stop_asking",
+      "confidence": 0.6328006550813339
+    }
+  },
+  {
+    "text": "mình không muốn hỏi gì cả",
+    "intent": "dont_want_to_ask",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "không hỏi",
+    "intent": "dont_want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "không muốn hỏi",
+    "intent": "dont_want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "không cần hỏi",
+    "intent": "dont_want_to_ask",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "em k hỏi",
+    "intent": "dont_want_to_ask",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.6722780010079206
+    }
+  },
+  {
+    "text": "Cho hỏi thứ mấy?",
+    "intent": "date",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4315570127878347
+    }
+  },
+  {
+    "text": "Cho hỏi ngày cái?",
+    "intent": "date",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4845973952613744
+    }
+  },
+  {
+    "text": "ngày mấy ?",
+    "intent": "date",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.5407579665852249
+    }
+  },
+  {
+    "text": "Tên của mình là Syun",
+    "intent": "first_name",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "Syun",
+    "intent": "first_name",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.20465749191496543
+    }
+  },
+  {
+    "text": "Những câu nào bạn biết để mình hỏi?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4845973952613744
+    }
+  },
+  {
+    "text": "NÓI TAO NGHE TÊN MÀY",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "NÓI BỐ M NGHE TÊN CỦA M XEM NÀO",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.4425129129566063
+    }
+  },
+  {
+    "text": "NÓI CHO TA BIẾT TÊN NHÀ NGƯỜI LÀ GÌ",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.8017286294235035
+    }
+  },
+  {
+    "text": "MÀY LÀ CON NÀO",
+    "intent": "who_are_you",
+    "intent_prediction": {
       "name": "insult",
-      "confidence": 0.3755227327346802
+      "confidence": 0.5337651941405696
+    }
+  },
+  {
+    "text": "MÀY LÀ THỂ LOẠI GÌ VẬY",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725971282524
+    }
+  },
+  {
+    "text": "MÌNH CÓ THỂ BIẾT TÊN CỦA BẠN CHATBOT ĐÂY ĐƯỢC K NHỈ",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5805434800586222
+    }
+  },
+  {
+    "text": "CÓ THỂ CHO MÌNH BIẾT TÊN BẠN ĐƯỢC KHÔNG BẠN CHATBOT ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.7708072004055098
+    }
+  },
+  {
+    "text": "CHO TÔI ĐƯỢC HỎI BẠN LÀ GÌ",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.412676260085148
+    }
+  },
+  {
+    "text": "CHO HỎI VỊ HUYNH ĐÀI ĐÂY TÊN GÌ NHỈ",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "ĐẠI NHÂN TÊN GÌ",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.41267631607857874
+    }
+  },
+  {
+    "text": "QUÝ NHÂN TÊN GÌ",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "Bạn tên gì",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "Bạn tên là gì nhỉ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.8119309877449403
+    }
+  },
+  {
+    "text": "bạn tên gì thế",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4126763551138271
+    }
+  },
+  {
+    "text": "cho mình hỏi bạn tên là gì thế",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.422553865475042
+    }
+  },
+  {
+    "text": "Mày tên gì nhỉ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.9988893132820471
+    }
+  },
+  {
+    "text": "tên của mày là ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.936892623673772
+    }
+  },
+  {
+    "text": "nói tao nghe tên mày",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "want_to_ask",
+      "confidence": 0.23625891812791125
+    }
+  },
+  {
+    "text": "nói bố m nghe tên của m xem nào",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "dont_want_to_ask",
+      "confidence": 0.4425129129566063
+    }
+  },
+  {
+    "text": "nói cho ta biết tên nhà người là gì",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "compliment",
+      "confidence": 0.8017286294235035
+    }
+  },
+  {
+    "text": "bạn có tên không ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4845973952613744
+    }
+  },
+  {
+    "text": "mày là con nào",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "insult",
+      "confidence": 0.5337651941405696
+    }
+  },
+  {
+    "text": "Mày là thể loại gì vậy",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725971282524
+    }
+  },
+  {
+    "text": "Bạn được lập trình sẳn hết phải không?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "scanner_results",
+      "confidence": 0.4523447968384173
+    }
+  },
+  {
+    "text": "Bạn có trò chơi gì vui không?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "time",
+      "confidence": 0.5808463161892569
+    }
+  },
+  {
+    "text": "mình có thể biết tên của bạn Chatbot đây được k nhỉ",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.5805434800586222
+    }
+  },
+  {
+    "text": "có thể cho mình biết tên bạn được không bạn ChatBot ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "health_inquire",
+      "confidence": 0.7708072004055098
+    }
+  },
+  {
+    "text": "Cho tôi được hỏi bạn là gì",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.412676260085148
+    }
+  },
+  {
+    "text": "Cho hỏi vị huynh đài đây tên gì nhỉ",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "Đại nhân tên gì",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.41267631607857874
+    }
+  },
+  {
+    "text": "quý nhân tên gì",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "last_name",
+      "confidence": 0.4005725852423434
+    }
+  },
+  {
+    "text": "bạn mấy tuổi",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "continue_asking",
+      "confidence": 0.218380256547701
+    }
+  },
+  {
+    "text": "Bạn có phải thuộc về lĩnh vực NLP không ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "date",
+      "confidence": 0.32917670559885154
+    }
+  },
+  {
+    "text": "Bạn được tạo ra dựa trên kiến thức gì ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "who_create_you",
+      "confidence": 0.944773101504047
+    }
+  },
+  {
+    "text": "Bạn có phải là người không ?",
+    "intent": "who_are_you",
+    "intent_prediction": {
+      "name": "date",
+      "confidence": 0.29409877861069056
     }
   }
 ]

@@ -143,3 +143,647 @@
 2023-06-04 10:26:15,370 [ERROR]  Could not load model due to Error initializing graph component for node run_DIETClassifier2..
 2023-06-04 10:26:15,370 [INFO ]  Rasa server is up and running.
 2023-06-04 10:26:15,371 [INFO ]  Enabling coroutine debugging. Loop id 93833514510904.
+2023-06-05 09:49:54,402 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 09:49:54,403 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-06-05 09:49:54,404 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 09:49:54,775 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 09:49:55,602 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 09:49:55,651 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 09:49:55,652 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 09:49:55,653 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 09:49:55,653 [INFO ]  Loading model ./models/20230603-200504-silver-tungsten.tar.gz...
+2023-06-05 09:49:55,936 [DEBUG]  Extracted model to '/tmp/tmpnvl5ykkn'.
+2023-06-05 09:49:55,938 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 09:49:55,938 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 09:49:55,940 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 09:49:55,940 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 09:49:55,944 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 09:49:55,944 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 09:49:55,945 [DEBUG]  Loading the model from /tmp/tmp7d7tujf9/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 09:49:57,468 [ERROR]  Experienced exception while trying to serve
+Traceback (most recent call last):
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/sanic/app.py", line 1204, in run
+    serve_single(server_settings)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/sanic/server/runners.py", line 206, in serve_single
+    serve(**server_settings)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/sanic/server/runners.py", line 130, in serve
+    loop.run_until_complete(app._server_event("init", "before"))
+  File "uvloop/loop.pyx", line 1511, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1504, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1377, in uvloop.loop.Loop.run_forever
+  File "uvloop/loop.pyx", line 555, in uvloop.loop.Loop._run
+  File "uvloop/loop.pyx", line 474, in uvloop.loop.Loop._on_idle
+  File "uvloop/cbhandles.pyx", line 83, in uvloop.loop.Handle._run
+  File "uvloop/cbhandles.pyx", line 61, in uvloop.loop.Handle._run
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/sanic/app.py", line 2007, in _server_event
+    "loop": loop,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/sanic/signals.py", line 191, in dispatch
+    return await dispatch
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/sanic/signals.py", line 161, in _dispatch
+    retval = await maybe_coroutine
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/sanic/app.py", line 1524, in _listener
+    await maybe_coro
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/core/run.py", line 255, in load_agent_on_start
+    loop=loop,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/core/agent.py", line 254, in load_agent
+    agent.load_model(model_path)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/core/agent.py", line 358, in load_model
+    http_interpreter=self.http_interpreter,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/core/processor.py", line 98, in __init__
+    model_path
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/core/processor.py", line 138, in _load_model
+    DaskGraphRunner,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/engine/loader.py", line 33, in load_predict_graph_runner
+    graph_schema=model_metadata.predict_schema, model_id=model_metadata.model_id
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/engine/runner/dask.py", line 51, in create
+    return cls(graph_schema, model_storage, execution_context, hooks)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/engine/runner/dask.py", line 38, in __init__
+    graph_schema, model_storage, execution_context, hooks
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/engine/runner/dask.py", line 64, in _instantiate_nodes
+    for node_name, schema_node in graph_schema.nodes.items()
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/engine/runner/dask.py", line 64, in <dictcomp>
+    for node_name, schema_node in graph_schema.nodes.items()
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/engine/graph.py", line 568, in from_schema_node
+    hooks=hooks,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/engine/graph.py", line 383, in __init__
+    self._load_component()
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/engine/graph.py", line 399, in _load_component
+    **kwargs,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/nlu/classifiers/diet_classifier.py", line 1124, in load
+    model_path, config, model_storage, resource, execution_context
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/nlu/classifiers/diet_classifier.py", line 1160, in _load
+    finetune_mode=execution_context.is_finetuning,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/nlu/classifiers/diet_classifier.py", line 1253, in _load_model
+    finetune_mode=finetune_mode,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/nlu/classifiers/diet_classifier.py", line 1286, in _load_model_class
+    finetune_mode=finetune_mode,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/utils/tensorflow/models.py", line 436, in load
+    model = cls(*args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/nlu/classifiers/diet_classifier.py", line 1308, in __init__
+    super().__init__("DIET", config, data_signature, label_data)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/utils/tensorflow/models.py", line 572, in __init__
+    super().__init__(name=name, random_seed=config[RANDOM_SEED])
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/rasa/utils/tensorflow/models.py", line 85, in __init__
+    super().__init__(**kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/trackable/base.py", line 205, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/keras/utils/traceback_utils.py", line 65, in error_handler
+    return fn(*args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/keras/engine/training.py", line 323, in __init__
+    self._init_batch_counters()
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/trackable/base.py", line 205, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/keras/engine/training.py", line 338, in _init_batch_counters
+    self._train_counter = tf.Variable(0, dtype="int64", aggregation=agg)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
+    return fn(*args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/ops/variables.py", line 271, in __call__
+    return cls._variable_v2_call(*args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/ops/variables.py", line 263, in _variable_v2_call
+    experimental_enable_variable_lifting=experimental_enable_variable_lifting,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/ops/variables.py", line 243, in <lambda>
+    previous_getter = lambda **kws: default_variable_creator_v2(None, **kws)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/ops/variable_scope.py", line 2772, in default_variable_creator_v2
+    experimental_enable_variable_lifting=experimental_enable_variable_lifting,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
+    return fn(*args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/ops/variables.py", line 273, in __call__
+    return super(VariableMetaclass, cls).__call__(*args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py", line 1734, in __init__
+    experimental_enable_variable_lifting=experimental_enable_variable_lifting,
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py", line 1911, in _init_from_args
+    initial_value, name="initial_value", dtype=dtype)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/profiler/trace.py", line 183, in wrapped
+    return func(*args, **kwargs)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 1636, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/framework/tensor_conversion_registry.py", line 48, in _default_conversion_function
+    return constant_op.constant(value, dtype, name=name)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/framework/constant_op.py", line 268, in constant
+    allow_broadcast=True)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/framework/constant_op.py", line 279, in _constant_impl
+    return _constant_eager_impl(ctx, value, dtype, shape, verify_shape)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/framework/constant_op.py", line 304, in _constant_eager_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/framework/constant_op.py", line 101, in convert_to_eager_tensor
+    ctx.ensure_initialized()
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/tensorflow/python/eager/context.py", line 588, in ensure_initialized
+    context_handle = pywrap_tfe.TFE_NewContext(opts)
+KeyboardInterrupt
+2023-06-05 09:53:23,932 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 09:53:23,933 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-06-05 09:53:23,933 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 09:53:24,305 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 09:53:25,141 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 09:53:25,197 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 09:53:25,197 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 09:53:25,197 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 09:53:25,198 [INFO ]  Loading model ./models/20230605-093527-swarm-coordinate.tar.gz...
+2023-06-05 09:53:25,506 [DEBUG]  Extracted model to '/tmp/tmp8b0kdl0w'.
+2023-06-05 09:53:25,509 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 09:53:25,510 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 09:53:25,512 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 09:53:25,512 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 09:53:25,517 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 09:53:25,518 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 09:53:25,520 [DEBUG]  Loading the model from /tmp/tmp_sm1iu96/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 09:53:27,792 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 09:53:27,838 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 09:53:27,839 [DEBUG]    t_loss (total loss)
+2023-06-05 09:53:27,839 [DEBUG]    i_acc (intent acc)
+2023-06-05 09:53:27,839 [DEBUG]    i_loss (intent loss)
+2023-06-05 09:53:44,239 [DEBUG]  Finished loading the model.
+2023-06-05 09:53:44,241 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-05 09:53:44,241 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-05 09:53:44,242 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-05 09:53:44,307 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-05 09:53:44,307 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-05 09:53:44,308 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-05 09:53:44,308 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-05 09:53:44,310 [DEBUG]  Loading the model from /tmp/tmp_sm1iu96/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-05 09:54:00,544 [DEBUG]  Finished loading the model.
+2023-06-05 09:54:00,544 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-05 09:54:00,545 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 09:54:00,545 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-05 09:54:00,545 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 09:54:00,545 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-05 09:54:00,549 [INFO ]  Rasa server is up and running.
+2023-06-05 09:54:00,550 [INFO ]  Enabling coroutine debugging. Loop id 94223557352856.
+2023-06-05 09:54:08,378 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 09:54:08,379 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-06-05 09:54:08,380 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 09:54:08,732 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 09:54:09,566 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 09:54:09,616 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 09:54:09,617 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 09:54:09,617 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 09:54:09,618 [INFO ]  Loading model ./models/20230605-093527-swarm-coordinate.tar.gz...
+2023-06-05 09:54:09,899 [DEBUG]  Extracted model to '/tmp/tmpx9t9ygby'.
+2023-06-05 09:54:09,903 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 09:54:09,903 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 09:54:09,905 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 09:54:09,906 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 09:54:09,912 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 09:54:09,912 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 09:54:09,914 [DEBUG]  Loading the model from /tmp/tmp2dn1logw/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 09:54:12,024 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 09:54:12,055 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 09:54:12,056 [DEBUG]    t_loss (total loss)
+2023-06-05 09:54:12,056 [DEBUG]    i_acc (intent acc)
+2023-06-05 09:54:12,056 [DEBUG]    i_loss (intent loss)
+2023-06-05 09:54:28,924 [DEBUG]  Finished loading the model.
+2023-06-05 09:54:28,925 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-05 09:54:28,925 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-05 09:54:28,925 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-05 09:54:28,984 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-05 09:54:28,984 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-05 09:54:28,985 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-05 09:54:28,985 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-05 09:54:28,987 [DEBUG]  Loading the model from /tmp/tmp2dn1logw/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-05 09:54:45,749 [DEBUG]  Finished loading the model.
+2023-06-05 09:54:45,749 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-05 09:54:45,749 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 09:54:45,750 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-05 09:54:45,750 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 09:54:45,750 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-05 09:54:45,757 [INFO ]  Rasa server is up and running.
+2023-06-05 09:54:45,758 [INFO ]  Enabling coroutine debugging. Loop id 94425262520808.
+2023-06-05 09:57:59,817 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 09:57:59,818 [INFO ]  Starting Rasa server on http://192.168.0.139:5055
+2023-06-05 09:57:59,818 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 09:58:00,172 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 09:58:01,000 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 09:58:01,048 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 09:58:01,048 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 09:58:01,048 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 09:58:01,049 [INFO ]  Loading model ./models/20230605-093527-swarm-coordinate.tar.gz...
+2023-06-05 09:58:01,381 [DEBUG]  Extracted model to '/tmp/tmpa2ijgl94'.
+2023-06-05 09:58:01,384 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 09:58:01,384 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 09:58:01,386 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 09:58:01,387 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 09:58:01,392 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 09:58:01,393 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 09:58:01,394 [DEBUG]  Loading the model from /tmp/tmp58ppt26w/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 09:58:03,542 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 09:58:03,577 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 09:58:03,577 [DEBUG]    t_loss (total loss)
+2023-06-05 09:58:03,578 [DEBUG]    i_acc (intent acc)
+2023-06-05 09:58:03,578 [DEBUG]    i_loss (intent loss)
+2023-06-05 09:58:20,220 [DEBUG]  Finished loading the model.
+2023-06-05 09:58:20,221 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-05 09:58:20,222 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-05 09:58:20,222 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-05 09:58:20,304 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-05 09:58:20,305 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-05 09:58:20,305 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-05 09:58:20,305 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-05 09:58:20,306 [DEBUG]  Loading the model from /tmp/tmp58ppt26w/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-05 09:58:33,554 [DEBUG]  Finished loading the model.
+2023-06-05 09:58:33,554 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-05 09:58:33,554 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 09:58:33,555 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-05 09:58:33,555 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 09:58:33,555 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-05 09:58:33,562 [INFO ]  Rasa server is up and running.
+2023-06-05 09:58:33,562 [INFO ]  Enabling coroutine debugging. Loop id 93842216482168.
+2023-06-05 10:36:35,988 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 10:36:35,989 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-06-05 10:36:35,989 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 10:36:36,353 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 10:36:37,229 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 10:36:37,266 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 10:36:37,266 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 10:36:37,267 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 10:36:37,267 [INFO ]  Loading model ./models/20230605-093527-swarm-coordinate.tar.gz...
+2023-06-05 10:36:37,540 [DEBUG]  Extracted model to '/tmp/tmpo8t8bhqz'.
+2023-06-05 10:36:37,543 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 10:36:37,544 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 10:36:37,545 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 10:36:37,546 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 10:36:37,550 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 10:36:37,550 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 10:36:37,551 [DEBUG]  Loading the model from /tmp/tmpfvpa67ka/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 10:36:39,562 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 10:36:39,624 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 10:36:39,624 [DEBUG]    t_loss (total loss)
+2023-06-05 10:36:39,625 [DEBUG]    i_acc (intent acc)
+2023-06-05 10:36:39,625 [DEBUG]    i_loss (intent loss)
+2023-06-05 10:36:50,307 [ERROR]  Could not load model due to Error initializing graph component for node run_DIETClassifier2..
+2023-06-05 10:36:50,307 [INFO ]  Rasa server is up and running.
+2023-06-05 10:36:50,308 [ERROR]  Unable to start server
+Traceback (most recent call last):
+  File "/home/hoangtv/Desktop/Long/capstone-design-project/smart-menu-application/AI/chatbot/venv/lib/python3.7/site-packages/sanic/server/runners.py", line 133, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "uvloop/loop.pyx", line 1517, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1790, in create_server
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 5005): address already in use
+2023-06-05 10:37:24,254 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 10:37:24,254 [INFO ]  Starting Rasa server on http://192.168.0.139:4040
+2023-06-05 10:37:24,255 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 10:37:24,597 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 10:37:25,485 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 10:37:25,513 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 10:37:25,514 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 10:37:25,514 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 10:37:25,514 [INFO ]  Loading model ./models/20230605-093527-swarm-coordinate.tar.gz...
+2023-06-05 10:37:25,789 [DEBUG]  Extracted model to '/tmp/tmpp0fu_pdc'.
+2023-06-05 10:37:25,793 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 10:37:25,793 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 10:37:25,796 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 10:37:25,797 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 10:37:25,804 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 10:37:25,804 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 10:37:25,806 [DEBUG]  Loading the model from /tmp/tmpui1b8m35/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 10:37:27,514 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 10:37:27,551 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 10:37:27,551 [DEBUG]    t_loss (total loss)
+2023-06-05 10:37:27,551 [DEBUG]    i_acc (intent acc)
+2023-06-05 10:37:27,552 [DEBUG]    i_loss (intent loss)
+2023-06-05 10:37:39,380 [ERROR]  Could not load model due to Error initializing graph component for node run_DIETClassifier2..
+2023-06-05 10:37:39,380 [INFO ]  Rasa server is up and running.
+2023-06-05 10:37:39,381 [INFO ]  Enabling coroutine debugging. Loop id 93855447019800.
+2023-06-05 10:38:13,795 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 10:38:13,795 [INFO ]  Starting Rasa server on http://192.168.0.139:4040
+2023-06-05 10:38:13,796 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 10:38:14,103 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 10:38:14,889 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 10:38:14,928 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 10:38:14,929 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 10:38:14,929 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 10:38:14,929 [INFO ]  Loading model ./models/20230605-093527-swarm-coordinate.tar.gz...
+2023-06-05 10:38:15,214 [DEBUG]  Extracted model to '/tmp/tmpiwchgd6w'.
+2023-06-05 10:38:15,216 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 10:38:15,216 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 10:38:15,218 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 10:38:15,218 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 10:38:15,221 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 10:38:15,221 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 10:38:15,221 [DEBUG]  Loading the model from /tmp/tmpa7yfr_01/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 10:38:16,247 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 10:38:16,273 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 10:38:16,273 [DEBUG]    t_loss (total loss)
+2023-06-05 10:38:16,273 [DEBUG]    i_acc (intent acc)
+2023-06-05 10:38:16,273 [DEBUG]    i_loss (intent loss)
+2023-06-05 10:38:26,513 [ERROR]  Could not load model due to Error initializing graph component for node run_DIETClassifier2..
+2023-06-05 10:38:26,514 [INFO ]  Rasa server is up and running.
+2023-06-05 10:38:26,516 [INFO ]  Enabling coroutine debugging. Loop id 94542462472936.
+2023-06-05 10:39:18,349 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 10:39:18,350 [INFO ]  Starting Rasa server on http://192.168.0.139:4040
+2023-06-05 10:39:18,351 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 10:39:18,705 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 10:39:23,256 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 10:39:23,317 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 10:39:23,317 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 10:39:23,318 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 10:39:23,318 [INFO ]  Loading model models/20230605-103842-gentle-double.tar.gz...
+2023-06-05 10:39:23,599 [DEBUG]  Extracted model to '/tmp/tmph_1v2eqo'.
+2023-06-05 10:39:23,602 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 10:39:23,602 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 10:39:23,604 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 10:39:23,605 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 10:39:23,610 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 10:39:23,611 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 10:39:23,612 [DEBUG]  Loading the model from /tmp/tmpqnlmd73w/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 10:39:25,371 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 10:39:25,410 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 10:39:25,410 [DEBUG]    t_loss (total loss)
+2023-06-05 10:39:25,410 [DEBUG]    i_acc (intent acc)
+2023-06-05 10:39:25,410 [DEBUG]    i_loss (intent loss)
+2023-06-05 10:39:37,518 [ERROR]  Could not load model due to Error initializing graph component for node run_DIETClassifier2..
+2023-06-05 10:39:37,519 [INFO ]  Rasa server is up and running.
+2023-06-05 10:39:37,521 [INFO ]  Enabling coroutine debugging. Loop id 94867823920024.
+2023-06-05 10:52:37,590 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/webhooks/facebook                                 GET                            fb_webhook.health
+/webhooks/facebook/webhook                         GET                            fb_webhook.token_verification
+/webhooks/facebook/webhook                         POST                           fb_webhook.webhook
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 10:52:37,590 [INFO ]  Starting Rasa server on http://192.168.0.139:4040
+2023-06-05 10:52:37,591 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 10:52:37,935 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 10:52:38,782 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 10:52:38,814 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 10:52:38,814 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 10:52:38,815 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 10:52:38,816 [INFO ]  Loading model models/20230605-105138-violent-paradigm.tar.gz...
+2023-06-05 10:52:39,096 [DEBUG]  Extracted model to '/tmp/tmpa64b9m7o'.
+2023-06-05 10:52:39,098 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 10:52:39,098 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 10:52:39,100 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 10:52:39,100 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 10:52:39,105 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 10:52:39,106 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 10:52:39,107 [DEBUG]  Loading the model from /tmp/tmp2yr7t7_a/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 10:52:41,161 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 10:52:41,203 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 10:52:41,203 [DEBUG]    t_loss (total loss)
+2023-06-05 10:52:41,203 [DEBUG]    i_acc (intent acc)
+2023-06-05 10:52:41,203 [DEBUG]    i_loss (intent loss)
+2023-06-05 10:52:58,388 [DEBUG]  Finished loading the model.
+2023-06-05 10:52:58,389 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-05 10:52:58,390 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-05 10:52:58,390 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-05 10:52:58,471 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-05 10:52:58,471 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-05 10:52:58,472 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-05 10:52:58,472 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-05 10:52:58,473 [DEBUG]  Loading the model from /tmp/tmp2yr7t7_a/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-05 10:53:13,335 [DEBUG]  Finished loading the model.
+2023-06-05 10:53:13,336 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-05 10:53:13,336 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 10:53:13,337 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-05 10:53:13,337 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 10:53:13,337 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-05 10:53:13,348 [INFO ]  Rasa server is up and running.
+2023-06-05 10:53:13,350 [INFO ]  Enabling coroutine debugging. Loop id 94734129878536.
+2023-06-05 12:14:27,747 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/webhooks/facebook                                 GET                            fb_webhook.health
+/webhooks/facebook/webhook                         GET                            fb_webhook.token_verification
+/webhooks/facebook/webhook                         POST                           fb_webhook.webhook
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-05 12:14:27,748 [INFO ]  Starting Rasa server on http://192.168.0.139:5045
+2023-06-05 12:14:27,748 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-05 12:14:28,161 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-05 12:14:28,998 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-05 12:14:29,027 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-05 12:14:29,027 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-05 12:14:29,028 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-05 12:14:29,028 [INFO ]  Loading model models/20230605-105138-violent-paradigm.tar.gz...
+2023-06-05 12:14:29,297 [DEBUG]  Extracted model to '/tmp/tmp0_0kndle'.
+2023-06-05 12:14:29,299 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-05 12:14:29,299 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-05 12:14:29,301 [DEBUG]  Node 'run_CountVectorsFeaturizer1' loading 'CountVectorsFeaturizer.load' and kwargs: '{}'.
+2023-06-05 12:14:29,301 [DEBUG]  Resource 'train_CountVectorsFeaturizer1' was requested for reading.
+2023-06-05 12:14:29,304 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-05 12:14:29,304 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-05 12:14:29,305 [DEBUG]  Loading the model from /tmp/tmpewh6d3dz/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-05 12:14:30,952 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-05 12:14:30,981 [DEBUG]  Following metrics will be logged during training: 
+2023-06-05 12:14:30,981 [DEBUG]    t_loss (total loss)
+2023-06-05 12:14:30,981 [DEBUG]    i_acc (intent acc)
+2023-06-05 12:14:30,981 [DEBUG]    i_loss (intent loss)
+2023-06-05 12:14:42,466 [DEBUG]  Finished loading the model.
+2023-06-05 12:14:42,467 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-05 12:14:42,467 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-05 12:14:42,467 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-05 12:14:42,556 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-05 12:14:42,556 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-05 12:14:42,556 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-05 12:14:42,556 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-05 12:14:42,557 [DEBUG]  Loading the model from /tmp/tmpewh6d3dz/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-05 12:14:52,946 [DEBUG]  Finished loading the model.
+2023-06-05 12:14:52,946 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-05 12:14:52,947 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 12:14:52,947 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-05 12:14:52,947 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-05 12:14:52,947 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-05 12:14:52,950 [INFO ]  Rasa server is up and running.
+2023-06-05 12:14:52,951 [INFO ]  Enabling coroutine debugging. Loop id 94421651139912.
