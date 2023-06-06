@@ -19,3 +19,7 @@ RUN pip3 install rasa && \
     pip3 install rasa[transformers] && \
     pip install transformers && \
     python3 -m spacy download en_core_web_md
+
+# CMD ["rasa", "run", "--enable-api", "--auth-token thisismysecret", \
+#     "--cors", "*", "-m", "models/20230605-105138-violent-paradigm.tar.gz",\
+#     "-vv", "--log-file", "out.log", "-p", "5045"]
