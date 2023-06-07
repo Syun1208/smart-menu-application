@@ -16,7 +16,7 @@ pipeline:
   model_name: bert
   model_weights: bert-base-uncased
 - name: DIETClassifier
-  epochs: 200
+  epochs: 250
 - name: EntitySynonymMapper
 
 

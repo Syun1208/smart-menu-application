@@ -26,7 +26,10 @@ class ActionAskDate(Action):
         return "action_ask_date"
     
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,  domain: DomainDict) -> Dict[Text, Text]:
-        return [SlotSet('date_answer', date.today())]
+        
+        dispatcher.utter_message(text="Hôm nay là thứ {} nha bro !".format(date.today()))
+        
+        return []
 
 class ActionAskTime(Action):
     def name(self) -> Text:
@@ -37,7 +40,10 @@ class ActionAskTime(Action):
 
         current_time = now.strftime("%H:%M:%S")
         
-        return [SlotSet('time_answer', current_time)]
+
+        dispatcher.utter_message(text="Bây giờ là {} rùi bạn ơi, chú ý thời gian để làm việc nha bạn iuuu :3".format(current_time))
+
+        return []
 
 # class ActionAskFirstName(Action):
 #     def name(self) -> Text:

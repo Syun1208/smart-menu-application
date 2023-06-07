@@ -988,9 +988,6 @@ nlu:
     - Phạm Minh Long và Hoàng Đình Thái học khoa nào
     - Bạn biết thầy Trần Vũ Hoàng không?
     - Anh Long đẹp trai nhất trong UTE-AI lab đúng ko bot ?
-    - Con loz Khôi Nguyên đầy đọa anh Long phải không chatbot ?
-    - Người tạo ra m có phải là có nyc tệ lắm phải ko ?
-    - M có muốn trả thù nyc cho người tạo ra m không bot ? 
     - Chúa tể AI Phạm Minh Long tạo ra m đúng không bot ngu loz ?
     - Anh Long đẹp trai làm ở VinBigdata tạo ra m phải ko bot ?
     - UTE-AI Lab có phải là lab lầy nhất trường UTE ko ?
@@ -2200,16 +2197,25 @@ nlu:
     - ê ku nay ngày gì ?
     - ê hôm nay là ngày gì ?
     - Nè hôm nay là ngày gì ?
-- intent: first_name
+
+- intent: ex
   examples: |
-    - Tên của mình là Long
-    - Long
-    - Tên của mình là Syun
-    - Syun
-- intent: last_name
-  examples: |
-    - Họ của mình là Phạm
-    - Phạm
+    - Con loz Khôi Nguyên đầy đọa anh Long phải không chatbot ?
+    - Người tạo ra m có phải là có nyc tệ lắm phải ko ?
+    - M có muốn trả thù nyc cho người tạo ra m không bot ? 
+    - nyc anh Long là ai v bot ?
+    - nyc anh Long là Nguyễn Khôi Nguyên phải ko ?
+    - anh Long ghét nyc lắm phải hongg ? 
+# - intent: first_name
+#   examples: |
+#     - Tên của mình là Long
+#     - Long
+#     - Tên của mình là Syun
+#     - Syun
+# - intent: last_name
+#   examples: |
+#     - Họ của mình là Phạm
+#     - Phạm
 - intent: who_are_you
   examples: |
     - Những câu nào bạn biết để mình hỏi?	

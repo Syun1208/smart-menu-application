@@ -7,6 +7,16 @@ stories:
   - intent: greet
   - action: utter_greet
 
+- story: ask for time 
+  steps:
+  - intent: time
+  - action: action_ask_time
+
+- story: ask for date
+  steps:
+  - intent: date
+  - action: action_ask_date
+
 - story: how to use
   steps:
   - intent: how_to_use

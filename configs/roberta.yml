@@ -15,7 +15,7 @@ pipeline:
 - name: LanguageModelFeaturizer
   model_name: roberta
 - name: DIETClassifier
-  epochs: 200
+  epochs: 250
 - name: EntitySynonymMapper
 
 

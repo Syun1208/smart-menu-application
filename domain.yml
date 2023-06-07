@@ -5,6 +5,7 @@ intents:
   - goodbye
   - affirm
   - deny
+  - ex
   - insult
   - stop_asking
   - continue_asking
@@ -41,8 +42,6 @@ slots:
     influence_conversation: false
     mappings:
       - type: custom
-
-
 
 responses:
 
@@ -105,7 +104,7 @@ responses:
   - text: App có 3 chức năng chính scan text trên menu, dịch tiếng Việt sang tiếng Anh, gợi ý món ăn. Ởphần home bạn sẽ thấy có 3 nút tương ứng cho 3 chức năng. Ở góc dưới bên phải là chat bot (là tui đó :))))
   - text: Ứng dụng này có ba chức năng chủ yếu quét văn bản trên thực đơn, dịch từ tiếng Việt sang tiếng Anh và đề xuất món ăn. Trên màn hình chính, bạn sẽ thấy ba nút tương ứng cho ba chức năng này. Ở góc dưới bên phải, có một trò chuyện chat bot (đó là tôi đấy :))))
   - text: Ứng dụng này được xây dựng với ba tính năng chính quét và nhận diện văn bản trên menu, dịch đoạn văn từ tiếng Việt sang tiếng Anh và cung cấp gợi ý về các món ăn. Trên màn hình chính, bạn sẽ thấy ba nút tương ứng cho từng tính năng này. Ở góc dưới bên phải, có một chat bot sẵn sàng trò chuyện và giúp đỡ bạn (chính là tôi đấy :))))
-  - text: Có 3 chức năng nha má {menu scanner, dịch tiếng Việt -> Anh, gợi ý món ăn}. Góc dưới là con chatbot đẹp trai khoai to nha =)). Bấm thử vô từng chức năng đi, rùi thắc mắc gì hỏi mình tiếp nha.
+  - text: Có 3 chức năng nha má {menu scanner, dịch tiếng Việt -> Anh, gợi ý món ăn}. Góc dưới là con chatbot đẹp trai nha =)). Bấm thử vô từng chức năng đi, rùi thắc mắc gì hỏi mình tiếp nha.
   
   utter_scanner_suggest:
   - text: bạn làm theo mình. Bấm load model -> chọn 1 bức ảnh menu từ (camera hoặc gallery trong điện thoại bạn) -> run model để lấy kết quả ạ
@@ -154,11 +153,17 @@ responses:
   - text: Có gì đâu hihi
   - text: Giúp được bạn là nhiệm vụ của mình mà !
 
+  utter_ex:
+  - text: Đúng gòi nè :)) nyc anh Long là Nguyễn Khôi Nguyên nha. Red flag đó té đi bạn =))
+  - text: Yeah ! bé Nguyên là nyc của anh Long đẹp trai nha, bé đó sống tệ lắm, trap girl đó, Hải quay xe !!!
+  - text: Đừng nhắc nữa, đến cả bot tui đây còn ghét nói chi anh Long đẹp trai của tui, Khui Nguyên chứ ai =))
+
 actions:
 - action_ask_date
 - action_ask_time
-- action_ask_first_name
-- action_ask_last_name
+# - action_ask_first_name
+# - action_ask_last_name
+- utter_ex
 - utter_greet
 - utter_goodbye
 - utter_ok
