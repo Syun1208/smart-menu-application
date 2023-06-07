@@ -17,6 +17,11 @@ stories:
   - intent: date
   - action: action_ask_date
 
+- story: ask for ex
+  steps:
+  - intent: ex
+  - action: utter_ex
+
 - story: how to use
   steps:
   - intent: how_to_use

@@ -25,7 +25,7 @@ class ActionAskDate(Action):
     def name(self) -> Text:
         return "action_ask_date"
     
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,  domain: DomainDict) -> Dict[Text, Text]:
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,  domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         dispatcher.utter_message(text="Hôm nay là thứ {} nha bro !".format(date.today()))
         
@@ -35,12 +35,12 @@ class ActionAskTime(Action):
     def name(self) -> Text:
         return "action_ask_time"
     
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,  domain: DomainDict) -> Dict[Text, Text]:
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,  domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         now = datetime.now(tz=ZoneInfo("Asia/Ho_Chi_Minh"))
 
         current_time = now.strftime("%H:%M:%S")
         
-
+        dispatcher.utter_message(text="Hi")
         dispatcher.utter_message(text="Bây giờ là {} rùi bạn ơi, chú ý thời gian để làm việc nha bạn iuuu :3".format(current_time))
 
         return []
