@@ -30,18 +30,18 @@ intents:
   - camera
   - scanner_results
 
-slots:
-  date_answer:
-    type: text
-    influence_conversation: false
-    mappings:
-      - type: custom
+# slots:
+#   date_answer:
+#     type: text
+#     influence_conversation: false
+#     mappings:
+#       - type: custom
 
-  time_answer:
-    type: text
-    influence_conversation: false
-    mappings:
-      - type: custom
+#   time_answer:
+#     type: text
+#     influence_conversation: false
+#     mappings:
+#       - type: custom
 
 responses:
 
