@@ -1,1 +1,1 @@
-rasa run --enable-api --cors * -m models/20230605-105138-violent-paradigm.tar.gz -vv --log-file out.log
+rasa run --enable-api --cors * -m ./models/20230607-225139-noisy-noodle.tar.gz -vv --log-file out.log -p 5005 --debug

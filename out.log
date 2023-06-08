@@ -1113,3 +1113,986 @@ OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 5005):
 2023-06-08 02:06:28,361 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
 2023-06-08 02:06:28,364 [INFO ]  Rasa server is up and running.
 2023-06-08 02:06:28,365 [INFO ]  Enabling coroutine debugging. Loop id 94160590176680.
+2023-06-08 15:20:55,475 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-08 15:20:55,476 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-06-08 15:20:55,476 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-08 15:20:55,885 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-08 15:20:56,725 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-08 15:20:56,775 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-08 15:20:56,775 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-08 15:20:56,776 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-08 15:20:56,776 [INFO ]  Loading model ./models/20230607-225139-noisy-noodle.tar.gz...
+2023-06-08 15:20:57,035 [DEBUG]  Extracted model to '/tmp/tmpn23_rugb'.
+2023-06-08 15:20:57,037 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-08 15:20:57,037 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-08 15:20:57,039 [DEBUG]  Node 'run_LanguageModelFeaturizer1' loading 'LanguageModelFeaturizer.load' and kwargs: '{}'.
+2023-06-08 15:20:57,356 [DEBUG]  Loading Tokenizer and Model for bert
+2023-06-08 15:20:57,359 [DEBUG]  Starting new HTTPS connection (1): huggingface.co:443
+2023-06-08 15:20:57,744 [DEBUG]  https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-06-08 15:20:58,600 [DEBUG]  https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-06-08 15:21:05,979 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-08 15:21:05,979 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-08 15:21:05,988 [DEBUG]  Loading the model from /tmp/tmphu6ntff7/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-08 15:21:06,027 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-08 15:21:06,075 [DEBUG]  Following metrics will be logged during training: 
+2023-06-08 15:21:06,075 [DEBUG]    t_loss (total loss)
+2023-06-08 15:21:06,075 [DEBUG]    i_acc (intent acc)
+2023-06-08 15:21:06,076 [DEBUG]    i_loss (intent loss)
+2023-06-08 15:21:22,553 [DEBUG]  Finished loading the model.
+2023-06-08 15:21:22,562 [DEBUG]  Node 'run_EntitySynonymMapper3' loading 'EntitySynonymMapper.load' and kwargs: '{}'.
+2023-06-08 15:21:22,562 [DEBUG]  Resource 'train_EntitySynonymMapper3' was requested for reading.
+2023-06-08 15:21:22,562 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_EntitySynonymMapper3' doesn't exist.
+2023-06-08 15:21:22,563 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-08 15:21:22,563 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-08 15:21:22,563 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-08 15:21:22,633 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-08 15:21:22,633 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-08 15:21:22,634 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-08 15:21:22,634 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-08 15:21:22,636 [DEBUG]  Loading the model from /tmp/tmphu6ntff7/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-08 15:21:42,109 [DEBUG]  Finished loading the model.
+2023-06-08 15:21:42,110 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-08 15:21:42,110 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-08 15:21:42,111 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-08 15:21:42,111 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-08 15:21:42,112 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-08 15:21:42,122 [INFO ]  Rasa server is up and running.
+2023-06-08 15:21:42,132 [INFO ]  Enabling coroutine debugging. Loop id 93993517238984.
+2023-06-08 15:21:49,896 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:21:49,897 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:21:49,897 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:21:49,897 [DEBUG]  Could not find tracker for conversation ID 'user'.
+2023-06-08 15:21:49,897 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:21:49,897 [DEBUG]  Starting a new session for conversation ID 'user'.
+2023-06-08 15:21:49,899 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:21:49,899 [DEBUG]  Action 'action_session_start' ended with events '[<rasa.shared.core.events.SessionStarted object at 0x7fa7b04e9588>, ActionExecuted(action: action_listen, policy: None, confidence: None)]'.
+2023-06-08 15:21:49,899 [DEBUG]  Current slot values: 
+	session_started_metadata: None
+2023-06-08 15:21:49,899 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b04dff60>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:21:49,899 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:21:49,900 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:21:49,902 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:21:50,088 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:21:50,551 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:21:50,552 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:21:50,552 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:21:50,552 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:21:50,552 [DEBUG]  Logged UserUtterance - tracker now has 4 events.
+2023-06-08 15:21:50,553 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:21:50,553 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:21:50,553 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b04e9080>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:21:50,553 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:21:50,553 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:21:50,553 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:21:50,554 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:21:50,554 [DEBUG]  There is a memorised next action 'utter_who_are_you'
+2023-06-08 15:21:50,554 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:21:50,554 [DEBUG]  Current tracker state:
+[state 1] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:21:50,554 [DEBUG]  There is no applicable rule.
+2023-06-08 15:21:50,554 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:21:50,554 [DEBUG]  There is no applicable rule.
+2023-06-08 15:21:50,555 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:21:50,569 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:21:50,570 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:21:50,570 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:21:50,570 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:21:50,570 [DEBUG]  Predicted next action using MemoizationPolicy.
+2023-06-08 15:21:50,571 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 1.00.
+2023-06-08 15:21:50,572 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b04dfb70>]'.
+2023-06-08 15:21:50,572 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là trợ lý hướng dẫn người dùng sử dụng ứng dụng smart menu do anh Phạm Minh Long phát minh dưới sự hướng dẫn của thầy Trần Vũ Hoàng', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212510.5725985)]'.
+2023-06-08 15:21:50,573 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b04e9080>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:21:50,573 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:21:50,573 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:21:50,573 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:21:50,574 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:21:50,574 [DEBUG]  There is a memorised next action 'action_listen'
+2023-06-08 15:21:50,574 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:21:50,574 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:21:50,574 [DEBUG]  There is no applicable rule.
+2023-06-08 15:21:50,574 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:21:50,585 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:21:50,586 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:21:50,586 [DEBUG]  Predicted next action using MemoizationPolicy.
+2023-06-08 15:21:50,586 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:21:50,586 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:21:50,586 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:21:50,586 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:21:50,587 [DEBUG]  Deleted lock for conversation 'user'.
+2023-06-08 15:22:05,954 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:22:05,954 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:22:05,954 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:22:05,954 [DEBUG]  Recreating tracker for id 'user'
+2023-06-08 15:22:05,955 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b0479588>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:05,956 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:22:05,956 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:22:05,956 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:22:06,148 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:22:06,157 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:22:06,157 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:06,157 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:22:06,158 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:22:06,158 [DEBUG]  Logged UserUtterance - tracker now has 9 events.
+2023-06-08 15:22:06,158 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:22:06,158 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:22:06,159 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b04e9080>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:06,159 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:06,159 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:06,159 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:06,160 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:06,160 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:06,160 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:06,160 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:22:06,160 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:06,161 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:06,161 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:06,161 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:06,171 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:22:06,172 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:06,172 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:22:06,172 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:22:06,172 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:06,172 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 0.99.
+2023-06-08 15:22:06,173 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b04e9c18>]'.
+2023-06-08 15:22:06,173 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là chatbot thông minh hỗ trợ bạn sử dụng ứng dụng smart menu một cách hiệu quả nhất !', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212526.1732464)]'.
+2023-06-08 15:22:06,173 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b04e9080>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:06,174 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:06,174 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:06,174 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:06,174 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:06,174 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:06,174 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:06,175 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:06,175 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:06,175 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:06,184 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:22:06,184 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:06,184 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:06,185 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:22:06,185 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:22:06,185 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:22:06,185 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:22:06,185 [DEBUG]  Deleted lock for conversation 'user'.
+2023-06-08 15:22:08,504 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:22:08,504 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:22:08,504 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:22:08,504 [DEBUG]  Recreating tracker for id 'user'
+2023-06-08 15:22:08,507 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b04df8d0>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:08,507 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:22:08,507 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:22:08,508 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:22:08,762 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:22:08,772 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:22:08,772 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:08,772 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:22:08,772 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:22:08,773 [DEBUG]  Logged UserUtterance - tracker now has 14 events.
+2023-06-08 15:22:08,773 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:22:08,773 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:22:08,773 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b058b5c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:08,774 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:08,774 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:08,774 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:08,775 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:08,775 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:08,775 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:08,775 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:22:08,776 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:08,776 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:08,776 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:08,776 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:08,790 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:22:08,790 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:08,790 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:22:08,791 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:22:08,791 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:08,791 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 0.99.
+2023-06-08 15:22:08,791 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b04e90b8>]'.
+2023-06-08 15:22:08,791 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là trợ lý hướng dẫn người dùng sử dụng ứng dụng smart menu do anh Phạm Minh Long phát minh dưới sự hướng dẫn của thầy Trần Vũ Hoàng', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212528.791743)]'.
+2023-06-08 15:22:08,792 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b058b5c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:08,792 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:08,792 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:08,792 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:08,792 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:08,793 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:08,793 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:08,793 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:08,793 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:08,793 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:08,809 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:22:08,810 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:08,810 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:08,810 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:22:08,810 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:22:08,810 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:22:08,810 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:22:08,811 [DEBUG]  Deleted lock for conversation 'user'.
+2023-06-08 15:22:09,937 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:22:09,938 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:22:09,938 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:22:09,938 [DEBUG]  Recreating tracker for id 'user'
+2023-06-08 15:22:09,939 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b04df8d0>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:09,940 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:22:09,940 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:22:09,940 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:22:10,117 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:22:10,131 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:22:10,132 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:10,132 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:22:10,132 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:22:10,133 [DEBUG]  Logged UserUtterance - tracker now has 19 events.
+2023-06-08 15:22:10,133 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:22:10,133 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:22:10,133 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b058bc18>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:10,134 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:10,134 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:10,134 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:10,135 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:10,135 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:10,135 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:10,135 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:22:10,135 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:10,136 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:10,136 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:10,136 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:10,147 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:22:10,148 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:10,148 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:22:10,148 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:22:10,148 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:10,149 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 0.99.
+2023-06-08 15:22:10,150 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b04e9710>]'.
+2023-06-08 15:22:10,150 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là trợ lý hướng dẫn người dùng sử dụng ứng dụng smart menu do anh Phạm Minh Long phát minh dưới sự hướng dẫn của thầy Trần Vũ Hoàng', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212530.1499996)]'.
+2023-06-08 15:22:10,150 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b058bc18>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:10,150 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:10,151 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:10,151 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:10,151 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:10,152 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:10,152 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:10,152 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:10,152 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:10,153 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:10,167 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:22:10,168 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:10,169 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:10,169 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:22:10,170 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:22:10,170 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:22:10,170 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:22:10,171 [DEBUG]  Deleted lock for conversation 'user'.
+2023-06-08 15:22:11,678 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:22:11,679 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:22:11,679 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:22:11,679 [DEBUG]  Recreating tracker for id 'user'
+2023-06-08 15:22:11,683 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b04dffd0>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:11,684 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:22:11,684 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:22:11,685 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:22:11,937 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:22:11,949 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:22:11,950 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:11,950 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:22:11,950 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:22:11,951 [DEBUG]  Logged UserUtterance - tracker now has 24 events.
+2023-06-08 15:22:11,951 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:22:11,951 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:22:11,951 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b04dfb70>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:11,952 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:11,952 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:11,952 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:11,953 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:11,953 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:11,953 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:11,954 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:22:11,954 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:11,955 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:11,955 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:11,955 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:11,967 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:22:11,968 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:11,968 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:22:11,968 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:22:11,968 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:11,969 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 0.99.
+2023-06-08 15:22:11,969 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b058f128>]'.
+2023-06-08 15:22:11,969 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là trợ lý hướng dẫn người dùng sử dụng ứng dụng smart menu do anh Phạm Minh Long phát minh dưới sự hướng dẫn của thầy Trần Vũ Hoàng', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212531.9696262)]'.
+2023-06-08 15:22:11,970 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b04dfb70>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:11,970 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:11,970 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:11,970 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:11,971 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:11,971 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:11,971 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:11,972 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:11,972 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:11,972 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:11,986 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:22:11,987 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:11,987 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:11,987 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:22:11,987 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:22:11,988 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:22:11,988 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:22:11,988 [DEBUG]  Deleted lock for conversation 'user'.
+2023-06-08 15:22:14,955 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:22:14,955 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:22:14,955 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:22:14,955 [DEBUG]  Recreating tracker for id 'user'
+2023-06-08 15:22:14,957 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b04dfe80>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:14,958 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:22:14,958 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:22:14,958 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:22:15,129 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:22:15,136 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:22:15,136 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:15,136 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:22:15,136 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:22:15,136 [DEBUG]  Logged UserUtterance - tracker now has 29 events.
+2023-06-08 15:22:15,137 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:22:15,137 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:22:15,137 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa98b1a54a8>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:15,137 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:15,137 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:15,137 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:15,138 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:15,138 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:15,138 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:15,138 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:22:15,138 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:15,138 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:15,139 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:15,139 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:15,146 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:22:15,146 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:15,146 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:22:15,146 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:22:15,146 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:15,146 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 0.99.
+2023-06-08 15:22:15,146 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b04e9f60>]'.
+2023-06-08 15:22:15,147 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là chatbot thông minh hỗ trợ bạn sử dụng ứng dụng smart menu một cách hiệu quả nhất !', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212535.1469169)]'.
+2023-06-08 15:22:15,147 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa98b1a54a8>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:15,147 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:15,147 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:15,147 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:15,147 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:15,148 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:15,148 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:15,148 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:15,148 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:15,148 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:15,156 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:22:15,156 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:15,156 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:15,157 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:22:15,157 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:22:15,157 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:22:15,157 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:22:15,157 [DEBUG]  Deleted lock for conversation 'user'.
+2023-06-08 15:22:28,218 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:22:28,218 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:22:28,218 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:22:28,218 [DEBUG]  Recreating tracker for id 'user'
+2023-06-08 15:22:28,220 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b04dfe80>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:28,220 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:22:28,220 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:22:28,220 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:22:28,362 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:22:28,370 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:22:28,370 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:28,370 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:22:28,371 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:22:28,371 [DEBUG]  Logged UserUtterance - tracker now has 34 events.
+2023-06-08 15:22:28,371 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:22:28,371 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:22:28,371 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b074b5c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:28,372 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:28,372 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:28,372 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:28,373 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:28,373 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:28,373 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:28,374 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:22:28,374 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:28,374 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:28,374 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:28,375 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:28,387 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:22:28,388 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:28,388 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:22:28,389 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:22:28,389 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:28,389 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 0.99.
+2023-06-08 15:22:28,390 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b058fc88>]'.
+2023-06-08 15:22:28,391 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là trợ lý hướng dẫn người dùng sử dụng ứng dụng smart menu do anh Phạm Minh Long phát minh dưới sự hướng dẫn của thầy Trần Vũ Hoàng', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212548.3907638)]'.
+2023-06-08 15:22:28,391 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b074b5c0>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:28,391 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:28,391 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:28,392 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:28,392 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:28,393 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:28,393 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:28,393 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:28,394 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:28,394 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:28,404 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:22:28,405 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:28,405 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:28,406 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:22:28,406 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:22:28,406 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:22:28,407 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:22:28,409 [DEBUG]  Deleted lock for conversation 'user'.
+2023-06-08 15:22:31,543 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:22:31,543 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:22:31,543 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:22:31,543 [DEBUG]  Recreating tracker for id 'user'
+2023-06-08 15:22:31,545 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b04dfe48>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:31,546 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:22:31,546 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:22:31,546 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:22:31,727 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:22:31,735 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:22:31,736 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:31,736 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:22:31,736 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:22:31,737 [DEBUG]  Logged UserUtterance - tracker now has 39 events.
+2023-06-08 15:22:31,737 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:22:31,737 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:22:31,737 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b06a9630>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:31,738 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:31,738 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:31,738 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:31,739 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:31,740 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:31,740 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:31,740 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:22:31,740 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:31,741 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:31,741 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:31,741 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:31,752 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:22:31,752 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:31,752 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:22:31,752 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:22:31,753 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:31,753 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 0.99.
+2023-06-08 15:22:31,753 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b040ce10>]'.
+2023-06-08 15:22:31,753 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là trợ lý hướng dẫn người dùng sử dụng ứng dụng smart menu do anh Phạm Minh Long phát minh dưới sự hướng dẫn của thầy Trần Vũ Hoàng', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212551.7536337)]'.
+2023-06-08 15:22:31,754 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b06a9630>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:31,754 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:31,754 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:31,754 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:31,755 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+[state 16] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:31,755 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:31,755 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:31,755 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+[state 16] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:31,755 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:31,756 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:31,766 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:22:31,767 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:31,767 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:31,767 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:22:31,768 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:22:31,768 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:22:31,768 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:22:31,769 [DEBUG]  Deleted lock for conversation 'user'.
+2023-06-08 15:22:40,871 [DEBUG]  Issuing ticket for conversation 'user'.
+2023-06-08 15:22:40,872 [DEBUG]  Acquiring lock for conversation 'user'.
+2023-06-08 15:22:40,872 [DEBUG]  Acquired lock for conversation 'user'.
+2023-06-08 15:22:40,872 [DEBUG]  Recreating tracker for id 'user'
+2023-06-08 15:22:40,876 [DEBUG]  Running graph with inputs: {'__message__': [<rasa.core.channels.channel.UserMessage object at 0x7fa7b058fcf8>]}, targets: ['run_RegexMessageHandler'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:40,876 [DEBUG]  Node 'nlu_message_converter' running 'NLUMessageConverter.convert_user_message'.
+2023-06-08 15:22:40,877 [DEBUG]  Node 'run_WhitespaceTokenizer0' running 'WhitespaceTokenizer.process'.
+2023-06-08 15:22:40,877 [DEBUG]  Node 'run_LanguageModelFeaturizer1' running 'LanguageModelFeaturizer.process'.
+2023-06-08 15:22:41,167 [DEBUG]  Node 'run_DIETClassifier2' running 'DIETClassifier.process'.
+2023-06-08 15:22:41,174 [DEBUG]  Node 'run_EntitySynonymMapper3' running 'EntitySynonymMapper.process'.
+2023-06-08 15:22:41,175 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:41,175 [DEBUG]  Node 'run_RegexMessageHandler' running 'RegexMessageHandler.process'.
+2023-06-08 15:22:41,175 [DEBUG]  Received user message 'm là ai?' with intent '{'name': 'who_are_you', 'confidence': 0.9999915361404419}' and entities '[]'
+2023-06-08 15:22:41,175 [DEBUG]  Logged UserUtterance - tracker now has 44 events.
+2023-06-08 15:22:41,175 [DEBUG]  Validating extracted slots: 
+2023-06-08 15:22:41,176 [DEBUG]  Default action 'action_extract_slots' was executed, resulting in 0 events: 
+2023-06-08 15:22:41,176 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b058f748>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:41,176 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:41,176 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:41,176 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:41,177 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+[state 16] user intent: who_are_you | previous action name: utter_who_are_you
+[state 17] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:41,177 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:41,178 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:41,178 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+[state 16] user intent: who_are_you | previous action name: utter_who_are_you
+[state 17] user text: m là ai? | previous action name: action_listen
+2023-06-08 15:22:41,178 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:41,179 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+[state 16] user intent: who_are_you | previous action name: utter_who_are_you
+[state 17] user intent: who_are_you | previous action name: action_listen
+2023-06-08 15:22:41,179 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:41,179 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:41,191 [DEBUG]  TED predicted 'utter_who_are_you' based on user intent.
+2023-06-08 15:22:41,192 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:41,193 [DEBUG]  Made prediction using user intent.
+2023-06-08 15:22:41,193 [DEBUG]  Added `DefinePrevUserUtteredFeaturization(False)` event.
+2023-06-08 15:22:41,193 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:41,194 [DEBUG]  Predicted next action 'utter_who_are_you' with confidence 0.99.
+2023-06-08 15:22:41,194 [DEBUG]  Policy prediction ended with events '[<rasa.shared.core.events.DefinePrevUserUtteredFeaturization object at 0x7fa7b04e98d0>]'.
+2023-06-08 15:22:41,194 [DEBUG]  Action 'utter_who_are_you' ended with events '[BotUttered('Mình là trợ lý hướng dẫn người dùng sử dụng ứng dụng smart menu do anh Phạm Minh Long phát minh dưới sự hướng dẫn của thầy Trần Vũ Hoàng', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {"utter_action": "utter_who_are_you"}, 1686212561.194737)]'.
+2023-06-08 15:22:41,195 [DEBUG]  Running graph with inputs: {'__tracker__': <rasa.shared.core.trackers.DialogueStateTracker object at 0x7fa7b058f748>}, targets: ['select_prediction'] and ExecutionContext(model_id='a0ed5664944f4352b4b561b4eb908d0c', should_add_diagnostic_data=False, is_finetuning=False, node_name=None).
+2023-06-08 15:22:41,195 [DEBUG]  Node 'rule_only_data_provider' running 'RuleOnlyDataProvider.provide'.
+2023-06-08 15:22:41,195 [DEBUG]  Node 'domain_provider' running 'DomainProvider.provide_inference'.
+2023-06-08 15:22:41,195 [DEBUG]  Node 'run_MemoizationPolicy0' running 'MemoizationPolicy.predict_action_probabilities'.
+2023-06-08 15:22:41,196 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+[state 16] user intent: who_are_you | previous action name: utter_who_are_you
+[state 17] user intent: who_are_you | previous action name: action_listen
+[state 18] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:41,197 [DEBUG]  There is no memorised next action
+2023-06-08 15:22:41,197 [DEBUG]  Node 'run_RulePolicy2' running 'RulePolicy.predict_action_probabilities'.
+2023-06-08 15:22:41,198 [DEBUG]  Current tracker state:
+[state 1] user intent: who_are_you | previous action name: action_listen
+[state 2] user intent: who_are_you | previous action name: utter_who_are_you
+[state 3] user intent: who_are_you | previous action name: action_listen
+[state 4] user intent: who_are_you | previous action name: utter_who_are_you
+[state 5] user intent: who_are_you | previous action name: action_listen
+[state 6] user intent: who_are_you | previous action name: utter_who_are_you
+[state 7] user intent: who_are_you | previous action name: action_listen
+[state 8] user intent: who_are_you | previous action name: utter_who_are_you
+[state 9] user intent: who_are_you | previous action name: action_listen
+[state 10] user intent: who_are_you | previous action name: utter_who_are_you
+[state 11] user intent: who_are_you | previous action name: action_listen
+[state 12] user intent: who_are_you | previous action name: utter_who_are_you
+[state 13] user intent: who_are_you | previous action name: action_listen
+[state 14] user intent: who_are_you | previous action name: utter_who_are_you
+[state 15] user intent: who_are_you | previous action name: action_listen
+[state 16] user intent: who_are_you | previous action name: utter_who_are_you
+[state 17] user intent: who_are_you | previous action name: action_listen
+[state 18] user intent: who_are_you | previous action name: utter_who_are_you
+2023-06-08 15:22:41,198 [DEBUG]  There is no applicable rule.
+2023-06-08 15:22:41,198 [DEBUG]  Node 'run_TEDPolicy1' running 'TEDPolicy.predict_action_probabilities'.
+2023-06-08 15:22:41,211 [DEBUG]  TED predicted 'action_listen' based on user intent.
+2023-06-08 15:22:41,212 [DEBUG]  Node 'select_prediction' running 'DefaultPolicyPredictionEnsemble.combine_predictions_from_kwargs'.
+2023-06-08 15:22:41,213 [DEBUG]  Predicted next action using TEDPolicy.
+2023-06-08 15:22:41,213 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2023-06-08 15:22:41,214 [DEBUG]  Policy prediction ended with events '[]'.
+2023-06-08 15:22:41,214 [DEBUG]  Action 'action_listen' ended with events '[]'.
+2023-06-08 15:22:41,214 [DEBUG]  No event broker configured. Skipping streaming events.
+2023-06-08 15:22:41,216 [DEBUG]  Deleted lock for conversation 'user'.

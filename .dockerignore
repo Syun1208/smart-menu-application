@@ -3,4 +3,8 @@ venv/
 out.log
 story_graph.dot
 gridresults/
-
+.idea
+Dockerfile
+__pycache__
+README.md
+google-cloud-sdk
