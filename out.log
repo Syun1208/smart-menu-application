@@ -976,3 +976,140 @@ OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 5005):
 2023-06-05 13:30:54,091 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
 2023-06-05 13:30:54,094 [INFO ]  Rasa server is up and running.
 2023-06-05 13:30:54,095 [INFO ]  Enabling coroutine debugging. Loop id 94445196917640.
+2023-06-08 01:43:36,904 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/webhooks/facebook                                 GET                            fb_webhook.health
+/webhooks/facebook/webhook                         GET                            fb_webhook.token_verification
+/webhooks/facebook/webhook                         POST                           fb_webhook.webhook
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-08 01:43:36,904 [INFO ]  Starting Rasa server on http://192.168.0.139:5045
+2023-06-08 01:43:36,905 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-08 01:43:37,184 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-08 01:43:38,037 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-08 01:43:38,061 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-08 01:43:38,061 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-08 01:43:38,062 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-08 01:43:38,062 [INFO ]  Loading model models/20230607-225139-noisy-noodle.tar.gz...
+2023-06-08 01:43:38,283 [DEBUG]  Extracted model to '/tmp/tmp33q2ks6c'.
+2023-06-08 01:43:38,284 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-08 01:43:38,284 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-08 01:43:38,286 [DEBUG]  Node 'run_LanguageModelFeaturizer1' loading 'LanguageModelFeaturizer.load' and kwargs: '{}'.
+2023-06-08 01:43:38,392 [DEBUG]  Loading Tokenizer and Model for bert
+2023-06-08 01:43:38,393 [DEBUG]  Starting new HTTPS connection (1): huggingface.co:443
+2023-06-08 01:43:39,288 [DEBUG]  https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-06-08 01:43:39,572 [DEBUG]  https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-06-08 01:43:41,949 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-08 01:43:41,949 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-08 01:43:41,950 [DEBUG]  Loading the model from /tmp/tmpdp_rqrg7/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-08 01:43:41,962 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-08 01:43:41,982 [DEBUG]  Following metrics will be logged during training: 
+2023-06-08 01:43:41,982 [DEBUG]    t_loss (total loss)
+2023-06-08 01:43:41,982 [DEBUG]    i_acc (intent acc)
+2023-06-08 01:43:41,982 [DEBUG]    i_loss (intent loss)
+2023-06-08 01:43:49,231 [DEBUG]  Finished loading the model.
+2023-06-08 01:43:49,232 [DEBUG]  Node 'run_EntitySynonymMapper3' loading 'EntitySynonymMapper.load' and kwargs: '{}'.
+2023-06-08 01:43:49,232 [DEBUG]  Resource 'train_EntitySynonymMapper3' was requested for reading.
+2023-06-08 01:43:49,232 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_EntitySynonymMapper3' doesn't exist.
+2023-06-08 01:43:49,232 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-08 01:43:49,232 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-08 01:43:49,232 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-08 01:43:49,281 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-08 01:43:49,281 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-08 01:43:49,281 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-08 01:43:49,281 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-08 01:43:49,282 [DEBUG]  Loading the model from /tmp/tmpdp_rqrg7/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-08 01:43:57,711 [DEBUG]  Finished loading the model.
+2023-06-08 01:43:57,711 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-08 01:43:57,711 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-08 01:43:57,712 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-08 01:43:57,712 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-08 01:43:57,712 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-08 01:43:57,715 [INFO ]  Rasa server is up and running.
+2023-06-08 01:43:57,716 [INFO ]  Enabling coroutine debugging. Loop id 94224844805112.
+2023-06-08 02:06:08,158 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id:path>/messages     POST                           add_message
+/conversations/<conversation_id:path>/tracker/events POST                           append_events
+/webhooks/rasa                                     GET                            custom_webhook_RasaChatInput.health
+/webhooks/rasa/webhook                             POST                           custom_webhook_RasaChatInput.receive
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id:path>/execute      POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id:path>/predict      POST                           predict
+/conversations/<conversation_id:path>/tracker/events PUT                            replace_events
+/conversations/<conversation_id:path>/story        GET                            retrieve_story
+/conversations/<conversation_id:path>/tracker      GET                            retrieve_tracker
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/conversations/<conversation_id:path>/trigger_intent POST                           trigger_intent
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2023-06-08 02:06:08,158 [INFO ]  Starting Rasa server on http://192.168.0.139:5045
+2023-06-08 02:06:08,159 [DEBUG]  Using the default number of Sanic workers (1).
+2023-06-08 02:06:08,427 [DEBUG]  Starting new HTTPS connection (1): api.segment.io:443
+2023-06-08 02:06:09,271 [DEBUG]  https://api.segment.io:443 "POST /v1/track HTTP/1.1" 200 21
+2023-06-08 02:06:09,295 [DEBUG]  Connected to InMemoryTrackerStore.
+2023-06-08 02:06:09,296 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2023-06-08 02:06:09,296 [DEBUG]  Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+2023-06-08 02:06:09,296 [INFO ]  Loading model models/20230607-225139-noisy-noodle.tar.gz...
+2023-06-08 02:06:09,517 [DEBUG]  Extracted model to '/tmp/tmp80vhao13'.
+2023-06-08 02:06:09,519 [DEBUG]  Node 'nlu_message_converter' loading 'NLUMessageConverter.load' and kwargs: '{}'.
+2023-06-08 02:06:09,519 [DEBUG]  Node 'run_WhitespaceTokenizer0' loading 'WhitespaceTokenizer.load' and kwargs: '{}'.
+2023-06-08 02:06:09,521 [DEBUG]  Node 'run_LanguageModelFeaturizer1' loading 'LanguageModelFeaturizer.load' and kwargs: '{}'.
+2023-06-08 02:06:09,625 [DEBUG]  Loading Tokenizer and Model for bert
+2023-06-08 02:06:09,626 [DEBUG]  Starting new HTTPS connection (1): huggingface.co:443
+2023-06-08 02:06:10,025 [DEBUG]  https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/vocab.txt HTTP/1.1" 200 0
+2023-06-08 02:06:10,312 [DEBUG]  https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-06-08 02:06:12,679 [DEBUG]  Node 'run_DIETClassifier2' loading 'DIETClassifier.load' and kwargs: '{}'.
+2023-06-08 02:06:12,679 [DEBUG]  Resource 'train_DIETClassifier2' was requested for reading.
+2023-06-08 02:06:12,680 [DEBUG]  Loading the model from /tmp/tmpgum9i0fv/train_DIETClassifier2/DIETClassifier.tf_model with finetune_mode=False...
+2023-06-08 02:06:12,693 [DEBUG]  You specified 'DIET' to train entities, but no entities are present in the training data. Skipping training of entities.
+2023-06-08 02:06:12,712 [DEBUG]  Following metrics will be logged during training: 
+2023-06-08 02:06:12,712 [DEBUG]    t_loss (total loss)
+2023-06-08 02:06:12,712 [DEBUG]    i_acc (intent acc)
+2023-06-08 02:06:12,712 [DEBUG]    i_loss (intent loss)
+2023-06-08 02:06:19,877 [DEBUG]  Finished loading the model.
+2023-06-08 02:06:19,877 [DEBUG]  Node 'run_EntitySynonymMapper3' loading 'EntitySynonymMapper.load' and kwargs: '{}'.
+2023-06-08 02:06:19,878 [DEBUG]  Resource 'train_EntitySynonymMapper3' was requested for reading.
+2023-06-08 02:06:19,878 [DEBUG]  Failed to load ABCMeta from model storage. Resource 'train_EntitySynonymMapper3' doesn't exist.
+2023-06-08 02:06:19,878 [DEBUG]  Node 'run_RegexMessageHandler' loading 'RegexMessageHandler.load' and kwargs: '{}'.
+2023-06-08 02:06:19,878 [DEBUG]  Node 'domain_provider' loading 'DomainProvider.load' and kwargs: '{}'.
+2023-06-08 02:06:19,878 [DEBUG]  Resource 'domain_provider' was requested for reading.
+2023-06-08 02:06:19,925 [DEBUG]  Node 'run_MemoizationPolicy0' loading 'MemoizationPolicy.load' and kwargs: '{}'.
+2023-06-08 02:06:19,925 [DEBUG]  Resource 'train_MemoizationPolicy0' was requested for reading.
+2023-06-08 02:06:19,926 [DEBUG]  Node 'run_TEDPolicy1' loading 'TEDPolicy.load' and kwargs: '{}'.
+2023-06-08 02:06:19,926 [DEBUG]  Resource 'train_TEDPolicy1' was requested for reading.
+2023-06-08 02:06:19,927 [DEBUG]  Loading the model from /tmp/tmpgum9i0fv/train_TEDPolicy1/ted_policy.tf_model with finetune_mode=False...
+2023-06-08 02:06:28,360 [DEBUG]  Finished loading the model.
+2023-06-08 02:06:28,361 [DEBUG]  Node 'run_RulePolicy2' loading 'RulePolicy.load' and kwargs: '{}'.
+2023-06-08 02:06:28,361 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-08 02:06:28,361 [DEBUG]  Node 'rule_only_data_provider' loading 'RuleOnlyDataProvider.load' and kwargs: '{}'.
+2023-06-08 02:06:28,361 [DEBUG]  Resource 'train_RulePolicy2' was requested for reading.
+2023-06-08 02:06:28,361 [DEBUG]  Node 'select_prediction' loading 'DefaultPolicyPredictionEnsemble.load' and kwargs: '{}'.
+2023-06-08 02:06:28,364 [INFO ]  Rasa server is up and running.
+2023-06-08 02:06:28,365 [INFO ]  Enabling coroutine debugging. Loop id 94160590176680.

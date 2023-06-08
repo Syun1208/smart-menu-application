@@ -1,1 +1,1 @@
-rasa run --enable-api --auth-token thisismysecret --cors * -m models/20230605-105138-violent-paradigm.tar.gz -vv --log-file out.log -p 5045 -i 192.168.0.139 
+rasa run --enable-api --cors * -m models/20230605-105138-violent-paradigm.tar.gz -vv --log-file out.log

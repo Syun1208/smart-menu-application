@@ -1,0 +1,6 @@
+.rasa/
+venv/
+out.log
+story_graph.dot
+gridresults/
+

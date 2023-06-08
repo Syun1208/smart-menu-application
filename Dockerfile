@@ -1,25 +1,15 @@
 FROM rasa/rasa:3.5.10-full
-FROM python:3.7.2
-FROM ubuntu:20.04
 
 USER root
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y python3-pip
-
 # RUN pip install --upgrade pip
 
 COPY . .
 
+RUN apt-get update && apt-get install -y python3-pip
+
 RUN pip3 install -r requirements.txt
 
-RUN pip3 install rasa && \
-    pip3 install rasa[full] && \
-    pip3 install rasa[transformers] && \
-    pip install transformers && \
-    python3 -m spacy download en_core_web_md
-
-# CMD ["rasa", "run", "--enable-api", "--auth-token thisismysecret", \
-#     "--cors", "*", "-m", "models/20230605-105138-violent-paradigm.tar.gz",\
-#     "-vv", "--log-file", "out.log", "-p", "5045"]
+RUN bash install.sh

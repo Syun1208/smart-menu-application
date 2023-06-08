@@ -1,295 +1,288 @@
 {
-  "compliment": {
-    "precision": 0.43564356435643564,
-    "recall": 0.43137254901960786,
-    "f1-score": 0.43349753694581283,
-    "support": 102,
-    "confused_with": {
-      "insult": 10,
-      "mood_great": 10
-    }
-  },
   "translate_suggest": {
-    "precision": 0.9130434782608695,
-    "recall": 1.0,
-    "f1-score": 0.9545454545454545,
+    "precision": 0.8695652173913043,
+    "recall": 0.9523809523809523,
+    "f1-score": 0.909090909090909,
     "support": 21,
-    "confused_with": {}
+    "confused_with": {
+      "health_inquire": 1
+    }
   },
   "continue_asking": {
-    "precision": 0.6142857142857143,
-    "recall": 0.6825396825396826,
-    "f1-score": 0.6466165413533834,
+    "precision": 0.6842105263157895,
+    "recall": 0.6190476190476191,
+    "f1-score": 0.6500000000000001,
     "support": 63,
     "confused_with": {
-      "affirm": 6,
-      "want_to_ask": 4
-    }
-  },
-  "health_inquire": {
-    "precision": 0.9196428571428571,
-    "recall": 0.8547717842323651,
-    "f1-score": 0.8860215053763439,
-    "support": 241,
-    "confused_with": {
-      "stop_asking": 6,
-      "compliment": 5
-    }
-  },
-  "first_name": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 4,
-    "confused_with": {
-      "who_are_you": 2,
-      "who_create_you": 1,
-      "affirm": 1
-    }
-  },
-  "last_name": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2,
-    "confused_with": {
-      "goodbye": 1,
-      "who_are_you": 1
-    }
-  },
-  "date": {
-    "precision": 0.6666666666666666,
-    "recall": 0.6666666666666666,
-    "f1-score": 0.6666666666666666,
-    "support": 15,
-    "confused_with": {
-      "insult": 2,
-      "how_to_use": 1
-    }
-  },
-  "insult": {
-    "precision": 0.784037558685446,
-    "recall": 0.7136752136752137,
-    "f1-score": 0.7472035794183445,
-    "support": 234,
-    "confused_with": {
-      "greet": 12,
-      "compliment": 10
-    }
-  },
-  "time": {
-    "precision": 0.8571428571428571,
-    "recall": 0.6,
-    "f1-score": 0.7058823529411764,
-    "support": 20,
-    "confused_with": {
-      "deny": 3,
-      "compliment": 2
-    }
-  },
-  "mood_great": {
-    "precision": 0.5070422535211268,
-    "recall": 0.6,
-    "f1-score": 0.549618320610687,
-    "support": 60,
-    "confused_with": {
-      "compliment": 9,
-      "mood_unhappy": 6
-    }
-  },
-  "stop_asking": {
-    "precision": 0.7959183673469388,
-    "recall": 0.7177914110429447,
-    "f1-score": 0.7548387096774193,
-    "support": 163,
-    "confused_with": {
-      "greet": 8,
-      "deny": 6
-    }
-  },
-  "scanner_suggest": {
-    "precision": 0.9512195121951219,
-    "recall": 1.0,
-    "f1-score": 0.975,
-    "support": 78,
-    "confused_with": {}
-  },
-  "mood_unhappy": {
-    "precision": 0.6190476190476191,
-    "recall": 0.4482758620689655,
-    "f1-score": 0.52,
-    "support": 29,
-    "confused_with": {
-      "mood_great": 7,
-      "who_create_you": 2
+      "affirm": 5,
+      "greet": 4
     }
   },
   "who_create_you": {
-    "precision": 0.7927927927927928,
-    "recall": 0.7586206896551724,
-    "f1-score": 0.7753303964757708,
-    "support": 116,
+    "precision": 0.83,
+    "recall": 0.7345132743362832,
+    "f1-score": 0.7793427230046949,
+    "support": 113,
     "confused_with": {
-      "who_are_you": 9,
-      "deny": 4
-    }
-  },
-  "greet": {
-    "precision": 0.5955056179775281,
-    "recall": 0.654320987654321,
-    "f1-score": 0.6235294117647059,
-    "support": 162,
-    "confused_with": {
-      "attention": 14,
-      "insult": 8
-    }
-  },
-  "deny": {
-    "precision": 0.7754237288135594,
-    "recall": 0.8133333333333334,
-    "f1-score": 0.7939262472885034,
-    "support": 225,
-    "confused_with": {
-      "insult": 5,
-      "mood_great": 4
-    }
-  },
-  "scanner_gallery": {
-    "precision": 0.21428571428571427,
-    "recall": 0.1875,
-    "f1-score": 0.19999999999999998,
-    "support": 16,
-    "confused_with": {
-      "camera": 13
-    }
-  },
-  "who_are_you": {
-    "precision": 0.8064516129032258,
-    "recall": 0.8658008658008658,
-    "f1-score": 0.8350730688935282,
-    "support": 231,
-    "confused_with": {
-      "deny": 6,
-      "who_create_you": 5
-    }
-  },
-  "scanner_run_model": {
-    "precision": 0.7142857142857143,
-    "recall": 1.0,
-    "f1-score": 0.8333333333333333,
-    "support": 15,
-    "confused_with": {}
-  },
-  "affirm": {
-    "precision": 0.3384615384615385,
-    "recall": 0.28205128205128205,
-    "f1-score": 0.3076923076923077,
-    "support": 78,
-    "confused_with": {
-      "compliment": 9,
-      "who_are_you": 7
-    }
-  },
-  "food_recommender_suggest": {
-    "precision": 0.95,
-    "recall": 1.0,
-    "f1-score": 0.9743589743589743,
-    "support": 19,
-    "confused_with": {}
-  },
-  "goodbye": {
-    "precision": 0.6935483870967742,
-    "recall": 0.6231884057971014,
-    "f1-score": 0.6564885496183207,
-    "support": 69,
-    "confused_with": {
-      "greet": 8,
-      "insult": 3
-    }
-  },
-  "dont_want_to_ask": {
-    "precision": 0.6842105263157895,
-    "recall": 0.7428571428571429,
-    "f1-score": 0.7123287671232877,
-    "support": 35,
-    "confused_with": {
-      "stop_asking": 4,
-      "who_are_you": 2
-    }
-  },
-  "scanner_load_model": {
-    "precision": 0.96,
-    "recall": 1.0,
-    "f1-score": 0.9795918367346939,
-    "support": 24,
-    "confused_with": {}
-  },
-  "scanner_results": {
-    "precision": 1.0,
-    "recall": 0.95,
-    "f1-score": 0.9743589743589743,
-    "support": 20,
-    "confused_with": {
-      "scanner_suggest": 1
-    }
-  },
-  "camera": {
-    "precision": 0.7,
-    "recall": 0.8235294117647058,
-    "f1-score": 0.7567567567567567,
-    "support": 51,
-    "confused_with": {
-      "scanner_gallery": 8,
-      "who_are_you": 1
-    }
-  },
-  "how_to_use": {
-    "precision": 0.7692307692307693,
-    "recall": 0.7142857142857143,
-    "f1-score": 0.7407407407407408,
-    "support": 14,
-    "confused_with": {
-      "scanner_suggest": 2,
-      "who_create_you": 1
+      "who_are_you": 10,
+      "goodbye": 4
     }
   },
   "attention": {
-    "precision": 0.5384615384615384,
-    "recall": 0.5223880597014925,
-    "f1-score": 0.5303030303030304,
+    "precision": 0.6,
+    "recall": 0.3582089552238806,
+    "f1-score": 0.44859813084112143,
     "support": 67,
     "confused_with": {
-      "greet": 13,
-      "insult": 8
+      "greet": 19,
+      "insult": 13
     }
   },
-  "want_to_ask": {
-    "precision": 0.7770700636942676,
-    "recall": 0.8714285714285714,
-    "f1-score": 0.8215488215488216,
-    "support": 140,
+  "food_recommender_suggest": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 19,
+    "confused_with": {}
+  },
+  "affirm": {
+    "precision": 0.5396825396825397,
+    "recall": 0.4358974358974359,
+    "f1-score": 0.48226950354609927,
+    "support": 78,
     "confused_with": {
-      "continue_asking": 5,
+      "compliment": 11,
+      "greet": 6
+    }
+  },
+  "scanner_load_model": {
+    "precision": 0.9230769230769231,
+    "recall": 1.0,
+    "f1-score": 0.9600000000000001,
+    "support": 24,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 0.7991266375545851,
+    "recall": 0.8133333333333334,
+    "f1-score": 0.8061674008810573,
+    "support": 225,
+    "confused_with": {
+      "compliment": 9,
+      "affirm": 7
+    }
+  },
+  "scanner_gallery": {
+    "precision": 0.11764705882352941,
+    "recall": 0.125,
+    "f1-score": 0.12121212121212122,
+    "support": 16,
+    "confused_with": {
+      "camera": 13,
+      "scanner_load_model": 1
+    }
+  },
+  "health_inquire": {
+    "precision": 0.9121338912133892,
+    "recall": 0.9045643153526971,
+    "f1-score": 0.9083333333333334,
+    "support": 241,
+    "confused_with": {
+      "deny": 4,
+      "compliment": 3
+    }
+  },
+  "mood_unhappy": {
+    "precision": 0.6388888888888888,
+    "recall": 0.7931034482758621,
+    "f1-score": 0.7076923076923076,
+    "support": 29,
+    "confused_with": {
+      "deny": 2,
+      "camera": 1
+    }
+  },
+  "date": {
+    "precision": 0.6153846153846154,
+    "recall": 0.5333333333333333,
+    "f1-score": 0.5714285714285715,
+    "support": 15,
+    "confused_with": {
+      "greet": 2,
+      "time": 1
+    }
+  },
+  "camera": {
+    "precision": 0.5964912280701754,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.6296296296296297,
+    "support": 51,
+    "confused_with": {
+      "scanner_gallery": 14,
+      "who_create_you": 2
+    }
+  },
+  "scanner_results": {
+    "precision": 0.9,
+    "recall": 0.9,
+    "f1-score": 0.9,
+    "support": 20,
+    "confused_with": {
+      "who_create_you": 1,
+      "mood_unhappy": 1
+    }
+  },
+  "stop_asking": {
+    "precision": 0.8551724137931035,
+    "recall": 0.7607361963190185,
+    "f1-score": 0.8051948051948054,
+    "support": 163,
+    "confused_with": {
+      "greet": 9,
+      "want_to_ask": 5
+    }
+  },
+  "compliment": {
+    "precision": 0.39622641509433965,
+    "recall": 0.4117647058823529,
+    "f1-score": 0.40384615384615385,
+    "support": 102,
+    "confused_with": {
+      "insult": 14,
+      "deny": 10
+    }
+  },
+  "who_are_you": {
+    "precision": 0.832,
+    "recall": 0.9004329004329005,
+    "f1-score": 0.8648648648648648,
+    "support": 231,
+    "confused_with": {
+      "want_to_ask": 4,
       "deny": 3
     }
   },
-  "accuracy": 0.7363872082973206,
+  "scanner_run_model": {
+    "precision": 0.9375,
+    "recall": 1.0,
+    "f1-score": 0.967741935483871,
+    "support": 15,
+    "confused_with": {}
+  },
+  "want_to_ask": {
+    "precision": 0.80625,
+    "recall": 0.9214285714285714,
+    "f1-score": 0.86,
+    "support": 140,
+    "confused_with": {
+      "compliment": 2,
+      "continue_asking": 2
+    }
+  },
+  "goodbye": {
+    "precision": 0.7213114754098361,
+    "recall": 0.6376811594202898,
+    "f1-score": 0.6769230769230768,
+    "support": 69,
+    "confused_with": {
+      "greet": 5,
+      "insult": 4
+    }
+  },
+  "dont_want_to_ask": {
+    "precision": 0.7407407407407407,
+    "recall": 0.5714285714285714,
+    "f1-score": 0.6451612903225806,
+    "support": 35,
+    "confused_with": {
+      "stop_asking": 8,
+      "who_create_you": 1
+    }
+  },
+  "ex": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.5,
+    "support": 6,
+    "confused_with": {
+      "mood_great": 2,
+      "who_create_you": 1
+    }
+  },
+  "scanner_suggest": {
+    "precision": 0.9873417721518988,
+    "recall": 1.0,
+    "f1-score": 0.9936305732484078,
+    "support": 78,
+    "confused_with": {}
+  },
+  "time": {
+    "precision": 0.6956521739130435,
+    "recall": 0.8,
+    "f1-score": 0.7441860465116279,
+    "support": 20,
+    "confused_with": {
+      "health_inquire": 1,
+      "compliment": 1
+    }
+  },
+  "how_to_use": {
+    "precision": 0.9090909090909091,
+    "recall": 0.7142857142857143,
+    "f1-score": 0.8,
+    "support": 14,
+    "confused_with": {
+      "scanner_suggest": 1,
+      "continue_asking": 1
+    }
+  },
+  "insult": {
+    "precision": 0.7218045112781954,
+    "recall": 0.8205128205128205,
+    "f1-score": 0.768,
+    "support": 234,
+    "confused_with": {
+      "greet": 8,
+      "who_are_you": 8
+    }
+  },
+  "greet": {
+    "precision": 0.615819209039548,
+    "recall": 0.6728395061728395,
+    "f1-score": 0.6430678466076697,
+    "support": 162,
+    "confused_with": {
+      "insult": 15,
+      "attention": 8
+    }
+  },
+  "mood_great": {
+    "precision": 0.6326530612244898,
+    "recall": 0.5166666666666667,
+    "f1-score": 0.5688073394495414,
+    "support": 60,
+    "confused_with": {
+      "compliment": 12,
+      "mood_unhappy": 5
+    }
+  },
+  "accuracy": 0.7568152315015145,
   "macro avg": {
-    "precision": 0.6680489121714092,
-    "recall": 0.6732550908129361,
-    "f1-score": 0.6674224787767943,
-    "support": 2314
+    "precision": 0.7456346502906374,
+    "recall": 0.7106128385618266,
+    "f1-score": 0.7183995915397302,
+    "support": 2311
   },
   "weighted avg": {
-    "precision": 0.7350144449973603,
-    "recall": 0.7363872082973206,
-    "f1-score": 0.7338272346109642,
-    "support": 2314
+    "precision": 0.7560390185690896,
+    "recall": 0.7568152315015145,
+    "f1-score": 0.7530473346149203,
+    "support": 2311
   },
   "micro avg": {
-    "precision": 0.7363872082973206,
-    "recall": 0.7363872082973206,
-    "f1-score": 0.7363872082973206,
-    "support": 2314
+    "precision": 0.7568152315015145,
+    "recall": 0.7568152315015145,
+    "f1-score": 0.7568152315015145,
+    "support": 2311
   }
 }
