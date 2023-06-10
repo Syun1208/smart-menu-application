@@ -1,3 +1,9 @@
 rasa
 typing-extensions
 gdown 
+fastapi
+uvicorn[standard]
+numpy
+unidecode
+httpx
+requests

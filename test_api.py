@@ -1,11 +1,11 @@
 import requests
 
-url = "http://dc3d-171-250-162-130.ngrok-free.app/webhooks/rest/webhook"
+url = "http://0.0.0.0:5005/webhooks/rest/webhook"
 
 # Define the payload for the request
 payload = {
     "sender": "user",
-    "message": "hi"
+    "message": "sao m ngu dữ v"
 }
 
 # Send the POST request to the Rasa API

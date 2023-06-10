@@ -1,0 +1,70 @@
+version: '3.9'
+
+services:
+  main:
+    image: syun1208/chatbot_rasa:latest
+    restart: on-failure
+    tty: true
+    command: 
+      - run 
+      - --enable-api 
+      - -m ./models/20230607-225139-noisy-noodle.tar.gz 
+      - --cors 
+      - "*"
+      - -vv
+      - --log-file 
+      - out.log
+      - -p 5005
+      - --debug
+    ports: 
+      - "5005:5005"
+    depends_on:
+    - action
+    container_name: syun1208/chatbot_rasa
+    networks:
+    - chatbot
+
+  action:
+    image: syun1208/chatbot_rasa:latest
+    restart: on-failure
+    tty: true
+    command: 
+      - run  
+      - actions  
+    ports: 
+      - "5055:5055"
+    container_name: chatbot_rasa
+    networks:
+    - chatbot
+  
+  # mongo:
+  #   image: mongo
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: rasa_chatbot
+  #     MONGO_INITDB_ROOT_PASSWORD: rasa_chatbot
+  #   networks:
+  #     - chatbot
+  #   volumes:
+  #     - mongodata/:/data/db
+  #   restart: unless-stopped
+  #   container_name: mlcv_quanna_mongodb_tracker_store
+  #   ports:
+  #     - 27017:27017
+
+  # event_broker:
+  #   image: nouchka/sqlite3:latest
+  #   stdin_open: true
+  #   tty: true
+  #   volumes:
+  #     - eventbroker:/root/db/
+  #   networks:
+  #     - chatbot
+  #   container_name: mlcv_quanna_sqlite_event_broker
+networks:
+  chatbot: 
+    external: true
+    driver: bridge
+
+volumes:
+  mongodata:
+  eventbroker:

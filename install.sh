@@ -1,5 +1,5 @@
-apt update
-apt install python3-dev python3-pip
+apt-get update
+apt-get install python3-dev python3-pip
 venv ./venv
 source ./venv/bin/activate
 pip3 install -U pip

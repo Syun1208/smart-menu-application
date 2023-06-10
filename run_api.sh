@@ -1,1 +1,1 @@
-rasa run --enable-api --cors * -m ./models/20230607-225139-noisy-noodle.tar.gz -vv --log-file out.log -p 5005 --debug
+rasa run --enable-api --cors * -m ./models/20230609-151105-selfish-heap.tar.gz -vv --log-file out.log 
