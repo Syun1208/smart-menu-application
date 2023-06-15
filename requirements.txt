@@ -1,9 +1,8 @@
-rasa
+rasa==3.5.10
 typing-extensions
 gdown 
 fastapi
 uvicorn[standard]
 numpy
 unidecode
-httpx
 requests

@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-import httpx
 from typing import List
 import uvicorn
 import requests
@@ -10,13 +9,13 @@ app = FastAPI(title="Chúa hề chatbot", description=app_desc)
 
 
 
-@app.get("/health/check")
+@app.get("/")
 async def hello_world():
-    return {"message":"Hello"}
+    return {"message": "Hello"}
 
 @app.post("/rasa/webhook")
 async def rasa_webhook(message: str):
-    url = "http://0.0.0.0:5005/webhooks/rest/webhook"
+    url = "http://0.0.0.0:8080/webhooks/rest/webhook"
 
     payload = {
         "sender": "anh Long đẹp trai",
@@ -38,4 +37,4 @@ async def rasa_webhook(message: str):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=80)

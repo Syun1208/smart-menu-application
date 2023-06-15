@@ -3,18 +3,11 @@ digraph  {
 "-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
 1 [class=active, fontsize=12, label=action_session_start];
 2 [class=active, fontsize=12, label=utter_greet];
-5 [class=active, fontsize=12, label=utter_attention];
-6 [class="intent dashed active", label="  ?  ", shape=rect];
-7 [class="intent active", fillcolor=lightblue, label="/greet", shape=rect, style=filled];
-8 [class="intent active", fillcolor=lightblue, label="/greet", shape=rect, style=filled];
-9 [class="intent active", fillcolor=lightblue, label="/attention", shape=rect, style=filled];
+3 [class="intent dashed active", label="  ?  ", shape=rect];
+4 [class="intent active", fillcolor=lightblue, label="/greet", shape=rect, style=filled];
 0 -> "-1"  [class="", key=NONE, label=""];
 0 -> 1  [class=active, key=NONE, label=""];
-1 -> 7  [class=active, key=0];
-2 -> 8  [class=active, key=0];
-2 -> 9  [class=active, key=0];
-5 -> 6  [class=active, key=NONE, label=""];
-7 -> 2  [class=active, key=0];
-8 -> 2  [class=active, key=0];
-9 -> 5  [class=active, key=0];
+1 -> 4  [class=active, key=0];
+2 -> 3  [class=active, key=NONE, label=""];
+4 -> 2  [class=active, key=0];
 }

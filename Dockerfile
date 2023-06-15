@@ -1,20 +1,18 @@
-FROM rasa/rasa:3.5.10-full
+# Use the official Python image as the base image
+FROM python:3.7
 
-EXPOSE 8080
-
-USER root
-
+# Set the working directory in the container
 WORKDIR /app
 
-# RUN pip install --upgrade pip
+# Copy the requirements file to the container
+COPY requirements.txt .
 
+# Install Rasa and dependencies
+RUN pip install --upgrade pip \
+    pip install --no-cache-dir rasa==3.5.10
+
+# Copy the rest of the Rasa project to the container
 COPY . .
 
-RUN apt-get update && apt-get install -y python3-pip
-
-RUN pip3 install -r requirements.txt
-
-# COPY ./chatbot ./chatbot
-
-#CMD ["rasa", "run", "--enable-api", "--cors", "*", "-m", "./models/20230607-225139-noisy-noodle.tar.gz", "-vv", "--log-file", "out.log", "-p", "5005", "--debug"]
-CMD gunicorn -w 4 -k uvicorn.workers.UvicornWorker fast_api:app
+# Set the command to run the Rasa API server
+CMD ["rasa", "run", "-p", "8080", "--cors", "*", "--enable-api", "-m", "./models/20230609-151105-selfish-heap.tar.gz"]
