@@ -6,4 +6,5 @@
 
 
 <h1 align="center">Capstone Design Project</h1>
-<video src='https://youtu.be/1AApTKtQTlY' width=180/>
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/GtlcOowVptU/0.jpg)](https://youtu.be/1AApTKtQTlY "Unity Snake Game")
