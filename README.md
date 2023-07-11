@@ -7,4 +7,4 @@
 
 <h1 align="center">Capstone Design Project</h1>
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/GtlcOowVptU/0.jpg)](https://youtu.be/1AApTKtQTlY "Unity Snake Game")
+[***Video demo***](https://youtu.be/1AApTKtQTlY "Smart Menu Application")
