@@ -6,4 +6,4 @@
 
 
 <h1 align="center">Capstone Design Project</h1>
-<video src='[your URL here](https://youtu.be/1AApTKtQTlY)https://youtu.be/1AApTKtQTlY' width=180/>
+<video src='https://youtu.be/1AApTKtQTlY' width=180/>
