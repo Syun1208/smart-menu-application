@@ -1,0 +1,7 @@
+node_modules/
+frames/
+frames-draft/
+preview/
+output/draft.mp4
+audio/timeline.json
+__pycache__/

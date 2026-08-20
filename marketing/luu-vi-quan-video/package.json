@@ -1,0 +1,19 @@
+{
+  "name": "luu-vi-quan-promo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Three.js food promo video for Lưu Vị Quán - renders an MP4 with a synthesised soundtrack",
+  "scripts": {
+    "preview": "node scripts/serve.mjs",
+    "render": "node scripts/render.mjs",
+    "audio": "python3 audio/soundtrack.py",
+    "build": "bash scripts/build.sh"
+  },
+  "dependencies": {
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  }
+}
