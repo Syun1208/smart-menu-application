@@ -37,7 +37,7 @@ const crustMat = (tint = 0xfff0d8, tex = 'golden') =>
       roughness: 0.52,
       metalness: 0.0,
       envMap: SHARED.env,
-      envMapIntensity: 0.4,
+      envMapIntensity: 0.28,
     }));
 
 const glossMat = (color, roughness = 0.18, extra = {}) =>
@@ -47,7 +47,7 @@ const glossMat = (color, roughness = 0.18, extra = {}) =>
       roughness,
       metalness: 0.02,
       envMap: SHARED.env,
-      envMapIntensity: 0.75,
+      envMapIntensity: 0.5,
       ...extra,
     }));
 
@@ -374,7 +374,7 @@ export function kraftBox({ w = 2.2, d = 1.6, h = 0.62, thickness = 0.05, paperTe
     envMap: SHARED.env,
     envMapIntensity: 0.35,
   });
-  const inner = new THREE.MeshStandardMaterial({ color: 0xd8b183, roughness: 0.9 });
+  const inner = new THREE.MeshStandardMaterial({ color: 0xc19a6b, roughness: 0.92 });
 
   const base = new THREE.Mesh(new THREE.BoxGeometry(w, thickness, d), outer);
   base.receiveShadow = true;
@@ -402,14 +402,14 @@ export function kraftBox({ w = 2.2, d = 1.6, h = 0.62, thickness = 0.05, paperTe
 }
 
 /** Small round dipping bowl. */
-export function dipBowl({ radius = 0.42, color = 0xf2ece0 } = {}) {
+export function dipBowl({ radius = 0.42, color = 0xdfd2bd } = {}) {
   const profile = [];
   for (let i = 0; i <= 10; i++) {
     const p = i / 10;
     profile.push(new THREE.Vector2(radius * (0.35 + 0.65 * Math.pow(p, 0.7)), p * radius * 0.55));
   }
   const g = new THREE.LatheGeometry(profile, 28);
-  const bowl = new THREE.Mesh(g, glossMat(color, 0.35, { side: THREE.DoubleSide }));
+  const bowl = new THREE.Mesh(g, glossMat(color, 0.5, { side: THREE.DoubleSide }));
   bowl.castShadow = bowl.receiveShadow = true;
   return bowl;
 }

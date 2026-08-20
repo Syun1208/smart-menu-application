@@ -70,10 +70,10 @@ export function kraftPaperTexture(size = 1024) {
       ctx.save();
       ctx.translate(x, y);
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(120, 78, 40, 0.72)';
+      ctx.fillStyle = 'rgba(120, 78, 40, 0.5)';
       ctx.font = `800 ${size * 0.036}px "Be Vietnam Pro", sans-serif`;
       ctx.fillText('LƯU VỊ QUÁN', 0, 0);
-      ctx.fillStyle = 'rgba(120, 78, 40, 0.45)';
+      ctx.fillStyle = 'rgba(120, 78, 40, 0.3)';
       ctx.font = `600 ${size * 0.015}px "Be Vietnam Pro", sans-serif`;
       ctx.fillText('VỊ NGON ĐÁNG LƯU LẠI', 0, size * 0.026);
       ctx.restore();

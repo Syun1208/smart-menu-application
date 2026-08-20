@@ -85,33 +85,33 @@ const GradeShader = {
 // ---------------------------------------------------------------------------
 const SHOTS = {
   hook: {
-    from: { pos: V3(0.0, 1.30, 3.10), look: V3(0, 0.30, 0), fov: 46 },
-    to:   { pos: V3(0.2, 3.20, 5.60), look: V3(0, -0.50, 0), fov: 54 },
+    from: { pos: V3(0.0, 1.17, 2.7), look: V3(0, 0.30, 0), fov: 46 },
+    to:   { pos: V3(0.17, 2.88, 4.87), look: V3(0, -0.50, 0), fov: 54 },
     ease: easeInOutCubic,
   },
   nem: {
-    from: { pos: V3(-3.44, 2.21, 3.84), look: V3(0, -0.05, 0), fov: 52 },
-    to:   { pos: V3(2.0, 2.54, 4.64), look: V3(0.1, -0.05, 0), fov: 50 },
+    from: { pos: V3(-2.99, 1.99, 3.34), look: V3(0, -0.05, 0), fov: 52 },
+    to:   { pos: V3(1.74, 2.29, 4.04), look: V3(0.1, -0.05, 0), fov: 50 },
     ease: easeInOutCubic,
   },
   caVien: {
-    from: { pos: V3(2.96, 3.94, 3.52), look: V3(0, 0.05, 0), fov: 50 },
-    to:   { pos: V3(-1.52, 1.89, 4.96), look: V3(0, -0.1, 0), fov: 52 },
+    from: { pos: V3(2.58, 3.55, 3.06), look: V3(0, 0.05, 0), fov: 50 },
+    to:   { pos: V3(-1.32, 1.7, 4.32), look: V3(0, -0.1, 0), fov: 52 },
     ease: easeInOutCubic,
   },
   miTron: {
-    from: { pos: V3(0.0, 5.08, 1.76), look: V3(0, 0.1, 0), fov: 50 },
-    to:   { pos: V3(-0.72, 1.89, 4.64), look: V3(0, 0.05, 0), fov: 54 },
+    from: { pos: V3(0.0, 4.57, 1.53), look: V3(0, 0.1, 0), fov: 50 },
+    to:   { pos: V3(-0.63, 1.7, 4.04), look: V3(0, 0.05, 0), fov: 54 },
     ease: easeInOutCubic,
   },
   traiCay: {
-    from: { pos: V3(-2.88, 2.62, 4.16), look: V3(0, -0.05, 0), fov: 50 },
-    to:   { pos: V3(1.44, 3.2, 4.48), look: V3(0, -0.05, 0), fov: 52 },
+    from: { pos: V3(-2.51, 2.36, 3.62), look: V3(0, -0.05, 0), fov: 50 },
+    to:   { pos: V3(1.25, 2.88, 3.9), look: V3(0, -0.05, 0), fov: 52 },
     ease: easeInOutCubic,
   },
   cta: {
-    from: { pos: V3(3.52, 2.71, 4.16), look: V3(0, -0.15, 0), fov: 52 },
-    to:   { pos: V3(-3.52, 3.03, 4.32), look: V3(0, -0.15, 0), fov: 54 },
+    from: { pos: V3(3.06, 2.44, 3.62), look: V3(0, -0.15, 0), fov: 52 },
+    to:   { pos: V3(-3.06, 2.73, 3.76), look: V3(0, -0.15, 0), fov: 54 },
     ease: (t) => t, // steady orbit, no easing
   },
 };
@@ -140,7 +140,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
   const wood = woodTexture(1024);
   wood.repeat.set(4, 4);
   const kraft = kraftPaperTexture(1024);
-  kraft.repeat.set(2, 2);
+  kraft.repeat.set(5, 5);
 
   // --- lighting ------------------------------------------------------------
   const ambient = new THREE.AmbientLight(0xffe9d2, 0.16);
@@ -149,7 +149,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
   const hemi = new THREE.HemisphereLight(0xffd2a1, 0x2a1108, 0.28);
   scene.add(hemi);
 
-  const key = new THREE.SpotLight(0xfff2e2, 95, 26, Math.PI / 6.4, 0.72, 2.0);
+  const key = new THREE.SpotLight(0xfff2e2, 92, 26, Math.PI / 6.4, 0.72, 2.0);
   key.position.set(2.6, 5.4, 3.0);
   key.castShadow = true;
   key.shadow.mapSize.set(quality === 'high' ? 1024 : 512, quality === 'high' ? 1024 : 512);
@@ -174,7 +174,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
   // --- shared set ----------------------------------------------------------
   const set = new THREE.Group();
   set.add(P.table(wood));
-  const paper = P.paperSheet(kraft, { w: 7.4, d: 7.4 });
+  const paper = P.paperSheet(kraft, { w: 6.6, d: 6.6 });
   paper.position.y = 0.006;
   paper.rotation.y = 0.22;
   scene.add(set, paper);
@@ -308,7 +308,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
       // lie the rolls along Z so they read as separate pieces, not one long tube
       roll.rotation.set(Math.PI / 2, (rnd() - 0.5) * 0.35, (rnd() - 0.5) * 0.25);
       group.add(roll);
-      rolls.push({ mesh: roll, target, tIn: 0.15 + i * 0.22, dir: i % 2 ? 1 : -1, spin: 4 + rnd() * 3 });
+      rolls.push({ mesh: roll, target, tIn: i < 3 ? -1 : 0.1 + (i - 3) * 0.17, dir: i % 2 ? 1 : -1, spin: 4 + rnd() * 3 });
     }
 
     // nem xù dropping into the front of the tray
@@ -318,7 +318,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
       const target = V3(-0.75 + i * 0.3, 0.22, 0.55);
       b.position.copy(target);
       group.add(b);
-      balls.push({ mesh: b, target, tIn: 1.45 + i * 0.11 });
+      balls.push({ mesh: b, target, tIn: 1.0 + i * 0.1 });
     }
 
     // nem phô mai + cheese pull
@@ -396,7 +396,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
       const target = V3(Math.cos(a) * r * 1.35, 0.22 + ring * 0.2, Math.sin(a) * r);
       b.position.copy(target);
       group.add(b);
-      balls.push({ mesh: b, target, tIn: 0.2 + i * 0.055, spin: rnd() * 6.28 });
+      balls.push({ mesh: b, target, tIn: i < 5 ? -1 : 0.15 + (i - 5) * 0.05, spin: rnd() * 6.28 });
     }
 
     const sauce = P.sauceBlob({ radius: 0.5, seed: 5 });
@@ -591,7 +591,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
       m.position.copy(target);
       m.rotation.set(rnd() * 6.28, rnd() * 6.28, rnd() * 6.28);
       group.add(m);
-      pieces.push({ mesh: m, target, tIn: 0.25 + i * 0.055, spin: rnd() * 6 });
+      pieces.push({ mesh: m, target, tIn: i < 6 ? -1 : 0.2 + (i - 6) * 0.05, spin: rnd() * 6 });
     }
 
     return {
@@ -788,10 +788,10 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
     if (id === 'hook') {
       const on = lt < 0.35 ? 0.05 : 1;
       const flicker = lt < 0.55 ? 0.75 + 0.35 * Math.sin(lt * 60) : 1;
-      key.intensity = 118 * on * flicker;
+      key.intensity = 92 * on * flicker;
       ambient.intensity = 0.06 + 0.12 * clamp(range(lt, 0.3, 1.6));
     } else {
-      key.intensity = 118;
+      key.intensity = 92;
       ambient.intensity = 0.24;
     }
 
@@ -837,7 +837,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
       + (sc.id === 'caVien' ? 0.5 * clamp(1 - range(lt, 2.4, 4.5)) : 0)
       + (sc.id === 'hook' ? 0.45 : 0);
     sparks.update(t, clamp(fryHeat) * 0.5, sc.id === 'hook' ? 0.5 : 0.45);
-    const steamy = sc.id === 'miTron' ? 0.9 : sc.id === 'hook' ? 0.7 : sc.id === 'nem' ? 0.5 : sc.id === 'cta' ? 0.6 : 0.15;
+    const steamy = sc.id === 'miTron' ? 0.6 : sc.id === 'hook' ? 0.35 : sc.id === 'nem' ? 0.3 : sc.id === 'cta' ? 0.4 : 0.1;
     steam.update(t, steamy);
     const sparkleBursts = [2.05, 9.4, 20.8, 27.1, 31.7];
     let glow = 0;
@@ -860,7 +860,7 @@ export async function createPromo({ canvas, width = VIDEO.width, height = VIDEO.
     const fadeOut = easeInOutCubic(range(t, VIDEO.duration - 1.1, VIDEO.duration));
     grade.uniforms.uFade.value = Math.max(fadeIn, fadeOut);
 
-    bloom.threshold = sc.id === 'traiCay' ? 0.93 : 0.86;
+    bloom.threshold = sc.id === 'traiCay' ? 0.95 : 0.9;
     bloom.strength = 0.3 + glow * 0.3 + flash * 0.5 + (sc.id === 'traiCay' ? 0.08 : 0);
 
     composer.render();
