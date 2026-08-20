@@ -5,7 +5,9 @@ món ăn 3D procedural bằng Three.js + chữ tiếng Việt bằng HTML/CSS + 
 hiệu ứng âm thanh tổng hợp bằng Python. Không dùng ảnh/nhạc bên ngoài, không cần
 bản quyền, và render lại lúc nào cũng ra đúng một kết quả.
 
-> Kết quả: `output/luu-vi-quan-promo.mp4`
+> Kết quả:
+> - `output/luu-vi-quan-promo.mp4` — bản gốc (H.264 CRF 19, ~37 MB)
+> - `output/luu-vi-quan-promo-social.mp4` — bản nhẹ để đăng Facebook/TikTok (~12 MB)
 
 ## Nội dung video
 
@@ -35,6 +37,16 @@ Preview chạy real-time trong trình duyệt, tua lại từ đầu sau mỗi 3
 ```bash
 bash scripts/build.sh                                   # bản đầy đủ 1080x1920 @30fps
 FPS=12 SCALE=0.4 OUT=output/draft.mp4 bash scripts/build.sh   # bản nháp nhanh
+```
+
+Bản đầy đủ mất khoảng 40 phút trên máy 4 nhân (Chromium render WebGL bằng CPU:
+~2,3 giây/khung hình chia cho 3 worker). Bản nháp chỉ mất ~15 phút.
+
+Xuất thêm bản nhẹ để đăng mạng xã hội:
+
+```bash
+ffmpeg -i output/luu-vi-quan-promo.mp4 -c:v libx264 -crf 26 -preset slow \
+       -c:a aac -b:a 160k -movflags +faststart output/luu-vi-quan-promo-social.mp4
 ```
 
 Pipeline gồm 4 bước:
