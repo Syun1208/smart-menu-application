@@ -97,3 +97,16 @@ scripts/check-assets.mjs   bảng slot ảnh
   tối và bết màu.
 - **Render bằng SwiftShader** (container không có GPU) — khoảng 0.14s/frame ở 540×960.
 - Clip gốc **không** dính watermark TikTok (đã kiểm tra frame thật), nên không cắt bù.
+
+## Hai bản xuất
+
+`npm run render` cho bản **master** CRF 18 (~43 MB) — dùng để lưu trữ và dựng lại.
+
+Muốn bản nhẹ để đăng mạng hoặc gửi qua chat:
+
+```bash
+npm run mux -- --crf 22 --tag social     # ~20 MB, 3 Mbps — ghép lại từ frame đã có, ~2 phút
+```
+
+Cả hai đều 1080×1920 @30fps. TikTok/Reels sẽ nén lại lần nữa khi upload, nên bản
+`-social` là đủ; giữ master phòng khi cần dựng lại hoặc xuất tỉ lệ khác.
