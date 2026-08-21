@@ -8,3 +8,4 @@ audio/timeline-photo.json
 scene/regions.json
 __pycache__/
 audio/*.wav
+!audio/voice.wav

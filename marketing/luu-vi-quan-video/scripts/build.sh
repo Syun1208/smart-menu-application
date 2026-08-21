@@ -13,6 +13,7 @@ SCALE="${SCALE:-1}"
 WORKERS="${WORKERS:-3}"
 DURATION="${DURATION:-34}"
 FILM="${FILM:-photo}"                 # photo = real photographs, cg = the 3D scene
+VOICE="${VOICE:-}"                    # optional voice-over WAV mixed under/over the music
 FRAMES="${FRAMES:-frames}"
 
 if [ "$FILM" = "photo" ]; then
@@ -33,7 +34,7 @@ echo "==> 1/4  export timeline ($FILM cut)"
 node scripts/export-timeline.mjs --film "$FILM"
 
 echo "==> 2/4  synthesise soundtrack"
-python3 audio/soundtrack.py --timeline "$TIMELINE" --out "$TRACK"
+python3 audio/soundtrack.py --timeline "$TIMELINE" --out "$TRACK" ${VOICE:+--voice "$VOICE"}
 
 echo "==> 3/4  render frames (${FPS}fps, scale ${SCALE}, ${WORKERS} workers)"
 rm -rf "$FRAMES"

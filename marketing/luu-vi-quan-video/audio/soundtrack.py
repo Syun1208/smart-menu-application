@@ -537,10 +537,45 @@ def build_sfx(track: Track, cfg: dict):
         track.add(sound, cue['t'], gain=cue.get('gain', 1.0) * 0.5, pan=pan)
 
 
-def master(music: np.ndarray, sfx: np.ndarray, duration: float, cfg: dict) -> np.ndarray:
+def read_wav(path: pathlib.Path) -> tuple[np.ndarray, int]:
+    with wave.open(str(path), 'rb') as w:
+        sr = w.getframerate()
+        raw = np.frombuffer(w.readframes(w.getnframes()), '<i2').astype(np.float32) / 32768
+        if w.getnchannels() == 2:
+            raw = raw.reshape(-1, 2).mean(axis=1)
+    return raw, sr
+
+
+def duck(bed: np.ndarray, voice: np.ndarray, depth: float = 0.62, attack: float = 0.06,
+         release: float = 0.35) -> np.ndarray:
+    """Pull the music and foley down wherever the voice is speaking."""
+    env = np.abs(voice)
+    k = max(1, int(attack * SR))
+    env = np.convolve(env, np.ones(k) / k, mode='same')
+    # asymmetric release so the bed comes back gently after each line
+    out = np.empty_like(env)
+    coeff = math.exp(-1.0 / (release * SR))
+    run = 0.0
+    for i, v in enumerate(env):
+        run = max(v, run * coeff)
+        out[i] = run
+    gate = np.clip(out / 0.12, 0, 1)
+    gain = 1 - depth * gate
+    return bed * gain[:, None]
+
+
+def master(music: np.ndarray, sfx: np.ndarray, duration: float, cfg: dict,
+           voice: np.ndarray | None = None) -> np.ndarray:
     ir = reverb_ir(1.0, 4.2, 4000)
     wet = np.stack([convolve(sfx[:, 0], ir), convolve(sfx[:, 1], ir)], axis=1)
     bus = music * 0.9 + sfx * 1.0 + wet * 0.12
+    if voice is not None:
+        v = np.zeros(len(bus))
+        v[:min(len(voice), len(bus))] = voice[:len(bus)]
+        bus = duck(bus, v)
+        # a touch of the same room on the voice keeps it in the mix
+        v_wet = convolve(v, ir)[:len(bus)]
+        bus = bus + np.stack([v, v], axis=1) * 0.92 + np.stack([v_wet, v_wet], axis=1) * 0.05
 
     # master EQ: shave the top-end hiss, keep the kick weighty
     bus = np.stack([fft_filter(bus[:, 0], high=13000), fft_filter(bus[:, 1], high=13000)], axis=1)
@@ -573,6 +608,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--out', default=str(HERE / 'soundtrack.wav'))
     ap.add_argument('--timeline', default=str(HERE / 'timeline.json'))
+    ap.add_argument('--voice', default='', help='optional voice-over WAV, mixed on top with ducking')
     args = ap.parse_args()
 
     cfg = json.loads(pathlib.Path(args.timeline).read_text())
@@ -586,8 +622,17 @@ def main():
     sfx_track = Track(duration + 2)
     build_sfx(sfx_track, cfg)
 
+    voice = None
+    if args.voice:
+        raw, vsr = read_wav(pathlib.Path(args.voice))
+        if vsr != SR:
+            raw = np.interp(np.linspace(0, len(raw) - 1, int(len(raw) * SR / vsr)),
+                            np.arange(len(raw)), raw)
+        voice = raw
+        print(f'  voice-over: {args.voice} ({len(voice) / SR:.2f}s)')
+
     n = int(duration * SR)
-    out = master(music[:n], sfx_track.buf[:n], duration, cfg)
+    out = master(music[:n], sfx_track.buf[:n], duration, cfg, voice)
     write_wav(pathlib.Path(args.out), out)
     print(f"Wrote {args.out} ({len(out) / SR:.2f}s, peak {np.max(np.abs(out)):.2f})")
 

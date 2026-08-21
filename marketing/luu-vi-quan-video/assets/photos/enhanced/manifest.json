@@ -1,0 +1,42 @@
+{
+  "nemSongTray": {
+    "file": "enhanced/nemSongTray.png",
+    "w": 1290,
+    "h": 780
+  },
+  "nemChienBowls": {
+    "file": "enhanced/nemChienBowls.png",
+    "w": 1335,
+    "h": 768
+  },
+  "comboPhoto": {
+    "file": "enhanced/comboPhoto.png",
+    "w": 1455,
+    "h": 1152
+  },
+  "miTronPhoto": {
+    "file": "enhanced/miTronPhoto.png",
+    "w": 1473,
+    "h": 882
+  },
+  "miTronCheese": {
+    "file": "enhanced/miTronCheese.png",
+    "w": 939,
+    "h": 528
+  },
+  "fruitDam": {
+    "file": "enhanced/fruitDam.png",
+    "w": 513,
+    "h": 630
+  },
+  "fruitMix": {
+    "file": "enhanced/fruitMix.png",
+    "w": 1056,
+    "h": 441
+  },
+  "fruitBox": {
+    "file": "enhanced/fruitBox.png",
+    "w": 870,
+    "h": 522
+  }
+}

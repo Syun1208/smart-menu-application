@@ -19,10 +19,10 @@ bản **cg** giữ lại làm nền cho các cảnh không có ảnh.
 | Thời gian | Phân cảnh | Nội dung |
 |---|---|---|
 | 0–4s | Hook | Cận cá viên sốt cay → "ĐÓI CHƯA?" → logo **LƯU VỊ QUÁN** |
-| 4–10s | Nem | Nem rán, nem phô mai, nem xù, khay nem sống + bảng giá 50k/60k/12k/65k |
+| 4–10s | Nem | Nem rán, nem phô mai, nem xù (chỉ nem chiên) + bảng giá 50k/60k/12k/65k |
 | 10–16s | Cá viên chiên | Cá viên sốt mắm tỏi, cận đậu phộng, hộp combo, combo 50k/70k/100k |
 | 16–22s | Mì trộn | Mì trộn cá viên, cận phô mai mozzarella, 50–70k / 60–80k |
-| 22–27s | Trái cây | Combo mix vị, box cắt sẵn, 40k/50k/199–399k |
+| 22–27s | Trái cây | Khay trái cây ở quầy, ly mix vị, ly trái cây dầm, box quà, 40k/50k/199–399k |
 | 27–34s | CTA | **0947 815 316**, freeship 2km, giờ mở cửa, slogan |
 
 Toàn bộ giá và chữ lấy từ menu thật của quán, khai báo tập trung trong
@@ -74,7 +74,8 @@ scene/overlay.js     ← lớp chữ HTML/CSS, dùng chung cho cả hai bản d�
 scene/ui.css         ← toàn bộ typography và bố cục chữ
 
 # bản ảnh thật
-assets/photos/       ← 5 ảnh gốc của quán
+assets/photos/       ← ảnh gốc của quán (nem chiên, combo, menu, trái cây)
+assets/photos/enhanced/ ← bản phóng to đã xử lý của các ảnh nhỏ cắt từ menu in
 scene/photos.js      ← khai báo vùng cắt (region) trong từng tấm ảnh
 scene/shots.js       ← kịch bản quay: shot nào, khung nào, chuyển cảnh gì, cue tiếng gì
 scene/film.js        ← shader dựng phim: khung hình, chuyển cảnh, grade, bloom, tàn lửa
@@ -87,6 +88,7 @@ scene/textures.js    ← vân gỗ, giấy kraft in logo, lớp vỏ chiên giò
 scene/index.html     ← trang render bản 3D
 
 audio/soundtrack.py  ← trống, bass, marimba và 14 loại SFX (xèo xèo, whoosh, ding, kéo phô mai…)
+audio/voice.py       ← kịch bản lời đọc + tổng hợp giọng nữ (xem phần Giọng đọc)
 scripts/            ← server tĩnh, renderer, export timeline/region, build, chụp ảnh kiểm tra
 ```
 
@@ -103,9 +105,13 @@ và tiếng khớp hình tuyệt đối.
   thêm rung tay rất nhẹ nên ảnh tĩnh vẫn "thở".
 - **Chuyển cảnh** viết thẳng trong shader: whip pan (nhoè theo hướng), zoom punch
   (nhoè xuyên tâm), flash cut, slide, wipe chéo có viền sáng, dissolve.
-- **Card** dành cho ảnh cắt từ tờ menu in (mì trộn, trái cây): ảnh nổi lên như
-  một tấm thẻ bo góc có viền sáng và bóng đổ, đặt trên nền gradient màu thương
-  hiệu — vừa hợp bố cục, vừa tránh phóng to ảnh nhỏ lên toàn khung.
+- **Card** dành cho ảnh không hợp khung dọc (mì trộn cắt từ menu in, ly trái cây
+  dầm chụp dọc): ảnh nổi lên như một tấm thẻ bo góc có viền sáng và bóng đổ, đặt
+  trên nền gradient màu thương hiệu — vừa hợp bố cục, vừa tránh phóng to ảnh nhỏ
+  lên toàn khung.
+- **Ảnh nhỏ cắt từ menu in** được phóng to sẵn bằng `scripts/enhance-crops.py`
+  (Lanczos 3× + unsharp trên kênh sáng + tăng tương phản cục bộ) thay vì để GPU
+  nội suy tuyến tính; shader còn lấy mẫu **bicubic Catmull-Rom** nên cạnh không bị nhoè.
 - **Mỗi cú cắt tự sinh ra tiếng của nó**: `scene/shots.js` gắn whoosh/impact/
   sparkle vào từng transition rồi trộn với lớp foley theo món ăn, nên hình và
   tiếng không bao giờ lệch nhau.
@@ -116,6 +122,27 @@ Kiểm tra nhanh khung hình đã cắt đúng món chưa:
 node scripts/export-regions.mjs && python3 scripts/check-regions.py   # preview/regions.jpg
 node scripts/shots.mjs --page scene/film.html --times 0.9,6.2,13,23.5 # preview/*.png
 ```
+
+## Giọng đọc (voice-over)
+
+Kịch bản lời đọc và mốc thời gian nằm trong `LINES` của [`audio/voice.py`](audio/voice.py).
+Ghép giọng vào phim:
+
+```bash
+python3 audio/soundtrack.py --timeline audio/timeline-photo.json \
+        --out audio/soundtrack-photo.wav --voice audio/voice.wav
+VOICE=audio/voice.wav bash scripts/build.sh          # hoặc build thẳng
+```
+
+Nhạc và tiếng động **tự động hạ xuống** (ducking) mỗi khi có tiếng đọc rồi trả
+lại như cũ, nên lời thoại luôn nghe rõ.
+
+`audio/voice.wav` hiện tại do máy đọc (Piper, giọng nữ ~200 Hz). **Hạn chế cần
+biết**: mô hình tiếng Việt offline duy nhất lấy được ở đây không có thanh điệu
+trong bảng âm vị, nên giọng đọc bị mất dấu — nghe như người nước ngoài nói tiếng
+Việt. Muốn giọng chuẩn, thu một người thật (ghi âm điện thoại là đủ) hoặc dùng
+TTS tiếng Việt có thanh điệu (CapCut, Vbee, FPT.AI, Zalo) rồi đưa file WAV vào
+`--voice` — phần còn lại của pipeline giữ nguyên.
 
 ## Âm thanh
 

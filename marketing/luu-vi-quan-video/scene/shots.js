@@ -23,8 +23,12 @@ const shot = (at, end, region, opts = {}) => ({
   trans: opts.trans || { type: 'whip', dur: 0.34, dir: [1, 0] },
   cool: opts.cool || 0,
   cardW: opts.cardW,
-  sharpen: opts.sharpen ?? (opts.mode === 'card' ? 0.55 : 0.18),
+  cardH: opts.cardH,
+  cardX: opts.cardX,
+  cardY: opts.cardY,
+  sharpen: opts.sharpen ?? (opts.mode === 'card' ? 0.22 : 0.16),
   dark: opts.dark || 0,
+  expo: opts.expo,
 });
 
 const whip = (dx = 1, dy = 0, dur = 0.32) => ({ type: 'whip', dur, dir: [dx, dy] });
@@ -46,7 +50,7 @@ export const SHOTS = [
   shot(4.00, 5.60, 'nemBoardRight', { z: [1.20, 1.04], x: [0.03, -0.02], trans: whip(1, 0, 0.3) }),
   shot(5.60, 7.00, 'nemPhoMai',     { z: [1.10, 0.98], y: [0.03, -0.01], trans: punch() }),
   shot(7.00, 8.30, 'nemRan',        { z: [1.18, 1.04], x: [-0.03, 0.02], trans: whip(-1, 0, 0.28) }),
-  shot(8.30, 10.00, 'nemSongTray',  { mode: 'card', z: [1.08, 1.0], rot: [-2.4, 1.6], trans: slide(0, 1, 0.42) }),
+  shot(8.30, 10.00, 'nemBoardLeft',   { z: [1.18, 1.02], y: [0.02, -0.02], trans: slide(0, 1, 0.42) }),
 
   // ----------------------------------------------------- cá viên chiên ------
   shot(10.00, 11.50, 'caVienSauce', { z: [1.30, 1.08], y: [-0.03, 0.02], trans: flash(0.3) }),
@@ -55,14 +59,16 @@ export const SHOTS = [
   shot(14.20, 16.00, 'peanutBowl',  { z: [1.26, 1.06], y: [0.02, -0.03], trans: slide(0, -1, 0.4) }),
 
   // ---------------------------------------------------------- mì trộn -------
-  shot(16.00, 18.00, 'miTronPhoto',  { mode: 'card', z: [1.10, 1.0], rot: [2.2, -1.4], trans: punch(0.38) }),
-  shot(18.00, 19.60, 'miTronCheese', { mode: 'card', z: [1.06, 0.98], rot: [-1.8, 1.2], trans: whip(1, 0, 0.3) }),
+  shot(16.00, 18.00, 'miTronPhotoHD',  { mode: 'card', cardW: 0.78, cardY: 0.715, z: [1.10, 1.0], rot: [2.2, -1.4], trans: punch(0.38) }),
+  shot(18.00, 19.60, 'miTronCheeseHD', { mode: 'card', cardW: 0.54, cardX: 0.44, cardY: 0.735, z: [1.06, 0.98], rot: [-1.8, 1.2], trans: whip(1, 0, 0.3) }),
   shot(19.60, 22.00, 'comboBox',     { z: [1.10, 1.26], x: [-0.02, 0.04], trans: wipe(0.5) }),
 
   // ---------------------------------------------------------- trái cây ------
-  shot(22.00, 24.00, 'fruitMix',      { mode: 'card', cardW: 0.76, z: [1.10, 1.0], rot: [-2.0, 1.4], trans: flash(0.3), cool: 0.3 }),
-  shot(24.00, 25.60, 'fruitBox',      { mode: 'card', cardW: 0.74, z: [1.06, 0.98], rot: [1.8, -1.2], trans: whip(-1, 0, 0.3), cool: 0.3 }),
-  shot(25.60, 27.00, 'brandPaper',     { z: [1.34, 1.12], x: [0.02, -0.02], trans: slide(0, 1, 0.4), cool: 0.25, dark: 0.26 }),
+  shot(22.00, 23.50, 'fruitCounter',  { z: [1.16, 1.02], x: [-0.03, 0.02], trans: flash(0.3), cool: 0.3, expo: 0.97 }),
+  shot(23.50, 25.00, 'fruitCupsAll',  { z: [1.14, 1.00], y: [-0.02, 0.03], trans: whip(1, 0, 0.3), cool: 0.3 }),
+  shot(25.00, 26.10, 'fruitDamCup',   { mode: 'card', cardW: 0.86, cardY: 0.720,
+                                      z: [1.04, 0.98], rot: [1.6, -1.0], trans: punch(0.34), cool: 0.25, expo: 0.90 }),
+  shot(26.10, 27.00, 'fruitBoxReal',  { z: [1.10, 1.02], x: [0.02, -0.02], trans: whip(-1, 0, 0.28), cool: 0.3 }),
 
   // ------------------------------------------------------ call to action ----
   shot(27.00, 30.40, 'comboWide',    { z: [1.16, 1.02], y: [0.02, -0.02], trans: flash(0.36), dark: 0.58 }),

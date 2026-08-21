@@ -59,6 +59,33 @@ const fragmentShader = /* glsl */ `
     return mix(rect.xy, rect.zw, vec2(q.x, 1.0 - q.y));
   }
 
+  // Catmull-Rom bicubic, the 9-bilinear-tap formulation. The GPU's own filter
+  // is bilinear, which turns any enlargement into mush; this keeps edges.
+  vec3 bicubic(sampler2D tex, vec2 uv, vec2 texSize) {
+    vec2 pos = uv * texSize;
+    vec2 c = floor(pos - 0.5) + 0.5;
+    vec2 f = pos - c;
+    vec2 w0 = f * (-0.5 + f * (1.0 - 0.5 * f));
+    vec2 w1 = 1.0 + f * f * (-2.5 + 1.5 * f);
+    vec2 w2 = f * (0.5 + f * (2.0 - 1.5 * f));
+    vec2 w3 = f * f * (-0.5 + 0.5 * f);
+    vec2 w12 = w1 + w2;
+    vec2 t0 = (c - 1.0) / texSize;
+    vec2 t3 = (c + 2.0) / texSize;
+    vec2 t12 = (c + w2 / w12) / texSize;
+    vec3 r = vec3(0.0);
+    r += texture2D(tex, vec2(t0.x,  t0.y )).rgb * w0.x  * w0.y;
+    r += texture2D(tex, vec2(t12.x, t0.y )).rgb * w12.x * w0.y;
+    r += texture2D(tex, vec2(t3.x,  t0.y )).rgb * w3.x  * w0.y;
+    r += texture2D(tex, vec2(t0.x,  t12.y)).rgb * w0.x  * w12.y;
+    r += texture2D(tex, vec2(t12.x, t12.y)).rgb * w12.x * w12.y;
+    r += texture2D(tex, vec2(t3.x,  t12.y)).rgb * w3.x  * w12.y;
+    r += texture2D(tex, vec2(t0.x,  t3.y )).rgb * w0.x  * w3.y;
+    r += texture2D(tex, vec2(t12.x, t3.y )).rgb * w12.x * w3.y;
+    r += texture2D(tex, vec2(t3.x,  t3.y )).rgb * w3.x  * w3.y;
+    return r;
+  }
+
   float sdRoundRect(vec2 p, vec2 b, float r) {
     vec2 q = abs(p) - b + r;
     return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - r;
@@ -68,7 +95,7 @@ const fragmentShader = /* glsl */ `
     float amt = abs(fx.x) + abs(fx.y) + abs(fx.z);
     if (amt < 0.0015) {
       vec2 suv = srcUV(rect, uv);
-      vec3 c = texture2D(tex, suv).rgb;
+      vec3 c = bicubic(tex, suv, tsize);
       if (sharpen > 0.001) {
         vec2 px = abs(rect.zw - rect.xy) / max(tsize, vec2(1.0)) * 1.15;
         vec3 n = texture2D(tex, suv + vec2(px.x, 0.0)).rgb + texture2D(tex, suv - vec2(px.x, 0.0)).rgb
@@ -121,9 +148,11 @@ const fragmentShader = /* glsl */ `
     vec3 photo = sampleRect(tex, rect, clamp(luv, 0.0, 1.0), fx, tsize, mode.y);
 
     float inside = smoothstep(0.004, -0.002, d);
-    float rim = exp(-pow(max(abs(d) - 0.0025, 0.0) / 0.006, 2.0));
+    float border = smoothstep(0.0055, 0.0015, abs(d + 0.0035));
+    float halo = exp(-pow(max(d, 0.0) / 0.020, 2.0));
     vec3 col = mix(bg, photo, inside);
-    col += rim * vec3(1.0, 0.70, 0.32) * 0.30;
+    col = mix(col, vec3(1.0, 0.95, 0.88), border * 0.85);
+    col += (1.0 - inside) * halo * vec3(1.0, 0.62, 0.26) * 0.14;
     return col;
   }
 
@@ -251,14 +280,15 @@ function windowFor(regionName, zoom, panX, panY, cardMode) {
 }
 
 /** Card geometry in frame uv for a given photo aspect. */
-function cardFor(regionAspect, maxW = CARD.maxW) {
-  let uw = maxW;
+function cardFor(regionAspect, shot) {
+  let uw = shot.cardW ?? CARD.maxW;
   let uh = (uw * FRAME_ASPECT) / regionAspect;
-  if (uh > CARD.maxH) {
-    uh = CARD.maxH;
+  const maxH = shot.cardH ?? CARD.maxH;
+  if (uh > maxH) {
+    uh = maxH;
     uw = (uh * regionAspect) / FRAME_ASPECT;
   }
-  return [0.5, CARD.centerY, uw / 2, uh / 2];
+  return [shot.cardX ?? 0.5, shot.cardY ?? CARD.centerY, uw / 2, uh / 2];
 }
 
 /** Evaluate one shot at absolute time t (clamped to its own span). */
@@ -272,7 +302,7 @@ function evalShot(shot, t) {
   const isCard = shot.mode === 'card';
 
   const win = windowFor(shot.region, zoom, panX, panY, isCard);
-  const card = isCard ? cardFor(win.regionAspect, shot.cardW) : [0.5, 0.5, 0.5, 0.5];
+  const card = isCard ? cardFor(win.regionAspect, shot) : [0.5, 0.5, 0.5, 0.5];
 
   return {
     rect: win.rect,
@@ -282,6 +312,7 @@ function evalShot(shot, t) {
     rot,
     dark: shot.dark,
     cool: shot.cool,
+    expo: shot.expo ?? 1,
   };
 }
 
@@ -464,7 +495,7 @@ export async function createFilm({ canvas, width, height }) {
     uniforms.uDark.value = clamp(Math.max(B.dark * (inCut ? m : 1), openDark));
     uniforms.uCool.value = lerp(A.cool, B.cool, inCut ? m : 1);
     uniforms.uVignette.value = 0.38 + 0.18 * clamp(B.dark * 2);
-    uniforms.uExposure.value = 1.03 + 0.03 * Math.sin(t * 1.3);
+    uniforms.uExposure.value = (1.03 + 0.03 * Math.sin(t * 1.3)) * lerp(A.expo, B.expo, inCut ? m : 1);
     uniforms.uTime.value = t;
 
     // embers ride the fried-food chapters, fade out over the fruit
