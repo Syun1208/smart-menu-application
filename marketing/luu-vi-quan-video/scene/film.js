@@ -120,6 +120,21 @@ const fragmentShader = /* glsl */ `
       return sampleRect(tex, rect, uv, fx, tsize, mode.y);
     }
 
+    // --- mode 2: the photo runs the full width of the frame and whatever it
+    // cannot fill is a blurred, darkened copy of itself. Used for photographs
+    // whose shape does not suit 9:16 - nothing is cropped away, and the picture
+    // is still as big as the frame allows.
+    if (mode.x > 1.5) {
+      vec2 hs = card.zw;                 // 'half' is a reserved word in GLSL
+      vec2 dd = (uv - card.xy) / hs;
+      vec3 bg = texture2D(tex, vec2(uv.x, 1.0 - uv.y) * 0.9 + 0.05, 5.0).rgb;
+      bg = mix(vec3(0.06, 0.03, 0.015), bg * 0.55, 0.85);
+      float inside = step(max(abs(dd.x), abs(dd.y)), 1.0);
+      vec3 photo = sampleRect(tex, rect, clamp(dd * 0.5 + 0.5, 0.0, 1.0), fx, tsize, mode.y);
+      float edge = smoothstep(1.06, 0.99, abs(dd.y));
+      return mix(bg, photo, inside * edge + inside * (1.0 - edge) * 0.85);
+    }
+
     // --- card: the photo floats over a blurred, dimmed copy of itself --------
     vec2 asp = vec2(uAspect, 1.0);
     vec2 p = (uv - card.xy) * asp;
@@ -178,15 +193,15 @@ const fragmentShader = /* glsl */ `
       float e = smoothstep(0.0, 1.0, m);
       uvA += uDir * e * 0.62;
       uvB += uDir * (e - 1.0) * 0.62;
-      float b = sin(3.14159 * m) * 0.105;
+      float b = sin(3.14159 * m) * 0.055;
       fxA += vec3(uDir * b, 0.0);
       fxB += vec3(uDir * b, 0.0);
       blend = step(0.5, e);
     } else if (uTrans < 2.5) {             // zoom punch
       float e = 1.0 - pow(1.0 - m, 3.0);
-      uvB = (uvB - 0.5) * mix(1.32, 1.0, e) + 0.5;
-      uvA = (uvA - 0.5) * mix(1.0, 0.84, e) + 0.5;
-      float r = sin(3.14159 * m) * 0.055;
+      uvB = (uvB - 0.5) * mix(1.16, 1.0, e) + 0.5;
+      uvA = (uvA - 0.5) * mix(1.0, 0.92, e) + 0.5;
+      float r = sin(3.14159 * m) * 0.028;
       fxB.z += r;
       fxA.z += r * 0.7;
       blend = smoothstep(0.16, 0.52, m);
@@ -196,7 +211,7 @@ const fragmentShader = /* glsl */ `
       float ins = step(0.0, uvB.x) * step(uvB.x, 1.0) * step(0.0, uvB.y) * step(uvB.y, 1.0);
       blend = ins;
       float edge = min(min(uvB.x, 1.0 - uvB.x), min(uvB.y, 1.0 - uvB.y));
-      edgeGlow = ins * exp(-edge / 0.008) * 0.5;
+      edgeGlow = ins * exp(-edge / 0.008) * 0.25;
     } else if (uTrans < 4.5) {             // flash cut
       blend = step(0.45, m);
     } else if (uTrans < 5.5) {             // diagonal wipe
@@ -204,7 +219,7 @@ const fragmentShader = /* glsl */ `
       float g = uv.x * 0.68 + uv.y * 0.32;
       float pos = mix(1.0 + w, -w, m);
       blend = clamp((g - pos) / w, 0.0, 1.0);
-      edgeGlow = exp(-pow((g - pos) / (w * 0.45), 2.0)) * 0.55;
+      edgeGlow = exp(-pow((g - pos) / (w * 0.45), 2.0)) * 0.28;
     } else {                                // dissolve
       blend = smoothstep(0.0, 1.0, m);
     }
@@ -289,6 +304,10 @@ function windowFor(regionName, zoom, panX, panY, cardMode) {
 
 /** Card geometry in frame uv for a given photo aspect. */
 function cardFor(regionAspect, shot) {
+  if (shot.mode === 'wide') {
+    const uh = FRAME_ASPECT / regionAspect;          // full width, natural height
+    return [0.5, shot.cardY ?? 0.60, 0.5, uh / 2];
+  }
   let uw = shot.cardW ?? CARD.maxW;
   let uh = (uw * FRAME_ASPECT) / regionAspect;
   const maxH = shot.cardH ?? CARD.maxH;
@@ -307,7 +326,8 @@ function evalShot(shot, t) {
   const panX = lerp(shot.x[0], shot.x[1], e);
   const panY = lerp(shot.y[0], shot.y[1], e);
   const rot = lerp(shot.rot[0], shot.rot[1], e) * (Math.PI / 180);
-  const isCard = shot.mode === 'card';
+  const isCard = shot.mode === 'card' || shot.mode === 'wide';
+  const modeId = shot.mode === 'wide' ? 2 : shot.mode === 'card' ? 1 : 0;
 
   const win = windowFor(shot.region, zoom, panX, panY, isCard);
   const card = isCard ? cardFor(win.regionAspect, shot) : [0.5, 0.5, 0.5, 0.5];
@@ -316,7 +336,7 @@ function evalShot(shot, t) {
     rect: win.rect,
     photo: win.photo,
     card,
-    mode: [isCard ? 1 : 0, shot.sharpen],
+    mode: [modeId, shot.sharpen],
     rot,
     dark: shot.dark,
     cool: shot.cool,
@@ -378,6 +398,7 @@ export async function createFilm({ canvas, width, height }) {
   // Written by audio/beatmap.py from whatever track is on the film, so swapping
   // the music re-times every kick in here without touching this file.
   let beat = null;
+  let shots = SHOTS;
   try {
     const res = await fetch('./beats.json', { cache: 'no-store' });
     if (res.ok) {
@@ -394,9 +415,31 @@ export async function createFilm({ canvas, width, height }) {
       }
       hits.sort((a, b) => a.t - b.t);
       beat = { hits, bass: raw.energy?.bass || [], fps: raw.fps || 30, bpm: raw.bpm };
+      shots = snapToBeats(SHOTS, raw.beats);
     }
   } catch (err) {
     console.warn('no beat map:', err);
+  }
+
+  /**
+   * Move every cut onto the nearest beat of whatever track is playing, as long
+   * as it does not move far or crowd the shot before it. Swapping the music
+   * therefore re-times the edit, not just the effects.
+   */
+  function snapToBeats(list, beats) {
+    if (!beats || !beats.length) return list;
+    const out = list.map((s) => ({ ...s }));
+    for (let i = 1; i < out.length; i++) {
+      let best = out[i].at;
+      let bestD = Infinity;
+      for (const b of beats) {
+        const d = Math.abs(b - out[i].at);
+        if (d < bestD) { bestD = d; best = b; }
+      }
+      if (bestD <= 0.30 && best - out[i - 1].at >= 0.45) out[i].at = best;
+    }
+    for (let i = 0; i < out.length - 1; i++) out[i].end = out[i + 1].at;
+    return out;
   }
 
   /** The kick riding on the music at time t. */
@@ -411,13 +454,13 @@ export async function createFilm({ canvas, width, height }) {
     }
     const hit = beat.hits[lo];
     const age = t - hit.t;
-    const env = Math.exp(-age / 0.075);            // snap in, settle in ~150 ms
+    const env = Math.exp(-age / 0.105);            // a soft breath on the beat, not a jolt
     const bassFrame = Math.min(beat.bass.length - 1, Math.round(t * beat.fps));
-    const pump = beat.bass.length ? beat.bass[bassFrame] * 0.010 : 0;
+    const pump = beat.bass.length ? beat.bass[bassFrame] * 0.005 : 0;
     return {
-      punch: 0.045 * hit.s * env + pump,
-      roll: 0.0075 * hit.s * env * (lo % 2 ? 1 : -1),
-      split: hit.s > 1.1 ? 0.0026 * env : 0.0009 * hit.s * env,
+      punch: 0.019 * hit.s * env + pump,
+      roll: 0.0026 * hit.s * env * (lo % 2 ? 1 : -1),
+      split: hit.s > 1.1 ? 0.0010 * env : 0,
     };
   }
 
@@ -431,7 +474,7 @@ export async function createFilm({ canvas, width, height }) {
     uRotA: { value: 0 }, uRotB: { value: 0 },
     uMix: { value: 1 }, uTrans: { value: 0 }, uDir: { value: new THREE.Vector2(1, 0) },
     uFlash: { value: 0 }, uDark: { value: 0 }, uCool: { value: 0 }, uSweep: { value: 0 },
-    uGrain: { value: 0.028 }, uVignette: { value: 0.38 },
+    uGrain: { value: 0.017 }, uVignette: { value: 0.38 },
     uExposure: { value: 1.03 }, uContrast: { value: 1.05 }, uSat: { value: 1.12 },
     uTime: { value: 0 }, uAspect: { value: FRAME_ASPECT },
     uShake: { value: new THREE.Vector2() },
@@ -526,11 +569,11 @@ export async function createFilm({ canvas, width, height }) {
   function renderFrame(t) {
     // --- which shot, and are we mid-cut? -----------------------------------
     let index = 0;
-    for (let i = SHOTS.length - 1; i >= 0; i--) {
-      if (t >= SHOTS[i].at) { index = i; break; }
+    for (let i = shots.length - 1; i >= 0; i--) {
+      if (t >= shots[i].at) { index = i; break; }
     }
-    const cur = SHOTS[index];
-    const prev = SHOTS[Math.max(0, index - 1)];
+    const cur = shots[index];
+    const prev = shots[Math.max(0, index - 1)];
     const dur = cur.trans.dur;
     const inCut = index > 0 && t < cur.at + dur;
     const m = inCut ? clamp((t - cur.at) / dur) : 1;
@@ -555,24 +598,23 @@ export async function createFilm({ canvas, width, height }) {
     uniforms.uDir.value.set(cur.trans.dir[0], cur.trans.dir[1]);
 
     // --- accents ------------------------------------------------------------
-    const flashCut = inCut && cur.trans.type === 'flash' ? pulse(m) * 0.72 : 0;
+    const flashCut = inCut && cur.trans.type === 'flash' ? pulse(m) * 0.34 : 0;
     const openFlash = t < 0.5 ? Math.max(0, 0.55 - t * 1.6) : 0;
     uniforms.uFlash.value = Math.max(flashCut, openFlash);
 
     const sinceCut = t - cur.at;
     const shakeAmp = (cur.trans.type === 'flash' || cur.trans.type === 'punch')
-      ? 0.008 * Math.exp(-sinceCut * 9) : 0.0025 * Math.exp(-sinceCut * 6);
+      ? 0.0035 * Math.exp(-sinceCut * 9) : 0.0012 * Math.exp(-sinceCut * 6);
     // a permanent, very slow handheld drift keeps a still photograph breathing
-    const driftX = Math.sin(t * 0.9 + 0.4) * 0.0016 + Math.sin(t * 2.3 + 1.9) * 0.0006;
-    const driftY = Math.sin(t * 1.1 + 2.1) * 0.0018 + Math.sin(t * 2.9 + 0.7) * 0.0007;
+    const driftX = Math.sin(t * 0.9 + 0.4) * 0.0009 + Math.sin(t * 2.3 + 1.9) * 0.0003;
+    const driftY = Math.sin(t * 1.1 + 2.1) * 0.0010 + Math.sin(t * 2.9 + 0.7) * 0.0003;
     uniforms.uShake.value.set(
       driftX + Math.sin(t * 61.0) * shakeAmp * 0.6,
       driftY + Math.sin(t * 47.0 + 1.3) * shakeAmp,
     );
 
     // a sheen crosses the frame right after every hard accent
-    uniforms.uSweep.value = sinceCut < 0.55 && (cur.trans.type === 'flash' || cur.trans.type === 'punch')
-      ? 0.001 + sinceCut / 0.55 : 0;
+    uniforms.uSweep.value = 0;   // the sheen read as one effect too many
 
     // --- grade --------------------------------------------------------------
     const sc = sceneAt(t);
@@ -589,10 +631,10 @@ export async function createFilm({ canvas, width, height }) {
     uniforms.uPunch.value = kick.punch;
     uniforms.uRoll.value = kick.roll;
     beatPass.uniforms.uSplit.value = kick.split;
-    beatPass.uniforms.uLift.value = kick.punch * 1.6;
+    beatPass.uniforms.uLift.value = kick.punch * 0.9;
 
     // embers ride the fried-food chapters, fade out over the fruit
-    const ember = sc.id === 'traiCay' ? 0.12 : sc.id === 'cta' ? 0.5 : 0.62;
+    const ember = sc.id === 'traiCay' ? 0.05 : sc.id === 'cta' ? 0.16 : 0.22;
     updateSparks(t, ember * (0.55 + 0.45 * Math.sin(t * 0.8 + 1.2)));
 
     composer.render();

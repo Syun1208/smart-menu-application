@@ -15,6 +15,7 @@ DURATION="${DURATION:-34}"
 FILM="${FILM:-photo}"                 # photo = real photographs, cg = the 3D scene
 VOICE="${VOICE:-}"                    # optional voice-over WAV mixed under/over the music
 AUDIO="${AUDIO:-}"                    # optional music track replacing the synthesised one
+AUDIO_START="${AUDIO_START:-0}"       # second of that track to start from (pick a chorus)
 FRAMES="${FRAMES:-frames}"
 
 if [ "$FILM" = "photo" ]; then
@@ -36,7 +37,9 @@ node scripts/export-timeline.mjs --film "$FILM"
 
 if [ -n "$AUDIO" ]; then
   echo "==> 2/4  use the supplied music: $AUDIO"
-  "$FFMPEG" -y -loglevel error -i "$AUDIO" -t "$DURATION" -ac 2 -ar 44100 "$TRACK"
+  "$FFMPEG" -y -loglevel error -ss "$AUDIO_START" -t "$DURATION" -i "$AUDIO" -vn -ac 2 -ar 44100 \
+    -af "afade=t=in:st=0:d=0.3,afade=t=out:st=$(echo "$DURATION - 1.1" | bc):d=1.1,loudnorm=I=-14:TP=-1.5:LRA=11" \
+    "$TRACK"
 else
   echo "==> 2/4  synthesise soundtrack"
   python3 audio/soundtrack.py --timeline "$TIMELINE" --out "$TRACK" ${VOICE:+--voice "$VOICE"}

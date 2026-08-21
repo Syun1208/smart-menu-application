@@ -9,3 +9,5 @@ scene/regions.json
 __pycache__/
 audio/*.wav
 !audio/voice.wav
+assets/audio/*.mp3
+assets/audio/*.m4a
