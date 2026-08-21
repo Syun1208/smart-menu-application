@@ -1,0 +1,76 @@
+{
+  "brand": {
+    "name": "LƯU VỊ QUÁN",
+    "sub": "Nem chua Trần Công Châu",
+    "tagline": "Chỉ vài phút để có bữa ăn ngon",
+    "slogan": "Vị ngon đáng lưu lại",
+    "phone": "0947 815 316",
+    "ship": "Freeship bán kính 2km",
+    "hours": [
+      { "label": "T2–T6", "value": "10h–23h" },
+      { "label": "T7, CN", "value": "cả ngày" }
+    ],
+    "footer": "Nem giòn rụm · Phô mai kéo sợi · Ăn là lưu vị",
+    "colors": {
+      "cream": "#fdf3e7",
+      "paper": "#fffaf3",
+      "red": "#c8401b",
+      "orange": "#e8801f",
+      "brown": "#4a2f22",
+      "ink": "#2a1a12"
+    }
+  },
+  "sections": [
+    {
+      "id": "nem-song",
+      "title": "NEM SỐNG",
+      "theme": "light",
+      "items": [
+        { "name": "Nem trần", "price": "50k", "unit": "/ 10c" },
+        { "name": "Nem xù", "price": "60k", "unit": "/ 10c" },
+        { "name": "Nem phô mai", "price": "12k", "unit": "/ 1v" },
+        { "name": "Nem bò pía", "price": "65k", "unit": "/ 10c" }
+      ]
+    },
+    {
+      "id": "nem-chien",
+      "title": "NEM CHIÊN",
+      "theme": "dark",
+      "items": [
+        { "name": "Nem trần", "price": "60k", "unit": "/ 10c" },
+        { "name": "Nem xù", "price": "75k", "unit": "/ 10c" },
+        { "name": "Nem phô mai", "price": "15k", "unit": "/ 1v" },
+        { "name": "Nem bò pía", "price": "80k", "unit": "/ 10c" }
+      ]
+    },
+    {
+      "id": "ca-vien",
+      "title": "COMBO CÁ VIÊN / MẮM TỎI",
+      "theme": "light",
+      "items": [
+        { "name": "Combo nhỏ", "price": "50k", "unit": "" },
+        { "name": "Combo vừa", "price": "70k", "unit": "" },
+        { "name": "Combo lớn", "price": "100k", "unit": "" }
+      ]
+    },
+    {
+      "id": "mi-tron",
+      "title": "MÌ TRỘN",
+      "theme": "light",
+      "items": [
+        { "name": "Mì trộn cá viên", "price": "50 – 70k", "unit": "" },
+        { "name": "Mì trộn cá viên phô mai mozzarella", "price": "60 – 80k", "unit": "" }
+      ]
+    }
+  ],
+  "fruit": {
+    "title": "TRÁI CÂY",
+    "items": [
+      { "name": "Trái cây cắt sẵn", "price": "", "unit": "hộp / khay" },
+      { "name": "Trái cây mix tô", "price": "", "unit": "nhiều loại" },
+      { "name": "Trái cây dầm sốt kem", "price": "", "unit": "ly" },
+      { "name": "Box trái cây cao cấp", "price": "", "unit": "quà tặng" }
+    ],
+    "note": "Giá theo mùa — nhắn 0947 815 316 để đặt"
+  }
+}

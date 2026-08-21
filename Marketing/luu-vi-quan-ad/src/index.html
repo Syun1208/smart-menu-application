@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<base href="/">
+<title>Lưu Vị Quán — TVC 60s</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #16100c; color: #f3e6d6;
+    font: 14px/1.5 "Be Vietnam Pro", "DejaVu Sans", system-ui, sans-serif; }
+  body { display: grid; place-items: center; gap: 12px; grid-template-rows: 1fr auto auto; padding: 16px; box-sizing: border-box; }
+  #stage { max-height: calc(100vh - 130px); max-width: 100%; height: auto; border-radius: 10px;
+    box-shadow: 0 18px 60px rgba(0,0,0,.6); cursor: pointer; display: block; }
+  #track { width: min(420px, 90vw); height: 4px; background: rgba(255,255,255,.14); border-radius: 3px; overflow: hidden; }
+  #bar { height: 100%; width: 0; background: #e8801f; }
+  #label { font-weight: 700; letter-spacing: .2px; }
+  #status { opacity: .62; font-size: 12px; }
+  #help { opacity: .45; font-size: 11.5px; text-align: center; }
+</style>
+<script type="importmap">
+{ "imports": {
+    "three": "/node_modules/three/build/three.module.js",
+    "three/addons/": "/node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <div id="track"><div id="bar"></div></div>
+  <div id="label">đang tải…</div>
+  <div id="status"></div>
+  <div id="help">Space phát/dừng · ←/→ lùi/tới 1 frame (giữ Shift = 1 giây) · ↑/↓ nhảy cảnh · Home về đầu</div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

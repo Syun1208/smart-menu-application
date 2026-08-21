@@ -1,0 +1,251 @@
+// Scene three.js cho TVC.
+// Bo cuc rat gon co chu dich: mot OrthographicCamera + mot quad phu khung, toan bo
+// "may quay" nam trong shader duoi dang phep lay mau UV. Anh goc khong bao gio bi ve lai,
+// nen chu / gia / logo tren anh menu giu nguyen tung diem anh - dung yeu cau cua storyboard.
+
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+
+import { vertexShader, fragmentShader } from './shaders/shot.js';
+import { GrainShader } from './shaders/grain.js';
+import { cameraAt, clampCamera } from './cameraMoves.js';
+import { loadImage, resolveSource } from './sources.js';
+import * as Overlay from './overlay.js';
+
+const FIT_CODE = { cover: 0, contain: 1, width: 2 };
+
+// Grade trung tinh cho cac the do hoa tu ve (menu, end card, placeholder).
+const CARD_GRADE = { warmth: 0, saturation: 1, contrast: 1, vignette: 0, sharpen: 0 };
+
+export class AdScene {
+  constructor({ frame, shots, brand, menu, manifest, canvas }) {
+    this.frame = frame;
+    this.shots = shots;
+    this.brand = brand;
+    this.menu = menu;
+    this.manifest = manifest;
+
+    this.renderer = new THREE.WebGLRenderer({
+      canvas, antialias: false, preserveDrawingBuffer: true, alpha: false,
+    });
+    this.renderer.setPixelRatio(1);
+    this.renderer.setSize(frame.width, frame.height, false);
+    // Day la mot bo dung 2D, khong phai scene co anh sang: gia tri mau di thang tu anh
+    // goc ra file. Neu de three tu giai ma sRGB -> linear thi EffectComposer khong ma hoa
+    // nguoc lai o pass cuoi => anh ra toi va bi bet mau. Nen tat ca chuyen doi hai dau.
+    this.renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+
+    this.scene = new THREE.Scene();
+    this.camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0, 10);
+    this.camera.position.z = 1;
+
+    const white = new THREE.DataTexture(new Uint8Array([255, 255, 255, 255]), 1, 1);
+    white.needsUpdate = true;
+
+    this.uniforms = {
+      uTexA: { value: white }, uTexB: { value: white },
+      uSizeA: { value: new THREE.Vector2(1, 1) }, uSizeB: { value: new THREE.Vector2(1, 1) },
+      uHasB: { value: 0 },
+      uCamA: { value: new THREE.Vector4(0, 0, 1, 0) },
+      uCamB: { value: new THREE.Vector4(0, 0, 1, 0) },
+      uFitA: { value: 0 }, uFitB: { value: 0 },
+      uGradeA: { value: new THREE.Vector4(0.1, 1.1, 1.05, 0.2) },
+      uGradeB: { value: new THREE.Vector4(0.1, 1.1, 1.05, 0.2) },
+      uSharpen: { value: new THREE.Vector2(0.4, 0.4) },
+      uGlow: { value: new THREE.Vector2(0, 0) },
+      uMix: { value: 0 },
+      uWhip: { value: 0 },
+      uBackdrop: { value: new THREE.Color(brand.cream) },
+      uFrame: { value: new THREE.Vector2(frame.width, frame.height) },
+    };
+
+    this.quad = new THREE.Mesh(
+      new THREE.PlaneGeometry(1, 1),
+      new THREE.ShaderMaterial({ uniforms: this.uniforms, vertexShader, fragmentShader, depthTest: false })
+    );
+    this.quad.renderOrder = 0;
+    this.scene.add(this.quad);
+
+    // Lop chu nam trong cung scene, ve sau quad anh.
+    this.captionTex = new THREE.CanvasTexture(document.createElement('canvas'));
+    this.captionTex.colorSpace = THREE.NoColorSpace;
+    this.captionMat = new THREE.MeshBasicMaterial({ map: this.captionTex, transparent: true, depthTest: false });
+    this.captionMesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), this.captionMat);
+    this.captionMesh.renderOrder = 1;
+    this.captionMesh.visible = false;
+    this.scene.add(this.captionMesh);
+
+    this.composer = new EffectComposer(this.renderer);
+    this.composer.setSize(frame.width, frame.height);
+    this.composer.addPass(new RenderPass(this.scene, this.camera));
+    this.grainPass = new ShaderPass(GrainShader);
+    this.composer.addPass(this.grainPass);
+
+    this.textures = new Map();   // url|fallback-key -> THREE.Texture
+    this.captions = new Map();   // shot.id -> CanvasTexture
+    this.cards = new Map();      // fallback-key -> HTMLCanvasElement
+  }
+
+  // --- texture ---------------------------------------------------------
+
+  async textureFor(shot, local) {
+    const src = resolveSource(shot, local, this.manifest, this.frame.fps);
+    const key = src.kind === 'url' ? src.url : `${shot.id}:${src.fallback}`;
+
+    const cached = this.textures.get(key);
+    if (cached) return cached;
+
+    let tex;
+    if (src.kind === 'url') {
+      const img = await loadImage(src.url);
+      tex = new THREE.Texture(img);
+      tex.image = img;
+    } else {
+      tex = new THREE.CanvasTexture(this.cardFor(shot, src.fallback));
+      tex.userData.isCard = true;    // do hoa typeset -> khong ap grade anh chup
+    }
+    tex.colorSpace = THREE.NoColorSpace;
+    tex.minFilter = THREE.LinearMipmapLinearFilter;
+    tex.magFilter = THREE.LinearFilter;
+    tex.generateMipmaps = true;
+    tex.anisotropy = this.renderer.capabilities.getMaxAnisotropy();
+    tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
+    tex.needsUpdate = true;
+
+    // Chuoi frame chay 1 lan roi bo; the/anh tinh thi giu lai.
+    if (src.kind === 'url' && shot.source.kind === 'frames') {
+      if (this.textures.size > 8) {
+        const oldest = this.textures.keys().next().value;
+        const t = this.textures.get(oldest);
+        if (t && !t.isCanvasTexture) { t.dispose(); this.textures.delete(oldest); }
+      }
+    }
+    this.textures.set(key, tex);
+    return tex;
+  }
+
+  cardFor(shot, kind) {
+    const key = `${shot.id}:${kind}`;
+    if (this.cards.has(key)) return this.cards.get(key);
+    const W = this.frame.width, H = this.frame.height;
+    let canvas;
+    if (kind === 'menu')         canvas = Overlay.makeMenuCard(this.menu, W, this.brand);
+    else if (kind === 'fruit')   canvas = Overlay.makeFruitCard(this.menu, W, this.brand);
+    else if (kind === 'endcard') canvas = Overlay.makeEndcard(this.brand, W, H);
+    else                         canvas = Overlay.makePlaceholder(shot, W, H, this.brand);
+    this.cards.set(key, canvas);
+    return canvas;
+  }
+
+  captionFor(shot) {
+    if (!shot.caption) return null;
+    if (this.captions.has(shot.id)) return this.captions.get(shot.id);
+    const c = Overlay.makeCaption(shot.caption, this.frame.width, this.frame.height, this.brand);
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.NoColorSpace;
+    this.captions.set(shot.id, t);
+    return t;
+  }
+
+  // --- tinh trang thai mot lop -----------------------------------------
+
+  stateFor(shot, t) {
+    const dur = shot.t1 - shot.t0;
+    const p = dur > 0 ? (t - shot.t0) / dur : 0;
+    let cam = cameraAt(shot.move, p, shot.ease, shot.bias, !!shot.lockText);
+    if (shot.scaleBoost) cam = { ...cam, scale: cam.scale * shot.scaleBoost };
+    return { cam, local: Math.max(0, t - shot.t0), p };
+  }
+
+  applyLayer(suffix, shot, cam, tex) {
+    const img = tex.image;
+    const w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
+    const texAspect = w / h;
+    const frameAspect = this.frame.width / this.frame.height;
+    const fit = shot.fit || 'cover';
+    const safe = clampCamera(cam, texAspect, frameAspect, fit);
+
+    this.uniforms['uTex' + suffix].value = tex;
+    this.uniforms['uSize' + suffix].value.set(w, h);
+    this.uniforms['uCam' + suffix].value.set(safe.x, safe.y, safe.scale, safe.rot);
+    this.uniforms['uFit' + suffix].value = FIT_CODE[fit];
+
+    // The typeset (menu / end card / placeholder) da co mau thuong hieu dung roi:
+    // to them mau am + glow chi lam chu bet lai. Chi anh chup moi di qua grade.
+    const isCard = !!tex.userData.isCard;
+    const g = isCard ? CARD_GRADE : shot.grade;
+    this.uniforms['uGrade' + suffix].value.set(g.warmth, g.saturation, g.contrast, g.vignette);
+    const i = suffix === 'A' ? 'x' : 'y';
+    this.uniforms.uSharpen.value[i] = isCard ? 0 : g.sharpen;
+    this.uniforms.uGlow.value[i] = (isCard || shot.lockText) ? 0 : (shot.glow || 0);
+  }
+
+  // --- ve mot frame -----------------------------------------------------
+
+  async renderFrame(t) {
+    t = Math.max(0, Math.min(this.shots[this.shots.length - 1].t1 - 1e-4, t));
+
+    let idx = 0;
+    for (let i = 0; i < this.shots.length; i++) {
+      if (t >= this.shots[i].t0 && t < this.shots[i].t1) { idx = i; break; }
+      if (i === this.shots.length - 1) idx = i;
+    }
+    const cur = this.shots[idx];
+    const prev = this.shots[idx - 1];
+
+    // Chuyen canh: lop A = canh truoc, lop B = canh hien tai, uMix chay 0 -> 1.
+    const tr = cur.transition || { type: 'cut', dur: 0 };
+    const inTrans = prev && tr.dur > 0 && (t - cur.t0) < tr.dur;
+
+    if (inTrans) {
+      const k = (t - cur.t0) / tr.dur;
+      const sPrev = this.stateFor(prev, t);          // canh truoc chay tiep qua diem cat
+      const sCur = this.stateFor(cur, t);
+      const [texPrev, texCur] = await Promise.all([
+        this.textureFor(prev, sPrev.local),
+        this.textureFor(cur, sCur.local),
+      ]);
+      this.applyLayer('A', prev, sPrev.cam, texPrev);
+      this.applyLayer('B', cur, sCur.cam, texCur);
+      this.uniforms.uHasB.value = 1;
+      this.uniforms.uMix.value = k * k * (3 - 2 * k);                     // smoothstep
+      this.uniforms.uWhip.value = tr.type === 'whip' ? Math.sin(k * Math.PI) : 0;
+    } else {
+      const s = this.stateFor(cur, t);
+      const tex = await this.textureFor(cur, s.local);
+      this.applyLayer('A', cur, s.cam, tex);
+      this.uniforms.uHasB.value = 0;
+      this.uniforms.uMix.value = 0;
+      this.uniforms.uWhip.value = 0;
+    }
+
+    // Caption: hien khi canh da on dinh, fade in/out o hai dau.
+    const capTex = this.captionFor(cur);
+    if (capTex && !cur.lockText) {
+      const a = fadeEnvelope(t - cur.t0, cur.t1 - cur.t0, 0.45, 0.45);
+      this.captionMesh.visible = a > 0.01;
+      this.captionMat.map = capTex;
+      this.captionMat.opacity = a;
+      this.captionMat.needsUpdate = true;
+    } else {
+      this.captionMesh.visible = false;
+    }
+
+    // Grain: tat han o canh co chu de khong lam nhieu net chu / so.
+    this.grainPass.uniforms.uAmount.value = cur.lockText ? 0.0 : 0.030;
+    this.grainPass.uniforms.uSeed.value = Math.floor(t * this.frame.fps) * 7.13;
+
+    this.composer.render();
+  }
+}
+
+// Bao hinh len/xuong o hai dau mot canh.
+function fadeEnvelope(local, dur, inDur, outDur) {
+  if (local < 0 || local > dur) return 0;
+  const a = Math.min(1, local / inDur);
+  const b = Math.min(1, (dur - local) / outDur);
+  const v = Math.min(a, b);
+  return v * v * (3 - 2 * v);
+}
