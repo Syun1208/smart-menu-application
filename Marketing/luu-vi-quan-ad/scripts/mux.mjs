@@ -47,6 +47,7 @@ if (useAudio) {
   const L = AUDIO.loudness;
   // loudnorm truoc, fade sau - nguoc lai thi loudnorm se keo phan fade len lai.
   args.push('-c:a', 'aac', '-b:a', '160k',
+    '-ar', '48000',
     '-af', `loudnorm=I=${L.I}:TP=${L.TP}:LRA=${L.LRA},`
          + `afade=t=in:st=0:d=${AUDIO.fadeIn},`
          + `afade=t=out:st=${Math.max(0, dur - AUDIO.fadeOut)}:d=${AUDIO.fadeOut}`,
