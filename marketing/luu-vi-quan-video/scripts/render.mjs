@@ -28,13 +28,15 @@ const SCALE = Number(arg('scale', 1));
 const QUALITY = Number(arg('quality', 92));
 const OUT = path.resolve(ROOT, arg('out', 'frames'));
 const PAGE = arg('page', 'scene/index.html');
+const FROM = Number(arg('from', 0));
+const TO = Number(arg('to', 0));   // 0 = to the end
 const CHROME = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 
 const WIDTH = Math.round(1080 * SCALE);
 const HEIGHT = Math.round(1920 * SCALE);
 const TOTAL = Math.round(DURATION * FPS);
 
-fs.mkdirSync(OUT, { recursive: true });
+fs.mkdirSync(OUT, { recursive: true });   // note: --from/--to keep existing frames
 
 const launchOptions = {
   args: [
@@ -65,7 +67,8 @@ async function renderShard(server, workerId) {
   if (err) throw new Error(`scene failed to boot: ${err}`);
 
   let done = 0;
-  for (let frame = workerId; frame < TOTAL; frame += WORKERS) {
+  const last = TO > 0 ? Math.min(TO, TOTAL - 1) : TOTAL - 1;
+  for (let frame = FROM + workerId; frame <= last; frame += WORKERS) {
     const t = frame / FPS;
     await page.evaluate((time) => window.renderFrame(time), t);
     await page.screenshot({
@@ -85,7 +88,7 @@ async function renderShard(server, workerId) {
 
 const started = Date.now();
 const server = await serve(0);
-console.log(`Rendering ${TOTAL} frames @ ${FPS}fps (${WIDTH}x${HEIGHT}) with ${WORKERS} workers -> ${OUT}`);
+console.log(`Rendering frames ${FROM}..${TO > 0 ? TO : TOTAL - 1} @ ${FPS}fps (${WIDTH}x${HEIGHT}) with ${WORKERS} workers -> ${OUT}`);
 
 const counts = await Promise.all(
   Array.from({ length: WORKERS }, (_, i) => renderShard(server, i)),
@@ -94,8 +97,9 @@ server.close();
 
 const total = counts.reduce((a, b) => a + b, 0);
 const secs = (Date.now() - started) / 1000;
-console.log(`Done: ${total}/${TOTAL} frames in ${secs.toFixed(1)}s (${(secs / total).toFixed(2)}s per frame)`);
-if (total !== TOTAL) {
+const expected = (TO > 0 ? Math.min(TO, TOTAL - 1) : TOTAL - 1) - FROM + 1;
+console.log(`Done: ${total}/${expected} frames in ${secs.toFixed(1)}s (${(secs / total).toFixed(2)}s per frame)`);
+if (total !== expected) {
   console.error('Frame count mismatch - the video would stutter.');
   process.exit(1);
 }

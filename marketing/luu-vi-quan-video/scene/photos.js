@@ -16,7 +16,7 @@ export const PHOTOS = {
   menuFruit:{ src: '../assets/photos/menu-fruit.jpg',     w: 909,  h: 1500 },
 
   // sent later by the shop - proper high-resolution product photography
-  fruitTrays:  { src: '../assets/photos/fruit-trays-counter.jpg', w: 2000, h: 1500 },
+  fruitTrays:  { src: '../assets/photos/fruit-trays-counter.jpg', w: 2000, h: 1230 },
   fruitCups:   { src: '../assets/photos/fruit-cups-many.jpg',     w: 1320, h: 1630 },
   fruitCup:    { src: '../assets/photos/fruit-cup-hand.jpg',      w: 1814, h: 2000 },
   fruitGift:   { src: '../assets/photos/fruit-gift-box.jpg',      w: 1012, h: 901  },
@@ -65,10 +65,11 @@ export const REGIONS = {
   menuFruitHead: { photo: 'menuFruit', rect: [0.03, 0.01, 0.97, 0.20] },
 
   // --- the real fruit photography ------------------------------------------
-  // NOTE: fruit-trays-counter.jpg carries a TikTok watermark along the bottom,
-  // so every framing of it stops above y = 0.90.
-  fruitCounter:   { photo: 'fruitTrays', rect: [0.02, 0.04, 0.98, 0.82] },
-  fruitCounterHero:{ photo: 'fruitTrays', rect: [0.26, 0.20, 0.86, 0.76] },
+  // NOTE: fruit-trays-counter.jpg came with someone else's TikTok watermark
+  // along the bottom; the file itself is cropped above it, so no framing of it
+  // can bring the watermark back.
+  fruitCounter:   { photo: 'fruitTrays', rect: [0.02, 0.02, 0.98, 0.98] },
+  fruitCounterHero:{ photo: 'fruitTrays', rect: [0.26, 0.22, 0.86, 0.92] },
   fruitCupsAll:   { photo: 'fruitCups',  rect: [0.02, 0.02, 0.98, 0.88] },
   fruitCupsTight: { photo: 'fruitCups',  rect: [0.18, 0.26, 0.86, 0.74] },
   fruitDamCup:    { photo: 'fruitCup',   rect: [0.04, 0.03, 0.96, 0.94] },
