@@ -14,6 +14,7 @@ WORKERS="${WORKERS:-3}"
 DURATION="${DURATION:-34}"
 FILM="${FILM:-photo}"                 # photo = real photographs, cg = the 3D scene
 VOICE="${VOICE:-}"                    # optional voice-over WAV mixed under/over the music
+AUDIO="${AUDIO:-}"                    # optional music track replacing the synthesised one
 FRAMES="${FRAMES:-frames}"
 
 if [ "$FILM" = "photo" ]; then
@@ -33,8 +34,16 @@ FFMPEG="${FFMPEG:-$(python3 -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_
 echo "==> 1/4  export timeline ($FILM cut)"
 node scripts/export-timeline.mjs --film "$FILM"
 
-echo "==> 2/4  synthesise soundtrack"
-python3 audio/soundtrack.py --timeline "$TIMELINE" --out "$TRACK" ${VOICE:+--voice "$VOICE"}
+if [ -n "$AUDIO" ]; then
+  echo "==> 2/4  use the supplied music: $AUDIO"
+  "$FFMPEG" -y -loglevel error -i "$AUDIO" -t "$DURATION" -ac 2 -ar 44100 "$TRACK"
+else
+  echo "==> 2/4  synthesise soundtrack"
+  python3 audio/soundtrack.py --timeline "$TIMELINE" --out "$TRACK" ${VOICE:+--voice "$VOICE"}
+fi
+
+echo "==> 2b   map the beat"
+python3 audio/beatmap.py --audio "$TRACK" --fps "$FPS"
 
 echo "==> 3/4  render frames (${FPS}fps, scale ${SCALE}, ${WORKERS} workers)"
 rm -rf "$FRAMES"

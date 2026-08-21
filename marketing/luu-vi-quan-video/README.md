@@ -123,6 +123,24 @@ node scripts/export-regions.mjs && python3 scripts/check-regions.py   # preview/
 node scripts/shots.mjs --page scene/film.html --times 0.9,6.2,13,23.5 # preview/*.png
 ```
 
+## Nhạc khác + hiệu ứng giật theo phách
+
+Đổi nhạc nền và cho hình "giật giật" bám đúng giai điệu của bản nhạc đó:
+
+```bash
+python3 audio/beatmap.py --audio nhac-cua-ban.mp3     # -> scene/beats.json
+AUDIO=nhac-cua-ban.mp3 bash scripts/build.sh
+```
+
+`audio/beatmap.py` tự dò tempo, từng phách, các điểm nhấn và đường năng lượng
+bass/mid/high (chỉ dùng numpy: spectral flux + autocorrelation + dò pha). Phim
+đọc `scene/beats.json` rồi ở mỗi phách sẽ: nảy zoom vào ~4,5%, nghiêng khung một
+chút, tách nhẹ kênh màu ở phách mạnh, và cả lớp chữ cũng nảy theo. Phách đầu ô
+nhịp nảy mạnh nhất. Đổi nhạc là mọi cú giật tự canh lại, không phải sửa tay.
+
+Chỉnh độ giật: `beatKick()` trong [`scene/film.js`](scene/film.js) — `0.045` là
+biên độ zoom, `0.075` là thời gian tắt dần (giây).
+
 ## Giọng đọc (voice-over)
 
 Kịch bản lời đọc và mốc thời gian nằm trong `LINES` của [`audio/voice.py`](audio/voice.py).

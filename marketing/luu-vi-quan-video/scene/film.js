@@ -11,6 +11,7 @@
 import * as THREE from 'three';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { PHOTOS, REGIONS } from './photos.js';
 import { SHOTS } from './shots.js';
@@ -49,6 +50,7 @@ const fragmentShader = /* glsl */ `
   uniform float uFlash, uDark, uCool, uSweep, uGrain, uVignette, uExposure, uContrast, uSat;
   uniform float uTime, uAspect;
   uniform vec2 uShake;
+  uniform float uPunch, uRoll;   // beat kick: zoom in, tilt a hair
 
   const vec3 WARM = vec3(1.055, 0.995, 0.915);
   const vec3 COOL = vec3(0.930, 1.000, 1.070);
@@ -157,7 +159,13 @@ const fragmentShader = /* glsl */ `
   }
 
   void main() {
-    vec2 uv = clamp(vUv + uShake, -0.5, 1.5);
+    // the beat kick: snap in a few percent and tilt, then let it settle
+    vec2 pc = (vUv + uShake) - 0.5;
+    float rs = sin(uRoll), rc = cos(uRoll);
+    pc = vec2(pc.x * uAspect, pc.y);
+    pc = mat2(rc, -rs, rs, rc) * pc;
+    pc = vec2(pc.x / uAspect, pc.y) * (1.0 - uPunch);
+    vec2 uv = clamp(pc + 0.5, -0.5, 1.5);
     vec2 uvA = uv, uvB = uv;
     vec3 fxA = uFxA, fxB = uFxB;
     float m = clamp(uMix, 0.0, 1.0);
@@ -366,6 +374,53 @@ export async function createFilm({ canvas, width, height }) {
   );
   const texOf = (photo) => textures[Object.keys(PHOTOS).find((k) => PHOTOS[k] === photo)];
 
+  // --- the beat map: what the music is doing, frame by frame ---------------
+  // Written by audio/beatmap.py from whatever track is on the film, so swapping
+  // the music re-times every kick in here without touching this file.
+  let beat = null;
+  try {
+    const res = await fetch('./beats.json', { cache: 'no-store' });
+    if (res.ok) {
+      const raw = await res.json();
+      // one list of hits: every beat, plus the sharpest onsets in between
+      const hits = raw.beats.map((t, i) => ({
+        t,
+        s: i % 4 === 0 ? 1.25 : i % 2 === 0 ? 1.0 : 0.8,   // downbeats hit hardest
+      }));
+      for (const o of raw.onsets || []) {
+        if (o.v < 0.55) continue;
+        if (raw.beats.some((b) => Math.abs(b - o.t) < 0.09)) continue;   // already a beat
+        hits.push({ t: o.t, s: 0.55 * o.v });
+      }
+      hits.sort((a, b) => a.t - b.t);
+      beat = { hits, bass: raw.energy?.bass || [], fps: raw.fps || 30, bpm: raw.bpm };
+    }
+  } catch (err) {
+    console.warn('no beat map:', err);
+  }
+
+  /** The kick riding on the music at time t. */
+  function beatKick(t) {
+    if (!beat || !beat.hits.length) return { punch: 0, roll: 0, split: 0 };
+    let lo = 0;
+    let hi = beat.hits.length - 1;
+    if (t < beat.hits[0].t) return { punch: 0, roll: 0, split: 0 };
+    while (lo < hi) {
+      const mid = (lo + hi + 1) >> 1;
+      if (beat.hits[mid].t <= t) lo = mid; else hi = mid - 1;
+    }
+    const hit = beat.hits[lo];
+    const age = t - hit.t;
+    const env = Math.exp(-age / 0.075);            // snap in, settle in ~150 ms
+    const bassFrame = Math.min(beat.bass.length - 1, Math.round(t * beat.fps));
+    const pump = beat.bass.length ? beat.bass[bassFrame] * 0.010 : 0;
+    return {
+      punch: 0.045 * hit.s * env + pump,
+      roll: 0.0075 * hit.s * env * (lo % 2 ? 1 : -1),
+      split: hit.s > 1.1 ? 0.0026 * env : 0.0009 * hit.s * env,
+    };
+  }
+
   const uniforms = {
     uTexA: { value: null }, uTexB: { value: null },
     uRectA: { value: new THREE.Vector4(0, 0, 1, 1) }, uRectB: { value: new THREE.Vector4(0, 0, 1, 1) },
@@ -380,6 +435,7 @@ export async function createFilm({ canvas, width, height }) {
     uExposure: { value: 1.03 }, uContrast: { value: 1.05 }, uSat: { value: 1.12 },
     uTime: { value: 0 }, uAspect: { value: FRAME_ASPECT },
     uShake: { value: new THREE.Vector2() },
+    uPunch: { value: 0 }, uRoll: { value: 0 },
   };
 
   const quad = new THREE.Mesh(
@@ -416,6 +472,36 @@ export async function createFilm({ canvas, width, height }) {
   composer.addPass(new RenderPass(scene, camera));
   const bloom = new UnrealBloomPass(new THREE.Vector2(width, height), 0.22, 0.55, 0.92);
   composer.addPass(bloom);
+
+  // On the hardest hits the channels separate for a frame or two and the whole
+  // image lifts - the "snap" you feel in a music-cut ad.
+  const beatPass = new ShaderPass({
+    uniforms: {
+      tDiffuse: { value: null },
+      uSplit: { value: 0 },
+      uLift: { value: 0 },
+      uDirection: { value: new THREE.Vector2(1, 0.35) },
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }
+    `,
+    fragmentShader: `
+      uniform sampler2D tDiffuse;
+      uniform float uSplit, uLift;
+      uniform vec2 uDirection;
+      varying vec2 vUv;
+      void main() {
+        vec2 d = uDirection * uSplit;
+        vec3 c;
+        c.r = texture2D(tDiffuse, clamp(vUv + d, 0.0, 1.0)).r;
+        c.g = texture2D(tDiffuse, vUv).g;
+        c.b = texture2D(tDiffuse, clamp(vUv - d, 0.0, 1.0)).b;
+        gl_FragColor = vec4(c * (1.0 + uLift), 1.0);
+      }
+    `,
+  });
+  composer.addPass(beatPass);
 
   const rnd = (n) => {
     const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
@@ -498,11 +584,19 @@ export async function createFilm({ canvas, width, height }) {
     uniforms.uExposure.value = (1.03 + 0.03 * Math.sin(t * 1.3)) * lerp(A.expo, B.expo, inCut ? m : 1);
     uniforms.uTime.value = t;
 
+    // --- the beat ------------------------------------------------------------
+    const kick = beatKick(t);
+    uniforms.uPunch.value = kick.punch;
+    uniforms.uRoll.value = kick.roll;
+    beatPass.uniforms.uSplit.value = kick.split;
+    beatPass.uniforms.uLift.value = kick.punch * 1.6;
+
     // embers ride the fried-food chapters, fade out over the fruit
     const ember = sc.id === 'traiCay' ? 0.12 : sc.id === 'cta' ? 0.5 : 0.62;
     updateSparks(t, ember * (0.55 + 0.45 * Math.sin(t * 0.8 + 1.2)));
 
     composer.render();
+    return kick;          // the overlay kicks with the picture
   }
 
   return { renderFrame, renderer };

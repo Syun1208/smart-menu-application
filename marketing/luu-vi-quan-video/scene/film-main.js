@@ -21,9 +21,16 @@ async function boot() {
   const film = await createFilm({ canvas, width: VIDEO.width, height: VIDEO.height });
   const overlay = createOverlay();
 
+  const ui = document.getElementById('ui');
+  ui.style.transformOrigin = '50% 50%';
+
   window.renderFrame = (t) => {
-    film.renderFrame(t);
+    const kick = film.renderFrame(t);
     overlay.update(t);
+    // the typography rides the same beat as the photograph, a little softer
+    const scale = 1 + (kick ? kick.punch : 0) * 0.55;
+    const roll = (kick ? kick.roll : 0) * (180 / Math.PI) * 0.5;
+    ui.style.transform = `scale(${scale.toFixed(4)}) rotate(${roll.toFixed(3)}deg)`;
   };
 
   window.renderFrame(0);
