@@ -24,6 +24,10 @@ const scale = parseFloat(val('--scale', draft ? '0.5' : '1'));
 const fps = parseInt(val('--fps', draft ? '24' : String(FRAME.fps)), 10);
 const quality = parseFloat(val('--quality', draft ? '0.82' : '0.95'));
 const withAudio = !has('--no-audio');
+// --patch: render de len bo frame da co trong build/out, danh so theo vi tri tuyet doi
+// tren timeline. Dung khi sua mot canh roi chi muon render lai dung canh do,
+// sau do chay `npm run mux` de ghep lai ca video.
+const patch = has('--patch');
 
 let [t0, t1] = (val('--range', `0:${DURATION}`)).split(':').map(Number);
 t0 = Math.max(0, t0); t1 = Math.min(DURATION, t1);
@@ -36,7 +40,7 @@ const suffix = draft ? '-draft' : '';
 const rangeTag = partial ? `-${t0}s_${t1}s` : '';
 const outFile = path.join(ROOT, 'dist', `luu-vi-quan-60s-9x16${suffix}${rangeTag}.mp4`);
 
-fs.rmSync(outDir, { recursive: true, force: true });
+if (!patch) fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
 fs.mkdirSync(path.join(ROOT, 'dist'), { recursive: true });
 
@@ -69,7 +73,8 @@ for (let i = 0; i < total; i++) {
     await window.AD.renderFrame(tt);
     return window.AD.toJPEG(q);
   }, [t, quality]);
-  fs.writeFileSync(path.join(outDir, `${String(i + 1).padStart(5, '0')}.jpg`),
+  const index = patch ? Math.round(t * fps) + 1 : i + 1;
+  fs.writeFileSync(path.join(outDir, `${String(index).padStart(5, '0')}.jpg`),
     Buffer.from(dataUrl.slice(dataUrl.indexOf(',') + 1), 'base64'));
   if (i % 5 === 0 || i === total - 1) {
     const el = (Date.now() - started) / 1000;
@@ -82,6 +87,13 @@ await browser.close();
 server.close();
 
 // --- ghep MP4 -----------------------------------------------------------
+if (patch) {
+  const n = fs.readdirSync(outDir).filter((f) => f.endsWith('.jpg')).length;
+  console.log(`  đã vá ${total} frame vào build/out (tổng ${n} frame).`);
+  console.log('  chạy `npm run mux` để ghép lại cả video.\n');
+  process.exit(0);
+}
+
 const audioFile = path.join(ROOT, AUDIO.file);
 const useAudio = withAudio && fs.existsSync(audioFile);
 const dur = t1 - t0;

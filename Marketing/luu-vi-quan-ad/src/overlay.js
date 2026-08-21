@@ -22,6 +22,19 @@ function roundRect(ctx, x, y, w, h, r) {
   ctx.closePath();
 }
 
+
+// Ve chu can giua, tu thu nho co chu neu vuot qua be rong cho phep.
+function fitText(ctx, text, cx, y, maxWidth, weight, size, minSize) {
+  let fs = size;
+  ctx.font = `${weight} ${fs}px ${FONT}`;
+  while (ctx.measureText(text).width > maxWidth && fs > minSize) {
+    fs -= 1;
+    ctx.font = `${weight} ${fs}px ${FONT}`;
+  }
+  ctx.fillText(text, cx, y);
+  return fs;
+}
+
 // Xuong dong theo be ngang, tra ve mang dong.
 function wrap(ctx, text, maxWidth) {
   const words = String(text).split(/\s+/);
@@ -143,15 +156,15 @@ export function makeMenuCard(menu, W, brand) {
   ctx.fillStyle = c.red;
   roundRect(ctx, pad, y, bw, bh, bh * 0.28); ctx.fill();
   ctx.fillStyle = '#fff';
-  ctx.font = `900 ${Math.round(W * 0.040)}px ${FONT}`;
-  ctx.fillText('ĐẶT HÀNG  ' + menu.brand.phone, pad + bw / 2, y + bh * 0.68);
+  fitText(ctx, 'ĐẶT HÀNG  ' + menu.brand.phone, pad + bw / 2, y + bh * 0.68,
+    bw - Math.round(W * 0.045), 900, Math.round(W * 0.040), Math.round(W * 0.026));
 
   ctx.strokeStyle = c.orange; ctx.lineWidth = 3;
   const bw2 = W - pad * 2 - bw - Math.round(W * 0.02);
   roundRect(ctx, pad + bw + Math.round(W * 0.02), y, bw2, bh, bh * 0.28); ctx.stroke();
   ctx.fillStyle = c.brown;
-  ctx.font = `700 ${Math.round(W * 0.030)}px ${FONT}`;
-  ctx.fillText(menu.brand.ship, pad + bw + Math.round(W * 0.02) + bw2 / 2, y + bh * 0.66);
+  fitText(ctx, menu.brand.ship, pad + bw + Math.round(W * 0.02) + bw2 / 2, y + bh * 0.66,
+    bw2 - Math.round(W * 0.030), 700, Math.round(W * 0.030), Math.round(W * 0.020));
   y += bh + Math.round(W * 0.022);
 
   // gio mo cua
@@ -160,7 +173,8 @@ export function makeMenuCard(menu, W, brand) {
   ctx.fillStyle = '#fff';
   ctx.font = `700 ${Math.round(W * 0.029)}px ${FONT}`;
   const hrs = 'GIỜ MỞ CỬA   ' + menu.brand.hours.map((h) => `${h.label}: ${h.value}`).join('   |   ');
-  ctx.fillText(hrs, W / 2, y + Math.round(W * 0.046));
+  fitText(ctx, hrs, W / 2, y + Math.round(W * 0.046),
+    W - pad * 2 - Math.round(W * 0.040), 700, Math.round(W * 0.029), Math.round(W * 0.020));
   y += Math.round(W * 0.068) + Math.round(W * 0.040);
 
   ctx.textAlign = 'left';
@@ -301,8 +315,8 @@ export function makeEndcard(brand, W, H) {
   }
 
   ctx.fillStyle = brand.red;
-  ctx.font = `900 ${Math.round(W * 0.125)}px ${FONT}`;
-  ctx.fillText(brand.name, cx, y + Math.round(W * 0.115));
+  fitText(ctx, brand.name, cx, y + Math.round(W * 0.115),
+    W - Math.round(W * 0.12), 900, Math.round(W * 0.125), Math.round(W * 0.075));
   y += Math.round(W * 0.205);
 
   ctx.fillStyle = brand.brown;
@@ -310,22 +324,22 @@ export function makeEndcard(brand, W, H) {
   ctx.fillText(brand.slogan, cx, y); y += Math.round(W * 0.095);
 
   ctx.fillStyle = 'rgba(74,47,34,0.9)';
-  ctx.font = `600 ${Math.round(W * 0.042)}px ${FONT}`;
-  ctx.fillText(brand.line, cx, y); y += Math.round(W * 0.105);
+  fitText(ctx, brand.line, cx, y, W - Math.round(W * 0.12), 600,
+    Math.round(W * 0.042), Math.round(W * 0.028)); y += Math.round(W * 0.105);
 
   const bw = Math.round(W * 0.72), bh = Math.round(W * 0.125);
   ctx.fillStyle = brand.red;
   roundRect(ctx, cx - bw / 2, y, bw, bh, bh * 0.30); ctx.fill();
   ctx.fillStyle = '#fff';
-  ctx.font = `900 ${Math.round(W * 0.068)}px ${FONT}`;
-  ctx.fillText(brand.phone, cx, y + bh * 0.70);
+  fitText(ctx, brand.phone, cx, y + bh * 0.70, bw - Math.round(W * 0.070), 900,
+    Math.round(W * 0.068), Math.round(W * 0.042));
   y += bh + Math.round(W * 0.055);
 
   ctx.strokeStyle = brand.orange; ctx.lineWidth = 4;
   const bw2 = Math.round(W * 0.62), bh2 = Math.round(W * 0.088);
   roundRect(ctx, cx - bw2 / 2, y, bw2, bh2, bh2 * 0.32); ctx.stroke();
   ctx.fillStyle = brand.brown;
-  ctx.font = `700 ${Math.round(W * 0.038)}px ${FONT}`;
-  ctx.fillText(brand.ship, cx, y + bh2 * 0.66);
+  fitText(ctx, brand.ship, cx, y + bh2 * 0.66, bw2 - Math.round(W * 0.055), 700,
+    Math.round(W * 0.038), Math.round(W * 0.026));
   return canvas;
 }

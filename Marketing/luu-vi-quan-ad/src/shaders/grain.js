@@ -4,7 +4,7 @@ export const GrainShader = {
   name: 'GrainShader',
   uniforms: {
     tDiffuse: { value: null },
-    uAmount:  { value: 0.030 },
+    uAmount:  { value: 0.016 },
     uSeed:    { value: 0.0 },
   },
   vertexShader: /* glsl */ `

@@ -251,7 +251,7 @@ export class AdScene {
     }
 
     // Grain: tat han o canh co chu de khong lam nhieu net chu / so.
-    this.grainPass.uniforms.uAmount.value = cur.lockText ? 0.0 : 0.030;
+    this.grainPass.uniforms.uAmount.value = cur.lockText ? 0.0 : 0.016;
     this.grainPass.uniforms.uSeed.value = Math.floor(t * this.frame.fps) * 7.13;
 
     this.composer.render();

@@ -8,7 +8,9 @@
     "prepare-assets": "node scripts/prepare-assets.mjs",
     "check-assets": "node scripts/check-assets.mjs",
     "preview": "node scripts/serve.mjs",
-    "render": "node scripts/render.mjs"
+    "render": "node scripts/render.mjs",
+    "mux": "node scripts/mux.mjs",
+    "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
     "three": "^0.180.0"
