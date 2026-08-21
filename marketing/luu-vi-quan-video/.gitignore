@@ -2,6 +2,9 @@ node_modules/
 frames/
 frames-draft/
 preview/
-output/draft.mp4
+output/draft*.mp4
 audio/timeline.json
+audio/timeline-photo.json
+scene/regions.json
 __pycache__/
+audio/*.wav

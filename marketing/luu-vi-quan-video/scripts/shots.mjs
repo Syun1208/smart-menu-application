@@ -1,5 +1,6 @@
 // Grab a handful of still frames for art-direction review:
 //   node scripts/shots.mjs --times 0.5,2.2,5,12,18,24,29 [--scale 0.5] [--out preview]
+//                          [--page scene/film.html]
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -11,6 +12,7 @@ const arg = (n, d) => { const i = process.argv.indexOf(`--${n}`); return i > -1 
 const times = String(arg('times', '0.5,2.2,5,12,18,24,29')).split(',').map(Number);
 const SCALE = Number(arg('scale', 0.5));
 const OUT = path.resolve(ROOT, arg('out', 'preview'));
+const PAGE = arg('page', 'scene/index.html');
 fs.mkdirSync(OUT, { recursive: true });
 
 const server = await serve(0);
@@ -21,7 +23,7 @@ const browser = await chromium.launch({
 const page = await browser.newPage({ viewport: { width: Math.round(1080 * SCALE), height: Math.round(1920 * SCALE) } });
 page.on('pageerror', (e) => console.error('page error:', e.message));
 page.on('console', (m) => { if (m.type() === 'error') console.error('console:', m.text()); });
-await page.goto(`http://127.0.0.1:${server.address().port}/scene/index.html`, { waitUntil: 'load' });
+await page.goto(`http://127.0.0.1:${server.address().port}/${PAGE}`, { waitUntil: 'load' });
 if (SCALE !== 1) await page.addStyleTag({ content: `#stage { transform: scale(${SCALE}); transform-origin: top left; }` });
 await page.waitForFunction('window.__promoReady === true || window.__promoError', null, { timeout: 120000 });
 const err = await page.evaluate('window.__promoError');

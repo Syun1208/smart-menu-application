@@ -1,33 +1,39 @@
-# Lưu Vị Quán — video marketing 3D (Three.js)
+# Lưu Vị Quán — video marketing (Three.js)
 
 Video quảng cáo dọc **1080×1920 (9:16)**, dài **34 giây**, dựng hoàn toàn bằng code:
-món ăn 3D procedural bằng Three.js + chữ tiếng Việt bằng HTML/CSS + nhạc nền và
-hiệu ứng âm thanh tổng hợp bằng Python. Không dùng ảnh/nhạc bên ngoài, không cần
-bản quyền, và render lại lúc nào cũng ra đúng một kết quả.
+Three.js dựng hình, chữ tiếng Việt bằng HTML/CSS, nhạc nền và hiệu ứng âm thanh
+tổng hợp bằng Python. Render lại lúc nào cũng ra đúng một kết quả.
 
-> Kết quả:
-> - `output/luu-vi-quan-promo.mp4` — bản gốc (H.264 CRF 19, ~37 MB)
-> - `output/luu-vi-quan-promo-social.mp4` — bản nhẹ để đăng Facebook/TikTok (~12 MB)
+Repo có **hai bản dựng** dùng chung timeline, chữ, giá và hệ thống âm thanh:
+
+| Bản dựng | Hình ảnh | Lệnh | Kết quả |
+|---|---|---|---|
+| **photo** (mặc định) | Ảnh chụp thật của quán, cắt theo nhịp nhạc | `bash scripts/build.sh` | `output/luu-vi-quan-promo-photo.mp4` |
+| **cg** | Món ăn 3D procedural (không dùng ảnh) | `FILM=cg bash scripts/build.sh` | `output/luu-vi-quan-promo.mp4` |
+
+Bản **photo** là bản nên đăng: món ăn là ảnh thật nên trông ngon và đáng tin;
+bản **cg** giữ lại làm nền cho các cảnh không có ảnh.
 
 ## Nội dung video
 
 | Thời gian | Phân cảnh | Nội dung |
 |---|---|---|
-| 0–4s | Hook | Đèn bật, hộp đồ ăn hạ xuống, "ĐÓI CHƯA?" → logo **LƯU VỊ QUÁN** |
-| 4–10s | Nem | Nem trần / nem xù / nem phô mai / nem bò pía bay vào chảo, kéo phô mai, bảng giá |
-| 10–16s | Cá viên chiên | Cá viên rơi vào hộp, rưới sốt mắm tỏi, rắc đậu phộng, combo 50k/70k/100k |
-| 16–22s | Mì trộn | Vắt mì, topping rơi xuống, trứng ốp la, phô mai mozzarella kéo sợi bằng đũa |
-| 22–27s | Trái cây | Ánh sáng đổi tông mát, trái cây cắt sẵn rơi vào ly, giá 40k/50k/box |
-| 27–34s | CTA | Số điện thoại **0947 815 316**, freeship 2km, giờ mở cửa, slogan |
+| 0–4s | Hook | Cận cá viên sốt cay → "ĐÓI CHƯA?" → logo **LƯU VỊ QUÁN** |
+| 4–10s | Nem | Nem rán, nem phô mai, nem xù, khay nem sống + bảng giá 50k/60k/12k/65k |
+| 10–16s | Cá viên chiên | Cá viên sốt mắm tỏi, cận đậu phộng, hộp combo, combo 50k/70k/100k |
+| 16–22s | Mì trộn | Mì trộn cá viên, cận phô mai mozzarella, 50–70k / 60–80k |
+| 22–27s | Trái cây | Combo mix vị, box cắt sẵn, 40k/50k/199–399k |
+| 27–34s | CTA | **0947 815 316**, freeship 2km, giờ mở cửa, slogan |
 
 Toàn bộ giá và chữ lấy từ menu thật của quán, khai báo tập trung trong
-[`scene/timeline.js`](scene/timeline.js) — sửa giá ở đó là video tự cập nhật.
+[`scene/timeline.js`](scene/timeline.js) — sửa giá ở đó là cả hai bản tự cập nhật.
 
 ## Chạy thử
 
 ```bash
 npm install          # three + playwright
-npm run preview      # mở http://localhost:5173/scene/index.html?preview=1
+npm run preview      # http://localhost:5173/scene/film.html?preview=1   (bản ảnh thật)
+                     # http://localhost:5173/scene/index.html?preview=1  (bản 3D)
 ```
 
 Preview chạy real-time trong trình duyệt, tua lại từ đầu sau mỗi 34 giây.
@@ -35,59 +41,95 @@ Preview chạy real-time trong trình duyệt, tua lại từ đầu sau mỗi 3
 ## Xuất video
 
 ```bash
-bash scripts/build.sh                                   # bản đầy đủ 1080x1920 @30fps
-FPS=12 SCALE=0.4 OUT=output/draft.mp4 bash scripts/build.sh   # bản nháp nhanh
+bash scripts/build.sh                                        # bản ảnh thật, 1080x1920 @30fps
+FILM=cg bash scripts/build.sh                                # bản 3D
+FPS=12 SCALE=0.42 OUT=output/draft.mp4 bash scripts/build.sh # bản nháp nhanh
 ```
 
-Bản đầy đủ mất khoảng 40 phút trên máy 4 nhân (Chromium render WebGL bằng CPU:
-~2,3 giây/khung hình chia cho 3 worker). Bản nháp chỉ mất ~15 phút.
+Trên máy 4 nhân (Chromium render WebGL bằng CPU, 3 worker): bản ảnh thật khoảng
+**20–25 phút**, bản 3D khoảng **40 phút**. Bản nháp 12fps chỉ mất ~5 phút.
 
 Xuất thêm bản nhẹ để đăng mạng xã hội:
 
 ```bash
-ffmpeg -i output/luu-vi-quan-promo.mp4 -c:v libx264 -crf 26 -preset slow \
-       -c:a aac -b:a 160k -movflags +faststart output/luu-vi-quan-promo-social.mp4
+ffmpeg -i output/luu-vi-quan-promo-photo.mp4 -c:v libx264 -crf 26 -preset slow \
+       -c:a aac -b:a 160k -movflags +faststart output/luu-vi-quan-promo-photo-social.mp4
 ```
 
 Pipeline gồm 4 bước:
 
-1. `scripts/export-timeline.mjs` — xuất timeline sang JSON cho phần âm thanh.
-2. `audio/soundtrack.py` — tổng hợp nhạc + SFX ra `audio/soundtrack.wav`.
-3. `scripts/render.mjs` — Chromium (WebGL phần mềm) render từng khung hình,
-   chia đều cho nhiều worker; chụp cả canvas 3D lẫn chữ HTML trong một ảnh.
+1. `scripts/export-timeline.mjs` — xuất timeline + cue âm thanh sang JSON.
+2. `audio/soundtrack.py` — tổng hợp nhạc + SFX ra file WAV.
+3. `scripts/render.mjs` — Chromium render từng khung hình, chia đều cho nhiều
+   worker; chụp cả canvas WebGL lẫn chữ HTML trong một ảnh.
 4. `ffmpeg` — ghép ảnh + tiếng thành MP4 (H.264 + AAC, `+faststart`).
 
-Biến môi trường: `FPS`, `SCALE`, `WORKERS`, `DURATION`, `OUT`, `FRAMES`, `FFMPEG`.
+Biến môi trường: `FILM`, `FPS`, `SCALE`, `WORKERS`, `DURATION`, `OUT`, `FRAMES`, `FFMPEG`.
 
 ## Cấu trúc
 
 ```
 scene/timeline.js    ← nguồn sự thật: độ dài, phân cảnh, câu chữ, giá, cue âm thanh
-scene/promo.js       ← scene 3D: ánh sáng, máy quay, hạt, post-processing, renderFrame(t)
-scene/props.js       ← món ăn procedural: nem, cá viên, mì, phô mai kéo sợi, trái cây, hộp giấy
+scene/overlay.js     ← lớp chữ HTML/CSS, dùng chung cho cả hai bản dựng
+scene/ui.css         ← toàn bộ typography và bố cục chữ
+
+# bản ảnh thật
+assets/photos/       ← 5 ảnh gốc của quán
+scene/photos.js      ← khai báo vùng cắt (region) trong từng tấm ảnh
+scene/shots.js       ← kịch bản quay: shot nào, khung nào, chuyển cảnh gì, cue tiếng gì
+scene/film.js        ← shader dựng phim: khung hình, chuyển cảnh, grade, bloom, tàn lửa
+scene/film.html      ← trang render bản ảnh thật
+
+# bản 3D
+scene/promo.js       ← scene 3D: ánh sáng, máy quay, hạt, post-processing
+scene/props.js       ← món ăn procedural: nem, cá viên, mì, phô mai kéo sợi, trái cây
 scene/textures.js    ← vân gỗ, giấy kraft in logo, lớp vỏ chiên giòn, sprite khói/lửa
-scene/overlay.js     ← lớp chữ HTML/CSS chạy theo cùng đồng hồ với 3D
-audio/soundtrack.py  ← trống, bass, marimba, và 14 loại SFX (xèo xèo, whoosh, ding, kéo phô mai…)
-scripts/            ← server tĩnh, renderer, export timeline, build
+scene/index.html     ← trang render bản 3D
+
+audio/soundtrack.py  ← trống, bass, marimba và 14 loại SFX (xèo xèo, whoosh, ding, kéo phô mai…)
+scripts/            ← server tĩnh, renderer, export timeline/region, build, chụp ảnh kiểm tra
 ```
 
 Mọi chuyển động đều là hàm thuần của thời gian `t` (không `Math.random()`,
 không `requestAnimationFrame` khi render) nên khung hình nào cũng tái tạo được,
 và tiếng khớp hình tuyệt đối.
 
+## Bản ảnh thật hoạt động thế nào
+
+- **Không cắt ảnh ra file rời.** Mỗi "vùng" chỉ là một hình chữ nhật toạ độ 0–1
+  trong ảnh gốc (`scene/photos.js`), shader lấy đúng cửa sổ đó ở độ phân giải
+  đầy đủ. Muốn đổi khung hình chỉ cần sửa hai con số.
+- **Chuyển động máy quay** = cửa sổ đó tự thu/phóng và trôi theo thời gian, cộng
+  thêm rung tay rất nhẹ nên ảnh tĩnh vẫn "thở".
+- **Chuyển cảnh** viết thẳng trong shader: whip pan (nhoè theo hướng), zoom punch
+  (nhoè xuyên tâm), flash cut, slide, wipe chéo có viền sáng, dissolve.
+- **Card** dành cho ảnh cắt từ tờ menu in (mì trộn, trái cây): ảnh nổi lên như
+  một tấm thẻ bo góc có viền sáng và bóng đổ, đặt trên nền gradient màu thương
+  hiệu — vừa hợp bố cục, vừa tránh phóng to ảnh nhỏ lên toàn khung.
+- **Mỗi cú cắt tự sinh ra tiếng của nó**: `scene/shots.js` gắn whoosh/impact/
+  sparkle vào từng transition rồi trộn với lớp foley theo món ăn, nên hình và
+  tiếng không bao giờ lệch nhau.
+
+Kiểm tra nhanh khung hình đã cắt đúng món chưa:
+
+```bash
+node scripts/export-regions.mjs && python3 scripts/check-regions.py   # preview/regions.jpg
+node scripts/shots.mjs --page scene/film.html --times 0.9,6.2,13,23.5 # preview/*.png
+```
+
 ## Âm thanh
 
 Nhạc nền 120 BPM (kick/clap/hi-hat/bass/pad/marimba, vòng hợp âm C–G–Am–F) có
 sidechain "thở" theo tiếng trống. Lớp foley gồm: `riser`, `impact`, `whoosh`,
 `sizzle` (tiếng chiên), `crunch`, `pop`, `ding`, `sparkle`, `chime`, `bell`,
-`stretch` (kéo phô mai), `pour` (rưới sốt), `slurp`, `splash` — thời điểm phát
-lấy từ `CUES` trong `scene/timeline.js`.
+`stretch` (kéo phô mai), `pour` (rưới sốt), `slurp`, `splash`.
 
 ## Chỉnh sửa nhanh
 
 - **Đổi giá / câu chữ**: `COPY` trong `scene/timeline.js`.
-- **Đổi độ dài phân cảnh**: `SCENES` (nhớ chỉnh `CUES` cho khớp).
-- **Đổi góc máy**: `SHOTS` trong `scene/promo.js`.
-- **Đổi tông màu/ánh sáng**: phần `lighting` và `GradeShader` trong `scene/promo.js`.
+- **Đổi thứ tự hoặc độ dài từng cảnh quay**: `SHOTS` trong `scene/shots.js`.
+- **Thêm ảnh mới**: bỏ file vào `assets/photos/`, khai báo trong `scene/photos.js`,
+  rồi dùng tên vùng đó trong `scene/shots.js`.
+- **Đổi tông màu**: các uniform `uExposure/uContrast/uSat/uVignette` trong `scene/film.js`.
 - **Xuất bản vuông 1:1 hoặc ngang 16:9**: đổi `VIDEO.width/height` trong `timeline.js`
-  rồi chỉnh lại vị trí chữ trong `scene/index.html`.
+  rồi chỉnh lại vị trí chữ trong `scene/ui.css`.

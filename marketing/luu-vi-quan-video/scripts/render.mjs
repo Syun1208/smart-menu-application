@@ -6,6 +6,7 @@
 //
 //   node scripts/render.mjs [--fps 30] [--duration 34] [--workers 3]
 //                           [--scale 1] [--quality 92] [--out frames]
+//                           [--page scene/film.html]
 
 import { chromium } from 'playwright';
 import fs from 'node:fs';
@@ -26,6 +27,7 @@ const WORKERS = Number(arg('workers', 3));
 const SCALE = Number(arg('scale', 1));
 const QUALITY = Number(arg('quality', 92));
 const OUT = path.resolve(ROOT, arg('out', 'frames'));
+const PAGE = arg('page', 'scene/index.html');
 const CHROME = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 
 const WIDTH = Math.round(1080 * SCALE);
@@ -54,7 +56,7 @@ async function renderShard(server, workerId) {
   const page = await browser.newPage({ viewport: { width: WIDTH, height: HEIGHT }, deviceScaleFactor: 1 });
   page.on('pageerror', (e) => console.error(`[worker ${workerId}] page error:`, e.message));
 
-  await page.goto(`http://127.0.0.1:${port}/scene/index.html`, { waitUntil: 'load' });
+  await page.goto(`http://127.0.0.1:${port}/${PAGE}`, { waitUntil: 'load' });
   if (SCALE !== 1) {
     await page.addStyleTag({ content: `#stage { transform: scale(${SCALE}); transform-origin: top left; }` });
   }

@@ -1,0 +1,138 @@
+@font-face { font-family: 'Be Vietnam Pro'; font-weight: 400; src: url('../assets/fonts/BeVietnamPro-400.ttf') format('truetype'); font-display: block; }
+@font-face { font-family: 'Be Vietnam Pro'; font-weight: 600; src: url('../assets/fonts/BeVietnamPro-600.ttf') format('truetype'); font-display: block; }
+@font-face { font-family: 'Be Vietnam Pro'; font-weight: 800; src: url('../assets/fonts/BeVietnamPro-800.ttf') format('truetype'); font-display: block; }
+@font-face { font-family: 'Be Vietnam Pro'; font-weight: 900; src: url('../assets/fonts/BeVietnamPro-900.ttf') format('truetype'); font-display: block; }
+
+:root {
+  --orange: #ef5a12;
+  --amber: #ffb020;
+  --cream: #fff5e6;
+  --brown: #3a1d0c;
+}
+
+html, body {
+  margin: 0; padding: 0; background: #000; overflow: hidden;
+  width: 1080px; height: 1920px;
+}
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+#gl { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+
+#ui {
+  position: absolute; inset: 0;
+  font-family: 'Be Vietnam Pro', 'Liberation Sans', sans-serif;
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+.layer { will-change: transform, opacity; }
+.center { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* ---------- brand bug (top of frame, from the nem chapter onwards) ------- */
+#bug {
+  position: absolute; top: 74px; left: 64px;
+  display: flex; align-items: center; gap: 20px;
+  padding: 18px 34px 18px 26px;
+  background: rgba(24, 10, 4, 0.55);
+  border: 2px solid rgba(255, 190, 110, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+#bug .mark { width: 46px; height: 46px; }
+#bug .txt { line-height: 1; }
+#bug .name { font-weight: 900; font-size: 34px; letter-spacing: 1px; }
+#bug .slogan { font-weight: 600; font-size: 17px; opacity: .75; letter-spacing: 2.5px; margin-top: 6px; }
+
+/* ---------- hook -------------------------------------------------------- */
+#hook-kicker {
+  position: absolute; left: 0; right: 0; top: 620px; text-align: center;
+  font-weight: 900; font-size: 190px; letter-spacing: -4px;
+  color: #fff;
+  text-shadow: 0 18px 60px rgba(0,0,0,.75), 0 0 90px rgba(255,150,40,.55);
+}
+#logo-lockup {
+  position: absolute; left: 0; right: 0; top: 380px; text-align: center;
+}
+#logo-lockup .mark { width: 190px; height: 190px; margin-bottom: 10px; }
+#logo-lockup .name {
+  font-weight: 900; font-size: 148px; letter-spacing: -2px; line-height: .98;
+  color: #fff; text-shadow: 0 16px 48px rgba(0,0,0,.8), 0 0 70px rgba(255,140,40,.45);
+}
+#logo-lockup .sub {
+  margin-top: 22px; font-weight: 800; font-size: 46px; color: var(--amber);
+  letter-spacing: 1px;
+}
+#logo-lockup .rule {
+  width: 420px; height: 5px; margin: 34px auto 0;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+}
+#logo-lockup .tag {
+  margin-top: 26px; font-weight: 600; font-size: 40px; opacity: .92; letter-spacing: 3px;
+}
+
+/* ---------- chapter titles + price chips -------------------------------- */
+#chapter { position: absolute; left: 64px; right: 64px; bottom: 720px; }
+#chapter .kicker {
+  display: inline-block; font-weight: 800; font-size: 32px; letter-spacing: 7px;
+  color: #12100e; background: var(--amber);
+  padding: 12px 26px; border-radius: 10px; margin-bottom: 26px;
+}
+#chapter .title {
+  font-weight: 900; font-size: 96px; line-height: 1.02; letter-spacing: -1px;
+  text-shadow: 0 14px 44px rgba(0,0,0,.85);
+}
+#chips { position: absolute; left: 64px; right: 64px; bottom: 130px; }
+.chip {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; margin-top: 18px;
+  padding: 22px 34px;
+  background: rgba(28, 12, 5, 0.62);
+  border: 2px solid rgba(255, 186, 106, 0.28);
+  border-left: 10px solid var(--orange);
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  will-change: transform, opacity;
+}
+.chip .n { font-weight: 700; font-size: 46px; white-space: nowrap; }
+.chip .p { font-weight: 900; font-size: 58px; color: var(--amber); white-space: nowrap; }
+.chip .u { font-weight: 600; font-size: 30px; opacity: .7; margin-left: 8px; }
+.chip .hot {
+  font-weight: 800; font-size: 26px; color: #ffd9a8;
+  background: rgba(239,90,18,.85); padding: 8px 16px; border-radius: 999px; margin-left: 14px;
+}
+
+/* ---------- call to action ---------------------------------------------- */
+#cta { position: absolute; left: 0; right: 0; top: 300px; text-align: center; }
+#cta .mark { width: 170px; height: 170px; }
+#cta .name { font-weight: 900; font-size: 132px; letter-spacing: -2px; color: #fff;
+  text-shadow: 0 16px 48px rgba(0,0,0,.8), 0 0 70px rgba(255,140,40,.4); }
+#cta .sub { font-weight: 800; font-size: 44px; color: var(--amber); margin-top: 14px; }
+#cta .order {
+  margin: 60px auto 0; width: fit-content;
+  display: flex; align-items: center; gap: 28px;
+  background: linear-gradient(180deg, #ff7a25, #d9430a);
+  padding: 30px 56px; border-radius: 999px;
+  box-shadow: 0 26px 70px rgba(255,90,20,.45), inset 0 2px 0 rgba(255,255,255,.35);
+}
+#cta .order .lbl { font-weight: 800; font-size: 40px; letter-spacing: 2px; opacity: .92; }
+#cta .order .num { font-weight: 900; font-size: 84px; letter-spacing: 1px; }
+#cta .ship {
+  margin: 34px auto 0; width: fit-content;
+  font-weight: 800; font-size: 42px; color: #fff;
+  border: 3px solid var(--amber); border-radius: 999px; padding: 18px 44px;
+}
+#cta .hours { margin-top: 30px; font-weight: 600; font-size: 36px; opacity: .9; }
+#cta .tag { margin-top: 46px; font-weight: 800; font-size: 40px; color: var(--amber); letter-spacing: 2px; }
+
+/* ---------- progress bar ------------------------------------------------ */
+/* ---------- legibility scrims ------------------------------------------ */
+#scrim {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 1150px;
+  background: linear-gradient(to top, rgba(14,6,2,.94), rgba(14,6,2,.74) 34%, rgba(14,6,2,0));
+  opacity: 0;
+}
+#scrim-full {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(12,5,2,.28), rgba(8,3,1,.86) 78%);
+  opacity: 0;
+}
+
+#progress { position: absolute; left: 0; bottom: 0; height: 8px; background: linear-gradient(90deg, var(--amber), var(--orange)); width: 0; }

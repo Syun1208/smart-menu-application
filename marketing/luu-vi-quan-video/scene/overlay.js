@@ -25,10 +25,10 @@ function fadeOut(t, start, dur = 0.4) {
 
 // Which chips belong to which chapter, and when each one flies in (scene-local).
 const CHIP_TIMING = {
-  nem:     [2.0, 2.5, 3.0, 3.5],
-  caVien:  [3.0, 3.8, 4.6],
-  miTron:  [3.2, 4.0],
-  traiCay: [2.2, 3.0, 3.8],
+  nem:     [1.6, 2.1, 2.6, 3.1],
+  caVien:  [1.6, 2.4, 3.2],
+  miTron:  [1.3, 2.1],
+  traiCay: [1.2, 2.0, 2.8],
 };
 
 export function createOverlay() {
@@ -167,11 +167,13 @@ export function createOverlay() {
     }
 
     // --- scrims: keep every line of copy readable over the food -------------
-    const chapterScrim = hasChapterText ? clamp(range(lt, 0.2, 0.8)) * 0.95 : 0;
+    const chapterScrim = hasChapterText ? clamp(range(lt, 0.2, 0.8)) * 0.78 : 0;
     const hookScrim = t < 4 ? 0.55 * clamp(range(t, 0.2, 0.8)) : 0;
     els.scrim.style.opacity = String(Math.max(chapterScrim, hookScrim, sc.id === 'cta' ? 0.5 : 0));
+    // the hook keeps a soft full-frame scrim until the logo has left again
+    const hookFull = t < 4.0 ? clamp(range(t, 0.2, 0.8)) * 0.52 * (1 - easeInOutCubic(range(t, 3.5, 4.0))) : 0;
     els.scrimFull.style.opacity = String(
-      sc.id === 'cta' ? clamp(range(lt, 0, 0.6)) * 0.62 : t < 2.4 ? clamp(range(t, 0.2, 0.8)) * 0.5 : 0,
+      sc.id === 'cta' ? clamp(range(lt, 0, 0.6)) * 0.62 : hookFull,
     );
 
     // --- progress bar -------------------------------------------------------

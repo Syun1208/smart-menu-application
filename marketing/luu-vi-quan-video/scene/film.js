@@ -1,0 +1,478 @@
+// The photo film: the shop's real photographs, cut to the beat.
+//
+// Everything you see is one full-screen quad. A single fragment shader frames a
+// window out of a source photograph (so a "camera move" is just an animated UV
+// rectangle, always sampled at full resolution), renders the outgoing and the
+// incoming shot, and blends them with a transition - whip pan, zoom punch,
+// flash cut, slide, wipe or dissolve. Grade, vignette, grain and the light
+// sweep happen in the same pass; a bloom pass on top gives the fried food that
+// warm glow.
+
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { PHOTOS, REGIONS } from './photos.js';
+import { SHOTS } from './shots.js';
+import { VIDEO, sceneAt } from './timeline.js';
+import { clamp, lerp, range, easeOutCubic, easeInOutCubic, pulse } from './lib/ease.js';
+
+const FRAME_ASPECT = VIDEO.width / VIDEO.height;   // 0.5625
+
+const TRANS_ID = { none: 0, cut: 0, whip: 1, punch: 2, slide: 3, flash: 4, wipe: 5, dissolve: 6 };
+
+// Where a "card" shot sits in frame: upper half, clear of the chapter title.
+const CARD = { maxW: 0.92, maxH: 0.42, centerY: 0.700 };
+
+const vertexShader = /* glsl */ `
+  varying vec2 vUv;
+  void main() {
+    vUv = uv;
+    gl_Position = vec4(position.xy * 2.0, 0.0, 1.0);
+  }
+`;
+
+const fragmentShader = /* glsl */ `
+  precision highp float;
+  varying vec2 vUv;
+
+  uniform sampler2D uTexA, uTexB;
+  uniform vec4 uRectA, uRectB;     // window into the source photo (x0,y0,x1,y1)
+  uniform vec4 uCardA, uCardB;     // cx, cy, halfW, halfH in frame uv
+  uniform vec2 uModeA, uModeB;     // x: 0 full-bleed / 1 card, y: sharpen amount
+  uniform vec2 uTexSizeA, uTexSizeB;
+  uniform vec3 uFxA, uFxB;         // xy: directional blur, z: radial blur
+  uniform float uRotA, uRotB;
+
+  uniform float uMix, uTrans;
+  uniform vec2 uDir;
+  uniform float uFlash, uDark, uCool, uSweep, uGrain, uVignette, uExposure, uContrast, uSat;
+  uniform float uTime, uAspect;
+  uniform vec2 uShake;
+
+  const vec3 WARM = vec3(1.055, 0.995, 0.915);
+  const vec3 COOL = vec3(0.930, 1.000, 1.070);
+
+  // Frame uv (y up) -> source uv (y down, matching how the rects are written).
+  vec2 srcUV(vec4 rect, vec2 uv) {
+    vec2 q = clamp(uv, 0.0, 1.0);
+    return mix(rect.xy, rect.zw, vec2(q.x, 1.0 - q.y));
+  }
+
+  float sdRoundRect(vec2 p, vec2 b, float r) {
+    vec2 q = abs(p) - b + r;
+    return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - r;
+  }
+
+  vec3 sampleRect(sampler2D tex, vec4 rect, vec2 uv, vec3 fx, vec2 tsize, float sharpen) {
+    float amt = abs(fx.x) + abs(fx.y) + abs(fx.z);
+    if (amt < 0.0015) {
+      vec2 suv = srcUV(rect, uv);
+      vec3 c = texture2D(tex, suv).rgb;
+      if (sharpen > 0.001) {
+        vec2 px = abs(rect.zw - rect.xy) / max(tsize, vec2(1.0)) * 1.15;
+        vec3 n = texture2D(tex, suv + vec2(px.x, 0.0)).rgb + texture2D(tex, suv - vec2(px.x, 0.0)).rgb
+               + texture2D(tex, suv + vec2(0.0, px.y)).rgb + texture2D(tex, suv - vec2(0.0, px.y)).rgb;
+        c = clamp(c * (1.0 + 4.0 * sharpen) - n * sharpen, 0.0, 2.0);
+      }
+      return c;
+    }
+    vec3 acc = vec3(0.0);
+    for (int i = 0; i < 9; i++) {
+      float f = float(i) / 8.0 - 0.5;
+      vec2 off = fx.xy * f + (uv - 0.5) * fx.z * f;
+      acc += texture2D(tex, srcUV(rect, uv + off)).rgb;
+    }
+    return acc / 9.0;
+  }
+
+  vec3 renderShot(sampler2D tex, vec4 rect, vec4 card, vec2 mode, float rot, vec3 fx, vec2 tsize, vec2 uv) {
+    if (mode.x < 0.5) {
+      return sampleRect(tex, rect, uv, fx, tsize, mode.y);
+    }
+
+    // --- card: the photo floats over a blurred, dimmed copy of itself --------
+    vec2 asp = vec2(uAspect, 1.0);
+    vec2 p = (uv - card.xy) * asp;
+    float c = cos(rot), s = sin(rot);
+    p = mat2(c, -s, s, c) * p;
+    vec2 b = card.zw * asp;
+    float radius = min(b.x, b.y) * 0.16;
+
+    // Backdrop: the brand's warm gradient, tinted by the average colour of the
+    // dish itself (one heavily mipped sample), so the card always sits in a
+    // clean studio-like field instead of a smeared copy of the photo.
+    vec3 avg = texture2D(tex, srcUV(rect, vec2(0.5, 0.5)), 6.0).rgb;   // colour of THIS dish, not the whole file
+    float h = smoothstep(0.0, 1.1, uv.y);
+    vec3 grad = mix(
+      mix(vec3(0.105, 0.052, 0.026), vec3(0.36, 0.155, 0.058), h),   // warm, fried food
+      mix(vec3(0.050, 0.085, 0.060), vec3(0.115, 0.265, 0.150), h),  // fresh, fruit
+      uCool);
+    vec3 bg = mix(grad, avg * 0.55, 0.26);
+    float glow = exp(-pow(length((uv - vec2(card.x, card.y)) * vec2(uAspect * 1.35, 1.0)) / 0.42, 2.0));
+    bg += mix(vec3(1.0, 0.52, 0.16), vec3(0.45, 1.0, 0.62), uCool) * glow * 0.16;
+    bg *= 1.0 - 0.35 * length((uv - 0.5) * vec2(uAspect * 1.7, 1.0));
+
+    float dShadow = sdRoundRect(p + vec2(0.0, 0.030), b * 1.015, radius);
+    bg = mix(bg, bg * 0.35, smoothstep(0.085, -0.01, dShadow));
+
+    float d = sdRoundRect(p, b, radius);
+    vec2 luv = p / b * 0.5 + 0.5;
+    vec3 photo = sampleRect(tex, rect, clamp(luv, 0.0, 1.0), fx, tsize, mode.y);
+
+    float inside = smoothstep(0.004, -0.002, d);
+    float rim = exp(-pow(max(abs(d) - 0.0025, 0.0) / 0.006, 2.0));
+    vec3 col = mix(bg, photo, inside);
+    col += rim * vec3(1.0, 0.70, 0.32) * 0.30;
+    return col;
+  }
+
+  void main() {
+    vec2 uv = clamp(vUv + uShake, -0.5, 1.5);
+    vec2 uvA = uv, uvB = uv;
+    vec3 fxA = uFxA, fxB = uFxB;
+    float m = clamp(uMix, 0.0, 1.0);
+    float blend = 1.0;
+    float edgeGlow = 0.0;
+
+    if (uTrans < 0.5) {                    // hard cut
+      blend = step(0.5, m);
+    } else if (uTrans < 1.5) {             // whip pan
+      float e = smoothstep(0.0, 1.0, m);
+      uvA += uDir * e * 0.62;
+      uvB += uDir * (e - 1.0) * 0.62;
+      float b = sin(3.14159 * m) * 0.105;
+      fxA += vec3(uDir * b, 0.0);
+      fxB += vec3(uDir * b, 0.0);
+      blend = step(0.5, e);
+    } else if (uTrans < 2.5) {             // zoom punch
+      float e = 1.0 - pow(1.0 - m, 3.0);
+      uvB = (uvB - 0.5) * mix(1.32, 1.0, e) + 0.5;
+      uvA = (uvA - 0.5) * mix(1.0, 0.84, e) + 0.5;
+      float r = sin(3.14159 * m) * 0.055;
+      fxB.z += r;
+      fxA.z += r * 0.7;
+      blend = smoothstep(0.16, 0.52, m);
+    } else if (uTrans < 3.5) {             // slide
+      float e = 1.0 - pow(1.0 - m, 3.0);
+      uvB += uDir * (e - 1.0);
+      float ins = step(0.0, uvB.x) * step(uvB.x, 1.0) * step(0.0, uvB.y) * step(uvB.y, 1.0);
+      blend = ins;
+      float edge = min(min(uvB.x, 1.0 - uvB.x), min(uvB.y, 1.0 - uvB.y));
+      edgeGlow = ins * exp(-edge / 0.008) * 0.5;
+    } else if (uTrans < 4.5) {             // flash cut
+      blend = step(0.45, m);
+    } else if (uTrans < 5.5) {             // diagonal wipe
+      float w = 0.14;
+      float g = uv.x * 0.68 + uv.y * 0.32;
+      float pos = mix(1.0 + w, -w, m);
+      blend = clamp((g - pos) / w, 0.0, 1.0);
+      edgeGlow = exp(-pow((g - pos) / (w * 0.45), 2.0)) * 0.55;
+    } else {                                // dissolve
+      blend = smoothstep(0.0, 1.0, m);
+    }
+
+    vec3 a = renderShot(uTexA, uRectA, uCardA, uModeA, uRotA, fxA, uTexSizeA, uvA);
+    vec3 b = renderShot(uTexB, uRectB, uCardB, uModeB, uRotB, fxB, uTexSizeB, uvB);
+    vec3 col = mix(a, b, blend);
+    col += edgeGlow * vec3(1.0, 0.76, 0.38);
+
+    // sheen sweeping across the food on the accents
+    if (uSweep > 0.001) {
+      float g = uv.x * 0.55 + uv.y * 0.45;
+      float d = g - fract(uSweep);
+      col += vec3(1.0, 0.88, 0.66) * exp(-d * d / 0.0025) * 0.14;
+    }
+
+    col *= uExposure;
+    col = (col - 0.5) * uContrast + 0.5;
+    float l = dot(col, vec3(0.299, 0.587, 0.114));
+    col = mix(vec3(l), col, uSat);
+    col *= mix(WARM, COOL, uCool);
+    col *= 1.0 - uDark * 0.62;
+
+    float v = length((uv - 0.5) * vec2(uAspect * 1.55, 1.0));
+    col *= 1.0 - uVignette * smoothstep(0.30, 1.05, v);
+    col = mix(col, vec3(1.0, 0.97, 0.92), clamp(uFlash, 0.0, 1.0));
+
+    float n = fract(sin(dot(uv * vec2(1927.0, 1091.0) + uTime * 41.0, vec2(12.9898, 78.233))) * 43758.5453);
+    col += (n - 0.5) * uGrain;
+
+    gl_FragColor = vec4(clamp(col, 0.0, 1.0), 1.0);
+  }
+`;
+
+/**
+ * Which window of the photo do we sample?
+ *
+ * Full-bleed shots take the whole WIDTH of the region and let the window spill
+ * up and down into the surrounding photo - a 9:16 frame is so tall that cropping
+ * a wide region to the frame's aspect would leave a narrow strip of pixels and
+ * upscale it four times over. Card shots keep the region exactly as framed,
+ * because their crop is lifted out of the printed menu and has no surroundings.
+ */
+function windowFor(regionName, zoom, panX, panY, cardMode) {
+  const r = REGIONS[regionName];
+  const photo = PHOTOS[r.photo];
+  const [x0, y0, x1, y1] = r.rect;
+  const rw = x1 - x0;
+  const rh = y1 - y0;
+  const regionAspect = (rw * photo.w) / (rh * photo.h);
+
+  let w;
+  let h;
+  if (cardMode) {
+    w = rw / zoom;
+    h = rh / zoom;
+  } else {
+    w = rw;
+    h = (rw * photo.w) / (FRAME_ASPECT * photo.h);
+    if (h > 1) {                       // landscape source: height is the limit
+      h = 1;
+      w = (h * FRAME_ASPECT * photo.h) / photo.w;
+    }
+    w /= zoom;
+    h /= zoom;
+  }
+
+  let cx = (x0 + x1) / 2 + panX * w;
+  let cy = (y0 + y1) / 2 + panY * h;
+
+  const bound = (c, half, lo, hi) => (half * 2 > hi - lo ? (lo + hi) / 2 : clamp(c, lo + half, hi - half));
+  if (cardMode) {
+    cx = bound(cx, w / 2, x0, x1);
+    cy = bound(cy, h / 2, y0, y1);
+  } else {
+    cx = bound(cx, w / 2, 0, 1);
+    cy = bound(cy, h / 2, 0, 1);
+  }
+
+  return { rect: [cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2], photo, regionAspect };
+}
+
+/** Card geometry in frame uv for a given photo aspect. */
+function cardFor(regionAspect, maxW = CARD.maxW) {
+  let uw = maxW;
+  let uh = (uw * FRAME_ASPECT) / regionAspect;
+  if (uh > CARD.maxH) {
+    uh = CARD.maxH;
+    uw = (uh * regionAspect) / FRAME_ASPECT;
+  }
+  return [0.5, CARD.centerY, uw / 2, uh / 2];
+}
+
+/** Evaluate one shot at absolute time t (clamped to its own span). */
+function evalShot(shot, t) {
+  const p = clamp((t - shot.at) / (shot.end - shot.at));
+  const e = easeOutCubic(p) * 0.65 + easeInOutCubic(p) * 0.35;   // slow, filmic drift
+  const zoom = lerp(shot.z[0], shot.z[1], e);
+  const panX = lerp(shot.x[0], shot.x[1], e);
+  const panY = lerp(shot.y[0], shot.y[1], e);
+  const rot = lerp(shot.rot[0], shot.rot[1], e) * (Math.PI / 180);
+  const isCard = shot.mode === 'card';
+
+  const win = windowFor(shot.region, zoom, panX, panY, isCard);
+  const card = isCard ? cardFor(win.regionAspect, shot.cardW) : [0.5, 0.5, 0.5, 0.5];
+
+  return {
+    rect: win.rect,
+    photo: win.photo,
+    card,
+    mode: [isCard ? 1 : 0, shot.sharpen],
+    rot,
+    dark: shot.dark,
+    cool: shot.cool,
+  };
+}
+
+function makeSparkleTexture() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 64;
+  const g = c.getContext('2d');
+  const grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+  grad.addColorStop(0, 'rgba(255,240,210,1)');
+  grad.addColorStop(0.35, 'rgba(255,180,90,0.55)');
+  grad.addColorStop(1, 'rgba(255,140,40,0)');
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 64, 64);
+  return new THREE.CanvasTexture(c);
+}
+
+export async function createFilm({ canvas, width, height }) {
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(1);
+  renderer.setSize(width, height, false);
+  renderer.outputColorSpace = THREE.LinearSRGBColorSpace;   // photos pass through untouched
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0, 1);
+
+  // --- load every photograph up front --------------------------------------
+  const loader = new THREE.TextureLoader();
+  const textures = {};
+  await Promise.all(
+    Object.entries(PHOTOS).map(
+      ([key, p]) =>
+        new Promise((resolve, reject) => {
+          loader.load(
+            p.src,
+            (tex) => {
+              tex.colorSpace = THREE.NoColorSpace;
+              tex.flipY = false;   // rects are written in image space (y down)
+              tex.generateMipmaps = true;
+              tex.minFilter = THREE.LinearMipmapLinearFilter;
+              tex.magFilter = THREE.LinearFilter;
+              tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
+              tex.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+              textures[key] = tex;
+              resolve();
+            },
+            undefined,
+            reject,
+          );
+        }),
+    ),
+  );
+  const texOf = (photo) => textures[Object.keys(PHOTOS).find((k) => PHOTOS[k] === photo)];
+
+  const uniforms = {
+    uTexA: { value: null }, uTexB: { value: null },
+    uRectA: { value: new THREE.Vector4(0, 0, 1, 1) }, uRectB: { value: new THREE.Vector4(0, 0, 1, 1) },
+    uCardA: { value: new THREE.Vector4(0.5, 0.5, 0.5, 0.5) }, uCardB: { value: new THREE.Vector4(0.5, 0.5, 0.5, 0.5) },
+    uModeA: { value: new THREE.Vector2(0, 0.2) }, uModeB: { value: new THREE.Vector2(0, 0.2) },
+    uTexSizeA: { value: new THREE.Vector2(1500, 1500) }, uTexSizeB: { value: new THREE.Vector2(1500, 1500) },
+    uFxA: { value: new THREE.Vector3() }, uFxB: { value: new THREE.Vector3() },
+    uRotA: { value: 0 }, uRotB: { value: 0 },
+    uMix: { value: 1 }, uTrans: { value: 0 }, uDir: { value: new THREE.Vector2(1, 0) },
+    uFlash: { value: 0 }, uDark: { value: 0 }, uCool: { value: 0 }, uSweep: { value: 0 },
+    uGrain: { value: 0.028 }, uVignette: { value: 0.38 },
+    uExposure: { value: 1.03 }, uContrast: { value: 1.05 }, uSat: { value: 1.12 },
+    uTime: { value: 0 }, uAspect: { value: FRAME_ASPECT },
+    uShake: { value: new THREE.Vector2() },
+  };
+
+  const quad = new THREE.Mesh(
+    new THREE.PlaneGeometry(1, 1),
+    new THREE.ShaderMaterial({ vertexShader, fragmentShader, uniforms, depthTest: false, depthWrite: false }),
+  );
+  quad.frustumCulled = false;
+  scene.add(quad);
+
+  // --- floating embers, so even a still photograph has life in it ----------
+  const SPARKS = 90;
+  const sparkGeo = new THREE.BufferGeometry();
+  const sparkPos = new Float32Array(SPARKS * 3);
+  const sparkSeed = new Float32Array(SPARKS);
+  for (let i = 0; i < SPARKS; i++) sparkSeed[i] = (i * 9301 % 233280) / 233280;
+  sparkGeo.setAttribute('position', new THREE.BufferAttribute(sparkPos, 3));
+  const sparkMat = new THREE.PointsMaterial({
+    map: makeSparkleTexture(),
+    size: 26,
+    sizeAttenuation: false,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthTest: false,
+    depthWrite: false,
+    opacity: 0.0,
+  });
+  const sparks = new THREE.Points(sparkGeo, sparkMat);
+  sparks.frustumCulled = false;
+  scene.add(sparks);
+
+  // --- bloom ---------------------------------------------------------------
+  const composer = new EffectComposer(renderer);
+  composer.setSize(width, height);
+  composer.addPass(new RenderPass(scene, camera));
+  const bloom = new UnrealBloomPass(new THREE.Vector2(width, height), 0.22, 0.55, 0.92);
+  composer.addPass(bloom);
+
+  const rnd = (n) => {
+    const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+    return x - Math.floor(x);
+  };
+
+  function updateSparks(t, intensity) {
+    for (let i = 0; i < SPARKS; i++) {
+      const s = sparkSeed[i];
+      const speed = 0.045 + s * 0.06;
+      const y = ((s * 1.7 + t * speed) % 1.35) - 0.35;
+      const x = (s * 3.3 % 1) + Math.sin(t * (0.5 + s) + s * 6.28) * 0.03;
+      sparkPos[i * 3] = ((x % 1) - 0.5);
+      sparkPos[i * 3 + 1] = y - 0.5;
+      sparkPos[i * 3 + 2] = 0;
+    }
+    sparkGeo.attributes.position.needsUpdate = true;
+    sparkMat.opacity = intensity;
+    sparkMat.size = 14 + 18 * intensity;
+  }
+
+  function renderFrame(t) {
+    // --- which shot, and are we mid-cut? -----------------------------------
+    let index = 0;
+    for (let i = SHOTS.length - 1; i >= 0; i--) {
+      if (t >= SHOTS[i].at) { index = i; break; }
+    }
+    const cur = SHOTS[index];
+    const prev = SHOTS[Math.max(0, index - 1)];
+    const dur = cur.trans.dur;
+    const inCut = index > 0 && t < cur.at + dur;
+    const m = inCut ? clamp((t - cur.at) / dur) : 1;
+
+    const B = evalShot(cur, t);
+    const A = inCut ? evalShot(prev, t) : B;
+
+    uniforms.uTexB.value = texOf(B.photo);
+    uniforms.uTexA.value = texOf(A.photo);
+    uniforms.uRectB.value.set(...B.rect);
+    uniforms.uRectA.value.set(...A.rect);
+    uniforms.uCardB.value.set(...B.card);
+    uniforms.uCardA.value.set(...A.card);
+    uniforms.uModeB.value.set(...B.mode);
+    uniforms.uModeA.value.set(...A.mode);
+    uniforms.uTexSizeB.value.set(B.photo.w, B.photo.h);
+    uniforms.uTexSizeA.value.set(A.photo.w, A.photo.h);
+    uniforms.uRotB.value = B.rot;
+    uniforms.uRotA.value = A.rot;
+    uniforms.uMix.value = m;
+    uniforms.uTrans.value = inCut ? (TRANS_ID[cur.trans.type] ?? 0) : 0;
+    uniforms.uDir.value.set(cur.trans.dir[0], cur.trans.dir[1]);
+
+    // --- accents ------------------------------------------------------------
+    const flashCut = inCut && cur.trans.type === 'flash' ? pulse(m) * 0.72 : 0;
+    const openFlash = t < 0.5 ? Math.max(0, 0.55 - t * 1.6) : 0;
+    uniforms.uFlash.value = Math.max(flashCut, openFlash);
+
+    const sinceCut = t - cur.at;
+    const shakeAmp = (cur.trans.type === 'flash' || cur.trans.type === 'punch')
+      ? 0.008 * Math.exp(-sinceCut * 9) : 0.0025 * Math.exp(-sinceCut * 6);
+    // a permanent, very slow handheld drift keeps a still photograph breathing
+    const driftX = Math.sin(t * 0.9 + 0.4) * 0.0016 + Math.sin(t * 2.3 + 1.9) * 0.0006;
+    const driftY = Math.sin(t * 1.1 + 2.1) * 0.0018 + Math.sin(t * 2.9 + 0.7) * 0.0007;
+    uniforms.uShake.value.set(
+      driftX + Math.sin(t * 61.0) * shakeAmp * 0.6,
+      driftY + Math.sin(t * 47.0 + 1.3) * shakeAmp,
+    );
+
+    // a sheen crosses the frame right after every hard accent
+    uniforms.uSweep.value = sinceCut < 0.55 && (cur.trans.type === 'flash' || cur.trans.type === 'punch')
+      ? 0.001 + sinceCut / 0.55 : 0;
+
+    // --- grade --------------------------------------------------------------
+    const sc = sceneAt(t);
+    const lt = t - sc.start;
+    const openDark = t < 1.0 ? (1 - easeOutCubic(range(t, 0.0, 0.9))) * 0.75 : 0;
+    uniforms.uDark.value = clamp(Math.max(B.dark * (inCut ? m : 1), openDark));
+    uniforms.uCool.value = lerp(A.cool, B.cool, inCut ? m : 1);
+    uniforms.uVignette.value = 0.38 + 0.18 * clamp(B.dark * 2);
+    uniforms.uExposure.value = 1.03 + 0.03 * Math.sin(t * 1.3);
+    uniforms.uTime.value = t;
+
+    // embers ride the fried-food chapters, fade out over the fruit
+    const ember = sc.id === 'traiCay' ? 0.12 : sc.id === 'cta' ? 0.5 : 0.62;
+    updateSparks(t, ember * (0.55 + 0.45 * Math.sin(t * 0.8 + 1.2)));
+
+    composer.render();
+  }
+
+  return { renderFrame, renderer };
+}
