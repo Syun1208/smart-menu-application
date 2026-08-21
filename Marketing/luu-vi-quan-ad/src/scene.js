@@ -16,6 +16,9 @@ import * as Overlay from './overlay.js';
 
 const FIT_CODE = { cover: 0, contain: 1, width: 2 };
 
+// So texture frame giu cung luc. Chi can du cho hai lop luc chuyen canh + vai frame dem.
+const MAX_FRAME_TEXTURES = 8;
+
 // Grade trung tinh cho cac the do hoa tu ve (menu, end card, placeholder).
 const CARD_GRADE = { warmth: 0, saturation: 1, contrast: 1, vignette: 0, sharpen: 0 };
 
@@ -57,7 +60,9 @@ export class AdScene {
       uGlow: { value: new THREE.Vector2(0, 0) },
       uMix: { value: 0 },
       uWhip: { value: 0 },
-      uBackdrop: { value: new THREE.Color(brand.cream) },
+      // Dung setStyle voi LinearSRGBColorSpace: pipeline nay khong doi color space,
+      // neu de Color tu chuyen sRGB -> linear thi nen kem se ra dam hon mau thuong hieu.
+      uBackdrop: { value: new THREE.Color().setStyle(brand.cream, THREE.LinearSRGBColorSpace) },
       uFrame: { value: new THREE.Vector2(frame.width, frame.height) },
     };
 
@@ -83,7 +88,8 @@ export class AdScene {
     this.grainPass = new ShaderPass(GrainShader);
     this.composer.addPass(this.grainPass);
 
-    this.textures = new Map();   // url|fallback-key -> THREE.Texture
+    this.textures = new Map();      // anh tinh + the typeset: giu suot phien
+    this.frameTextures = new Map(); // frame cua clip: cua so xoay vong
     this.captions = new Map();   // shot.id -> CanvasTexture
     this.cards = new Map();      // fallback-key -> HTMLCanvasElement
   }
@@ -94,7 +100,7 @@ export class AdScene {
     const src = resolveSource(shot, local, this.manifest, this.frame.fps);
     const key = src.kind === 'url' ? src.url : `${shot.id}:${src.fallback}`;
 
-    const cached = this.textures.get(key);
+    const cached = this.textures.get(key) || this.frameTextures.get(key);
     if (cached) return cached;
 
     let tex;
@@ -114,16 +120,27 @@ export class AdScene {
     tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
     tex.needsUpdate = true;
 
-    // Chuoi frame chay 1 lan roi bo; the/anh tinh thi giu lai.
-    if (src.kind === 'url' && shot.source.kind === 'frames') {
-      if (this.textures.size > 8) {
-        const oldest = this.textures.keys().next().value;
-        const t = this.textures.get(oldest);
-        if (t && !t.isCanvasTexture) { t.dispose(); this.textures.delete(oldest); }
-      }
+    if (shot.source.kind === 'frames' && src.kind === 'url') {
+      // Frame cua clip: moi frame chi dung dung mot lan, giu lai la phinh bo nho
+      // (1800 frame x 1280x720 RGBA). Xoay vong mot cua so nho.
+      this.frameTextures.set(key, tex);
+      this.evictFrames();
+    } else {
+      // Anh tinh va the typeset: dung lai suot canh, giu luon.
+      this.textures.set(key, tex);
     }
-    this.textures.set(key, tex);
     return tex;
+  }
+
+  /** Bo bot texture frame cu, nhung khong bao gio bo cai dang gan vao shader. */
+  evictFrames() {
+    const inUse = new Set([this.uniforms.uTexA.value, this.uniforms.uTexB.value]);
+    for (const [k, t] of this.frameTextures) {
+      if (this.frameTextures.size <= MAX_FRAME_TEXTURES) break;
+      if (inUse.has(t)) continue;
+      t.dispose();
+      this.frameTextures.delete(k);
+    }
   }
 
   cardFor(shot, kind) {
