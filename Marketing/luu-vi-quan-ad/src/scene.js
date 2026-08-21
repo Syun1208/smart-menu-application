@@ -14,7 +14,7 @@ import { cameraAt, clampCamera } from './cameraMoves.js';
 import { loadImage, resolveSource } from './sources.js';
 import * as Overlay from './overlay.js';
 
-const FIT_CODE = { cover: 0, contain: 1, width: 2 };
+const FIT_CODE = { cover: 0, contain: 1, width: 2, blurpad: 3 };
 
 // So texture frame giu cung luc. Chi can du cho hai lop luc chuyen canh + vai frame dem.
 const MAX_FRAME_TEXTURES = 8;
@@ -81,6 +81,14 @@ export class AdScene {
     this.captionMesh.renderOrder = 1;
     this.captionMesh.visible = false;
     this.scene.add(this.captionMesh);
+
+    // Dau nhan thuong hieu goc tren trai, hien suot video (tru end card - o do da co ten quan).
+    this.markTex = new THREE.CanvasTexture(Overlay.makeWatermark(brand, frame.width, frame.height));
+    this.markTex.colorSpace = THREE.NoColorSpace;
+    this.markMat = new THREE.MeshBasicMaterial({ map: this.markTex, transparent: true, depthTest: false });
+    this.markMesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), this.markMat);
+    this.markMesh.renderOrder = 2;
+    this.scene.add(this.markMesh);
 
     this.composer = new EffectComposer(this.renderer);
     this.composer.setSize(frame.width, frame.height);
@@ -176,13 +184,39 @@ export class AdScene {
     return { cam, local: Math.max(0, t - shot.t0), p };
   }
 
+  /**
+   * fit: 'auto' -> chon kieu can khung theo ti le THAT cua anh vua tha vao.
+   * r = ti le anh / ti le khung (khung 9:16 = 0.5625).
+   *   r > 2.2  anh ngang bet, cat se mat qua nua be ngang -> dat tren nen chinh no lam mo
+   *   r < 0.72 anh rat cao -> dung tron be ngang, cat bot chieu doc
+   *   con lai  lap day khung, camera lia de lo het bo cuc
+   * Canh khoa chu luon 'width': khong bao gio cat mat mot cot gia.
+   */
+  resolveFit(shot, texAspect) {
+    const f = shot.fit || 'cover';
+    if (f !== 'auto') return f;
+    if (shot.lockText) return 'width';
+    // Canh quay that: luon lap day khung. Cat 16:9 -> 9:16 la chuyen binh thuong voi
+    // video doc, va 6 giay hinh dong ma de trong vien mo thi nhin rat hut.
+    if (shot.source.kind === 'frames') return 'cover';
+    const r = texAspect / (this.frame.width / this.frame.height);
+    if (r > 2.2) return 'blurpad';
+    if (r < 0.72) return 'width';
+    return 'cover';
+  }
+
   applyLayer(suffix, shot, cam, tex) {
     const img = tex.image;
     const w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
     const texAspect = w / h;
     const frameAspect = this.frame.width / this.frame.height;
-    const fit = shot.fit || 'cover';
-    const safe = clampCamera(cam, texAspect, frameAspect, fit);
+    const fit = this.resolveFit(shot, texAspect);
+    // blurpad: anh phai luon nhin thay tron ven, nen keo scale xuong duoi 1
+    // va lay chuyen dong tu phan nen mo thay vi phong to anh chinh.
+    const cam2 = fit === 'blurpad'
+      ? { ...cam, scale: Math.min(0.95, Math.max(0.72, cam.scale * 0.80)) }
+      : cam;
+    const safe = clampCamera(cam2, texAspect, frameAspect, fit);
 
     this.uniforms['uTex' + suffix].value = tex;
     this.uniforms['uSize' + suffix].value.set(w, h);
@@ -226,6 +260,7 @@ export class AdScene {
       ]);
       this.applyLayer('A', prev, sPrev.cam, texPrev);
       this.applyLayer('B', cur, sCur.cam, texCur);
+      this._curIsCard = !!texCur.userData.isCard;
       this.uniforms.uHasB.value = 1;
       this.uniforms.uMix.value = k * k * (3 - 2 * k);                     // smoothstep
       this.uniforms.uWhip.value = tr.type === 'whip' ? Math.sin(k * Math.PI) : 0;
@@ -233,6 +268,7 @@ export class AdScene {
       const s = this.stateFor(cur, t);
       const tex = await this.textureFor(cur, s.local);
       this.applyLayer('A', cur, s.cam, tex);
+      this._curIsCard = !!tex.userData.isCard;
       this.uniforms.uHasB.value = 0;
       this.uniforms.uMix.value = 0;
       this.uniforms.uWhip.value = 0;
@@ -250,8 +286,14 @@ export class AdScene {
       this.captionMesh.visible = false;
     }
 
+    // Dau nhan chi dat len ANH CHUP. The typeset (menu, end card, placeholder) da co san
+    // ten quan, va chu trang cua dau nhan tren nen kem thi coi nhu vo hinh.
+    const markAlpha = (cur.lockText || this._curIsCard) ? 0 : 0.85;
+    this.markMesh.visible = markAlpha > 0.01;
+    this.markMat.opacity = markAlpha * Math.min(1, t / 0.6);
+
     // Grain: tat han o canh co chu de khong lam nhieu net chu / so.
-    this.grainPass.uniforms.uAmount.value = cur.lockText ? 0.0 : 0.016;
+    this.grainPass.uniforms.uAmount.value = cur.lockText ? 0.0 : 0.006;
     this.grainPass.uniforms.uSeed.value = Math.floor(t * this.frame.fps) * 7.13;
 
     this.composer.render();

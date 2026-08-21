@@ -34,6 +34,7 @@ const useAudio = fs.existsSync(audioFile);
 
 const args = ['-hide_banner', '-loglevel', 'error', '-y', '-framerate', String(fps), '-i', path.join(inDir, '%05d.jpg')];
 if (useAudio) args.push('-ss', String(offset), '-i', audioFile);
+if (useAudio) args.push('-map', '0:v:0', '-map', '1:a:0');
 args.push(
   '-t', String(dur),
   '-c:v', 'libx264', '-crf', crf, '-preset', 'slow',
@@ -43,8 +44,12 @@ args.push(
   '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
 );
 if (useAudio) {
+  const L = AUDIO.loudness;
+  // loudnorm truoc, fade sau - nguoc lai thi loudnorm se keo phan fade len lai.
   args.push('-c:a', 'aac', '-b:a', '160k',
-    '-af', `afade=t=in:st=0:d=${AUDIO.fadeIn},afade=t=out:st=${Math.max(0, dur - AUDIO.fadeOut)}:d=${AUDIO.fadeOut}`,
+    '-af', `loudnorm=I=${L.I}:TP=${L.TP}:LRA=${L.LRA},`
+         + `afade=t=in:st=0:d=${AUDIO.fadeIn},`
+         + `afade=t=out:st=${Math.max(0, dur - AUDIO.fadeOut)}:d=${AUDIO.fadeOut}`,
     '-shortest');
 } else args.push('-an');
 args.push(out);

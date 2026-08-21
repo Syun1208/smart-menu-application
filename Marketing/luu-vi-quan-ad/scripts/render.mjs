@@ -102,6 +102,7 @@ const args = [
   '-framerate', String(fps), '-i', path.join(outDir, '%05d.jpg'),
 ];
 if (useAudio) args.push('-ss', String(AUDIO.offset + t0), '-i', audioFile);
+if (useAudio) args.push('-map', '0:v:0', '-map', '1:a:0');
 args.push(
   '-t', String(dur),
   '-c:v', 'libx264', '-crf', draft ? '23' : '18', '-preset', draft ? 'veryfast' : 'slow',
@@ -110,8 +111,11 @@ args.push(
 );
 if (useAudio) {
   const fo = Math.max(0, dur - AUDIO.fadeOut);
+  const L = AUDIO.loudness;
+  // loudnorm truoc, fade sau - nguoc lai thi loudnorm se keo phan fade len lai.
   args.push('-c:a', 'aac', '-b:a', '192k',
-    '-af', `afade=t=in:st=0:d=${AUDIO.fadeIn},afade=t=out:st=${fo}:d=${AUDIO.fadeOut}`,
+    '-af', `loudnorm=I=${L.I}:TP=${L.TP}:LRA=${L.LRA},`
+         + `afade=t=in:st=0:d=${AUDIO.fadeIn},afade=t=out:st=${fo}:d=${AUDIO.fadeOut}`,
     '-shortest');
 } else {
   args.push('-an');

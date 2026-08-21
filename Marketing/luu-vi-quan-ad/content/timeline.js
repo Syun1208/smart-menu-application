@@ -8,9 +8,14 @@ export const DURATION = 60;
 // Nhac nen: cat 60s tu file goc (117s), fade in 0.5s / fade out 1.5s.
 export const AUDIO = {
   file: 'assets/audio/ngon-qua-di.mp3',
-  offset: 0,
-  fadeIn: 0.5,
-  fadeOut: 1.5,
+  // Do tung doan bai hat: 0s la intro va la doan NHE NHAT (-18.3 LUFS) - do la ly do
+  // ban dau nghe yeu. Cua so 60s bat dau tu 50s chac tieng nhat (-12.9 LUFS, LRA 3.5).
+  offset: 50,
+  fadeIn: 0.4,
+  fadeOut: 1.8,
+  // Chuan hoa do lon khi xuat. Video tham khao cua khach o -7.4 LUFS; -9.5 du chac
+  // tren loa dien thoai ma khong bi ep qua tay.
+  loudness: { I: -8.5, TP: -1.0, LRA: 7 },
 };
 
 export const BRAND = {
@@ -34,8 +39,8 @@ export const CLIPS = {
 };
 
 // grade mac dinh: am, tuoi, hop khau vi quang cao do an
-const WARM = { warmth: 0.10, saturation: 1.14, contrast: 1.06, vignette: 0.22, sharpen: 0.45 };
-const HOT  = { warmth: 0.16, saturation: 1.18, contrast: 1.10, vignette: 0.26, sharpen: 0.55 };
+const WARM = { warmth: 0.045, saturation: 1.05, contrast: 1.02, vignette: 0.10, sharpen: 0.35 };
+const HOT  = { warmth: 0.065, saturation: 1.07, contrast: 1.03, vignette: 0.12, sharpen: 0.40 };
 const CLEAN = { warmth: 0.02, saturation: 1.02, contrast: 1.00, vignette: 0.06, sharpen: 0.30 };
 
 export const SHOTS = [
@@ -44,12 +49,12 @@ export const SHOTS = [
     t0: 0, t1: 6,
     source: { kind: 'frames', clip: 'shot01' },
     still: 'shot01-khay-trai-cay.jpg',
-    fit: 'cover',
+    fit: 'auto',
     // Da kiem tra frame that: clip nay KHONG dinh watermark TikTok (model sinh video
     // da cat mat duoi roi), nen khong can zoom bu - giu tron dien tich anh.
     bias: { x: 0, y: 0 },
     move: 'pushIn', ease: 'inOutSine',
-    grade: WARM, glow: 0.10,
+    grade: WARM, glow: 0.035,
     caption: 'Trái cây cắt sẵn — tươi mỗi ngày',
     transition: { type: 'fade', dur: 0.0 },
   },
@@ -58,9 +63,9 @@ export const SHOTS = [
     t0: 6, t1: 12,
     source: { kind: 'frames', clip: 'shot02' },
     still: 'shot02-nem-song-nem-xu.jpg',
-    fit: 'cover', bias: { x: 0, y: 0 },
+    fit: 'auto', bias: { x: 0, y: 0 },
     move: 'dollyForward', ease: 'inOutSine',
-    grade: WARM, glow: 0.12,
+    grade: WARM, glow: 0.040,
     caption: 'Nem chua Trần Công Châu',
     transition: { type: 'fade', dur: 0.45 },
   },
@@ -69,9 +74,9 @@ export const SHOTS = [
     t0: 12, t1: 18,
     source: { kind: 'frames', clip: 'shot03' },
     still: 'shot03-to-trai-cay-mix.jpg',
-    fit: 'cover', bias: { x: 0, y: 0 },
+    fit: 'auto', bias: { x: 0, y: 0 },
     move: 'overheadGlide', ease: 'inOutSine',
-    grade: WARM, glow: 0.16,
+    grade: WARM, glow: 0.055,
     caption: 'Mix đủ vị — dưa hấu, kiwi, việt quất',
     transition: { type: 'fade', dur: 0.45 },
   },
@@ -80,9 +85,9 @@ export const SHOTS = [
     t0: 18, t1: 24,
     source: { kind: 'frames', clip: 'shot04' },
     still: 'shot04-trai-cay-dam.jpg',
-    fit: 'cover', bias: { x: 0, y: 0 },
+    fit: 'auto', bias: { x: 0, y: 0 },
     move: 'closePush', ease: 'inOutSine',
-    grade: WARM, glow: 0.14,
+    grade: WARM, glow: 0.045,
     caption: 'Trái cây dầm sốt kem béo mịn',
     transition: { type: 'fade', dur: 0.45 },
   },
@@ -91,21 +96,21 @@ export const SHOTS = [
     t0: 24, t1: 30,
     source: { kind: 'still' },
     still: 'shot05-combo-ca-vien.jpg',
-    fit: 'cover', bias: { x: 0, y: 0 },
+    fit: 'auto', bias: { x: 0, y: 0 },
     move: 'topDownPush', ease: 'inOutSine',
-    grade: HOT, glow: 0.26,
+    grade: HOT, glow: 0.085,
     caption: 'Combo cá viên mắm tỏi — 50k / 70k / 100k',
     // Doi nhom: trai cay -> do nong. Whip-blur.
-    transition: { type: 'whip', dur: 0.28 },
+    transition: { type: 'fade', dur: 0.50 },
   },
   {
     id: 'shot06', n: 6, title: 'Nem chiên & đồ chiên',
     t0: 30, t1: 35,
     source: { kind: 'still' },
     still: 'shot06-nem-chien.jpg',
-    fit: 'cover', bias: { x: 0, y: 0 },
+    fit: 'auto', bias: { x: 0, y: 0 },
     move: 'orbitPush', ease: 'outCubic',
-    grade: HOT, glow: 0.30,
+    grade: HOT, glow: 0.095,
     caption: 'Nem giòn rụm · Phô mai kéo sợi',
     transition: { type: 'fade', dur: 0.35 },
   },
@@ -129,11 +134,11 @@ export const SHOTS = [
     t0: 42, t1: 47,
     source: { kind: 'still' },
     still: 'shot08-nem-chien-goc-rong.jpg',
-    fit: 'cover', bias: { x: 0, y: 0 },
+    fit: 'auto', bias: { x: 0, y: 0 },
     move: 'slideLR', ease: 'outCubic',
-    grade: HOT, glow: 0.28,
+    grade: HOT, glow: 0.090,
     caption: 'Nem trần · Nem xù · Nem phô mai · Nem bò pía',
-    transition: { type: 'whip', dur: 0.28 },
+    transition: { type: 'fade', dur: 0.50 },
   },
   {
     id: 'shot09', n: 9, title: 'Menu trái cây',
@@ -152,9 +157,9 @@ export const SHOTS = [
     t0: 53, t1: 56,
     source: { kind: 'still' },
     still: 'shot10-box-trai-cay.jpg',
-    fit: 'cover', bias: { x: 0, y: 0 },
+    fit: 'auto', bias: { x: 0, y: 0 },
     move: 'luxuryPush', ease: 'inOutSine',
-    grade: WARM, glow: 0.20,
+    grade: WARM, glow: 0.065,
     caption: 'Box trái cây cao cấp — quà tặng',
     transition: { type: 'fade', dur: 0.45 },
   },

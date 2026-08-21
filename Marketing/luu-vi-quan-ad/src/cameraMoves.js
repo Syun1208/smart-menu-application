@@ -16,26 +16,26 @@ const DEG = Math.PI / 180;
 // Moi move: {from, to} tren 4 kenh. Ham chung noi suy.
 const MOVES = {
   // 1 - push in cham, troi nhe trai -> phai
-  pushIn:        { x: [-0.020, 0.020], y: [0, 0],            scale: [1.06, 1.20], rot: [0, 0] },
-  // 2 - dolly forward, parallax nhe theo chieu sau
-  dollyForward:  { x: [0.012, -0.012], y: [0.010, -0.014],   scale: [1.05, 1.24], rot: [0, 0] },
+  pushIn:        { x: [-0.012, 0.012], y: [0, 0],            scale: [1.04, 1.12], rot: [0, 0] },
+  // 2 - dolly forward, parallax rat nhe
+  dollyForward:  { x: [0.007, -0.007], y: [0.006, -0.008],   scale: [1.03, 1.14], rot: [0, 0] },
   // 3 - luot overhead + tien nhe
-  overheadGlide: { x: [-0.014, 0.014], y: [-0.065, 0.065],   scale: [1.12, 1.18], rot: [0, 0] },
+  overheadGlide: { x: [-0.008, 0.008], y: [-0.038, 0.038],   scale: [1.07, 1.11], rot: [0, 0] },
   // 4 - close up push vao ly trai cay dam
-  closePush:     { x: [0, 0.010],      y: [0.020, -0.020],   scale: [1.10, 1.36], rot: [0, 0] },
+  closePush:     { x: [0, 0.006],      y: [0.012, -0.012],   scale: [1.06, 1.20], rot: [0, 0] },
   // 5 - top down push, mon vua ra lo
-  topDownPush:   { x: [0, 0],          y: [-0.030, 0.030],   scale: [1.05, 1.24], rot: [0, 0] },
-  // 6 - orbit nhe + push: canh manh nhat, nhan do gion
-  orbitPush:     { x: [-0.030, 0.030], y: [0.014, -0.014],   scale: [1.08, 1.28], rot: [-0.7 * DEG, 0.7 * DEG] },
+  topDownPush:   { x: [0, 0],          y: [-0.018, 0.018],   scale: [1.03, 1.14], rot: [0, 0] },
+  // 6 - canh manh nhat cua bo, nhung van giu muc diu: bo han xoay
+  orbitPush:     { x: [-0.018, 0.018], y: [0.008, -0.008],   scale: [1.05, 1.17], rot: [0, 0] },
   // 7 - crawl doc tren menu: KHONG xoay, doi scale toi thieu
   verticalCrawl: { x: [0, 0],          y: [-0.190, 0.190],   scale: [1.02, 1.05], rot: [0, 0] },
   // 8 - slide trai -> phai qua mam do chien
-  slideLR:       { x: [-0.105, 0.105], y: [0, 0],            scale: [1.15, 1.15], rot: [0, 0] },
+  slideLR:       { x: [-0.062, 0.062], y: [0, 0],            scale: [1.09, 1.09], rot: [0, 0] },
   // 9 - zoom vao menu trai cay rat cham: KHONG xoay
-  slowZoom:      { x: [0, 0],          y: [0.010, -0.010],   scale: [1.00, 1.06], rot: [0, 0] },
+  slowZoom:      { x: [0, 0],          y: [0.010, -0.010],   scale: [1.00, 1.05], rot: [0, 0] },
   // 10 - push sang trong vao box qua tang
-  luxuryPush:    { x: [-0.016, 0.016], y: [0.008, -0.008],   scale: [1.04, 1.20], rot: [0, 0] },
-  // 11 - end card gan nhu dung yen, chi zoom 3% cho so dien thoai de doc
+  luxuryPush:    { x: [-0.009, 0.009], y: [0.005, -0.005],   scale: [1.03, 1.12], rot: [0, 0] },
+  // 11 - end card gan nhu dung yen
   holdPush:      { x: [0, 0],          y: [0, 0],            scale: [1.00, 1.03], rot: [0, 0] },
 };
 
@@ -66,8 +66,11 @@ export function cameraAt(name, p, ease = 'inOutSine', bias = { x: 0, y: 0 }, loc
 // Do "gian no" tu khong gian khung sang khong gian texture, theo tung truc.
 export function fitMultiplier(texAspect, frameAspect, fit) {
   const ratio = texAspect / frameAspect;
-  if (fit === 'width')   return { x: 1, y: ratio };
-  if (fit === 'contain') return ratio > 1 ? { x: 1, y: ratio } : { x: 1 / ratio, y: 1 };
+  if (fit === 'width') return { x: 1, y: ratio };
+  // blurpad lay mau nhu contain (phan thua do shader lap bang nen mo)
+  if (fit === 'contain' || fit === 'blurpad') {
+    return ratio > 1 ? { x: 1, y: ratio } : { x: 1 / ratio, y: 1 };
+  }
   return ratio > 1 ? { x: 1 / ratio, y: 1 } : { x: 1, y: ratio }; // cover
 }
 

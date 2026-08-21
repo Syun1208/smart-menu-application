@@ -55,7 +55,7 @@ export function makeCaption(text, W, H, brand) {
   if (!text) return canvas;
 
   const pad = Math.round(W * 0.075);
-  const fs = Math.round(W * 0.052);
+  const fs = Math.round(W * 0.042);
   ctx.font = `700 ${fs}px ${FONT}`;
   const lines = wrap(ctx, text, W - pad * 2);
   const lh = Math.round(fs * 1.32);
@@ -65,8 +65,8 @@ export function makeCaption(text, W, H, brand) {
   // gradient chan khung
   const g = ctx.createLinearGradient(0, baseY - blockH - fs * 1.6, 0, H);
   g.addColorStop(0, 'rgba(20,10,6,0)');
-  g.addColorStop(0.45, 'rgba(20,10,6,0.55)');
-  g.addColorStop(1, 'rgba(20,10,6,0.80)');
+  g.addColorStop(0.45, 'rgba(20,10,6,0.30)');
+  g.addColorStop(1, 'rgba(20,10,6,0.52)');
   ctx.fillStyle = g;
   ctx.fillRect(0, baseY - blockH - fs * 1.6, W, H - (baseY - blockH - fs * 1.6));
 
@@ -77,8 +77,49 @@ export function makeCaption(text, W, H, brand) {
   ctx.font = `700 ${fs}px ${FONT}`;
   ctx.fillStyle = '#ffffff';
   ctx.shadowColor = 'rgba(0,0,0,0.55)';
-  ctx.shadowBlur = Math.round(fs * 0.35);
+  ctx.shadowBlur = Math.round(fs * 0.55);
   lines.forEach((l, i) => ctx.fillText(l, pad, baseY - blockH + (i + 1) * lh - Math.round(lh * 0.28)));
+  ctx.shadowBlur = 0;
+  return canvas;
+}
+
+
+/**
+ * Dau nhan nho o goc tren trai, hien suot video - hoc tu video tham khao cua khach.
+ * Giu thuong hieu tren khung hinh ma khong lam nang anh nhu mot caption lon.
+ */
+export function makeWatermark(brand, W, H) {
+  const { canvas, ctx } = ctxOf(W, H);
+  const x = Math.round(W * 0.058);
+  const y = Math.round(H * 0.042);
+  const s = Math.round(W * 0.030);
+
+  ctx.globalAlpha = 0.92;
+  ctx.strokeStyle = '#ffffff';
+  ctx.lineWidth = Math.max(2, Math.round(W * 0.0035));
+  ctx.lineCap = 'round';
+  ctx.shadowColor = 'rgba(0,0,0,0.45)';
+  ctx.shadowBlur = Math.round(W * 0.012);
+
+  // thia
+  ctx.beginPath(); ctx.ellipse(x + s * 0.45, y + s * 0.55, s * 0.28, s * 0.42, 0, 0, Math.PI * 2); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(x + s * 0.45, y + s * 0.97); ctx.lineTo(x + s * 0.45, y + s * 1.75); ctx.stroke();
+  // nia
+  for (let i = -1; i <= 1; i++) {
+    ctx.beginPath();
+    ctx.moveTo(x + s * 1.35 + i * s * 0.22, y + s * 0.18);
+    ctx.lineTo(x + s * 1.35 + i * s * 0.22, y + s * 0.72);
+    ctx.stroke();
+  }
+  ctx.beginPath(); ctx.moveTo(x + s * 1.35, y + s * 0.72); ctx.lineTo(x + s * 1.35, y + s * 1.75); ctx.stroke();
+
+  const tx = x + s * 2.15;
+  ctx.fillStyle = '#ffffff';
+  ctx.font = `900 ${Math.round(W * 0.032)}px ${FONT}`;
+  ctx.fillText(brand.name, tx, y + Math.round(W * 0.030));
+  ctx.globalAlpha = 0.78;
+  ctx.font = `600 ${Math.round(W * 0.019)}px ${FONT}`;
+  ctx.fillText(brand.slogan, tx, y + Math.round(W * 0.056));
   ctx.shadowBlur = 0;
   return canvas;
 }

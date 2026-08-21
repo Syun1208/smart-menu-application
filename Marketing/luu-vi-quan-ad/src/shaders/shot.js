@@ -106,6 +106,19 @@ vec3 glowPass(sampler2D tex, vec2 uv, vec2 texSize, float amount) {
   return bright * amount;
 }
 
+// Nen mo cho che do blurpad: lay mau vong tron 2 vong, du mem de khong thay chi tiet.
+vec3 blurBg(sampler2D tex, vec2 uv, vec2 texSize) {
+  vec2 t = 10.0 / texSize;
+  vec3 acc = sampleTex(tex, uv);
+  for (int i = 0; i < 8; i++) {
+    float a = float(i) * 0.78539816;
+    vec2 o = vec2(cos(a), sin(a));
+    acc += sampleTex(tex, uv + o * t);
+    acc += sampleTex(tex, uv + o * t * 2.2);
+  }
+  return acc / 17.0;
+}
+
 vec3 grade(vec3 c, vec4 g, vec2 uv) {
   // warmth: keo ve phia cam, hop voi anh do an
   c.r += g.x * 0.11;
@@ -125,10 +138,18 @@ vec3 grade(vec3 c, vec4 g, vec2 uv) {
 
 vec3 layer(sampler2D tex, vec2 texSize, vec4 cam, float fit, vec4 g, float sh, float gl, vec2 uv, float frameAspect, float whip) {
   float texAspect = texSize.x / texSize.y;
-  vec2 suv = mapUv(uv, cam, texAspect, frameAspect, fit);
+  // blurpad lay mau nhu contain; phan thua thi lap bang chinh anh do lam mo.
+  float sampleFit = (fit > 2.5) ? 1.0 : fit;
+  vec2 suv = mapUv(uv, cam, texAspect, frameAspect, sampleFit);
 
   bool mayLetterbox = fit > 0.5;
-  if (mayLetterbox && outside(suv)) return uBackdrop;
+  if (mayLetterbox && outside(suv)) {
+    if (fit > 2.5) {
+      vec2 bg = mapUv(uv, cam, texAspect, frameAspect, 0.0);
+      return grade(blurBg(tex, bg, texSize) * 0.58, g, uv);
+    }
+    return uBackdrop;
+  }
 
   vec3 c;
   if (whip > 0.001) {
